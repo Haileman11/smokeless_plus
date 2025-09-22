@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 import '../../services/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../constants/colors.dart';
@@ -84,7 +85,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       );
     }
-
+    final themeService = Provider.of<ThemeService>(context);
+    final textColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
     return Scaffold(
       body: Stack(
         children: [
@@ -97,12 +99,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
               // Header
               Text(
                 localizations.welcomeBack,
-                style: AppTextStyles.h2,
+                style: AppTextStyles.h2.copyWith(color: textColor),
               ),
               SizedBox(height: 8),
               Text(
                 localizations.motivationalQuote,
-                style: AppTextStyles.bodyMedium.copyWith(color: AppColors.textSecondary),
+                style: AppTextStyles.bodyMedium.copyWith(color: textColor.withOpacity(0.7)),
               ),
               SizedBox(height: 32),
 
@@ -499,7 +501,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         return Transform.scale(
           scale: 0.8 + (0.2 * animationValue),
           child: Opacity(
-            opacity: animationValue,
+            opacity: 0.9*animationValue,
             child: Material(
               color: Colors.transparent,
               child: InkWell(

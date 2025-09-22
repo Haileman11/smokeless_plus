@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 import '../../services/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../constants/colors.dart';
@@ -19,6 +20,7 @@ class SettingsScreen extends StatelessWidget {
           children: [
             // Language Selection
             _buildSettingsSection(
+              context: context,
               title: localizations.language,
               children: [
                 _buildLanguageTile(
@@ -55,6 +57,7 @@ class SettingsScreen extends StatelessWidget {
 
             // Data Management
             _buildSettingsSection(
+              context: context,
               title: 'Data Management',
               children: [
                 _buildSettingsTile(
@@ -62,6 +65,7 @@ class SettingsScreen extends StatelessWidget {
                   title: localizations.exportData,
                   subtitle: 'Export your data as JSON',
                   onTap: () => _showComingSoonDialog(context),
+                  context: context
                 ),
                 _buildSettingsTile(
                   icon: Icons.delete_forever,
@@ -69,6 +73,7 @@ class SettingsScreen extends StatelessWidget {
                   subtitle: 'Delete all app data',
                   textColor: AppColors.error,
                   onTap: () => _showClearDataDialog(context, appState),
+                  context: context
                 ),
               ],
             ),
@@ -76,6 +81,7 @@ class SettingsScreen extends StatelessWidget {
 
             // About
             _buildSettingsSection(
+              context: context,
               title: localizations.about,
               children: [
                 _buildSettingsTile(
@@ -83,12 +89,14 @@ class SettingsScreen extends StatelessWidget {
                   title: localizations.version,
                   subtitle: '1.0.0',
                   onTap: null,
+                  context: context
                 ),
                 _buildSettingsTile(
                   icon: Icons.code,
                   title: 'Open Source',
                   subtitle: 'Built with Flutter',
                   onTap: null,
+                  context: context
                 ),
               ],
             ),
@@ -101,15 +109,19 @@ class SettingsScreen extends StatelessWidget {
   Widget _buildSettingsSection({
     required String title,
     required List<Widget> children,
+    required BuildContext context,
   }) {
+    final themeService = Provider.of<ThemeService>(context);
+    final textColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
+    final cardColor = themeService.isDarkMode ? AppColors.darkCard : AppColors.lightCard;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: AppTextStyles.h4),
+        Text(title, style: AppTextStyles.h4.copyWith(color: textColor)),
         SizedBox(height: 16),
         Container(
           decoration: BoxDecoration(
-            color: AppColors.card,
+            color: cardColor,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(color: AppColors.border),
           ),
@@ -125,12 +137,15 @@ class SettingsScreen extends StatelessWidget {
     String? subtitle,
     Color? textColor,
     VoidCallback? onTap,
+    required BuildContext context,
   }) {
+    final themeService = Provider.of<ThemeService>(context);
+    final textThemeColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
     return ListTile(
       leading: Icon(icon, color: textColor ?? AppColors.textSecondary),
       title: Text(
         title,
-        style: AppTextStyles.bodyMedium.copyWith(color: textColor),
+        style: AppTextStyles.bodyMedium.copyWith(color: textColor?? textThemeColor),
       ),
       subtitle: subtitle != null
           ? Text(subtitle, style: AppTextStyles.bodySmall)
@@ -150,10 +165,11 @@ class SettingsScreen extends StatelessWidget {
     String flag,
   ) {
     final isSelected = appState.currentLanguage == languageCode;
-    
+    final themeService = Provider.of<ThemeService>(context);
+    final textColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
     return ListTile(
       leading: Text(flag, style: TextStyle(fontSize: 24)),
-      title: Text(languageName, style: AppTextStyles.bodyMedium),
+      title: Text(languageName, style: AppTextStyles.bodyMedium.copyWith(color: textColor)),
       trailing: isSelected
           ? Icon(Icons.check, color: AppColors.primary)
           : null,

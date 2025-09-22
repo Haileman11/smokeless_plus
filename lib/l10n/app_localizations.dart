@@ -215,7 +215,7 @@ class _AppLocalizationsDelegate
 // Import the language-specific implementations
 class AppLocalizationsEn extends AppLocalizations {
   @override String get dashboard => 'Dashboard';
-  @override String get healthTimeline => 'Health Timeline';
+  @override String get healthTimeline => 'Timeline';
   @override String get rewards => 'Rewards';
   @override String get journal => 'Journal';
   @override String get trophies => 'Trophies';

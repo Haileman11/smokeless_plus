@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 import '../../services/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../constants/colors.dart';
@@ -12,17 +13,19 @@ class HealthTimelineScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final localizations = AppLocalizations.of(context);
+    final themeService = Provider.of<ThemeService>(context);
+    final textColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          localizations.healthTimeline,
-          style: AppTextStyles.h3,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: AppColors.textPrimary,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     localizations.healthTimeline,
+      //     style: AppTextStyles.h3,
+      //   ),
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   foregroundColor: AppColors.textPrimary,
+      // ),
       body: appState.profile == null
           ? Center(
               child: Column(
@@ -32,7 +35,7 @@ class HealthTimelineScreen extends StatelessWidget {
                   SizedBox(height: 16),
                   Text(
                     localizations.completeProfile,
-                    style: AppTextStyles.bodyLarge,
+                    style: AppTextStyles.bodyLarge.copyWith(color: textColor.withOpacity(0.7)),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -45,12 +48,12 @@ class HealthTimelineScreen extends StatelessWidget {
                 children: [
                   Text(
                     localizations.yourHealthProgress,
-                    style: AppTextStyles.h2,
+                    style: AppTextStyles.h2.copyWith(color: textColor),
                   ),
                   SizedBox(height: 8),
                   Text(
                     localizations.timelineDescription,
-                    style: AppTextStyles.bodyMedium.copyWith(color: AppColors.textSecondary),
+                    style: AppTextStyles.bodyMedium.copyWith(color: textColor.withOpacity(0.7)),
                   ),
                   SizedBox(height: 32),
                   ListView.separated(
