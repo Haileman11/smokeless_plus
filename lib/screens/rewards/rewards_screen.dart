@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 import '../../services/app_state.dart';
 import '../../l10n/app_localizations.dart';
 import '../../constants/colors.dart';
@@ -12,17 +13,18 @@ class RewardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final appState = Provider.of<AppState>(context);
     final localizations = AppLocalizations.of(context);
-
+final themeService = Provider.of<ThemeService>(context);
+    final textColor = themeService.isDarkMode ? AppColors.background : AppColors.textPrimary;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          localizations.yourRewards,
-          style: AppTextStyles.h3,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: AppColors.textPrimary,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     localizations.yourRewards,
+      //     style: AppTextStyles.h3.copyWith(color: textColor),
+      //   ),
+      //   backgroundColor: Colors.transparent,
+      //   elevation: 0,
+      //   foregroundColor: AppColors.textPrimary,
+      // ),
       body: appState.profile == null
           ? Center(
               child: Column(

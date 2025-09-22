@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final IconData? icon;
   final Color? backgroundColor;
   final Color? textColor;
+  final String? dataTestId;
 
   const CustomButton({
     Key? key,
@@ -22,6 +23,7 @@ class CustomButton extends StatelessWidget {
     this.icon,
     this.backgroundColor,
     this.textColor,
+    this.dataTestId,
   }) : super(key: key);
 
   @override
@@ -35,6 +37,7 @@ class CustomButton extends StatelessWidget {
       width: double.infinity,
       height: isLarge ? 56 : 48,
       child: ElevatedButton(
+        key: dataTestId != null ? Key(dataTestId!) : null,
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: effectiveBackgroundColor,

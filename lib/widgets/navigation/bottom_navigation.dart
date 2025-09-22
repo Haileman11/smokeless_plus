@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 import '../../constants/colors.dart';
 import '../../l10n/app_localizations.dart';
 
@@ -15,11 +17,11 @@ class BottomNavigationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
-
+    final themeService = Provider.of<ThemeService>(context);
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.card,
-        border: Border(top: BorderSide(color: AppColors.border, width: 1)),
+        color: themeService.isDarkMode ? AppColors.darkCard : AppColors.lightCard,
+        border: Border(top: BorderSide(color: themeService.isDarkMode ? AppColors.darkCard : AppColors.lightCard, width: 1)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),

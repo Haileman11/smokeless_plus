@@ -7,6 +7,7 @@ class UserProfile {
   final int yearsSmoking;
   final String currency;
   final String reasonForQuitting;
+  final String planType;
   final String timezone;
   final double avgMinutesPerCig;
 
@@ -19,6 +20,7 @@ class UserProfile {
     required this.yearsSmoking,
     required this.currency,
     required this.reasonForQuitting,
+    required this.planType,
     required this.timezone,
     required this.avgMinutesPerCig,
   });
@@ -32,6 +34,7 @@ class UserProfile {
     'yearsSmoking': yearsSmoking,
     'currency': currency,
     'reasonForQuitting': reasonForQuitting,
+    'planType': planType,
     'timezone': timezone,
     'avgMinutesPerCig': avgMinutesPerCig,
   };
@@ -45,6 +48,7 @@ class UserProfile {
     yearsSmoking: json['yearsSmoking'],
     currency: json['currency'],
     reasonForQuitting: json['reasonForQuitting'],
+    planType: json['planType'] ?? 'coldTurkey',
     timezone: json['timezone'],
     avgMinutesPerCig: json['avgMinutesPerCig'].toDouble(),
   );

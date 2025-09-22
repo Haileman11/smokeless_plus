@@ -20,6 +20,21 @@ class AppColors {
   
   static const Color border = Color(0xFFE5E7EB);
   static const Color divider = Color(0xFFF3F4F6);
+
+
+  // Main dark theme colors (matching web version)
+  static const Color darkBackground = Color(0xFF0F172A);
+  static const Color darkCard = Color(0xFF1E293B);
+  static const Color darkBorder = Color(0xFF334155);
+  static const Color darkSecondary = Color(0xFF475569);  
+  static const Color accent = Color(0xFF06B6D4);
+  
+  // Light theme colors
+  static const Color lightBackground = Color(0xFFF8FAFC);
+  static const Color lightCard = Color(0xFFFFFFFF);
+  static const Color lightBorder = Color(0xFFE2E8F0);
+  static const Color lightSecondary = Color(0xFF64748B);
+
   
   // Gradient colors
   static const List<Color> primaryGradient = [
