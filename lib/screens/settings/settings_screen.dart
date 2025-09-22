@@ -12,15 +12,6 @@ class SettingsScreen extends StatelessWidget {
     final localizations = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          localizations.settings,
-          style: AppTextStyles.h3,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: AppColors.textPrimary,
-      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(24),
         child: Column(

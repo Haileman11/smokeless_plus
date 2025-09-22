@@ -149,6 +149,19 @@ abstract class AppLocalizations {
   String get selectCurrency;
   String get profileComplete;
   String get letsGo;
+  String get quitStrategy;
+  String get coldTurkey;
+  String get gradual;
+  String get quitImmediately;
+  String get reduceSlowly;
+  String get costInformation;
+  String get yourPotentialSavings;
+  String get daily;
+  String get monthly;
+  String get yearly;
+  String get savingsHint;
+  String get tellUsAboutSmoking;
+  String get helpCalculateStats;
 
   // Common
   String get error;
@@ -316,6 +329,19 @@ class AppLocalizationsEn extends AppLocalizations {
   @override String get selectCurrency => 'Select currency';
   @override String get profileComplete => 'Profile completed successfully!';
   @override String get letsGo => 'Let\'s Go!';
+  @override String get quitStrategy => 'Quit Strategy';
+  @override String get coldTurkey => 'Cold Turkey';
+  @override String get gradual => 'Gradual';
+  @override String get quitImmediately => 'Quit immediately';
+  @override String get reduceSlowly => 'Reduce slowly';
+  @override String get costInformation => 'Cost Information';
+  @override String get yourPotentialSavings => 'Your Potential Savings';
+  @override String get daily => 'Daily';
+  @override String get monthly => 'Monthly';
+  @override String get yearly => 'Yearly';
+  @override String get savingsHint => 'These are the amounts you could save by not smoking!';
+  @override String get tellUsAboutSmoking => 'Tell us about your smoking habit';
+  @override String get helpCalculateStats => 'This helps us calculate your personalized statistics';
   @override String get error => 'Error';
   @override String get save => 'Save';
   @override String get cancel => 'Cancel';
@@ -450,6 +476,19 @@ class AppLocalizationsFr extends AppLocalizations {
   @override String get selectCurrency => 'Sélectionner la devise';
   @override String get profileComplete => 'Profil complété avec succès !';
   @override String get letsGo => 'Allons-y !';
+  @override String get quitStrategy => 'Stratégie d\'Arrêt';
+  @override String get coldTurkey => 'Arrêt Total';
+  @override String get gradual => 'Progressif';
+  @override String get quitImmediately => 'Arrêter immédiatement';
+  @override String get reduceSlowly => 'Réduire lentement';
+  @override String get costInformation => 'Informations sur les Coûts';
+  @override String get yourPotentialSavings => 'Vos Économies Potentielles';
+  @override String get daily => 'Quotidien';
+  @override String get monthly => 'Mensuel';
+  @override String get yearly => 'Annuel';
+  @override String get savingsHint => 'Ce sont les montants que vous pourriez économiser en ne fumant pas !';
+  @override String get tellUsAboutSmoking => 'Parlez-nous de votre habitude de fumer';
+  @override String get helpCalculateStats => 'Cela nous aide à calculer vos statistiques personnalisées';
   @override String get error => 'Erreur';
   @override String get save => 'Sauvegarder';
   @override String get cancel => 'Annuler';
@@ -599,6 +638,19 @@ class AppLocalizationsEs extends AppLocalizations {
   @override String get quitJourneyBeginsSoon => '¡Su viaje para dejar de fumar comienza pronto!';
   @override String get prepareForJourney => 'Prepárate para el increíble viaje que te espera.';
   @override String get journeyStartsHere => 'Tu viaje hacia la libertad comienza aquí';
+  @override String get quitStrategy => 'Estrategia para Dejar';
+  @override String get coldTurkey => 'De Golpe';
+  @override String get gradual => 'Gradual';
+  @override String get quitImmediately => 'Dejar inmediatamente';
+  @override String get reduceSlowly => 'Reducir lentamente';
+  @override String get costInformation => 'Información de Costos';
+  @override String get yourPotentialSavings => 'Tus Ahorros Potenciales';
+  @override String get daily => 'Diario';
+  @override String get monthly => 'Mensual';
+  @override String get yearly => 'Anual';
+  @override String get savingsHint => '¡Estas son las cantidades que podrías ahorrar al no fumar!';
+  @override String get tellUsAboutSmoking => 'Cuéntanos sobre tu hábito de fumar';
+  @override String get helpCalculateStats => 'Esto nos ayuda a calcular tus estadísticas personalizadas';
 }
 
 class AppLocalizationsAr extends AppLocalizations {
@@ -733,4 +785,17 @@ class AppLocalizationsAr extends AppLocalizations {
   @override String get quitJourneyBeginsSoon => 'رحلة الإقلاع عن التدخين ستبدأ قريباً!';
   @override String get prepareForJourney => 'استعد للرحلة المذهلة التي تنتظرك.';
   @override String get journeyStartsHere => 'رحلتك نحو الحرية تبدأ هنا';
+  @override String get quitStrategy => 'استراتيجية الإقلاع';
+  @override String get coldTurkey => 'التوقف الفوري';
+  @override String get gradual => 'التدريجي';
+  @override String get quitImmediately => 'التوقف فوراً';
+  @override String get reduceSlowly => 'التقليل تدريجياً';
+  @override String get costInformation => 'معلومات التكلفة';
+  @override String get yourPotentialSavings => 'مدخراتك المحتملة';
+  @override String get daily => 'يومي';
+  @override String get monthly => 'شهري';
+  @override String get yearly => 'سنوي';
+  @override String get savingsHint => 'هذه هي المبالغ التي يمكنك توفيرها بعدم التدخين!';
+  @override String get tellUsAboutSmoking => 'أخبرنا عن عادة التدخين لديك';
+  @override String get helpCalculateStats => 'هذا يساعدنا في حساب إحصائياتك الشخصية';
 }
