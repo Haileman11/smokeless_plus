@@ -13,7 +13,7 @@ import 'package:smokeless_plus/main.dart';
 void main() {
   testWidgets('App loads correctly', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget( SmokeLessApp());
+    await tester.pumpWidget( MyApp());
 
     // Verify that the app loads
     expect(find.byType(MaterialApp), findsOneWidget);

@@ -1,0 +1,178 @@
+import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+
+import '../../../core/app_export.dart';
+
+class MetricCardWidget extends StatelessWidget {
+  final String title;
+  final String value;
+  final String subtitle;
+  final String iconName;
+  final Color iconColor;
+  final VoidCallback? onTap;
+
+  const MetricCardWidget({
+    Key? key,
+    required this.title,
+    required this.value,
+    required this.subtitle,
+    required this.iconName,
+    required this.iconColor,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      onLongPress: () => _showShareOptions(context),
+      child: Container(
+        width: 42.w,
+        height: 20.h,
+        margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
+        decoration: BoxDecoration(
+          color: AppTheme.lightTheme.colorScheme.surface,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: AppTheme.lightTheme.shadowColor,
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(4.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.textMediumEmphasisLight,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  CustomIconWidget(
+                    iconName: iconName,
+                    color: iconColor,
+                    size: 6.w,
+                  ),
+                ],
+              ),
+              SizedBox(height: 1.h),
+              Text(
+                value,
+                style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+                  color: AppTheme.textHighEmphasisLight,
+                  fontWeight: FontWeight.w700,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              SizedBox(height: 0.5.h),
+              Text(
+                subtitle,
+                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  color: AppTheme.textMediumEmphasisLight,
+                ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _showShareOptions(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: AppTheme.lightTheme.colorScheme.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) => Container(
+        padding: EdgeInsets.all(6.w),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 12.w,
+              height: 0.5.h,
+              decoration: BoxDecoration(
+                color: AppTheme.textDisabledLight,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            SizedBox(height: 3.h),
+            Text(
+              'Share Progress',
+              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 3.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildShareOption(context, 'share', 'Share', () {
+                  Navigator.pop(context);
+                }),
+                _buildShareOption(context, 'copy', 'Copy', () {
+                  Navigator.pop(context);
+                }),
+                _buildShareOption(context, 'download', 'Save', () {
+                  Navigator.pop(context);
+                }),
+              ],
+            ),
+            SizedBox(height: 4.h),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildShareOption(
+      BuildContext context, String iconName, String label, VoidCallback onTap) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            width: 12.w,
+            height: 12.w,
+            decoration: BoxDecoration(
+              color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Center(
+              child: CustomIconWidget(
+                iconName: iconName,
+                color: AppTheme.lightTheme.primaryColor,
+                size: 6.w,
+              ),
+            ),
+          ),
+          SizedBox(height: 1.h),
+          Text(
+            label,
+            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

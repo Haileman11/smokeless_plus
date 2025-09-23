@@ -1,0 +1,342 @@
+{
+    "@@locale": "en",
+    "appTitle": "QuitSmoking Tracker",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "goodMorning": "Good Morning",
+    "@goodMorning": {
+        "description": "Morning greeting"
+    },
+    "goodAfternoon": "Good Afternoon",
+    "@goodAfternoon": {
+        "description": "Afternoon greeting"
+    },
+    "goodEvening": "Good Evening",
+    "@goodEvening": {
+        "description": "Evening greeting"
+    },
+    "smokeFreeJourney": "You're doing amazing on your smoke-free journey",
+    "@smokeFreeJourney": {
+        "description": "Encouragement message for user's journey"
+    },
+    "currentStreak": "Current Streak",
+    "@currentStreak": {
+        "description": "Current streak label"
+    },
+    "daysSmokeFree": "Days Smoke-Free",
+    "@daysSmokeFree": {
+        "description": "Label for days without smoking"
+    },
+    "timeSmokeFree": "Time Smoke-Free",
+    "@timeSmokeFree": {
+        "description": "Label for time counter"
+    },
+    "moneySaved": "Money Saved",
+    "@moneySaved": {
+        "description": "Money saved metric"
+    },
+    "cigarettesAvoided": "Cigarettes Avoided",
+    "@cigarettesAvoided": {
+        "description": "Cigarettes avoided metric"
+    },
+    "healthScore": "Health Score",
+    "@healthScore": {
+        "description": "Health score metric"
+    },
+    "achievements": "Achievements",
+    "@achievements": {
+        "description": "Achievements metric"
+    },
+    "keepItUp": "Keep it up!",
+    "@keepItUp": {
+        "description": "Encouragement message"
+    },
+    "improvingDaily": "Improving daily",
+    "@improvingDaily": {
+        "description": "Health improvement message"
+    },
+    "basedOnProgress": "Based on progress",
+    "@basedOnProgress": {
+        "description": "Achievement description"
+    },
+    "thatsPacks": "That's {count} packs",
+    "@thatsPacks": {
+        "description": "Pack count message",
+        "placeholders": {
+            "count": {
+                "type": "int",
+                "example": "5"
+            }
+        }
+    },
+    "navigationHome": "Home",
+    "@navigationHome": {
+        "description": "Navigation label for home"
+    },
+    "navigationProgress": "Progress",
+    "@navigationProgress": {
+        "description": "Navigation label for progress"
+    },
+    "navigationHealthScore": "Health Score",
+    "@navigationHealthScore": {
+        "description": "Navigation label for health score"
+    },
+    "navigationAchievements": "Achievements",
+    "@navigationAchievements": {
+        "description": "Navigation label for achievements"
+    },
+    "navigationProfile": "Profile",
+    "@navigationProfile": {
+        "description": "Navigation label for profile"
+    },
+    "progressUpdated": "Progress updated successfully!",
+    "@progressUpdated": {
+        "description": "Success message for progress update"
+    },
+    "errorLoadingData": "Error loading data. Using default values.",
+    "@errorLoadingData": {
+        "description": "Error message when data loading fails"
+    },
+    "motivationalMessage1": "Every day smoke-free is a victory. You're building a healthier, stronger version of yourself with each passing moment.",
+    "@motivationalMessage1": {
+        "description": "First motivational message"
+    },
+    "motivationalMessage2": "Your lungs are thanking you right now. Every breath is cleaner, every heartbeat stronger.",
+    "@motivationalMessage2": {
+        "description": "Second motivational message"
+    },
+    "motivationalMessage3": "The money you're saving is just the beginning. The real treasure is the years you're adding to your life.",
+    "@motivationalMessage3": {
+        "description": "Third motivational message"
+    },
+    "drMichaelChen": "Dr. Michael Chen",
+    "@drMichaelChen": {
+        "description": "Author name"
+    },
+    "healthCoachMaria": "Health Coach Maria",
+    "@healthCoachMaria": {
+        "description": "Author name"
+    },
+    "wellnessExpertJohn": "Wellness Expert John",
+    "@wellnessExpertJohn": {
+        "description": "Author name"
+    },
+    "healthStageStarting": "Starting Recovery",
+    "@healthStageStarting": {
+        "description": "Health stage for starting"
+    },
+    "healthStageBegin": "Ready to Begin",
+    "@healthStageBegin": {
+        "description": "Health stage for ready to begin"
+    },
+    "healthStageJourney": "Journey Begins",
+    "@healthStageJourney": {
+        "description": "Health stage for journey begins"
+    },
+    "healthStageNicotineDropping": "Nicotine Dropping",
+    "@healthStageNicotineDropping": {
+        "description": "Health stage for nicotine dropping"
+    },
+    "healthStageCONormalizing": "CO Levels Normalizing",
+    "@healthStageCONormalizing": {
+        "description": "Health stage for CO normalizing"
+    },
+    "healthStageHeartRisk": "Heart Risk Decreasing",
+    "@healthStageHeartRisk": {
+        "description": "Health stage for heart risk"
+    },
+    "healthStageNicotineFree": "Nicotine Free Body",
+    "@healthStageNicotineFree": {
+        "description": "Health stage for nicotine free"
+    },
+    "healthStageSensesImproving": "Senses Improving",
+    "@healthStageSensesImproving": {
+        "description": "Health stage for senses improving"
+    },
+    "healthStageCirculation": "Circulation Improving",
+    "@healthStageCirculation": {
+        "description": "Health stage for circulation"
+    },
+    "healthStageLungFunction": "Lung Function Improving",
+    "@healthStageLungFunction": {
+        "description": "Health stage for lung function"
+    },
+    "healthStageSignificant": "Significant Recovery",
+    "@healthStageSignificant": {
+        "description": "Health stage for significant recovery"
+    },
+    "healthStageHeartDisease": "Heart Disease Risk Reduced",
+    "@healthStageHeartDisease": {
+        "description": "Health stage for heart disease"
+    },
+    "healthStageStroke": "Stroke Risk Normalized",
+    "@healthStageStroke": {
+        "description": "Health stage for stroke"
+    },
+    "healthStageMaximum": "Maximum Health Recovery",
+    "@healthStageMaximum": {
+        "description": "Health stage for maximum recovery"
+    },
+    "milestoneStartJourney": "Start Your Journey",
+    "@milestoneStartJourney": {
+        "description": "Milestone for starting journey"
+    },
+    "milestoneNicotineDropping": "Nicotine Levels Dropping",
+    "@milestoneNicotineDropping": {
+        "description": "Milestone for nicotine dropping"
+    },
+    "milestoneCOClearing": "Carbon Monoxide Clearing",
+    "@milestoneCOClearing": {
+        "description": "Milestone for CO clearing"
+    },
+    "milestoneHeartAttack": "Heart Attack Risk Decreasing",
+    "@milestoneHeartAttack": {
+        "description": "Milestone for heart attack risk"
+    },
+    "milestoneNicotineElimination": "Nicotine Elimination",
+    "@milestoneNicotineElimination": {
+        "description": "Milestone for nicotine elimination"
+    },
+    "milestoneTasteSmell": "Taste & Smell Revival",
+    "@milestoneTasteSmell": {
+        "description": "Milestone for taste and smell"
+    },
+    "milestoneCirculationBoost": "Circulation Boost",
+    "@milestoneCirculationBoost": {
+        "description": "Milestone for circulation boost"
+    },
+    "milestoneLungBoost": "Lung Function Boost",
+    "@milestoneLungBoost": {
+        "description": "Milestone for lung function boost"
+    },
+    "milestoneMajorLung": "Major Lung Recovery",
+    "@milestoneMajorLung": {
+        "description": "Milestone for major lung recovery"
+    },
+    "milestoneHeartRisk": "Heart Risk Halved",
+    "@milestoneHeartRisk": {
+        "description": "Milestone for heart risk halved"
+    },
+    "milestoneStrokeRisk": "Stroke Risk Normalized",
+    "@milestoneStrokeRisk": {
+        "description": "Milestone for stroke risk"
+    },
+    "milestoneCancerRisk": "Cancer Risk Halved",
+    "@milestoneCancerRisk": {
+        "description": "Milestone for cancer risk"
+    },
+    "milestoneMaintaining": "Maintaining Excellence",
+    "@milestoneMaintaining": {
+        "description": "Milestone for maintaining excellence"
+    },
+    "achievedStatus": "Achieved",
+    "@achievedStatus": {
+        "description": "Status for achieved milestone"
+    },
+    "soonStatus": "Soon",
+    "@soonStatus": {
+        "description": "Status for soon milestone"
+    },
+    "notStartedStatus": "Not Started",
+    "@notStartedStatus": {
+        "description": "Status for not started"
+    },
+    "timeInDays": "In {count} day",
+    "@timeInDays": {
+        "description": "Time remaining in days (singular)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "timeInDaysPlural": "In {count} days",
+    "@timeInDaysPlural": {
+        "description": "Time remaining in days (plural)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "timeInHours": "In {count} hour",
+    "@timeInHours": {
+        "description": "Time remaining in hours (singular)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "timeInHoursPlural": "In {count} hours",
+    "@timeInHoursPlural": {
+        "description": "Time remaining in hours (plural)",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "timeInMinutes": "In {count} minutes",
+    "@timeInMinutes": {
+        "description": "Time remaining in minutes",
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "languageSettings": "Language Settings",
+    "@languageSettings": {
+        "description": "Language settings title"
+    },
+    "selectLanguage": "Select Language",
+    "@selectLanguage": {
+        "description": "Select language label"
+    },
+    "languageEnglish": "English",
+    "@languageEnglish": {
+        "description": "English language option"
+    },
+    "languageSpanish": "Espa\u00f1ol",
+    "@languageSpanish": {
+        "description": "Spanish language option"
+    },
+    "languageFrench": "Fran\u00e7ais",
+    "@languageFrench": {
+        "description": "French language option"
+    },
+    "languageGerman": "Deutsch",
+    "@languageGerman": {
+        "description": "German language option"
+    },
+    "languageItalian": "Italiano",
+    "@languageItalian": {
+        "description": "Italian language option"
+    },
+    "languagePortuguese": "Portugu\u00eas",
+    "@languagePortuguese": {
+        "description": "Portuguese language option"
+    },
+    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+    "@languageArabic": {
+        "description": "Arabic language option"
+    },
+    "languageChinese": "\u4e2d\u6587",
+    "@languageChinese": {
+        "description": "Chinese language option"
+    },
+    "languageJapanese": "\u65e5\u672c\u8a9e",
+    "@languageJapanese": {
+        "description": "Japanese language option"
+    },
+    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+    "@languageRussian": {
+        "description": "Russian language option"
+    },
+    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940",
+    "@languageHindi": {
+        "description": "Hindi language option"
+    }
+}
