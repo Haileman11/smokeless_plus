@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/presentation/onboarding_flow/widgets/smoking_habits_widget.dart';
 
 import '../../core/app_export.dart';
 import '../../services/user_data_service.dart';
@@ -73,12 +74,22 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
               _buildRecoveryTimeline(l10n),
               _buildMedicalInsights(l10n),
               _buildComparisonChart(l10n),
+              SliverToBoxAdapter(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                  
+                  child: EstimatedSmokingImpact(
+                    yearsSmoking: _userData["yearsSmoking"] ?? 0.0,
+                    packCost: _userData["packCost"] ?? 0.0,
+                    cigarettesPerDay: _userData["cigarettesPerDay"] ?? 0,
+                  ),
+                ),
+              ),
               SliverToBoxAdapter(child: SizedBox(height: 10.h)),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: _buildBottomNavigation(l10n),
     );
   }
 
@@ -88,14 +99,14 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
       snap: true,
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
       elevation: 0,
-      leading: IconButton(
-        onPressed: () => Navigator.pop(context),
-        icon: CustomIconWidget(
-          iconName: 'arrow_back',
-          color: AppTheme.lightTheme.primaryColor,
-          size: 6.w,
-        ),
-      ),
+      // leading: IconButton(
+      //   onPressed: () => Navigator.pop(context),
+      //   icon: CustomIconWidget(
+      //     iconName: 'arrow_back',
+      //     color: AppTheme.lightTheme.primaryColor,
+      //     size: 6.w,
+      //   ),
+      // ),
       title: Text(
         'Health Score Dashboard',
         style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
@@ -167,102 +178,6 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
       child: ComparisonChartWidget(
         userProgress: _userData["healthProgress"] ?? 0.0,
         quitDays: _userData["currentStreak"] ?? 0,
-      ),
-    );
-  }
-
-  Widget _buildBottomNavigation(AppLocalizations l10n) {
-    final List<Map<String, dynamic>> navItems = [
-      {
-        "icon": "home",
-        "label": l10n.navigationHome,
-        "route": "/dashboard-home",
-      },
-      {
-        "icon": "trending_up",
-        "label": l10n.navigationProgress,
-        "route": "/progress-tracking",
-      },
-      {
-        "icon": "favorite",
-        "label": "Health Score",
-        "route": "/health-score-dashboard",
-      },
-      {
-        "icon": "emoji_events",
-        "label": l10n.navigationAchievements,
-        "route": "/achievement-system",
-      },
-      {
-        "icon": "person",
-        "label": l10n.navigationProfile,
-        "route": "/user-profile",
-      },
-    ];
-
-    return Container(
-      decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            color: AppTheme.lightTheme.shadowColor,
-            blurRadius: 8,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Container(
-          height: 8.h,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: navItems.asMap().entries.map((entry) {
-              final index = entry.key;
-              final item = entry.value;
-              final isActive = index == _currentTabIndex;
-
-              return GestureDetector(
-                onTap: () {
-                  setState(() => _currentTabIndex = index);
-                  if (item["route"] != "/health-score-dashboard") {
-                    Navigator.pushReplacementNamed(context, item["route"]);
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 2.5.w,
-                    vertical: 1.h,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomIconWidget(
-                        iconName: item["icon"],
-                        color: isActive
-                            ? AppTheme.lightTheme.primaryColor
-                            : AppTheme.textMediumEmphasisLight,
-                        size: 5.5.w,
-                      ),
-                      SizedBox(height: 0.3.h),
-                      Text(
-                        item["label"],
-                        style:
-                            AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
-                          color: isActive
-                              ? AppTheme.lightTheme.primaryColor
-                              : AppTheme.textMediumEmphasisLight,
-                          fontWeight:
-                              isActive ? FontWeight.w600 : FontWeight.w400,
-                          fontSize: 9.sp,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }).toList(),
-          ),
-        ),
       ),
     );
   }

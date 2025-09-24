@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/presentation/health_score_dashboard/widgets/medical_insights_widget.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
@@ -398,30 +400,47 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
         if (_cigarettesPerDay > 0 &&
             double.tryParse(_yearsController.text) != null &&
             double.tryParse(_yearsController.text)! > 0)
-          _buildCalculationPreview(),
+          EstimatedSmokingImpact(yearsSmoking: double.tryParse(_yearsController.text) ?? 0.0, packCost: double.tryParse(_costController.text) ?? 0.0, cigarettesPerDay: _cigarettesPerDay),
       ],
     );
   }
+}
 
-  Widget _buildCalculationPreview() {
-    final yearsSmoking = double.tryParse(_yearsController.text) ?? 0.0;
-    final packCost = double.tryParse(_costController.text) ?? 0.0;
+class EstimatedSmokingImpact extends StatelessWidget {
+  const EstimatedSmokingImpact({
+    super.key,
+    required this.yearsSmoking,
+    required this.packCost,
+    required this.cigarettesPerDay,
+    this.opacity = 0.1,
+  });
 
-    if (yearsSmoking > 0 && _cigarettesPerDay > 0) {
+  final double yearsSmoking;
+  final double packCost;
+  final int cigarettesPerDay;
+  
+  final double opacity;
+
+  @override
+  Widget build(BuildContext context) {   
+
+    if (yearsSmoking > 0 && cigarettesPerDay > 0) {
       final totalDays = (yearsSmoking * 365.25).round();
-      final totalCigarettes = totalDays * _cigarettesPerDay;
+      final totalCigarettes = totalDays * cigarettesPerDay;
       final totalSpent = packCost > 0
           ? (totalCigarettes * (packCost / 20)).toStringAsFixed(0)
           : '0';
-
+final lifeLostMinutes =
+        totalCigarettes * 11; // 11 minutes per cigarette
+    final lifeLostDuration = formatLifeLost(lifeLostMinutes);
       return Container(
         margin: EdgeInsets.only(top: 3.h),
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.primaryContainer.withAlpha(77),
+          color: AppTheme.lightTheme.colorScheme.primaryContainer.withValues(alpha: opacity),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: AppTheme.lightTheme.colorScheme.primary.withAlpha(77),
+            color: AppTheme.lightTheme.colorScheme.primary.withValues(alpha: opacity * 0.5),
           ),
         ),
         child: Column(
@@ -444,26 +463,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                 ),
               ],
             ),
-            SizedBox(height: 1.h),
-            Text(
-              '• Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-              ),
-            ),
+            SizedBox(height: 2.5.h),
+            InsightItemWidget(text: 'Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}', color: AppTheme.lightTheme.colorScheme.primary),
             if (packCost > 0)
-              Text(
-                '• Total money spent: \$$totalSpent',
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-                ),
-              ),
-            Text(
-              '• Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-              ),
-            ),
+              InsightItemWidget(text: 'Total money spent: \$$totalSpent', color: AppTheme.lightTheme.colorScheme.primary),
+            InsightItemWidget(text: 'Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days', color: AppTheme.lightTheme.colorScheme.primary),
+            InsightItemWidget(text: 'Life lost: $lifeLostDuration', color: AppTheme.lightTheme.colorScheme.primary),
+            //            
           ],
         ),
       );

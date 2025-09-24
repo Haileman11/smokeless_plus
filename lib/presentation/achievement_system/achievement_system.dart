@@ -145,30 +145,7 @@ class _AchievementSystemState extends State<AchievementSystem>
       ),
     );
   }
-
-  void _onBottomNavTap(int index) {
-    setState(() {
-      _currentBottomIndex = index;
-    });
-
-    switch (index) {
-      case 0:
-        Navigator.pushNamed(context, '/splash-screen');
-        break;
-      case 1:
-        Navigator.pushNamed(context, '/dashboard-home');
-        break;
-      case 2:
-        Navigator.pushNamed(context, '/progress-tracking');
-        break;
-      case 3:
-        Navigator.pushNamed(context, '/statistics-dashboard');
-        break;
-      case 4:
-        // Current screen - Achievement System
-        break;
-    }
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -198,31 +175,13 @@ class _AchievementSystemState extends State<AchievementSystem>
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('Achievement System'),
+        title: Text('Achievement System',
+            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: AppTheme.lightTheme.primaryColor,
+            )),
         backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
         elevation: AppTheme.lightTheme.appBarTheme.elevation,
-        actions: [
-          IconButton(
-            onPressed: () =>
-                Navigator.pushNamed(context, '/health-score-dashboard'),
-            icon: CustomIconWidget(
-              iconName: 'favorite',
-              color: AppTheme.lightTheme.colorScheme.primary,
-              size: 6.w,
-            ),
-            tooltip: 'Health Score Dashboard',
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/user-profile');
-            },
-            icon: CustomIconWidget(
-              iconName: 'person',
-              color: AppTheme.lightTheme.colorScheme.onSurface,
-              size: 6.w,
-            ),
-          ),
-        ],
       ),
       body: RefreshIndicator(
         onRefresh: _loadUserData,
@@ -361,7 +320,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                 sliver: SliverGrid(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    childAspectRatio: 0.8,
+                    childAspectRatio: 0.7,
                     crossAxisSpacing: 2.w,
                     mainAxisSpacing: 2.h,
                   ),
@@ -402,84 +361,7 @@ class _AchievementSystemState extends State<AchievementSystem>
             fontWeight: FontWeight.w600,
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentBottomIndex,
-        onTap: _onBottomNavTap,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor:
-            AppTheme.lightTheme.bottomNavigationBarTheme.backgroundColor,
-        selectedItemColor:
-            AppTheme.lightTheme.bottomNavigationBarTheme.selectedItemColor,
-        unselectedItemColor:
-            AppTheme.lightTheme.bottomNavigationBarTheme.unselectedItemColor,
-        selectedLabelStyle:
-            AppTheme.lightTheme.bottomNavigationBarTheme.selectedLabelStyle,
-        unselectedLabelStyle:
-            AppTheme.lightTheme.bottomNavigationBarTheme.unselectedLabelStyle,
-        items: [
-          BottomNavigationBarItem(
-            icon: CustomIconWidget(
-              iconName: 'home',
-              color: _currentBottomIndex == 0
-                  ? AppTheme
-                      .lightTheme.bottomNavigationBarTheme.selectedItemColor!
-                  : AppTheme
-                      .lightTheme.bottomNavigationBarTheme.unselectedItemColor!,
-              size: 6.w,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: CustomIconWidget(
-              iconName: 'dashboard',
-              color: _currentBottomIndex == 1
-                  ? AppTheme
-                      .lightTheme.bottomNavigationBarTheme.selectedItemColor!
-                  : AppTheme
-                      .lightTheme.bottomNavigationBarTheme.unselectedItemColor!,
-              size: 6.w,
-            ),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: CustomIconWidget(
-              iconName: 'trending_up',
-              color: _currentBottomIndex == 2
-                  ? AppTheme
-                      .lightTheme.bottomNavigationBarTheme.selectedItemColor!
-                  : AppTheme
-                      .lightTheme.bottomNavigationBarTheme.unselectedItemColor!,
-              size: 6.w,
-            ),
-            label: 'Progress',
-          ),
-          BottomNavigationBarItem(
-            icon: CustomIconWidget(
-              iconName: 'analytics',
-              color: _currentBottomIndex == 3
-                  ? AppTheme
-                      .lightTheme.bottomNavigationBarTheme.selectedItemColor!
-                  : AppTheme
-                      .lightTheme.bottomNavigationBarTheme.unselectedItemColor!,
-              size: 6.w,
-            ),
-            label: 'Statistics',
-          ),
-          BottomNavigationBarItem(
-            icon: CustomIconWidget(
-              iconName: 'emoji_events',
-              color: _currentBottomIndex == 4
-                  ? AppTheme
-                      .lightTheme.bottomNavigationBarTheme.selectedItemColor!
-                  : AppTheme
-                      .lightTheme.bottomNavigationBarTheme.unselectedItemColor!,
-              size: 6.w,
-            ),
-            label: 'Achievements',
-          ),
-        ],
-      ),
+      ),     
     );
   }
 

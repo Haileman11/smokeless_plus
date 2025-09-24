@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
 
@@ -85,13 +86,13 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 4,
+        childAspectRatio: 3,
         crossAxisSpacing: 2.w,
         mainAxisSpacing: 1.h,
       ),
-      itemCount: LanguageService.supportedLanguages.length,
+      itemCount: LanguageProvider.supportedLanguages.length,
       itemBuilder: (context, index) {
-        final language = LanguageService.supportedLanguages[index];
+        final language = LanguageProvider.supportedLanguages[index];
         final isSelected = widget.currentLanguage == language['code'];
 
         return _buildLanguageOption(context, language, isSelected);
@@ -107,7 +108,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
     return GestureDetector(
       onTap: () => _selectLanguage(language['code']!),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
+        padding: EdgeInsets.symmetric(horizontal: 3.w, ),
         decoration: BoxDecoration(
           color: isSelected
               ? AppTheme.lightTheme.primaryColor.withAlpha(26)
@@ -199,12 +200,12 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
     await Future.delayed(const Duration(milliseconds: 300));
 
     // Save language preference
-    final success = await LanguageService.saveLanguage(languageCode);
+    await context.read<LanguageProvider>().setLanguage(languageCode);
 
     // Close loading dialog
     if (mounted) Navigator.of(context).pop();
 
-    if (success) {
+    if (true) {
       // Call the callback to update the app language
       widget.onLanguageChanged(languageCode);
 
@@ -216,7 +217,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              'Language changed to ${LanguageService.getNativeLanguageName(languageCode)}',
+              'Language changed to ${context.read<LanguageProvider>().getNativeLanguageName(languageCode)}',
               style: const TextStyle(color: Colors.white),
             ),
             backgroundColor: AppTheme.successLight,

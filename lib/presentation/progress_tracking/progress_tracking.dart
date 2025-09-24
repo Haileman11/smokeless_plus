@@ -278,11 +278,15 @@ All data synchronized across the entire app!
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Your Synchronized Progress',
-                style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onPrimary,
-                  fontWeight: FontWeight.w700,
+              Expanded(
+                child: Text(
+                  'Your Synchronized Progress',
+                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                    color: AppTheme.lightTheme.colorScheme.onPrimary,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  maxLines: 2,
+                  
                 ),
               ),
               Container(
@@ -618,20 +622,14 @@ All data synchronized across the entire app!
     return Scaffold(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('Progress Tracking'),
+        title: Text('Progress Tracking',
+            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: AppTheme.lightTheme.colorScheme.onSurface,
+            )),
         backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
         elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: () =>
-                Navigator.pushNamed(context, '/health-score-dashboard'),
-            icon: CustomIconWidget(
-              iconName: 'favorite',
-              color: AppTheme.lightTheme.colorScheme.primary,
-              size: 24,
-            ),
-            tooltip: 'Health Score Dashboard',
-          ),
+        actions: [          
           IconButton(
             onPressed: _showFilterOptions,
             icon: CustomIconWidget(

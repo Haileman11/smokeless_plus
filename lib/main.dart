@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 
 import '../core/app_export.dart';
 import '../services/language_service.dart';
@@ -33,99 +36,83 @@ void main() async {
 
   // 🚨 CRITICAL: Device orientation lock - DO NOT REMOVE
   Future.wait([
-    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
+    SharedPreferences.getInstance()
   ]).then((value) {
-    runApp(MyApp());
+    runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider(value[1] as SharedPreferences)),
+        ChangeNotifierProvider(create: (_) => LanguageProvider(value[1] as SharedPreferences)),
+      ],
+      child: MyApp(),
+    ));
   });
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  Locale? _locale;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadLanguage();
-  }
-
-  Future<void> _loadLanguage() async {
-    final languageCode = await LanguageService.loadLanguage();
-    setState(() {
-      _locale = LanguageService.getLocale(languageCode);
-    });
-  }
-
-  void _changeLanguage(String languageCode) async {
-    // Save the language preference first
-    await LanguageService.saveLanguage(languageCode);
-
-    setState(() {
-      _locale = LanguageService.getLocale(languageCode);
-    });
-  }
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, screenType) {
-      return MaterialApp(
-        title: 'quitsmoking_tracker',
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        themeMode: ThemeMode.light,
-        locale: _locale,
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en'), // English
-          Locale('es'), // Spanish
-          Locale('fr'), // French
-          Locale('de'), // German
-          Locale('it'), // Italian
-          Locale('pt'), // Portuguese
-          Locale('ar'), // Arabic
-          Locale('zh'), // Chinese
-          Locale('ja'), // Japanese
-          Locale('ru'), // Russian
-          Locale('hi'), // Hindi
-        ],
-        // Force locale rebuild when changed
-        key: ValueKey(_locale?.languageCode ?? 'en'),
-        // 🚨 CRITICAL: NEVER REMOVE OR MODIFY
-        builder: (context, child) {
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(
-              textScaler: TextScaler.linear(1.0),
-            ),
-            child: child!,
-          );
-        },
-        // 🚨 END CRITICAL SECTION
-        debugShowCheckedModeBanner: false,
-        routes: AppRoutes.routes,
-        initialRoute: AppRoutes.initial,
-        onGenerateRoute: (settings) {
-          // Pass language change callback to all screens that need it
-          switch (settings.name) {
-            case '/user-profile':
-              return MaterialPageRoute(
-                builder: (context) => UserProfile(
-                  onLanguageChanged: _changeLanguage,
+      return Consumer2<ThemeProvider, LanguageProvider>(
+  builder: (context, themeProvider, languageProvider, _) {
+          return MaterialApp(
+            title: 'quitsmoking_tracker',
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: themeProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            locale: languageProvider.locale,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('en'), // English
+              Locale('es'), // Spanish
+              Locale('fr'), // French
+              Locale('de'), // German
+              Locale('it'), // Italian
+              Locale('pt'), // Portuguese
+              Locale('ar'), // Arabic
+              Locale('zh'), // Chinese
+              Locale('ja'), // Japanese
+              Locale('ru'), // Russian
+              Locale('hi'), // Hindi
+            ],
+            // Force locale rebuild when changed
+            key: ValueKey(languageProvider.locale.languageCode),
+            // 🚨 CRITICAL: NEVER REMOVE OR MODIFY
+            builder: (context, child) {
+              return MediaQuery(
+                data: MediaQuery.of(context).copyWith(
+                  textScaler: TextScaler.linear(1.0),
                 ),
-                settings: settings,
+                child: child!,
               );
-            default:
-              return null;
-          }
-        },
+            },
+            // 🚨 END CRITICAL SECTION
+            debugShowCheckedModeBanner: false,
+            routes: AppRoutes.routes,
+            initialRoute: AppRoutes.initial,
+            onGenerateRoute: (settings) {
+              // Pass language change callback to all screens that need it
+              switch (settings.name) {
+                case '/user-profile':
+                  return MaterialPageRoute(
+                    builder: (context) => UserProfile(
+                      onLanguageChanged: languageProvider.setLanguage,
+                    ),
+                    settings: settings,
+                  );
+                default:
+                  return null;
+              }
+            },
+          );
+        }
       );
     });
   }

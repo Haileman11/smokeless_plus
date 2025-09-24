@@ -118,25 +118,25 @@ class OnboardingStepWidget extends StatelessWidget {
                       buttonText,
                       style:
                           AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
-                        color: Colors.white,
+                        color: onNext!=null ? Colors.white : AppTheme.lightTheme.colorScheme.onSurface.withAlpha(100),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
                 ),
-                if (showSkip) ...[
-                  SizedBox(height: 1.h),
-                  TextButton(
-                    onPressed: onSkip,
-                    child: Text(
-                      'Skip',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                ],
-                SizedBox(height: 2.h),
+                // if (showSkip) ...[
+                //   SizedBox(height: 1.h),
+                //   TextButton(
+                //     onPressed: onSkip,
+                //     child: Text(
+                //       'Skip',
+                //       style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                //         color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                //       ),
+                //     ),
+                //   ),
+                // ],
+                // SizedBox(height: 2.h),
               ],
             ),
           ],

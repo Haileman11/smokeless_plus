@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
 
@@ -86,7 +87,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   Future<void> _loadCurrentLanguage() async {
-    final language = await LanguageService.loadLanguage();
+    final language = await context.read<LanguageProvider>().currentLanguage;
     setState(() {
       _currentLanguage = language;
     });
@@ -188,15 +189,12 @@ class _UserProfileState extends State<UserProfile> {
   Widget _buildAppBar(AppLocalizations l10n) {
     return SliverAppBar(
       backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
-      title: Text('Profile'),
-      leading: IconButton(
-        icon: CustomIconWidget(
-          iconName: 'arrow_back',
-          color: AppTheme.lightTheme.colorScheme.onSurface,
-          size: 24,
-        ),
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+      title: Text('Profile',
+          style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: AppTheme.lightTheme.colorScheme.onSurface,
+          )),
+      
       actions: [
         IconButton(
           icon: CustomIconWidget(

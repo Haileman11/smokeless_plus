@@ -101,44 +101,8 @@ class MedicalInsightsWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 1.5.h),
-        ...items.map((item) => _buildInsightItem(item, color)),
+        ...items.map((item) => InsightItemWidget(text: item, color: color)),
       ],
-    );
-  }
-
-  Widget _buildInsightItem(String text, Color color) {
-    return Container(
-      width: double.infinity,
-      margin: EdgeInsets.only(bottom: 1.h),
-      padding: EdgeInsets.all(3.w),
-      decoration: BoxDecoration(
-        color: color.withAlpha(13),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: color.withAlpha(26),
-          width: 1,
-        ),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomIconWidget(
-            iconName: 'fiber_manual_record',
-            color: color,
-            size: 3.w,
-          ),
-          SizedBox(width: 2.w),
-          Expanded(
-            child: Text(
-              text,
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurface,
-                height: 1.4,
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 
@@ -209,5 +173,53 @@ class MedicalInsightsWidget extends StatelessWidget {
     }
 
     return milestones.take(2).toList();
+  }
+}
+
+class InsightItemWidget extends StatelessWidget {
+  const InsightItemWidget({
+    super.key,
+    required this.text,
+    required this.color,
+  });
+
+  final String text;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.only(bottom: 1.h),
+      padding: EdgeInsets.all(3.w),
+      decoration: BoxDecoration(
+        color: color.withAlpha(13),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: color.withAlpha(26),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomIconWidget(
+            iconName: 'fiber_manual_record',
+            color: color,
+            size: 3.w,
+          ),
+          SizedBox(width: 2.w),
+          Expanded(
+            child: Text(
+              text,
+              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                color: AppTheme.lightTheme.colorScheme.onSurface,
+                height: 1.4,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

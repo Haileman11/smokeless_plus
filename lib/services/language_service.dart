@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LanguageService {
+class LanguageProvider with ChangeNotifier {
+  final SharedPreferences _prefs;
   static const String _keyLanguage = 'selected_language';
 
-  /// Available languages in the app
   static const List<Map<String, String>> supportedLanguages = [
     {'code': 'en', 'name': 'English', 'nativeName': 'English'},
     {'code': 'es', 'name': 'Spanish', 'nativeName': 'Español'},
@@ -19,77 +19,64 @@ class LanguageService {
     {'code': 'hi', 'name': 'Hindi', 'nativeName': 'हिन्दी'},
   ];
 
-  /// Get device default language
-  static String getDeviceLanguage() {
-    final locale = WidgetsBinding.instance.platformDispatcher.locale;
-    final languageCode = locale.languageCode;
+  String _languageCode = 'en';
 
-    // Check if the device language is supported
-    final supportedCodes =
-        supportedLanguages.map((lang) => lang['code']).toList();
-    if (supportedCodes.contains(languageCode)) {
-      return languageCode;
-    }
+  String get languageCode => _languageCode;
+  Locale get locale => Locale(_languageCode);
+  String get currentLanguage => getLanguageName(_languageCode);
 
-    // Default to English if device language is not supported
-    return 'en';
+  LanguageProvider(this._prefs) {
+    _loadLanguage();
   }
 
-  /// Save selected language to local storage
-  static Future<bool> saveLanguage(String languageCode) async {
+  void _loadLanguage()  {
     try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString(_keyLanguage, languageCode);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  /// Load selected language from local storage
-  static Future<String> loadLanguage() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final savedLanguage = prefs.getString(_keyLanguage);
+      final savedLanguage = _prefs.getString(_keyLanguage);
 
       if (savedLanguage != null) {
-        return savedLanguage;
+        _languageCode = savedLanguage;
+      } else {
+        _languageCode = getDeviceLanguage();
       }
 
-      // If no language is saved, use device language
-      return getDeviceLanguage();
-    } catch (e) {
-      // If error occurs, default to English
-      return 'en';
+      notifyListeners();
+    } catch (_) {
+      _languageCode = 'en';
+      notifyListeners();
     }
   }
 
-  /// Get language name by code
-  static String getLanguageName(String code) {
-    final language = supportedLanguages.firstWhere(
-      (lang) => lang['code'] == code,
-      orElse: () => {'code': 'en', 'name': 'English', 'nativeName': 'English'},
-    );
-    return language['name']!;
+  Future<void> setLanguage(String code) async {
+    _languageCode = code;
+    notifyListeners(); // 🔥 Trigger rebuilds
+    await _prefs.setString(_keyLanguage, code);
   }
 
-  /// Get native language name by code
-  static String getNativeLanguageName(String code) {
-    final language = supportedLanguages.firstWhere(
-      (lang) => lang['code'] == code,
-      orElse: () => {'code': 'en', 'name': 'English', 'nativeName': 'English'},
-    );
-    return language['nativeName']!;
+  static String getDeviceLanguage() {
+    final locale = WidgetsBinding.instance.platformDispatcher.locale;
+    final code = locale.languageCode;
+
+    final supportedCodes =
+        supportedLanguages.map((lang) => lang['code']).toList();
+    return supportedCodes.contains(code) ? code : 'en';
   }
 
-  /// Get locale from language code
-  static Locale getLocale(String languageCode) {
-    return Locale(languageCode);
+  String getLanguageName(String code) {
+    return supportedLanguages
+            .firstWhere((lang) => lang['code'] == code,
+                orElse: () => supportedLanguages.first)['name'] ??
+        'English';
   }
 
-  /// Check if language is Right-to-Left (RTL)
-  static bool isRTL(String languageCode) {
+  String getNativeLanguageName(String code) {
+    return supportedLanguages
+            .firstWhere((lang) => lang['code'] == code,
+                orElse: () => supportedLanguages.first)['nativeName'] ??
+        'English';
+  }
+
+  bool get isRTL {
     const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
-    return rtlLanguages.contains(languageCode);
+    return rtlLanguages.contains(_languageCode);
   }
 }

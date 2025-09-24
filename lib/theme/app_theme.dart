@@ -248,7 +248,7 @@ class AppTheme {
         borderSide: BorderSide(color: errorLight, width: 2.0),
       ),
       labelStyle: GoogleFonts.inter(
-        color: textMediumEmphasisLight,
+        color: textMediumEmphasisLight,        
         fontSize: 16,
         fontWeight: FontWeight.w400,
       ),

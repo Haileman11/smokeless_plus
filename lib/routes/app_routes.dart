@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smokeless_plus/presentation/main_screen/main_screen.dart';
 import '../presentation/splash_screen/splash_screen.dart';
 import '../presentation/achievement_system/achievement_system.dart';
 import '../presentation/user_profile/user_profile.dart';
@@ -28,16 +29,13 @@ class AppRoutes {
     initial: (context) => const SplashScreen(),
     splash: (context) => const SplashScreen(),
     achievementSystem: (context) => const AchievementSystem(),
-    userProfile: (context) {
-      // This is handled in onGenerateRoute for language callback support
-      return const UserProfile();
-    },
+    userProfile: (context) => const UserProfile(),
     onboardingFlow: (context) => const OnboardingFlow(),
     cravingSupport: (context) => const CravingSupport(),
     progressTracking: (context) => const ProgressTracking(),
     statisticsDashboard: (context) => const StatisticsDashboard(),
     healthMilestones: (context) => const HealthMilestones(),
-    dashboardHome: (context) => const DashboardHome(),
+    dashboardHome: (context) => const MainScreen(),
     healthScoreDashboard: (context) => const HealthScoreDashboard(),
     // TODO: Add your other routes here
   };

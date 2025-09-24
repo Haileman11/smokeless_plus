@@ -18,8 +18,7 @@ class DashboardHome extends StatefulWidget {
   State<DashboardHome> createState() => _DashboardHomeState();
 }
 
-class _DashboardHomeState extends State<DashboardHome> {
-  String _currentLanguage = 'en';
+class _DashboardHomeState extends State<DashboardHome> {  
   int _currentTabIndex = 0;
 
   // User data - now loaded dynamically
@@ -39,18 +38,10 @@ class _DashboardHomeState extends State<DashboardHome> {
   @override
   void initState() {
     super.initState();
-    _loadCurrentLanguage();
+    
     _loadUserData();
   }
 
-  Future<void> _loadCurrentLanguage() async {
-    final language = await LanguageService.loadLanguage();
-    if (mounted) {
-      setState(() {
-        _currentLanguage = language;
-      });
-    }
-  }
 
   /// Load user data and calculate metrics from scratch
   Future<void> _loadUserData() async {
@@ -163,7 +154,7 @@ class _DashboardHomeState extends State<DashboardHome> {
         ),
       ),
       floatingActionButton: _buildCravingSupportFAB(),
-      bottomNavigationBar: _buildBottomNavigation(l10n),
+      // bottomNavigationBar: _buildBottomNavigation(l10n),
     );
   }
 
@@ -280,101 +271,7 @@ class _DashboardHomeState extends State<DashboardHome> {
     return count;
   }
 
-  Widget _buildBottomNavigation(AppLocalizations l10n) {
-    final List<Map<String, dynamic>> navItems = [
-      {
-        "icon": "home",
-        "label": l10n.navigationHome,
-        "route": "/dashboard-home",
-      },
-      {
-        "icon": "trending_up",
-        "label": l10n.navigationProgress,
-        "route": "/progress-tracking",
-      },
-      {
-        "icon": "favorite",
-        "label": l10n.navigationHealthScore,
-        "route": "/health-score-dashboard",
-      },
-      {
-        "icon": "emoji_events",
-        "label": l10n.navigationAchievements,
-        "route": "/achievement-system",
-      },
-      {
-        "icon": "person",
-        "label": l10n.navigationProfile,
-        "route": "/user-profile",
-      },
-    ];
-
-    return Container(
-      decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
-        boxShadow: [
-          BoxShadow(
-            color: AppTheme.lightTheme.shadowColor,
-            blurRadius: 8,
-            offset: const Offset(0, -2),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        child: Container(
-          height: 8.h,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: navItems.asMap().entries.map((entry) {
-              final index = entry.key;
-              final item = entry.value;
-              final isActive = index == _currentTabIndex;
-
-              return GestureDetector(
-                onTap: () {
-                  setState(() => _currentTabIndex = index);
-                  if (item["route"] != "/dashboard-home") {
-                    Navigator.pushReplacementNamed(context, item["route"]);
-                  }
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 2.w,
-                    vertical: 1.h,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomIconWidget(
-                        iconName: item["icon"],
-                        color: isActive
-                            ? AppTheme.lightTheme.primaryColor
-                            : AppTheme.textMediumEmphasisLight,
-                        size: 5.5.w,
-                      ),
-                      SizedBox(height: 0.3.h),
-                      Text(
-                        item["label"],
-                        style:
-                            AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
-                          color: isActive
-                              ? AppTheme.lightTheme.primaryColor
-                              : AppTheme.textMediumEmphasisLight,
-                          fontWeight:
-                              isActive ? FontWeight.w600 : FontWeight.w400,
-                          fontSize: 8.5.sp,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-      ),
-    );
-  }
+  
 
   Widget _buildCravingSupportFAB() {
     return Container(
@@ -402,7 +299,7 @@ class _DashboardHomeState extends State<DashboardHome> {
       child: FloatingActionButton(
         onPressed: _showCravingSupport,
         backgroundColor: Colors.transparent,
-        elevation: 0,
+        elevation: 2,
         child: CustomIconWidget(
           iconName: 'support_agent',
           color: Colors.white,
