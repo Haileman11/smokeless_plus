@@ -108,18 +108,23 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  AnimatedBuilder(
-                    animation: _progressAnimation,
-                    builder: (context, child) {
-                      return CircularProgressIndicator(
-                        value: _progressAnimation.value,
-                        strokeWidth: 8,
-                        backgroundColor: Colors.grey.shade300,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          _getScoreColor(),
-                        ),
-                      );
-                    },
+                  SizedBox(
+                    height: 40.w,
+                    width: 40.w,
+                    child: AnimatedBuilder(
+                      animation: _progressAnimation,
+                      builder: (context, child) {
+                        return CircularProgressIndicator(
+                          
+                          value: _progressAnimation.value,
+                          strokeWidth: 20,
+                          backgroundColor: Colors.grey.shade300,
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            _getScoreColor(),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
