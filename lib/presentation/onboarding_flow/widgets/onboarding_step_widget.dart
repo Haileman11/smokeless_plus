@@ -56,8 +56,8 @@ class OnboardingStepWidget extends StatelessWidget {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: CustomImageWidget(
-                          imageUrl: imageUrl,
+                        child: Image.asset(
+                          imageUrl,
                           width: 80.w,
                           height: 30.h,
                           fit: BoxFit.cover,

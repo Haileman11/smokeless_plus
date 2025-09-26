@@ -18,18 +18,19 @@ class QuitDatePickerWidget extends StatefulWidget {
 }
 
 class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
-  DateTime? _selectedDate;
+  DateTime? _selectedDateTime;
 
   @override
   void initState() {
     super.initState();
-    _selectedDate = widget.selectedDate;
+    _selectedDateTime = widget.selectedDate;
   }
 
-  Future<void> _selectDate() async {
-    final DateTime? picked = await showDatePicker(
+  Future<void> _selectDateTime() async {
+    // Step 1: Pick date
+    final DateTime? pickedDate = await showDatePicker(
       context: context,
-      initialDate: _selectedDate ?? DateTime.now(),
+      initialDate: _selectedDateTime ?? DateTime.now(),
       firstDate: DateTime.now().subtract(const Duration(days: 365)),
       lastDate: DateTime.now().add(const Duration(days: 365)),
       builder: (context, child) {
@@ -42,30 +43,57 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
       },
     );
 
-    if (picked != null && picked != _selectedDate) {
-      setState(() {
-        _selectedDate = picked;
-      });
-      widget.onDateSelected(picked);
-    }
+    if (pickedDate == null) return;
+
+    // Step 2: Pick time
+    final TimeOfDay? pickedTime = await showTimePicker(
+      context: context,
+      initialTime: _selectedDateTime != null
+          ? TimeOfDay.fromDateTime(_selectedDateTime!)
+          : TimeOfDay.now(),
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: AppTheme.lightTheme.colorScheme,
+          ),
+          child: child!,
+        );
+      },
+    );
+
+    if (pickedTime == null) return;
+
+    // Step 3: Combine date and time
+    final DateTime combined = DateTime(
+      pickedDate.year,
+      pickedDate.month,
+      pickedDate.day,
+      pickedTime.hour,
+      pickedTime.minute,
+    );
+
+    setState(() {
+      _selectedDateTime = combined;
+    });
+
+    widget.onDateSelected(combined);
   }
 
-  String _formatDate(DateTime date) {
+  String _formatDateTime(DateTime dateTime) {
     final months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
+      'January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'
     ];
-    return '${months[date.month - 1]} ${date.day}, ${date.year}';
+
+    final String formattedDate =
+        '${months[dateTime.month - 1]} ${dateTime.day}, ${dateTime.year}';
+
+    final hour = dateTime.hour > 12 ? dateTime.hour - 12 : dateTime.hour;
+    final minute = dateTime.minute.toString().padLeft(2, '0');
+    final period = dateTime.hour >= 12 ? 'PM' : 'AM';
+    final formattedTime = '$hour:$minute $period';
+
+    return '$formattedDate at $formattedTime';
   }
 
   @override
@@ -77,7 +105,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
         color: AppTheme.lightTheme.colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: _selectedDate != null
+          color: _selectedDateTime != null
               ? AppTheme.lightTheme.colorScheme.primary
               : AppTheme.lightTheme.colorScheme.outline,
           width: 2,
@@ -90,8 +118,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.primary
-                      .withValues(alpha: 0.1),
+                  color: AppTheme.lightTheme.colorScheme.primary.withAlpha(25),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
@@ -106,7 +133,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Quit Date',
+                      'Quit Date & Time',
                       style:
                           AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
@@ -115,11 +142,11 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
-                      _selectedDate != null
-                          ? _formatDate(_selectedDate!)
-                          : 'Select your quit date',
+                      _selectedDateTime != null
+                          ? _formatDateTime(_selectedDateTime!)
+                          : 'Select your quit date and time',
                       style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: _selectedDate != null
+                        color: _selectedDateTime != null
                             ? AppTheme.lightTheme.colorScheme.onSurface
                             : AppTheme.lightTheme.colorScheme.onSurfaceVariant,
                       ),
@@ -134,7 +161,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
             width: double.infinity,
             height: 5.h,
             child: OutlinedButton(
-              onPressed: _selectDate,
+              onPressed: _selectDateTime,
               style: OutlinedButton.styleFrom(
                 side: BorderSide(
                   color: AppTheme.lightTheme.colorScheme.primary,
@@ -145,7 +172,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                 ),
               ),
               child: Text(
-                _selectedDate != null ? 'Change Date' : 'Select Date',
+                _selectedDateTime != null ? 'Change Date & Time' : 'Select Date & Time',
                 style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
                   color: AppTheme.lightTheme.colorScheme.primary,
                   fontWeight: FontWeight.w500,

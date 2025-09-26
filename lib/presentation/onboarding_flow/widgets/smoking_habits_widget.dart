@@ -10,18 +10,22 @@ class SmokingHabitsWidget extends StatefulWidget {
   final int cigarettesPerDay;
   final double costPerPack;
   final double yearsSmoking;
+  final String currency;
   final Function(int) onCigarettesChanged;
   final Function(double) onCostChanged;
   final Function(double) onYearsSmokingChanged;
+  final Function(String) onCurrencyChanged;
 
   const SmokingHabitsWidget({
     super.key,
     required this.cigarettesPerDay,
     required this.costPerPack,
     required this.yearsSmoking,
+    required this.currency,
     required this.onCigarettesChanged,
     required this.onCostChanged,
     required this.onYearsSmokingChanged,
+    required this.onCurrencyChanged,
   });
 
   @override
@@ -32,11 +36,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
   late int _cigarettesPerDay;
   late TextEditingController _costController;
   late TextEditingController _yearsController;
-
+  final List<String> _currencies = ['USD (\$)', 'EUR (€)', 'GBP (£)', 'INR (₹)', 'JPY (¥)'];
+  late String _selectedCurrency;
   @override
   void initState() {
     super.initState();
     _cigarettesPerDay = widget.cigarettesPerDay;
+    _selectedCurrency = widget.currency;
     _costController = TextEditingController(
       text: widget.costPerPack > 0 ? widget.costPerPack.toStringAsFixed(2) : '',
     );
@@ -70,6 +76,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
   void _updateYearsSmoking(String value) {
     final years = double.tryParse(value) ?? 0.0;
     widget.onYearsSmokingChanged(years);
+  }
+
+  void _updateCurrency(String? value) {
+    widget.onCurrencyChanged(value ?? 'USD (\$)');
+    setState(() {
+      _selectedCurrency = value ?? 'USD (\$)';
+    });
   }
 
   @override
@@ -370,12 +383,29 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
                 ],
                 decoration: InputDecoration(
-                  prefixText: '\$ ',
-                  prefixStyle:
-                      AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface,
-                    fontWeight: FontWeight.w500,
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.only(left: 12.0, right: 8),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _selectedCurrency,
+                        icon: const Icon(Icons.arrow_drop_down),
+                        onChanged: _updateCurrency,
+                        items: _currencies.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+                                color: AppTheme.lightTheme.colorScheme.onSurface,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ),
                   ),
+                  prefixIconConstraints: const BoxConstraints(minWidth: 100),
                   hintText: '0.00',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
