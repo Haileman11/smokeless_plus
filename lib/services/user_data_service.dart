@@ -9,6 +9,7 @@ class UserDataService {
   static const String _keyUserName = 'user_name';
   static const String _keyYearsSmoking =
       'years_smoking'; // New field for years of smoking
+  static const String _keyCurrency = 'currency';
 
   /// Calculate various metrics based on user's quit data
   static Map<String, dynamic> calculateQuittingMetrics({
@@ -662,6 +663,7 @@ class UserDataService {
     required DateTime quitDate,
     required int cigarettesPerDay,
     required double costPerPack,
+    required String currency,
     int cigarettesPerPack = 20,
     String userName = 'User',
     double yearsSmoking = 0.0, // New parameter for years of smoking
@@ -676,7 +678,7 @@ class UserDataService {
       await prefs.setString(_keyUserName, userName);
       await prefs.setDouble(
           _keyYearsSmoking, yearsSmoking); // Save years of smoking
-
+      await prefs.setString(_keyCurrency, currency);
       return true;
     } catch (e) {
       return false;
@@ -698,7 +700,7 @@ class UserDataService {
       final userName = prefs.getString(_keyUserName) ?? 'User';
       final yearsSmoking =
           prefs.getDouble(_keyYearsSmoking) ?? 0.0; // Load years of smoking
-
+      final currency = prefs.getString(_keyCurrency) ?? 'USD (\$)'; // Default currency
       // Calculate current metrics with years of smoking
       final metrics = calculateQuittingMetrics(
         quitDate: quitDate,
@@ -724,6 +726,7 @@ class UserDataService {
         "costPerPack": costPerPack,
         "cigarettesPerPack": cigarettesPerPack,
         "yearsSmoking": yearsSmoking, // Include years of smoking in return data
+        "currency": currency,
         ...metrics,
         "achievements": achievements,
       };

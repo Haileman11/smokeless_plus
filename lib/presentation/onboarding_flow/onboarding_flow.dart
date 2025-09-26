@@ -36,6 +36,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
   bool _milestoneAlerts = true;
   bool _cravingSupport = true;
   TimeOfDay _motivationTime = const TimeOfDay(hour: 9, minute: 0);
+  String _selectedCurrency = 'USD (\$)';
 
   @override
   void initState() {
@@ -103,6 +104,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
         cigarettesPerPack: 20,
         userName: 'User',
         yearsSmoking: _yearsSmoking,
+        currency: _selectedCurrency
       );
     }
 
@@ -288,7 +290,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                     description:
                         'Select your quit date to track your progress and celebrate milestones.',
                     imageUrl:
-                        'https://images.pexels.com/photos/6975474/pexels-photo-6975474.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        'assets/images/step-one.png',
                     customContent: QuitDatePickerWidget(
                       selectedDate: _quitDate,
                       onDateSelected: (date) {
@@ -306,11 +308,12 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                     description:
                         'This helps us calculate your savings and personalize your experience.',
                     imageUrl:
-                        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+                        'assets/images/step-two.png',
                     customContent: SmokingHabitsWidget(
                       cigarettesPerDay: _cigarettesPerDay,
                       costPerPack: _costPerPack,
                       yearsSmoking: _yearsSmoking,
+                      currency: _selectedCurrency,
                       onCigarettesChanged: (value) {
                         setState(() {
                           _cigarettesPerDay = value;
@@ -319,6 +322,11 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                       onCostChanged: (value) {
                         setState(() {
                           _costPerPack = value;
+                        });
+                      },
+                      onCurrencyChanged: (value) {
+                        setState(() {
+                          _selectedCurrency = value;
                         });
                       },
                       onYearsSmokingChanged: (value) {
@@ -336,7 +344,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                     description:
                         'Choose how you\'d like to receive support and encouragement.',
                     imageUrl:
-                        'https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        'assets/images/step-three.png',
                     customContent: NotificationPreferencesWidget(
                       dailyMotivation: _dailyMotivation,
                       milestoneAlerts: _milestoneAlerts,
@@ -372,7 +380,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                     description:
                         'Explore the tools that will support you on your smoke-free journey.',
                     imageUrl:
-                        'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        'assets/images/step-four.png',
                     customContent: const FeaturePreviewWidget(),
                     onNext: _nextStep,
                     buttonText: 'Continue',
@@ -383,7 +391,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                     description:
                         'Here\'s a preview of your progress based on the information you provided.',
                     imageUrl:
-                        'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
+                        'assets/images/step-five.png',
                     customContent: _quitDate != null
                         ? DashboardPreviewWidget(
                             quitDate: _quitDate!,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/services/theme_service.dart';
 
 import '../../core/app_export.dart';
 import '../../services/language_service.dart';
@@ -38,14 +39,13 @@ class _UserProfileState extends State<UserProfile> {
   bool _milestoneAlerts = true;
   bool _cravingReminders = false;
   bool _bedtimeEncouragement = true;
-  bool _socialFeatures = true;
-  bool _darkMode = false;
+  bool _socialFeatures = true;  
 
   TimeOfDay _motivationTime = const TimeOfDay(hour: 9, minute: 0);
   TimeOfDay _bedtimeTime = const TimeOfDay(hour: 22, minute: 0);
 
   String _selectedTheme = 'Light';
-  String _selectedCurrency = 'USD (\$)';
+  late String _selectedCurrency ;
   String _selectedUnits = 'Imperial';
 
   String _currentLanguage = 'en';
@@ -53,6 +53,7 @@ class _UserProfileState extends State<UserProfile> {
   @override
   void initState() {
     super.initState();
+    _selectedTheme = context.read<ThemeProvider>().isDarkMode ? 'Dark' : 'Light';
     _loadUserData();
     _loadCurrentLanguage();
   }
@@ -69,6 +70,7 @@ class _UserProfileState extends State<UserProfile> {
       if (userData != null) {
         setState(() {
           _userData = userData;
+          _selectedCurrency = userData['currency'] as String? ?? 'USD (\$)';
           _isLoading = false;
         });
       } else {
@@ -429,11 +431,12 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                     onTap: () => _showSelectionDialog(
                       'Theme',
-                      ['Light', 'Dark', 'Auto'],
+                      ['Light', 'Dark',],
                       _selectedTheme,
                       (value) {
                         setState(() {
                           _selectedTheme = value;
+                          context.read<ThemeProvider>().setDarkMode(value == 'Dark');
                         });
                       },
                     ),
@@ -461,7 +464,17 @@ class _UserProfileState extends State<UserProfile> {
                         'AUD (\$)'
                       ],
                       _selectedCurrency,
-                      (value) {
+                      (value) async {
+                        
+                        await UserDataService.saveUserData(
+                          quitDate: DateTime.parse(_userData!["quitDate"] as String),
+                          cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
+                          costPerPack: _userData!["costPerPack"] as double,
+                          currency: value,
+                          cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
+                          userName: _userData!["name"] as String,
+                          yearsSmoking: _userData!["yearsSmoking"] as double? ?? 0.0,
+                        );
                         setState(() {
                           _selectedCurrency = value;
                         });
@@ -485,7 +498,17 @@ class _UserProfileState extends State<UserProfile> {
                       'Units',
                       ['Imperial', 'Metric'],
                       _selectedUnits,
-                      (value) {
+                      (value) async {
+                        
+                        await UserDataService.saveUserData(
+                          quitDate: DateTime.parse(_userData!["quitDate"] as String),
+                          cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
+                          costPerPack: _userData!["costPerPack"] as double,
+                          currency: value,
+                          cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
+                          userName: _userData!["name"] as String,
+                          yearsSmoking: _userData!["yearsSmoking"] as double? ?? 0.0,
+                        );
                         setState(() {
                           _selectedUnits = value;
                         });
@@ -602,6 +625,7 @@ class _UserProfileState extends State<UserProfile> {
               cigarettesPerDay: newCigarettes,
               costPerPack: newCost,
               cigarettesPerPack: 20,
+              currency: _selectedCurrency,
               userName: userData['name'] ?? 'User',
               yearsSmoking: newYearsSmoking, // Include years of smoking in save
             );
@@ -650,6 +674,7 @@ class _UserProfileState extends State<UserProfile> {
         quitDate: quitDate,
         cigarettesPerDay: cigarettes,
         costPerPack: cost,
+        currency: _selectedCurrency,
         cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
         userName: _userData!["name"] as String,
         yearsSmoking: yearsSmoking, // Include years of smoking
@@ -846,6 +871,7 @@ class _UserProfileState extends State<UserProfile> {
       // Reset quit date to today while preserving years of smoking
       final success = await UserDataService.saveUserData(
         quitDate: DateTime.now(),
+        currency: _selectedCurrency,
         cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
         costPerPack: _userData!["costPerPack"] as double,
         cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
@@ -1091,6 +1117,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
     try {
       // Save the updated name while preserving all other data including years of smoking
       await UserDataService.saveUserData(
+        currency: _selectedCurrency,
         quitDate: DateTime.parse(_userData!["quitDate"] as String),
         cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
         costPerPack: _userData!["costPerPack"] as double,

@@ -230,7 +230,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                 : BarChart(
                     BarChartData(
                       alignment: BarChartAlignment.spaceEvenly,
-                      maxY: moneySaved * 1.2,
+                      // maxY: moneySaved * 1.2,
                       barTouchData: BarTouchData(
                         touchTooltipData: BarTouchTooltipData(
                           getTooltipItem: (group, groupIndex, rod, rodIndex) {
