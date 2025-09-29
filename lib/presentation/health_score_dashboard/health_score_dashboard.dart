@@ -54,7 +54,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Center(
           child: CircularProgressIndicator(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       );
@@ -65,7 +65,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _loadUserData,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.primary,
           child: CustomScrollView(
             slivers: [
               _buildAppBar(l10n),
@@ -103,7 +103,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
       //   onPressed: () => Navigator.pop(context),
       //   icon: CustomIconWidget(
       //     iconName: 'arrow_back',
-      //     color: Theme.of(context).primaryColor,
+      //     color: Theme.of(context).colorScheme.primary,
       //     size: 6.w,
       //   ),
       // ),
@@ -186,7 +186,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Health report export feature coming soon'),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
     );
   }

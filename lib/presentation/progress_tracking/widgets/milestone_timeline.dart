@@ -131,7 +131,7 @@ class MilestoneTimeline extends StatelessWidget {
             children: [
               CustomIconWidget(
                 iconName: 'flag',
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 size: 24,
               ),
               SizedBox(width: 2.w),

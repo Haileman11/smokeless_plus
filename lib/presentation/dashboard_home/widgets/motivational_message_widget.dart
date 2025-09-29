@@ -111,7 +111,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               children: [
                 CustomIconWidget(
                   iconName: 'schedule',
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 6.w,
                 ),
                 SizedBox(width: 2.w),
@@ -119,7 +119,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                   'Quote Schedule',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ],
@@ -145,7 +145,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                   padding: EdgeInsets.all(3.w),
                   decoration: BoxDecoration(
                     color:
-                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -164,7 +164,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 child: Text(
                   'Got it!',
                   style: TextStyle(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -217,19 +217,19 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Theme.of(context).primaryColor.withValues(alpha: 0.1),
+              Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
               AppTheme.accentLight.withValues(alpha: 0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
             width: 1,
           ),
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       );
@@ -245,13 +245,13 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Theme.of(context).primaryColor.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             AppTheme.accentLight.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
+          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2),
           width: 1,
         ),
       ),
@@ -264,7 +264,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               children: [
                 CustomIconWidget(
                   iconName: 'format_quote',
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 6.w,
                 ),
                 SizedBox(width: 3.w),
@@ -273,7 +273,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                     'Daily Motivation',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -282,7 +282,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                   icon: CustomIconWidget(
                     iconName: 'info_outline',
                     color:
-                        Theme.of(context).primaryColor.withValues(alpha: 0.7),
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
                     size: 5.w,
                   ),
                   padding: EdgeInsets.all(1.w),
@@ -297,12 +297,12 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                           height: 4.w,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         )
                       : CustomIconWidget(
                           iconName: 'refresh',
-                          color: Theme.of(context).primaryColor
+                          color: Theme.of(context).colorScheme.primary
                               .withValues(alpha: 0.7),
                           size: 5.w,
                         ),
@@ -341,13 +341,13 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                       EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
                   decoration: BoxDecoration(
                     color:
-                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
                     'Auto-refreshes 2x daily',
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w500,
                     ),
                   ),

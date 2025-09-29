@@ -27,7 +27,7 @@ class HealthImprovementChart extends StatelessWidget {
             ),
           ),
           PieChartSectionData(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             value: 35,
             title: 'Heart\nHealth\n35%',
             radius: 60,
@@ -60,7 +60,7 @@ class HealthImprovementChart extends StatelessWidget {
             ),
           ),
           PieChartSectionData(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             value: 55,
             title: 'Heart\nHealth\n55%',
             radius: 60,
@@ -93,7 +93,7 @@ class HealthImprovementChart extends StatelessWidget {
             ),
           ),
           PieChartSectionData(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             value: 75,
             title: 'Heart\nHealth\n75%',
             radius: 60,
@@ -126,7 +126,7 @@ class HealthImprovementChart extends StatelessWidget {
             ),
           ),
           PieChartSectionData(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             value: 85,
             title: 'Heart\nHealth\n85%',
             radius: 60,

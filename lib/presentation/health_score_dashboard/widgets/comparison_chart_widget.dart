@@ -40,7 +40,7 @@ class ComparisonChartWidget extends StatelessWidget {
               'Recovery Progress Comparison',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                // color: Theme.of(context).primaryColor,
+                // color: Theme.of(context).colorScheme.primary,
               ),
             ),
             SizedBox(height: 1.h),
@@ -72,7 +72,7 @@ class ComparisonChartWidget extends StatelessWidget {
           barTouchData: BarTouchData(
             enabled: true,
             touchTooltipData: BarTouchTooltipData(
-              // tooltipBgColor: Theme.of(context).primaryColor,
+              // tooltipBgColor: Theme.of(context).colorScheme.primary,
               getTooltipItem: (group, groupIndex, rod, rodIndex) {
                 String category;
                 switch (group.x.toInt()) {
@@ -175,7 +175,7 @@ class ComparisonChartWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildLegendItem('Your Progress', Theme.of(context).primaryColor, context),
+        _buildLegendItem('Your Progress', Theme.of(context).colorScheme.primary, context),
         SizedBox(width: 6.w),
         _buildLegendItem('Average', Colors.grey.shade400, context),
       ],
@@ -221,7 +221,7 @@ class ComparisonChartWidget extends StatelessWidget {
     } else if (userScore >= averageScore * 0.8) {
       message =
           'You\'re doing great! Your progress is right on track with typical recovery patterns.';
-      messageColor = Theme.of(context).primaryColor;
+      messageColor = Theme.of(context).colorScheme.primary;
       iconName = 'thumb_up';
     } else {
       message =
@@ -273,7 +273,7 @@ class ComparisonChartWidget extends StatelessWidget {
         barRods: [
           BarChartRodData(
             toY: category['userScore'].toDouble(),
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             width: 5.w,
             borderRadius: BorderRadius.circular(4),
           ),

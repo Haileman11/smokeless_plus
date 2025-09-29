@@ -29,7 +29,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     const DashboardHome(),
     const ProgressTracking(),
-    const HealthScoreDashboard(),
+    const HealthScoreDashboard(),    
     const AchievementSystem(),
     const UserProfile(),
     // const OnboardingFlow(),

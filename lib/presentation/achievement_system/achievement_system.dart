@@ -163,7 +163,7 @@ class _AchievementSystemState extends State<AchievementSystem>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
               SizedBox(height: 2.h),
               Text(
@@ -234,7 +234,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                       'Total',
                       '${_achievementData['totalAchievements'] ?? 0}',
                       'military_tech',
-                      Theme.of(context).primaryColor,
+                      Theme.of(context).colorScheme.primary,
                     ),
                     _buildProgressStat(
                       'Progress',

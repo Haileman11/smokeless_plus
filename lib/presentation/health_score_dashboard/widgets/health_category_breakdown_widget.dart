@@ -37,7 +37,7 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
               'Health Category Breakdown',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                // color: Theme.of(context).primaryColor,
+                // color: Theme.of(context).colorScheme.primary,
               ),
             ),
             SizedBox(height: 2.h),

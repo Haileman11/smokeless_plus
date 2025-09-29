@@ -47,13 +47,13 @@ class AchievementDetailModalWidget extends StatelessWidget {
                     height: 25.w,
                     decoration: BoxDecoration(
                       color: isUnlocked
-                          ? Theme.of(context).primaryColor
+                          ? Theme.of(context).colorScheme.primary
                           : Colors.grey.withValues(alpha: 0.3),
                       shape: BoxShape.circle,
                       boxShadow: isUnlocked
                           ? [
                               BoxShadow(
-                                color: Theme.of(context).primaryColor
+                                color: Theme.of(context).colorScheme.primary
                                     .withValues(alpha: 0.3),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),

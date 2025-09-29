@@ -79,7 +79,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
                   'Overall Health Score',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w700,
-                    // color: Theme.of(context).primaryColor,
+                    // color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 Container(
@@ -195,7 +195,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
       children: [
         CustomIconWidget(
           iconName: icon,
-          // color: Theme.of(context).primaryColor,
+          // color: Theme.of(context).colorScheme.primary,
           size: 6.w,
         ),
         SizedBox(height: 1.h),
@@ -203,7 +203,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
           value,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w700,
-            // color: Theme.of(context).primaryColor,
+            // color: Theme.of(context).colorScheme.primary,
           ),
         ),
         Text(

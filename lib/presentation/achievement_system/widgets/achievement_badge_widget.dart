@@ -83,7 +83,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isUnlocked
-                        ? Theme.of(context).primaryColor
+                        ? Theme.of(context).colorScheme.primary
                         : Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.3),
                     width: isUnlocked ? 2 : 1,
@@ -91,7 +91,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                   boxShadow: isUnlocked
                       ? [
                           BoxShadow(
-                            color: Theme.of(context).primaryColor
+                            color: Theme.of(context).colorScheme.primary
                                 .withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
@@ -112,7 +112,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                             height: 12.w,
                             decoration: BoxDecoration(
                               color: isUnlocked
-                                  ? Theme.of(context).primaryColor
+                                  ? Theme.of(context).colorScheme.primary
                                   : Colors.grey.withValues(alpha: 0.3),
                               shape: BoxShape.circle,
                             ),

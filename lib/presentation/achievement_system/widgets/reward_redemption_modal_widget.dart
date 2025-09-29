@@ -168,7 +168,7 @@ class _RewardRedemptionModalWidgetState
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: canAfford
-                          ? Theme.of(context).primaryColor
+                          ? Theme.of(context).colorScheme.primary
                               .withValues(alpha: 0.3)
                           : Theme.of(context).colorScheme.outline
                               .withValues(alpha: 0.2),
@@ -176,7 +176,7 @@ class _RewardRedemptionModalWidgetState
                     boxShadow: [
                       BoxShadow(
                         color: canAfford
-                            ? Theme.of(context).primaryColor
+                            ? Theme.of(context).colorScheme.primary
                                 .withValues(alpha: 0.1)
                             : Colors.grey.withValues(alpha: 0.1),
                         blurRadius: 8,
@@ -192,7 +192,7 @@ class _RewardRedemptionModalWidgetState
                         height: 15.w,
                         decoration: BoxDecoration(
                           color: canAfford
-                              ? Theme.of(context).primaryColor
+                              ? Theme.of(context).colorScheme.primary
                               : Colors.grey.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -274,7 +274,7 @@ class _RewardRedemptionModalWidgetState
                                       : null,
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: canAfford
-                                        ? Theme.of(context).primaryColor
+                                        ? Theme.of(context).colorScheme.primary
                                         : Colors.grey.withValues(alpha: 0.3),
                                     foregroundColor: Colors.white,
                                     padding: EdgeInsets.symmetric(

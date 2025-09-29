@@ -178,7 +178,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                             .lightTheme
                                             .colorScheme
                                             .secondary
-                                        : Theme.of(context).primaryColor
+                                        : Theme.of(context).colorScheme.primary
                                             .withValues(alpha: 0.2),
                                 shape: BoxShape.circle,
                               ),
@@ -191,7 +191,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                               .lightTheme
                                               .colorScheme
                                               .onSecondary
-                                          : Theme.of(context).primaryColor,
+                                          : Theme.of(context).colorScheme.primary,
                                   size: 28,
                                 ),
                               ),
@@ -210,7 +210,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                         ?.copyWith(
                                           fontWeight: FontWeight.w700,
                                           color:
-                                              Theme.of(context).primaryColor,
+                                              Theme.of(context).colorScheme.primary,
                                         ),
                                   ),
                                   Text(
@@ -249,12 +249,12 @@ Scientific Fact: ${milestone['scientificBasis']}
                         Container(
                           padding: EdgeInsets.all(3.w),
                           decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor.withValues(
+                            color: Theme.of(context).colorScheme.primary.withValues(
                               alpha: 0.1,
                             ),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: Theme.of(context).primaryColor
+                              color: Theme.of(context).colorScheme.primary
                                   .withValues(alpha: 0.3),
                             ),
                           ),
@@ -262,7 +262,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                             children: [
                               CustomIconWidget(
                                 iconName: 'science',
-                                color: Theme.of(context).primaryColor,
+                                color: Theme.of(context).colorScheme.primary,
                                 size: 20,
                               ),
                               SizedBox(width: 2.w),
@@ -348,7 +348,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                   color:
                       isAchieved
                           ? Theme.of(context).colorScheme.secondary
-                          : Theme.of(context).primaryColor,
+                          : Theme.of(context).colorScheme.primary,
                 ),
               ),
             ],
@@ -364,7 +364,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                 valueColor: AlwaysStoppedAnimation<Color>(
                   isAchieved
                       ? Theme.of(context).colorScheme.secondary
-                      : Theme.of(context).primaryColor,
+                      : Theme.of(context).colorScheme.primary,
                 ),
                 minHeight: 1.h,
               );
@@ -462,7 +462,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                             .lightTheme
                                             .colorScheme
                                             .secondary
-                                        : Theme.of(context).primaryColor
+                                        : Theme.of(context).colorScheme.primary
                                             .withValues(alpha: 0.2),
                                 shape: BoxShape.circle,
                               ),
@@ -475,7 +475,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                               .lightTheme
                                               .colorScheme
                                               .onSecondary
-                                          : Theme.of(context).primaryColor,
+                                          : Theme.of(context).colorScheme.primary,
                                   size: 24,
                                 ),
                               ),
@@ -528,7 +528,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                 style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(
                                       fontWeight: FontWeight.w700,
-                                      color: Theme.of(context).primaryColor,
+                                      color: Theme.of(context).colorScheme.primary,
                                     ),
                               ),
                               SizedBox(height: 0.5.h),
@@ -593,7 +593,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                                 .lightTheme
                                                 .colorScheme
                                                 .secondary
-                                            : Theme.of(context).primaryColor,
+                                            : Theme.of(context).colorScheme.primary,
                                   ),
                             ),
                           ],
@@ -613,7 +613,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                               valueColor: AlwaysStoppedAnimation<Color>(
                                 isAchieved
                                     ? Theme.of(context).colorScheme.secondary
-                                    : Theme.of(context).primaryColor,
+                                    : Theme.of(context).colorScheme.primary,
                               ),
                               minHeight: 0.8.h,
                             );
@@ -631,7 +631,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                       decoration: BoxDecoration(
                         color: (isAchieved
                                 ? Theme.of(context).colorScheme.secondary
-                                : Theme.of(context).primaryColor)
+                                : Theme.of(context).colorScheme.primary)
                             .withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -643,7 +643,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                             color:
                                 isAchieved
                                     ? Theme.of(context).colorScheme.secondary
-                                    : Theme.of(context).primaryColor,
+                                    : Theme.of(context).colorScheme.primary,
                             size: 16,
                           ),
                           SizedBox(width: 1.w),
@@ -657,7 +657,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                               .lightTheme
                                               .colorScheme
                                               .secondary
-                                          : Theme.of(context).primaryColor,
+                                          : Theme.of(context).colorScheme.primary,
                                   fontWeight: FontWeight.w600,
                                 ),
                           ),
@@ -680,7 +680,7 @@ Scientific Fact: ${milestone['scientificBasis']}
       return Center(
         child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(
-            Theme.of(context).primaryColor,
+            Theme.of(context).colorScheme.primary,
           ),
         ),
       );
@@ -741,8 +741,8 @@ Scientific Fact: ${milestone['scientificBasis']}
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).primaryColor,
-                  Theme.of(context).primaryColor.withValues(alpha: 0.8),
+                  Theme.of(context).colorScheme.primary,
+                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.8),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,

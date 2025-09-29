@@ -257,8 +257,8 @@ All data synchronized across the entire app!
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).primaryColor.withValues(alpha: 0.1),
-            Theme.of(context).primaryColor.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -266,7 +266,7 @@ All data synchronized across the entire app!
         borderRadius: BorderRadius.circular(16),
         // boxShadow: [
         //   BoxShadow(
-        //     color: Theme.of(context).primaryColor.withValues(alpha: 0.3),
+        //     color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
         //     blurRadius: 12,
         //     offset: Offset(0, 4),
         //   ),
@@ -517,7 +517,7 @@ All data synchronized across the entire app!
             children: [
               CustomIconWidget(
                 iconName: 'people',
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 size: 24,
               ),
               SizedBox(width: 2.w),
@@ -547,13 +547,13 @@ All data synchronized across the entire app!
           width: 10.w,
           height: 10.w,
           decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Center(
             child: CustomIconWidget(
               iconName: iconName,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               size: 20,
             ),
           ),
@@ -604,7 +604,7 @@ All data synchronized across the entire app!
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
               SizedBox(height: 2.h),
               Text(
@@ -662,7 +662,7 @@ All data synchronized across the entire app!
         child: SafeArea(
           child: RefreshIndicator(
             onRefresh: _loadUserData,
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
             child: CustomScrollView(
               controller: _scrollController,
               slivers: [

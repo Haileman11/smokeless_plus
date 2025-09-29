@@ -119,7 +119,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
   @override
   Widget build(BuildContext context) {
     final primaryColor =
-        widget.primaryColor ?? Theme.of(context).primaryColor;
+        widget.primaryColor ?? Theme.of(context).colorScheme.primary;
     final accentColor = widget.accentColor ?? AppTheme.accentLight;
 
     return ScaleTransition(

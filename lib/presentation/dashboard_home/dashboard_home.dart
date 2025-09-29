@@ -87,7 +87,7 @@ class _DashboardHomeState extends State<DashboardHome> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         title: Text(
           l10n.appTitle,
@@ -113,7 +113,7 @@ class _DashboardHomeState extends State<DashboardHome> {
               AnimatedTimeCounterWidget(
                 quitDate: DateTime.parse(_userData['quitDate'] as String),
                 title: l10n.timeSmokeFree,
-                primaryColor: Theme.of(context).primaryColor,
+                primaryColor: Theme.of(context).colorScheme.primary,
                 accentColor: Theme.of(context).colorScheme.secondary,
               ),
 
@@ -300,11 +300,12 @@ class _DashboardHomeState extends State<DashboardHome> {
   }
 
   void _showCravingSupport() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => const CravingSupportSheet(),
-    );
+    Navigator.of(context).pushNamed(AppRoutes.cravingSupport);
+    // showModalBottomSheet(
+    //   context: context,
+    //   isScrollControlled: true,
+    //   backgroundColor: Colors.transparent,
+    //   builder: (context) => const CravingSupportSheet(),
+    // );
   }
 }

@@ -47,13 +47,13 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
               Container(
                 padding: EdgeInsets.all(2.w),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor.withAlpha(26),
+                  color: Theme.of(context).colorScheme.primary.withAlpha(26),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
                   iconName: 'language',
                   size: 6.w,
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               SizedBox(width: 3.w),
@@ -184,7 +184,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
             mainAxisSize: MainAxisSize.min,
             children: [
               CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
               ),
               SizedBox(height: 2.h),
               Text(

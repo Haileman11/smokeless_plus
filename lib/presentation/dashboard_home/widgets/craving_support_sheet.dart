@@ -265,15 +265,15 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        Theme.of(context).primaryColor.withValues(alpha: 0.3),
-                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
+                        Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
                       ],
                     ),
                   ),
                   child: Center(
                     child: CustomIconWidget(
                       iconName: 'air',
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 12.w,
                     ),
                   ),
@@ -288,7 +288,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
               ElevatedButton(
                 onPressed: _startBreathing,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).primaryColor,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 ),
                 child: Text(
@@ -315,7 +315,8 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
   void _handleSupportAction(String action) {
     switch (action) {
       case 'breathing':
-        setState(() => _isBreathing = true);
+        // setState(() => _isBreathing = true);
+        Navigator.of(context).pushNamed(AppRoutes.cravingSupport);
         break;
       case 'quote':
         _showMotivationalQuote();
@@ -343,7 +344,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
           children: [
             CustomIconWidget(
               iconName: 'psychology',
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               size: 6.w,
             ),
             SizedBox(width: 3.w),

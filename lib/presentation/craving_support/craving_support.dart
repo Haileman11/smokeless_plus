@@ -719,8 +719,7 @@ class _CravingSupportState extends State<CravingSupport>
                               Container(
                                 padding: EdgeInsets.all(2.w),
                                 decoration: BoxDecoration(
-                                  color: AppTheme
-                                      .lightTheme.colorScheme.secondary
+                                  color: Theme.of(context).colorScheme.secondary
                                       .withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
@@ -738,21 +737,19 @@ class _CravingSupportState extends State<CravingSupport>
                                   children: [
                                     Text(
                                       session["method"] as String,
-                                      style: AppTheme
-                                          .lightTheme.textTheme.bodyMedium
+                                      style: Theme.of(context).textTheme.bodyMedium
                                           ?.copyWith(
                                         fontWeight: FontWeight.w600,
-                                        color: AppTheme
-                                            .lightTheme.colorScheme.onSurface,
+                                        color: Theme.of(context)
+                                            .colorScheme.onSurface,
                                       ),
                                     ),
                                     Text(
                                       '${session["duration"]} min • ${session["intensity"]} intensity',
-                                      style: AppTheme
-                                          .lightTheme.textTheme.bodySmall
+                                      style: Theme.of(context).textTheme.bodySmall
                                           ?.copyWith(
-                                        color: AppTheme
-                                            .lightTheme.colorScheme.onSurface
+                                        color: Theme.of(context)
+                                            .colorScheme.onSurface
                                             .withValues(alpha: 0.6),
                                       ),
                                     ),
@@ -763,8 +760,8 @@ class _CravingSupportState extends State<CravingSupport>
                                 timeAgoText,
                                 style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
-                                  color: AppTheme
-                                      .lightTheme.colorScheme.onSurface
+                                  color: Theme.of(context)
+                                      .colorScheme.onSurface
                                       .withValues(alpha: 0.6),
                                 ),
                               ),

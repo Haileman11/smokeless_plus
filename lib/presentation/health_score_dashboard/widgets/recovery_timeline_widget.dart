@@ -45,7 +45,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               'Recovery Timeline',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                // color: Theme.of(context).primaryColor,
+                // color: Theme.of(context).colorScheme.primary,
               ),
             ),
             SizedBox(height: 2.h),
@@ -77,7 +77,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              // tooltipBgColor: Theme.of(context).primaryColor,
+              // tooltipBgColor: Theme.of(context).colorScheme.primary,
               getTooltipItems: (touchedSpots) {
                 return touchedSpots.map((LineBarSpot touchedSpot) {
                   final period = _getPeriodLabel(touchedSpot.x.toInt());
@@ -130,7 +130,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
             LineChartBarData(
               spots: chartData,
               isCurved: true,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               barWidth: 3,
               isStrokeCapRound: true,
               dotData: FlDotData(
@@ -138,7 +138,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
                 getDotPainter: (spot, percent, barData, index) {
                   return FlDotCirclePainter(
                     radius: 4,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).colorScheme.primary,
                     strokeWidth: 2,
                     strokeColor: Colors.white,
                   );
@@ -146,7 +146,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               ),
               belowBarData: BarAreaData(
                 show: true,
-                color: Theme.of(context).primaryColor.withAlpha(51),
+                color: Theme.of(context).colorScheme.primary.withAlpha(51),
               ),
             ),
           ],

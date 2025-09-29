@@ -52,10 +52,10 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50.h,
+    return IntrinsicHeight(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           // Header
           Padding(
@@ -63,71 +63,78 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             child: Text(
               'Distraction Games',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w600,
-                color: Theme.of(context).colorScheme.primary,
-              ),
+                    fontWeight: FontWeight.w600,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
             ),
           ),
 
           // Game selection tabs
-          Container(
-            height: 6.h,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
-              itemCount: _games.length,
-              itemBuilder: (context, index) {
-                final game = _games[index];
-                final isSelected = index == _selectedGameIndex;
-
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _selectedGameIndex = index;
-                    });
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(right: 3.w),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
-                    decoration: BoxDecoration(
-                      color: isSelected
-                          ? Theme.of(context).colorScheme.primary
-                          : Theme.of(context).colorScheme.surface,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(
-                        color: isSelected
-                            ? Theme.of(context).colorScheme.primary
-                            : Theme.of(context).colorScheme.outline,
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        CustomIconWidget(
-                          iconName: game["icon"] as String,
-                          color: isSelected
-                              ? Theme.of(context).colorScheme.onPrimary
-                              : Theme.of(context).colorScheme.primary,
-                          size: 18,
-                        ),
-                        SizedBox(width: 2.w),
-                        Text(
-                          game["name"] as String,
-                          style: Theme.of(context).textTheme.bodyMedium
-                              ?.copyWith(
+          Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(horizontal: 4.w,),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: _games.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final game = entry.value;
+                      final isSelected = index == _selectedGameIndex;
+              
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selectedGameIndex = index;
+                          });
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(right: 3.w),
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+                          decoration: BoxDecoration(
                             color: isSelected
-                                ? Theme.of(context).colorScheme.onPrimary
-                                : Theme.of(context).colorScheme.primary,
-                            fontWeight: FontWeight.w500,
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.surface,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                              color: isSelected
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Theme.of(context).colorScheme.outline,
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              CustomIconWidget(
+                                iconName: game["icon"] as String,
+                                color: isSelected
+                                    ? Theme.of(context).colorScheme.onPrimary
+                                    : Theme.of(context).colorScheme.primary,
+                                size: 18,
+                              ),
+                              SizedBox(width: 2.w),
+                              Text(
+                                game["name"] as String,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium
+                                    ?.copyWith(
+                                      color: isSelected
+                                          ? Theme.of(context).colorScheme.onPrimary
+                                          : Theme.of(context).colorScheme.primary,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+                      );
+                    },
+                  ).toList(),
+                ),
+              ),
+            ],
           ),
 
           SizedBox(height: 2.h),
@@ -193,9 +200,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Color Focus Challenge',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
           SizedBox(height: 2.h),
           Container(
@@ -212,9 +219,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               'Find 5 ${randomColor['name']} objects around you',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
-                fontWeight: FontWeight.w500,
-              ),
+                    color: Theme.of(context).colorScheme.onSurface,
+                    fontWeight: FontWeight.w500,
+                  ),
             ),
           ),
           SizedBox(height: 3.h),
@@ -222,9 +229,11 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             'Look around your environment and identify 5 objects that are ${randomColor['name'].toString().toLowerCase()}. Take your time and focus on each object.',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface
-                  .withValues(alpha: 0.7),
-            ),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                ),
           ),
           const Spacer(),
           ElevatedButton(
@@ -266,25 +275,25 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Counting Challenge',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary
-                  .withValues(alpha: 0.1),
+              color:
+                  Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               'Count backwards from 100 by 7s',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.w600,
-              ),
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ),
           SizedBox(height: 3.h),
@@ -292,18 +301,20 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             '100, 93, 86, 79, 72...',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              color: Theme.of(context).colorScheme.secondary,
-              fontWeight: FontWeight.w300,
-            ),
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontWeight: FontWeight.w300,
+                ),
           ),
           SizedBox(height: 2.h),
           Text(
             'This mental math exercise requires focus and concentration, helping distract from cravings.',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface
-                  .withValues(alpha: 0.7),
-            ),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                ),
           ),
           const Spacer(),
           Row(
@@ -365,15 +376,17 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Memory Palace',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondary
+              color: Theme.of(context)
+                  .colorScheme
+                  .secondary
                   .withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
@@ -381,9 +394,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               'Visualize your childhood home',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.w600,
-              ),
+                    color: Theme.of(context).colorScheme.secondary,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ),
           SizedBox(height: 3.h),
@@ -395,18 +408,20 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                   Text(
                     'Instructions:',
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.onSurface,
-                    ),
+                          fontWeight: FontWeight.w600,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
                   ),
                   SizedBox(height: 1.h),
                   Text(
                     '1. Close your eyes and imagine walking through your childhood home\n\n2. Start at the front door and move room by room\n\n3. Notice details: colors, furniture, decorations\n\n4. Spend time in each room remembering specific objects\n\n5. Try to recall sounds, smells, and feelings',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.onSurface
-                          .withValues(alpha: 0.8),
-                      height: 1.5,
-                    ),
+                          color: Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withValues(alpha: 0.8),
+                          height: 1.5,
+                        ),
                   ),
                 ],
               ),
@@ -467,16 +482,16 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Word Association',
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-              color: Theme.of(context).colorScheme.onSurface,
-            ),
+                  fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.tertiary
-                  .withValues(alpha: 0.1),
+              color:
+                  Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Column(
@@ -484,17 +499,19 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 Text(
                   'Starting word:',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface
-                        .withValues(alpha: 0.7),
-                  ),
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withValues(alpha: 0.7),
+                      ),
                 ),
                 SizedBox(height: 1.h),
                 Text(
                   randomWord,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: Theme.of(context).colorScheme.tertiary,
-                    fontWeight: FontWeight.w600,
-                  ),
+                        color: Theme.of(context).colorScheme.tertiary,
+                        fontWeight: FontWeight.w600,
+                      ),
                 ),
               ],
             ),
@@ -504,9 +521,11 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             'Create a chain of related words. Each new word should connect to the previous one.',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Theme.of(context).colorScheme.onSurface
-                  .withValues(alpha: 0.7),
-            ),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.7),
+                ),
           ),
           SizedBox(height: 2.h),
           Container(
@@ -515,7 +534,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               color: Theme.of(context).colorScheme.surface,
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                color: Theme.of(context).colorScheme.outline
+                color: Theme.of(context)
+                    .colorScheme
+                    .outline
                     .withValues(alpha: 0.3),
               ),
             ),
@@ -523,10 +544,12 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               'Example: Ocean → Water → Rain → Clouds → Sky → Birds → Freedom',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface
-                    .withValues(alpha: 0.6),
-                fontStyle: FontStyle.italic,
-              ),
+                    color: Theme.of(context)
+                        .colorScheme
+                        .onSurface
+                        .withValues(alpha: 0.6),
+                    fontStyle: FontStyle.italic,
+                  ),
             ),
           ),
           const Spacer(),

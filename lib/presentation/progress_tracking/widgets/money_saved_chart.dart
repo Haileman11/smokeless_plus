@@ -144,7 +144,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       );

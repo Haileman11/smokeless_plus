@@ -81,13 +81,13 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
                             decoration: BoxDecoration(
                               color:
                                   isSelected
-                                      ? Theme.of(context).primaryColor
+                                      ? Theme.of(context).colorScheme.primary
                                       : Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
                                 color:
                                     isSelected
-                                        ? Theme.of(context).primaryColor
+                                        ? Theme.of(context).colorScheme.primary
                                         : AppTheme
                                             .lightTheme
                                             .colorScheme

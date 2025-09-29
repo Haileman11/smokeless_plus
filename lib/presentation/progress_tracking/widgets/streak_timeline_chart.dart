@@ -107,7 +107,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       );
@@ -139,7 +139,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
             children: [
               CustomIconWidget(
                 iconName: 'timeline',
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.primary,
                 size: 24,
               ),
               SizedBox(width: 2.w),
@@ -155,7 +155,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
           Text(
             'Current streak: $currentStreak days',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -260,7 +260,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                           isCurved: true,
                           gradient: LinearGradient(
                             colors: [
-                              Theme.of(context).primaryColor,
+                              Theme.of(context).colorScheme.primary,
                               Theme.of(context).colorScheme.secondary,
                             ],
                           ),
@@ -271,7 +271,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             getDotPainter: (spot, percent, barData, index) {
                               return FlDotCirclePainter(
                                 radius: 4,
-                                color: Theme.of(context).primaryColor,
+                                color: Theme.of(context).colorScheme.primary,
                                 strokeWidth: 2,
                                 strokeColor:
                                     Theme.of(context).colorScheme.surface,
@@ -282,7 +282,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             show: true,
                             gradient: LinearGradient(
                               colors: [
-                                Theme.of(context).primaryColor
+                                Theme.of(context).colorScheme.primary
                                     .withValues(alpha: 0.3),
                                 Theme.of(context).colorScheme.secondary
                                     .withValues(alpha: 0.1),
