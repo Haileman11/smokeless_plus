@@ -23,8 +23,8 @@ class SettingsSectionWidget extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
           child: Text(
             title,
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.primary,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -32,11 +32,11 @@ class SettingsSectionWidget extends StatelessWidget {
         Container(
           margin: EdgeInsets.symmetric(horizontal: 4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color: AppTheme.lightTheme.colorScheme.shadow,
+                color: Theme.of(context).colorScheme.shadow,
                 blurRadius: 4,
                 offset: const Offset(0, 1),
               ),
@@ -48,7 +48,7 @@ class SettingsSectionWidget extends StatelessWidget {
               final item = entry.value;
               final isLast = index == items.length - 1;
 
-              return _buildSettingsItem(item, isLast);
+              return _buildSettingsItem(item, isLast ,context);
             }).toList(),
           ),
         ),
@@ -56,13 +56,13 @@ class SettingsSectionWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsItem(SettingsItem item, bool isLast) {
+  Widget _buildSettingsItem(SettingsItem item, bool isLast, BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         border: !isLast
             ? Border(
                 bottom: BorderSide(
-                  color: AppTheme.lightTheme.dividerColor,
+                  color: Theme.of(context).dividerColor,
                   width: 0.5,
                 ),
               )
@@ -73,13 +73,13 @@ class SettingsSectionWidget extends StatelessWidget {
         leading: item.icon,
         title: Text(
           item.title,
-          style: AppTheme.lightTheme.textTheme.bodyLarge,
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
         subtitle: item.subtitle != null
             ? Text(
                 item.subtitle!,
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               )
             : null,

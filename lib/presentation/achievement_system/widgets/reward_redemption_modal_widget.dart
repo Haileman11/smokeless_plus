@@ -75,7 +75,7 @@ class _RewardRedemptionModalWidgetState
     return Container(
       height: 85.h,
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
@@ -86,7 +86,7 @@ class _RewardRedemptionModalWidgetState
             width: 12.w,
             height: 0.5.h,
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.outline
+              color: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
@@ -103,7 +103,7 @@ class _RewardRedemptionModalWidgetState
                     Text(
                       'Reward Store',
                       style:
-                          AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -111,7 +111,7 @@ class _RewardRedemptionModalWidgetState
                       padding:
                           EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.secondary
+                        color: Theme.of(context).colorScheme.secondary
                             .withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -120,15 +120,15 @@ class _RewardRedemptionModalWidgetState
                         children: [
                           CustomIconWidget(
                             iconName: 'stars',
-                            color: AppTheme.lightTheme.colorScheme.secondary,
+                            color: Theme.of(context).colorScheme.secondary,
                             size: 4.w,
                           ),
                           SizedBox(width: 1.w),
                           Text(
                             '${widget.availablePoints} pts',
-                            style: AppTheme.lightTheme.textTheme.titleMedium
+                            style: Theme.of(context).textTheme.titleMedium
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.secondary,
+                              color: Theme.of(context).colorScheme.secondary,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -140,8 +140,8 @@ class _RewardRedemptionModalWidgetState
                 SizedBox(height: 2.h),
                 Text(
                   'Redeem your hard-earned points for exclusive rewards and support your quit journey!',
-                  style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface
                         .withValues(alpha: 0.7),
                   ),
                   textAlign: TextAlign.center,
@@ -164,19 +164,19 @@ class _RewardRedemptionModalWidgetState
                   margin: EdgeInsets.only(bottom: 3.h),
                   padding: EdgeInsets.all(4.w),
                   decoration: BoxDecoration(
-                    color: AppTheme.lightTheme.colorScheme.surface,
+                    color: Theme.of(context).colorScheme.surface,
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: canAfford
-                          ? AppTheme.lightTheme.primaryColor
+                          ? Theme.of(context).primaryColor
                               .withValues(alpha: 0.3)
-                          : AppTheme.lightTheme.colorScheme.outline
+                          : Theme.of(context).colorScheme.outline
                               .withValues(alpha: 0.2),
                     ),
                     boxShadow: [
                       BoxShadow(
                         color: canAfford
-                            ? AppTheme.lightTheme.primaryColor
+                            ? Theme.of(context).primaryColor
                                 .withValues(alpha: 0.1)
                             : Colors.grey.withValues(alpha: 0.1),
                         blurRadius: 8,
@@ -192,7 +192,7 @@ class _RewardRedemptionModalWidgetState
                         height: 15.w,
                         decoration: BoxDecoration(
                           color: canAfford
-                              ? AppTheme.lightTheme.primaryColor
+                              ? Theme.of(context).primaryColor
                               : Colors.grey.withValues(alpha: 0.3),
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -213,11 +213,11 @@ class _RewardRedemptionModalWidgetState
                           children: [
                             Text(
                               reward['title'] ?? 'Reward',
-                              style: AppTheme.lightTheme.textTheme.titleMedium
+                              style: Theme.of(context).textTheme.titleMedium
                                   ?.copyWith(
                                 color: canAfford
-                                    ? AppTheme.lightTheme.colorScheme.onSurface
-                                    : AppTheme.lightTheme.colorScheme.onSurface
+                                    ? Theme.of(context).colorScheme.onSurface
+                                    : Theme.of(context).colorScheme.onSurface
                                         .withValues(alpha: 0.5),
                                 fontWeight: FontWeight.w600,
                               ),
@@ -226,12 +226,12 @@ class _RewardRedemptionModalWidgetState
                             Text(
                               reward['description'] ??
                                   'No description available.',
-                              style: AppTheme.lightTheme.textTheme.bodySmall
+                              style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(
                                 color: canAfford
-                                    ? AppTheme.lightTheme.colorScheme.onSurface
+                                    ? Theme.of(context).colorScheme.onSurface
                                         .withValues(alpha: 0.7)
-                                    : AppTheme.lightTheme.colorScheme.onSurface
+                                    : Theme.of(context).colorScheme.onSurface
                                         .withValues(alpha: 0.4),
                               ),
                               maxLines: 2,
@@ -274,7 +274,7 @@ class _RewardRedemptionModalWidgetState
                                       : null,
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: canAfford
-                                        ? AppTheme.lightTheme.primaryColor
+                                        ? Theme.of(context).primaryColor
                                         : Colors.grey.withValues(alpha: 0.3),
                                     foregroundColor: Colors.white,
                                     padding: EdgeInsets.symmetric(
@@ -320,7 +320,7 @@ class _RewardRedemptionModalWidgetState
           ),
           title: Text(
             'Confirm Redemption',
-            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -330,13 +330,13 @@ class _RewardRedemptionModalWidgetState
             children: [
               Text(
                 'Are you sure you want to redeem "${reward['title']}" for ${reward['points']} points?',
-                style: AppTheme.lightTheme.textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(height: 2.h),
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.secondary
+                  color: Theme.of(context).colorScheme.secondary
                       .withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -344,7 +344,7 @@ class _RewardRedemptionModalWidgetState
                   children: [
                     CustomIconWidget(
                       iconName: 'info',
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 4.w,
                     ),
                     SizedBox(width: 2.w),
@@ -352,8 +352,8 @@ class _RewardRedemptionModalWidgetState
                       child: Text(
                         'You will have ${widget.availablePoints - (reward['points'] as int)} points remaining.',
                         style:
-                            AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                          color: AppTheme.lightTheme.colorScheme.secondary,
+                            Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                     ),
@@ -398,7 +398,7 @@ class _RewardRedemptionModalWidgetState
                 width: 20.w,
                 height: 20.w,
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.secondary,
                   shape: BoxShape.circle,
                 ),
                 child: CustomIconWidget(
@@ -410,15 +410,15 @@ class _RewardRedemptionModalWidgetState
               SizedBox(height: 3.h),
               Text(
                 'Reward Redeemed!',
-                style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: AppTheme.lightTheme.colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(height: 2.h),
               Text(
                 'You have successfully redeemed "${reward['title']}". Check your profile for details.',
-                style: AppTheme.lightTheme.textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 3.h),
@@ -426,7 +426,7 @@ class _RewardRedemptionModalWidgetState
                 onPressed: () => Navigator.pop(context),
                 child: Text('Great!'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ],

@@ -27,19 +27,19 @@ class MilestoneCardWidget extends StatelessWidget {
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
           color: isAchieved
-              ? AppTheme.lightTheme.colorScheme.primary.withValues(alpha: 0.1)
-              : AppTheme.lightTheme.colorScheme.surface,
+              ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.1)
+              : Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isAchieved
-                ? AppTheme.lightTheme.colorScheme.primary
-                : AppTheme.lightTheme.colorScheme.outline
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).colorScheme.outline
                     .withValues(alpha: 0.3),
             width: isAchieved ? 2 : 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.lightTheme.colorScheme.shadow,
+              color: Theme.of(context).colorScheme.shadow,
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -55,8 +55,8 @@ class MilestoneCardWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: isAchieved
-                    ? AppTheme.lightTheme.colorScheme.primary
-                    : AppTheme.lightTheme.colorScheme.outline
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).colorScheme.outline
                         .withValues(alpha: 0.5),
               ),
               child: isAchieved
@@ -79,17 +79,17 @@ class MilestoneCardWidget extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
                     decoration: BoxDecoration(
                       color: isAchieved
-                          ? AppTheme.lightTheme.colorScheme.primary
-                          : AppTheme.lightTheme.colorScheme.outline
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.outline
                               .withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
                       milestone['timeframe'] ?? '',
-                      style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: isAchieved
                             ? Colors.white
-                            : AppTheme.lightTheme.colorScheme.onSurface,
+                            : Theme.of(context).colorScheme.onSurface,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -98,10 +98,10 @@ class MilestoneCardWidget extends StatelessWidget {
                   // Title
                   Text(
                     milestone['title'] ?? '',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: isAchieved
-                          ? AppTheme.lightTheme.colorScheme.primary
-                          : AppTheme.lightTheme.colorScheme.onSurface,
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -109,8 +109,8 @@ class MilestoneCardWidget extends StatelessWidget {
                   // Description
                   Text(
                     milestone['description'] ?? '',
-                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
@@ -122,15 +122,15 @@ class MilestoneCardWidget extends StatelessWidget {
                       children: [
                         CustomIconWidget(
                           iconName: 'emoji_events',
-                          color: AppTheme.lightTheme.colorScheme.tertiary,
+                          color: Theme.of(context).colorScheme.tertiary,
                           size: 4.w,
                         ),
                         SizedBox(width: 2.w),
                         Text(
                           'Achieved!',
-                          style: AppTheme.lightTheme.textTheme.labelMedium
+                          style: Theme.of(context).textTheme.labelMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.tertiary,
+                            color: Theme.of(context).colorScheme.tertiary,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -143,7 +143,7 @@ class MilestoneCardWidget extends StatelessWidget {
             // Action indicator
             CustomIconWidget(
               iconName: 'chevron_right',
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
               size: 5.w,
             ),
           ],

@@ -95,11 +95,11 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
         padding: EdgeInsets.all(4.w),
         margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.lightTheme.colorScheme.shadow,
+              color: Theme.of(context).colorScheme.shadow,
               blurRadius: 8,
               offset: Offset(0, 2),
             ),
@@ -107,7 +107,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       );
@@ -122,11 +122,11 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -139,13 +139,13 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
             children: [
               CustomIconWidget(
                 iconName: 'timeline',
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Synchronized Smoke-Free Streak',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -154,8 +154,8 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
           SizedBox(height: 1.h),
           Text(
             'Current streak: $currentStreak days',
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.primaryColor,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -168,23 +168,23 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                       children: [
                         CustomIconWidget(
                           iconName: 'schedule',
-                          color: AppTheme.lightTheme.colorScheme.outline,
+                          color: Theme.of(context).colorScheme.outline,
                           size: 48,
                         ),
                         SizedBox(height: 2.h),
                         Text(
                           'Your journey hasn\'t started yet',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.outline,
+                            color: Theme.of(context).colorScheme.outline,
                           ),
                         ),
                         SizedBox(height: 1.h),
                         Text(
                           'Check your quit date in Profile settings',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.outline,
+                            color: Theme.of(context).colorScheme.outline,
                           ),
                         ),
                       ],
@@ -199,7 +199,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             widget.selectedPeriod == 'Year' ? 50 : 10,
                         getDrawingHorizontalLine: (value) {
                           return FlLine(
-                            color: AppTheme.lightTheme.colorScheme.outline
+                            color: Theme.of(context).colorScheme.outline
                                 .withValues(alpha: 0.1),
                             strokeWidth: 1,
                           );
@@ -225,7 +225,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             getTitlesWidget: (value, meta) {
                               return Text(
                                 'Day ${value.toInt()}',
-                                style: AppTheme.lightTheme.textTheme.bodySmall,
+                                style: Theme.of(context).textTheme.bodySmall,
                               );
                             },
                           ),
@@ -237,7 +237,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             getTitlesWidget: (value, meta) {
                               return Text(
                                 '${value.toInt()}',
-                                style: AppTheme.lightTheme.textTheme.bodySmall,
+                                style: Theme.of(context).textTheme.bodySmall,
                               );
                             },
                           ),
@@ -260,8 +260,8 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                           isCurved: true,
                           gradient: LinearGradient(
                             colors: [
-                              AppTheme.lightTheme.primaryColor,
-                              AppTheme.lightTheme.colorScheme.secondary,
+                              Theme.of(context).primaryColor,
+                              Theme.of(context).colorScheme.secondary,
                             ],
                           ),
                           barWidth: 3,
@@ -271,10 +271,10 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             getDotPainter: (spot, percent, barData, index) {
                               return FlDotCirclePainter(
                                 radius: 4,
-                                color: AppTheme.lightTheme.primaryColor,
+                                color: Theme.of(context).primaryColor,
                                 strokeWidth: 2,
                                 strokeColor:
-                                    AppTheme.lightTheme.colorScheme.surface,
+                                    Theme.of(context).colorScheme.surface,
                               );
                             },
                           ),
@@ -282,9 +282,9 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             show: true,
                             gradient: LinearGradient(
                               colors: [
-                                AppTheme.lightTheme.primaryColor
+                                Theme.of(context).primaryColor
                                     .withValues(alpha: 0.3),
-                                AppTheme.lightTheme.colorScheme.secondary
+                                Theme.of(context).colorScheme.secondary
                                     .withValues(alpha: 0.1),
                               ],
                               begin: Alignment.topCenter,
@@ -300,10 +300,10 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                             return touchedBarSpots.map((barSpot) {
                               return LineTooltipItem(
                                 '${barSpot.y.toInt()} days smoke-free',
-                                AppTheme.lightTheme.textTheme.bodySmall!
+                                Theme.of(context).textTheme.bodySmall!
                                     .copyWith(
                                   color:
-                                      AppTheme.lightTheme.colorScheme.onPrimary,
+                                      Theme.of(context).colorScheme.onPrimary,
                                   fontWeight: FontWeight.w600,
                                 ),
                               );

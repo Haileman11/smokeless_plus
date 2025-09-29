@@ -21,11 +21,11 @@ class ComparisonChartWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withAlpha(26),
+            color: Theme.of(context).shadowColor.withAlpha(26),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -38,31 +38,31 @@ class ComparisonChartWidget extends StatelessWidget {
           children: [
             Text(
               'Recovery Progress Comparison',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.primaryColor,
+                // color: Theme.of(context).primaryColor,
               ),
             ),
             SizedBox(height: 1.h),
             Text(
               'See how your progress compares to average recovery patterns',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: AppTheme.textMediumEmphasisLight,
               ),
             ),
             SizedBox(height: 3.h),
-            _buildChart(),
+            _buildChart(context),
             SizedBox(height: 2.h),
-            _buildLegend(),
+            _buildLegend(context),
             SizedBox(height: 2.h),
-            _buildEncouragingMessage(),
+            _buildEncouragingMessage(context),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildChart() {
+  Widget _buildChart(BuildContext context) {
     return SizedBox(
       height: 25.h,
       child: BarChart(
@@ -72,7 +72,7 @@ class ComparisonChartWidget extends StatelessWidget {
           barTouchData: BarTouchData(
             enabled: true,
             touchTooltipData: BarTouchTooltipData(
-              // tooltipBgColor: AppTheme.lightTheme.primaryColor,
+              // tooltipBgColor: Theme.of(context).primaryColor,
               getTooltipItem: (group, groupIndex, rod, rodIndex) {
                 String category;
                 switch (group.x.toInt()) {
@@ -93,7 +93,7 @@ class ComparisonChartWidget extends StatelessWidget {
                 }
                 return BarTooltipItem(
                   '$category\n${rod.toY.toInt()}%',
-                  AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
+                  Theme.of(context).textTheme.bodySmall!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
@@ -109,7 +109,7 @@ class ComparisonChartWidget extends StatelessWidget {
                 getTitlesWidget: (value, meta) {
                   return Text(
                     '${value.toInt()}%',
-                    style: AppTheme.lightTheme.textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall,
                   );
                 },
               ),
@@ -123,25 +123,25 @@ class ComparisonChartWidget extends StatelessWidget {
                     case 0:
                       return Text(
                         'Cardio',
-                        style: AppTheme.lightTheme.textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       );
                     case 1:
                       return Text(
                         'Lungs',
-                        style: AppTheme.lightTheme.textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       );
                     case 2:
                       return Text(
                         'Circulation',
-                        style: AppTheme.lightTheme.textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       );
                     case 3:
                       return Text(
                         'Overall',
-                        style: AppTheme.lightTheme.textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall,
                         textAlign: TextAlign.center,
                       );
                     default:
@@ -154,7 +154,7 @@ class ComparisonChartWidget extends StatelessWidget {
             topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
           ),
           borderData: FlBorderData(show: false),
-          barGroups: _buildBarGroups(),
+          barGroups: _buildBarGroups(context),
           gridData: FlGridData(
             show: true,
             drawVerticalLine: false,
@@ -171,18 +171,18 @@ class ComparisonChartWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildLegend() {
+  Widget _buildLegend(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildLegendItem('Your Progress', AppTheme.lightTheme.primaryColor),
+        _buildLegendItem('Your Progress', Theme.of(context).primaryColor, context),
         SizedBox(width: 6.w),
-        _buildLegendItem('Average', Colors.grey.shade400),
+        _buildLegendItem('Average', Colors.grey.shade400, context),
       ],
     );
   }
 
-  Widget _buildLegendItem(String label, Color color) {
+  Widget _buildLegendItem(String label, Color color, BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -197,7 +197,7 @@ class ComparisonChartWidget extends StatelessWidget {
         SizedBox(width: 2.w),
         Text(
           label,
-          style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -205,7 +205,7 @@ class ComparisonChartWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildEncouragingMessage() {
+  Widget _buildEncouragingMessage(BuildContext context) {
     final userScore = (userProgress * 100).toInt();
     final averageScore = _getAverageScore();
 
@@ -221,7 +221,7 @@ class ComparisonChartWidget extends StatelessWidget {
     } else if (userScore >= averageScore * 0.8) {
       message =
           'You\'re doing great! Your progress is right on track with typical recovery patterns.';
-      messageColor = AppTheme.lightTheme.primaryColor;
+      messageColor = Theme.of(context).primaryColor;
       iconName = 'thumb_up';
     } else {
       message =
@@ -252,7 +252,7 @@ class ComparisonChartWidget extends StatelessWidget {
           Expanded(
             child: Text(
               message,
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: messageColor,
                 fontWeight: FontWeight.w500,
                 height: 1.4,
@@ -264,7 +264,7 @@ class ComparisonChartWidget extends StatelessWidget {
     );
   }
 
-  List<BarChartGroupData> _buildBarGroups() {
+  List<BarChartGroupData> _buildBarGroups(BuildContext context) {
     final data = _generateComparisonData();
 
     return data.map((category) {
@@ -273,7 +273,7 @@ class ComparisonChartWidget extends StatelessWidget {
         barRods: [
           BarChartRodData(
             toY: category['userScore'].toDouble(),
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             width: 5.w,
             borderRadius: BorderRadius.circular(4),
           ),

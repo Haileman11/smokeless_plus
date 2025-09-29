@@ -26,11 +26,11 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withAlpha(26),
+            color: Theme.of(context).shadowColor.withAlpha(26),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -43,9 +43,9 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
           children: [
             Text(
               'Recovery Timeline',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.primaryColor,
+                // color: Theme.of(context).primaryColor,
               ),
             ),
             SizedBox(height: 2.h),
@@ -77,13 +77,13 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               }
             },
             touchTooltipData: LineTouchTooltipData(
-              // tooltipBgColor: AppTheme.lightTheme.primaryColor,
+              // tooltipBgColor: Theme.of(context).primaryColor,
               getTooltipItems: (touchedSpots) {
                 return touchedSpots.map((LineBarSpot touchedSpot) {
                   final period = _getPeriodLabel(touchedSpot.x.toInt());
                   return LineTooltipItem(
                     '$period\n${touchedSpot.y.toInt()}% Recovery',
-                    AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
+                    Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,
                     ),
@@ -101,7 +101,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
                 getTitlesWidget: (value, meta) {
                   return Text(
                     '${value.toInt()}%',
-                    style: AppTheme.lightTheme.textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall,
                   );
                 },
               ),
@@ -113,7 +113,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
                 getTitlesWidget: (value, meta) {
                   return Text(
                     _getPeriodLabel(value.toInt()),
-                    style: AppTheme.lightTheme.textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall,
                   );
                 },
               ),
@@ -130,7 +130,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
             LineChartBarData(
               spots: chartData,
               isCurved: true,
-              color: AppTheme.lightTheme.primaryColor,
+              color: Theme.of(context).primaryColor,
               barWidth: 3,
               isStrokeCapRound: true,
               dotData: FlDotData(
@@ -138,7 +138,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
                 getDotPainter: (spot, percent, barData, index) {
                   return FlDotCirclePainter(
                     radius: 4,
-                    color: AppTheme.lightTheme.primaryColor,
+                    color: Theme.of(context).primaryColor,
                     strokeWidth: 2,
                     strokeColor: Colors.white,
                   );
@@ -146,7 +146,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               ),
               belowBarData: BarAreaData(
                 show: true,
-                color: AppTheme.lightTheme.primaryColor.withAlpha(51),
+                color: Theme.of(context).primaryColor.withAlpha(51),
               ),
             ),
           ],
@@ -163,7 +163,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
       children: [
         Text(
           'Health Recovery Milestones',
-          style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -205,7 +205,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
               children: [
                 Text(
                   milestone['title'],
-                  style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: isAchieved
                         ? AppTheme.successLight
@@ -214,7 +214,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
                 ),
                 Text(
                   milestone['description'],
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: AppTheme.textMediumEmphasisLight,
                   ),
                 ),
@@ -223,7 +223,7 @@ class _RecoveryTimelineWidgetState extends State<RecoveryTimelineWidget> {
           ),
           Text(
             milestone['timeframe'],
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: isAchieved ? AppTheme.successLight : Colors.grey.shade600,
               fontWeight: FontWeight.w600,
             ),

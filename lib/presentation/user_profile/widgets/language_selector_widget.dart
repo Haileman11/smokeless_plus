@@ -29,11 +29,11 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withAlpha(26),
+            color: Theme.of(context).shadowColor.withAlpha(26),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -47,20 +47,21 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
               Container(
                 padding: EdgeInsets.all(2.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.primaryColor.withAlpha(26),
+                  color: Theme.of(context).primaryColor.withAlpha(26),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
                   iconName: 'language',
                   size: 6.w,
-                  color: AppTheme.lightTheme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               SizedBox(width: 3.w),
               Text(
                 l10n.languageSettings,
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
+                  color: Theme.of(context).colorScheme.primary, 
                 ),
               ),
             ],
@@ -68,7 +69,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
           SizedBox(height: 3.h),
           Text(
             l10n.selectLanguage,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
               fontWeight: FontWeight.w500,
             ),
@@ -111,12 +112,12 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
         padding: EdgeInsets.symmetric(horizontal: 3.w, ),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppTheme.lightTheme.primaryColor.withAlpha(26)
-              : AppTheme.lightTheme.colorScheme.surface,
+              ? Theme.of(context).colorScheme.primary.withAlpha(26)
+              : Theme.of(context).colorScheme.surface,
           border: Border.all(
             color: isSelected
-                ? AppTheme.lightTheme.primaryColor
-                : AppTheme.lightTheme.colorScheme.outline.withAlpha(51),
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context).colorScheme.outline.withAlpha(51),
             width: isSelected ? 2 : 1,
           ),
           borderRadius: BorderRadius.circular(12),
@@ -129,7 +130,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
                 child: CustomIconWidget(
                   iconName: 'check_circle',
                   size: 4.w,
-                  color: AppTheme.lightTheme.primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             Expanded(
@@ -139,20 +140,20 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
                 children: [
                   Text(
                     language['nativeName']!,
-                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontWeight:
                           isSelected ? FontWeight.w600 : FontWeight.w500,
                       color: isSelected
-                          ? AppTheme.lightTheme.primaryColor
-                          : AppTheme.lightTheme.colorScheme.onSurface,
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
                   if (language['nativeName'] != language['name'])
                     Text(
                       language['name']!,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.textMediumEmphasisLight,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -176,19 +177,19 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
         child: Container(
           padding: EdgeInsets.all(6.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               CircularProgressIndicator(
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
               ),
               SizedBox(height: 2.h),
               Text(
                 'Switching language...',
-                style: AppTheme.lightTheme.textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
           ),
@@ -203,7 +204,7 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
     await context.read<LanguageProvider>().setLanguage(languageCode);
 
     // Close loading dialog
-    if (mounted) Navigator.of(context).pop();
+    // if (mounted) Navigator.of(context).pop();
 
     if (true) {
       // Call the callback to update the app language
@@ -229,9 +230,9 @@ class _LanguageSelectorWidgetState extends State<LanguageSelectorWidget> {
         );
 
         // Force a complete widget tree rebuild by navigating back and forth
-        Navigator.of(context).pop();
+        // Navigator.of(context).pop();
         await Future.delayed(const Duration(milliseconds: 100));
-        Navigator.of(context).pushNamed('/user-profile');
+        // Navigator.of(context).pushNamed('/user-profile');
       }
     } else {
       // Show error message

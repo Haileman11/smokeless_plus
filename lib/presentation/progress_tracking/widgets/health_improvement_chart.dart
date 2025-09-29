@@ -12,37 +12,37 @@ class HealthImprovementChart extends StatelessWidget {
     required this.selectedPeriod,
   }) : super(key: key);
 
-  List<PieChartSectionData> _getHealthData() {
+  List<PieChartSectionData> _getHealthData(BuildContext context) {
     switch (selectedPeriod) {
       case 'Week':
         return [
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.secondary,
+            color: Theme.of(context).colorScheme.secondary,
             value: 25,
             title: 'Lung\nFunction\n25%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSecondary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             value: 35,
             title: 'Heart\nHealth\n35%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.tertiary,
             value: 40,
             title: 'Overall\nWellness\n40%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onTertiary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onTertiary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -50,32 +50,32 @@ class HealthImprovementChart extends StatelessWidget {
       case 'Month':
         return [
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.secondary,
+            color: Theme.of(context).colorScheme.secondary,
             value: 45,
             title: 'Lung\nFunction\n45%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSecondary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             value: 55,
             title: 'Heart\nHealth\n55%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.tertiary,
             value: 60,
             title: 'Overall\nWellness\n60%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onTertiary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onTertiary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -83,32 +83,32 @@ class HealthImprovementChart extends StatelessWidget {
       case '3 Months':
         return [
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.secondary,
+            color: Theme.of(context).colorScheme.secondary,
             value: 70,
             title: 'Lung\nFunction\n70%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSecondary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             value: 75,
             title: 'Heart\nHealth\n75%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.tertiary,
             value: 80,
             title: 'Overall\nWellness\n80%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onTertiary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onTertiary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -116,32 +116,32 @@ class HealthImprovementChart extends StatelessWidget {
       case 'Year':
         return [
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.secondary,
+            color: Theme.of(context).colorScheme.secondary,
             value: 90,
             title: 'Lung\nFunction\n90%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSecondary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSecondary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             value: 85,
             title: 'Heart\nHealth\n85%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onPrimary,
               fontWeight: FontWeight.w600,
             ),
           ),
           PieChartSectionData(
-            color: AppTheme.lightTheme.colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.tertiary,
             value: 95,
             title: 'Overall\nWellness\n95%',
             radius: 60,
-            titleStyle: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onTertiary,
+            titleStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onTertiary,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -159,11 +159,11 @@ class HealthImprovementChart extends StatelessWidget {
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -176,13 +176,13 @@ class HealthImprovementChart extends StatelessWidget {
             children: [
               CustomIconWidget(
                 iconName: 'favorite',
-                color: AppTheme.lightTheme.colorScheme.tertiary,
+                color: Theme.of(context).colorScheme.tertiary,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Health Improvement',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -192,7 +192,7 @@ class HealthImprovementChart extends StatelessWidget {
           Expanded(
             child: PieChart(
               PieChartData(
-                sections: _getHealthData(),
+                sections: _getHealthData(context),
                 centerSpaceRadius: 40,
                 sectionsSpace: 2,
                 pieTouchData: PieTouchData(

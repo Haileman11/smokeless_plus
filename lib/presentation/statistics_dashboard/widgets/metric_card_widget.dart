@@ -28,11 +28,11 @@ class MetricCardWidget extends StatelessWidget {
       height: 18.h,
       margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: backgroundColor ?? AppTheme.lightTheme.colorScheme.surface,
+        color: backgroundColor ?? Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -50,9 +50,9 @@ class MetricCardWidget extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: textColor ??
-                          AppTheme.lightTheme.colorScheme.onSurface
+                          Theme.of(context).colorScheme.onSurface
                               .withValues(alpha: 0.7),
                       fontWeight: FontWeight.w500,
                     ),
@@ -62,7 +62,7 @@ class MetricCardWidget extends StatelessWidget {
                 ),
                 CustomIconWidget(
                   iconName: iconName,
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 20,
                 ),
               ],
@@ -72,9 +72,9 @@ class MetricCardWidget extends StatelessWidget {
               children: [
                 Text(
                   value,
-                  style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color:
-                        textColor ?? AppTheme.lightTheme.colorScheme.onSurface,
+                        textColor ?? Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.w700,
                   ),
                   maxLines: 1,
@@ -83,9 +83,9 @@ class MetricCardWidget extends StatelessWidget {
                 SizedBox(height: 0.5.h),
                 Text(
                   subtitle,
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: textColor ??
-                        AppTheme.lightTheme.colorScheme.onSurface
+                        Theme.of(context).colorScheme.onSurface
                             .withValues(alpha: 0.6),
                   ),
                   maxLines: 1,

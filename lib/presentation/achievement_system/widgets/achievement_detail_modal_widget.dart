@@ -18,7 +18,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
     return Container(
       height: 80.h,
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
@@ -29,7 +29,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
             width: 12.w,
             height: 0.5.h,
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.outline
+              color: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(2),
             ),
@@ -47,13 +47,13 @@ class AchievementDetailModalWidget extends StatelessWidget {
                     height: 25.w,
                     decoration: BoxDecoration(
                       color: isUnlocked
-                          ? AppTheme.lightTheme.primaryColor
+                          ? Theme.of(context).primaryColor
                           : Colors.grey.withValues(alpha: 0.3),
                       shape: BoxShape.circle,
                       boxShadow: isUnlocked
                           ? [
                               BoxShadow(
-                                color: AppTheme.lightTheme.primaryColor
+                                color: Theme.of(context).primaryColor
                                     .withValues(alpha: 0.3),
                                 blurRadius: 20,
                                 offset: const Offset(0, 8),
@@ -76,8 +76,8 @@ class AchievementDetailModalWidget extends StatelessWidget {
                   Text(
                     achievement['title'] ?? 'Achievement',
                     style:
-                        AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.onSurface,
+                        Theme.of(context).textTheme.headlineSmall?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -91,13 +91,13 @@ class AchievementDetailModalWidget extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         '+${achievement['points'] ?? 0} Points Earned',
                         style:
-                            AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                            Theme.of(context).textTheme.labelLarge?.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                         ),
@@ -114,7 +114,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                       child: Text(
                         '${achievement['points'] ?? 0} Points Available',
                         style:
-                            AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                            Theme.of(context).textTheme.labelLarge?.copyWith(
                           color: Colors.grey.withValues(alpha: 0.7),
                           fontWeight: FontWeight.w600,
                         ),
@@ -129,10 +129,10 @@ class AchievementDetailModalWidget extends StatelessWidget {
                     width: double.infinity,
                     padding: EdgeInsets.all(4.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.surface,
+                      color: Theme.of(context).colorScheme.surface,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppTheme.lightTheme.colorScheme.outline
+                        color: Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.2),
                       ),
                     ),
@@ -141,7 +141,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Description',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
                           ),
@@ -150,9 +150,9 @@ class AchievementDetailModalWidget extends StatelessWidget {
                         Text(
                           achievement['description'] ??
                               'No description available.',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onSurface
+                            color: Theme.of(context).colorScheme.onSurface
                                 .withValues(alpha: 0.8),
                           ),
                         ),
@@ -168,7 +168,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                       width: double.infinity,
                       padding: EdgeInsets.all(4.w),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.secondary
+                        color: Theme.of(context).colorScheme.secondary
                             .withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -180,16 +180,16 @@ class AchievementDetailModalWidget extends StatelessWidget {
                               CustomIconWidget(
                                 iconName: 'check_circle',
                                 color:
-                                    AppTheme.lightTheme.colorScheme.secondary,
+                                    Theme.of(context).colorScheme.secondary,
                                 size: 5.w,
                               ),
                               SizedBox(width: 2.w),
                               Text(
                                 'Unlocked',
-                                style: AppTheme.lightTheme.textTheme.titleMedium
+                                style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(
                                   color:
-                                      AppTheme.lightTheme.colorScheme.secondary,
+                                      Theme.of(context).colorScheme.secondary,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -198,9 +198,9 @@ class AchievementDetailModalWidget extends StatelessWidget {
                           SizedBox(height: 1.h),
                           Text(
                             achievement['unlockDate'] ?? 'Recently unlocked',
-                            style: AppTheme.lightTheme.textTheme.bodyMedium
+                            style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.7),
                             ),
                           ),
@@ -228,7 +228,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                               SizedBox(width: 2.w),
                               Text(
                                 'How to Unlock',
-                                style: AppTheme.lightTheme.textTheme.titleMedium
+                                style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(
                                   color: Colors.grey.withValues(alpha: 0.8),
                                   fontWeight: FontWeight.w600,
@@ -240,7 +240,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                           Text(
                             achievement['unlockCriteria'] ??
                                 'Complete the required actions to unlock this achievement.',
-                            style: AppTheme.lightTheme.textTheme.bodyMedium
+                            style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
                               color: Colors.grey.withValues(alpha: 0.7),
                             ),

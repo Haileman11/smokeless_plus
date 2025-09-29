@@ -77,21 +77,21 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                 margin: EdgeInsets.all(1.w),
                 decoration: BoxDecoration(
                   color: isUnlocked
-                      ? AppTheme.lightTheme.colorScheme.surface
-                      : AppTheme.lightTheme.colorScheme.surface
+                      ? Theme.of(context).colorScheme.surface
+                      : Theme.of(context).colorScheme.surface
                           .withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isUnlocked
-                        ? AppTheme.lightTheme.primaryColor
-                        : AppTheme.lightTheme.colorScheme.outline
+                        ? Theme.of(context).primaryColor
+                        : Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.3),
                     width: isUnlocked ? 2 : 1,
                   ),
                   boxShadow: isUnlocked
                       ? [
                           BoxShadow(
-                            color: AppTheme.lightTheme.primaryColor
+                            color: Theme.of(context).primaryColor
                                 .withValues(alpha: 0.1),
                             blurRadius: 8,
                             offset: const Offset(0, 2),
@@ -112,7 +112,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                             height: 12.w,
                             decoration: BoxDecoration(
                               color: isUnlocked
-                                  ? AppTheme.lightTheme.primaryColor
+                                  ? Theme.of(context).primaryColor
                                   : Colors.grey.withValues(alpha: 0.3),
                               shape: BoxShape.circle,
                             ),
@@ -129,11 +129,11 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                           // Badge Title
                           Text(
                             widget.achievement['title'] ?? 'Achievement',
-                            style: AppTheme.lightTheme.textTheme.labelMedium
+                            style: Theme.of(context).textTheme.labelMedium
                                 ?.copyWith(
                               color: isUnlocked
-                                  ? AppTheme.lightTheme.colorScheme.onSurface
-                                  : AppTheme.lightTheme.colorScheme.onSurface
+                                  ? Theme.of(context).colorScheme.onSurface
+                                  : Theme.of(context).colorScheme.onSurface
                                       .withValues(alpha: 0.5),
                               fontWeight: FontWeight.w600,
                             ),
@@ -148,16 +148,16 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                               padding: EdgeInsets.symmetric(
                                   horizontal: 2.w, vertical: 0.5.h),
                               decoration: BoxDecoration(
-                                color: AppTheme.lightTheme.colorScheme.secondary
+                                color: Theme.of(context).colorScheme.secondary
                                     .withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Text(
                                 '+${widget.achievement['points'] ?? 0} pts',
-                                style: AppTheme.lightTheme.textTheme.labelSmall
+                                style: Theme.of(context).textTheme.labelSmall
                                     ?.copyWith(
                                   color:
-                                      AppTheme.lightTheme.colorScheme.secondary,
+                                      Theme.of(context).colorScheme.secondary,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -165,7 +165,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                           ] else ...[
                             Text(
                               'Locked',
-                              style: AppTheme.lightTheme.textTheme.labelSmall
+                              style: Theme.of(context).textTheme.labelSmall
                                   ?.copyWith(
                                 color: Colors.grey.withValues(alpha: 0.7),
                               ),
@@ -183,12 +183,12 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                           padding: EdgeInsets.symmetric(
                               horizontal: 1.5.w, vertical: 0.5.h),
                           decoration: BoxDecoration(
-                            color: AppTheme.lightTheme.colorScheme.tertiary,
+                            color: Theme.of(context).colorScheme.tertiary,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
                             'NEW',
-                            style: AppTheme.lightTheme.textTheme.labelSmall
+                            style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                               color: Colors.white,
                               fontSize: 8.sp,

@@ -151,18 +151,24 @@ class _AchievementSystemState extends State<AchievementSystem>
   Widget build(BuildContext context) {
     if (_isLoading) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        appBar: AppBar(
+          title: Text("Achievements", style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,
+            color: Theme.of(context).colorScheme.primary,
+          )),
+        ),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
               ),
               SizedBox(height: 2.h),
               Text(
                 'Loading Your Achievements...',
-                style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: AppTheme.textMediumEmphasisLight,
                 ),
               ),
@@ -173,15 +179,16 @@ class _AchievementSystemState extends State<AchievementSystem>
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Achievement System',
-            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
-              color: AppTheme.lightTheme.primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             )),
-        backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
-        elevation: AppTheme.lightTheme.appBarTheme.elevation,
+            centerTitle: false,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        elevation: Theme.of(context).appBarTheme.elevation,
       ),
       body: RefreshIndicator(
         onRefresh: _loadUserData,
@@ -204,11 +211,11 @@ class _AchievementSystemState extends State<AchievementSystem>
                 margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
                 padding: EdgeInsets.all(4.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.surface,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.lightTheme.shadowColor,
+                      color: Theme.of(context).shadowColor,
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),
@@ -227,7 +234,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                       'Total',
                       '${_achievementData['totalAchievements'] ?? 0}',
                       'military_tech',
-                      AppTheme.lightTheme.primaryColor,
+                      Theme.of(context).primaryColor,
                     ),
                     _buildProgressStat(
                       'Progress',
@@ -247,7 +254,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                   padding: EdgeInsets.fromLTRB(4.w, 2.h, 4.w, 1.h),
                   child: Text(
                     'Recent Achievements',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -306,7 +313,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                         'Keep going!\nAchievements will unlock as you progress.',
                         textAlign: TextAlign.center,
                         style:
-                            AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                            Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: AppTheme.textMediumEmphasisLight,
                         ),
                       ),
@@ -347,7 +354,7 @@ class _AchievementSystemState extends State<AchievementSystem>
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _showRewardRedemption,
-        backgroundColor: AppTheme.lightTheme.colorScheme.tertiary,
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
         foregroundColor: Colors.white,
         icon: CustomIconWidget(
           iconName: 'card_giftcard',
@@ -356,7 +363,7 @@ class _AchievementSystemState extends State<AchievementSystem>
         ),
         label: Text(
           'Rewards',
-          style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
             color: Colors.white,
             fontWeight: FontWeight.w600,
           ),
@@ -377,14 +384,14 @@ class _AchievementSystemState extends State<AchievementSystem>
         SizedBox(height: 1.h),
         Text(
           value,
-          style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w800,
             color: color,
           ),
         ),
         Text(
           label,
-          style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
             color: AppTheme.textMediumEmphasisLight,
             fontWeight: FontWeight.w500,
           ),

@@ -62,9 +62,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             padding: EdgeInsets.all(4.w),
             child: Text(
               'Distraction Games',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w600,
-                color: AppTheme.lightTheme.colorScheme.primary,
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
           ),
@@ -92,13 +92,13 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                         EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? AppTheme.lightTheme.colorScheme.primary
-                          : AppTheme.lightTheme.colorScheme.surface,
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.surface,
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                         color: isSelected
-                            ? AppTheme.lightTheme.colorScheme.primary
-                            : AppTheme.lightTheme.colorScheme.outline,
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.outline,
                       ),
                     ),
                     child: Row(
@@ -107,18 +107,18 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                         CustomIconWidget(
                           iconName: game["icon"] as String,
                           color: isSelected
-                              ? AppTheme.lightTheme.colorScheme.onPrimary
-                              : AppTheme.lightTheme.colorScheme.primary,
+                              ? Theme.of(context).colorScheme.onPrimary
+                              : Theme.of(context).colorScheme.primary,
                           size: 18,
                         ),
                         SizedBox(width: 2.w),
                         Text(
                           game["name"] as String,
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                             color: isSelected
-                                ? AppTheme.lightTheme.colorScheme.onPrimary
-                                : AppTheme.lightTheme.colorScheme.primary,
+                                ? Theme.of(context).colorScheme.onPrimary
+                                : Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -172,7 +172,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
       margin: EdgeInsets.all(4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -186,15 +186,15 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
         children: [
           CustomIconWidget(
             iconName: 'palette',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 48,
           ),
           SizedBox(height: 2.h),
           Text(
             'Color Focus Challenge',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 2.h),
@@ -211,8 +211,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             child: Text(
               'Find 5 ${randomColor['name']} objects around you',
               textAlign: TextAlign.center,
-              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurface,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -221,8 +221,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Look around your environment and identify 5 objects that are ${randomColor['name'].toString().toLowerCase()}. Take your time and focus on each object.',
             textAlign: TextAlign.center,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurface
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurface
                   .withValues(alpha: 0.7),
             ),
           ),
@@ -245,7 +245,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
       margin: EdgeInsets.all(4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -259,30 +259,30 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
         children: [
           CustomIconWidget(
             iconName: 'calculate',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 48,
           ),
           SizedBox(height: 2.h),
           Text(
             'Counting Challenge',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.primary
+              color: Theme.of(context).colorScheme.primary
                   .withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               'Count backwards from 100 by 7s',
               textAlign: TextAlign.center,
-              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.primary,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -291,8 +291,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             '100, 93, 86, 79, 72...',
             textAlign: TextAlign.center,
-            style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.secondary,
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              color: Theme.of(context).colorScheme.secondary,
               fontWeight: FontWeight.w300,
             ),
           ),
@@ -300,8 +300,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'This mental math exercise requires focus and concentration, helping distract from cravings.',
             textAlign: TextAlign.center,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurface
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurface
                   .withValues(alpha: 0.7),
             ),
           ),
@@ -344,7 +344,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
       margin: EdgeInsets.all(4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -358,30 +358,30 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
         children: [
           CustomIconWidget(
             iconName: 'home',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 48,
           ),
           SizedBox(height: 2.h),
           Text(
             'Memory Palace',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.secondary
+              color: Theme.of(context).colorScheme.secondary
                   .withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
               'Visualize your childhood home',
               textAlign: TextAlign.center,
-              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.secondary,
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -394,16 +394,16 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 children: [
                   Text(
                     'Instructions:',
-                    style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.lightTheme.colorScheme.onSurface,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
                   SizedBox(height: 1.h),
                   Text(
                     '1. Close your eyes and imagine walking through your childhood home\n\n2. Start at the front door and move room by room\n\n3. Notice details: colors, furniture, decorations\n\n4. Spend time in each room remembering specific objects\n\n5. Try to recall sounds, smells, and feelings',
-                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.onSurface
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface
                           .withValues(alpha: 0.8),
                       height: 1.5,
                     ),
@@ -418,7 +418,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 SnackBar(
                   content: Text(
                       'Great job! Memory exercises strengthen focus and reduce cravings.'),
-                  backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               );
             },
@@ -446,7 +446,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
       margin: EdgeInsets.all(4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -460,22 +460,22 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
         children: [
           CustomIconWidget(
             iconName: 'psychology',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 48,
           ),
           SizedBox(height: 2.h),
           Text(
             'Word Association',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 2.h),
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.tertiary
+              color: Theme.of(context).colorScheme.tertiary
                   .withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
@@ -483,16 +483,16 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               children: [
                 Text(
                   'Starting word:',
-                  style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface
                         .withValues(alpha: 0.7),
                   ),
                 ),
                 SizedBox(height: 1.h),
                 Text(
                   randomWord,
-                  style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.tertiary,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    color: Theme.of(context).colorScheme.tertiary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -503,8 +503,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Text(
             'Create a chain of related words. Each new word should connect to the previous one.',
             textAlign: TextAlign.center,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurface
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurface
                   .withValues(alpha: 0.7),
             ),
           ),
@@ -512,18 +512,18 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           Container(
             padding: EdgeInsets.all(3.w),
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.surface,
+              color: Theme.of(context).colorScheme.surface,
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                color: AppTheme.lightTheme.colorScheme.outline
+                color: Theme.of(context).colorScheme.outline
                     .withValues(alpha: 0.3),
               ),
             ),
             child: Text(
               'Example: Ocean → Water → Rain → Clouds → Sky → Birds → Freedom',
               textAlign: TextAlign.center,
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurface
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurface
                     .withValues(alpha: 0.6),
                 fontStyle: FontStyle.italic,
               ),

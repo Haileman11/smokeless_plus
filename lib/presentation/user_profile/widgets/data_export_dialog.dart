@@ -54,13 +54,13 @@ class _DataExportDialogState extends State<DataExportDialog> {
               children: [
                 CustomIconWidget(
                   iconName: 'download',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 24,
                 ),
                 SizedBox(width: 3.w),
                 Text(
                   'Export Your Data',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -69,8 +69,8 @@ class _DataExportDialogState extends State<DataExportDialog> {
             SizedBox(height: 2.h),
             Text(
               'Choose the format for your quit smoking data export:',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
             SizedBox(height: 3.h),
@@ -88,7 +88,7 @@ class _DataExportDialogState extends State<DataExportDialog> {
             Container(
               padding: EdgeInsets.all(3.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.primaryContainer
+                color: Theme.of(context).colorScheme.primaryContainer
                     .withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -96,14 +96,14 @@ class _DataExportDialogState extends State<DataExportDialog> {
                 children: [
                   CustomIconWidget(
                     iconName: 'info',
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                     size: 20,
                   ),
                   SizedBox(width: 3.w),
                   Expanded(
                     child: Text(
                       'Your data will be exported securely and can be used for personal records or sharing with healthcare providers.',
-                      style: AppTheme.lightTheme.textTheme.bodySmall,
+                      style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),
                 ],
@@ -118,11 +118,11 @@ class _DataExportDialogState extends State<DataExportDialog> {
                       _isExporting ? null : () => Navigator.of(context).pop(),
                   child: Text(
                     'Cancel',
-                    style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
                       color: _isExporting
-                          ? AppTheme.lightTheme.colorScheme.onSurfaceVariant
+                          ? Theme.of(context).colorScheme.onSurfaceVariant
                               .withValues(alpha: 0.5)
-                          : AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                          : Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                   ),
                 ),
@@ -136,7 +136,7 @@ class _DataExportDialogState extends State<DataExportDialog> {
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
                             valueColor: AlwaysStoppedAnimation<Color>(
-                              AppTheme.lightTheme.colorScheme.onPrimary,
+                              Theme.of(context).colorScheme.onPrimary,
                             ),
                           ),
                         )
@@ -166,14 +166,14 @@ class _DataExportDialogState extends State<DataExportDialog> {
           padding: EdgeInsets.all(3.w),
           decoration: BoxDecoration(
             color: isSelected
-                ? AppTheme.lightTheme.colorScheme.primaryContainer
+                ? Theme.of(context).colorScheme.primaryContainer
                     .withValues(alpha: 0.2)
-                : AppTheme.lightTheme.colorScheme.surface,
+                : Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
               color: isSelected
-                  ? AppTheme.lightTheme.colorScheme.primary
-                  : AppTheme.lightTheme.colorScheme.outline,
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.outline,
               width: isSelected ? 2 : 1,
             ),
           ),
@@ -182,8 +182,8 @@ class _DataExportDialogState extends State<DataExportDialog> {
               CustomIconWidget(
                 iconName: format['icon'] as String,
                 color: isSelected
-                    ? AppTheme.lightTheme.colorScheme.primary
-                    : AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).colorScheme.onSurfaceVariant,
                 size: 24,
               ),
               SizedBox(width: 3.w),
@@ -194,18 +194,18 @@ class _DataExportDialogState extends State<DataExportDialog> {
                     Text(
                       format['format'] as String,
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: isSelected
-                            ? AppTheme.lightTheme.colorScheme.primary
-                            : AppTheme.lightTheme.colorScheme.onSurface,
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.onSurface,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
                       format['description'] as String,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -214,7 +214,7 @@ class _DataExportDialogState extends State<DataExportDialog> {
               if (isSelected)
                 CustomIconWidget(
                   iconName: 'check_circle',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 20,
                 ),
             ],
@@ -240,7 +240,7 @@ class _DataExportDialogState extends State<DataExportDialog> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Data exported successfully as $_selectedFormat'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -249,7 +249,7 @@ class _DataExportDialogState extends State<DataExportDialog> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Export failed. Please try again.'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.error,
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
       }

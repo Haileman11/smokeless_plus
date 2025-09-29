@@ -21,11 +21,11 @@ class ExportOptionsWidget extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -38,7 +38,7 @@ class ExportOptionsWidget extends StatelessWidget {
           children: [
             Text(
               'Export & Share',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -50,8 +50,9 @@ class ExportOptionsWidget extends StatelessWidget {
                     'Infographic',
                     'image',
                     'Share visual progress',
-                    AppTheme.lightTheme.colorScheme.primary,
+                    Theme.of(context).colorScheme.primary,
                     onExportInfographic,
+                    context
                   ),
                 ),
                 SizedBox(width: 3.w),
@@ -60,8 +61,9 @@ class ExportOptionsWidget extends StatelessWidget {
                     'CSV Report',
                     'table_chart',
                     'Detailed data export',
-                    AppTheme.lightTheme.colorScheme.secondary,
+                    Theme.of(context).colorScheme.secondary,
                     onExportCSV,
+                    context
                   ),
                 ),
               ],
@@ -69,7 +71,7 @@ class ExportOptionsWidget extends StatelessWidget {
             SizedBox(height: 2.h),
             SizedBox(
               width: double.infinity,
-              child: _buildShareButton(),
+              child: _buildShareButton(context),
             ),
           ],
         ),
@@ -83,6 +85,7 @@ class ExportOptionsWidget extends StatelessWidget {
     String subtitle,
     Color color,
     VoidCallback onTap,
+    BuildContext context
   ) {
     return GestureDetector(
       onTap: onTap,
@@ -109,7 +112,7 @@ class ExportOptionsWidget extends StatelessWidget {
               SizedBox(height: 1.h),
               Text(
                 title,
-                style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: color,
                   fontWeight: FontWeight.w600,
                 ),
@@ -120,7 +123,7 @@ class ExportOptionsWidget extends StatelessWidget {
               SizedBox(height: 0.5.h),
               Text(
                 subtitle,
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: color.withValues(alpha: 0.8),
                 ),
                 textAlign: TextAlign.center,
@@ -134,7 +137,7 @@ class ExportOptionsWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildShareButton() {
+  Widget _buildShareButton(BuildContext context) {
     return GestureDetector(
       onTap: onShareStats,
       child: Container(
@@ -142,8 +145,8 @@ class ExportOptionsWidget extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppTheme.lightTheme.colorScheme.primary,
-              AppTheme.lightTheme.colorScheme.secondary,
+              Theme.of(context).colorScheme.primary,
+              Theme.of(context).colorScheme.secondary,
             ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
@@ -155,14 +158,14 @@ class ExportOptionsWidget extends StatelessWidget {
           children: [
             CustomIconWidget(
               iconName: 'share',
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+              color: Theme.of(context).colorScheme.onPrimary,
               size: 24,
             ),
             SizedBox(width: 2.w),
             Text(
               'Share Your Progress',
-              style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onPrimary,
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                color: Theme.of(context).colorScheme.onPrimary,
                 fontWeight: FontWeight.w600,
               ),
             ),

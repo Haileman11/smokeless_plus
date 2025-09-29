@@ -132,11 +132,11 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
         padding: EdgeInsets.all(4.w),
         margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.lightTheme.colorScheme.shadow,
+              color: Theme.of(context).colorScheme.shadow,
               blurRadius: 8,
               offset: Offset(0, 2),
             ),
@@ -144,7 +144,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       );
@@ -159,11 +159,11 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -182,7 +182,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
               SizedBox(width: 2.w),
               Text(
                 'Synchronized Money Saved',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -191,7 +191,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
           SizedBox(height: 1.h),
           Text(
             'Total saved: \$${moneySaved.toStringAsFixed(2)}',
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: AppTheme.successLight,
               fontWeight: FontWeight.w600,
             ),
@@ -205,23 +205,23 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                       children: [
                         CustomIconWidget(
                           iconName: 'savings',
-                          color: AppTheme.lightTheme.colorScheme.outline,
+                          color: Theme.of(context).colorScheme.outline,
                           size: 48,
                         ),
                         SizedBox(height: 2.h),
                         Text(
                           'Start saving money today!',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.outline,
+                            color: Theme.of(context).colorScheme.outline,
                           ),
                         ),
                         SizedBox(height: 1.h),
                         Text(
                           'Set your quit date to see savings',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.outline,
+                            color: Theme.of(context).colorScheme.outline,
                           ),
                         ),
                       ],
@@ -236,9 +236,9 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                           getTooltipItem: (group, groupIndex, rod, rodIndex) {
                             return BarTooltipItem(
                               '\$${rod.toY.toStringAsFixed(2)}',
-                              AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
                                 color:
-                                    AppTheme.lightTheme.colorScheme.onPrimary,
+                                    Theme.of(context).colorScheme.onPrimary,
                                 fontWeight: FontWeight.w600,
                               ),
                             );
@@ -282,7 +282,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                               }
                               return Text(
                                 text,
-                                style: AppTheme.lightTheme.textTheme.bodySmall,
+                                style: Theme.of(context).textTheme.bodySmall,
                               );
                             },
                           ),
@@ -294,7 +294,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                             getTitlesWidget: (value, meta) {
                               return Text(
                                 '\$${value.toInt()}',
-                                style: AppTheme.lightTheme.textTheme.bodySmall,
+                                style: Theme.of(context).textTheme.bodySmall,
                               );
                             },
                           ),
@@ -307,7 +307,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                         drawVerticalLine: false,
                         getDrawingHorizontalLine: (value) {
                           return FlLine(
-                            color: AppTheme.lightTheme.colorScheme.outline
+                            color: Theme.of(context).colorScheme.outline
                                 .withValues(alpha: 0.1),
                             strokeWidth: 1,
                           );

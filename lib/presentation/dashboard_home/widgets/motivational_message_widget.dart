@@ -111,15 +111,15 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               children: [
                 CustomIconWidget(
                   iconName: 'schedule',
-                  color: AppTheme.lightTheme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                   size: 6.w,
                 ),
                 SizedBox(width: 2.w),
                 Text(
                   'Quote Schedule',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.lightTheme.primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ],
@@ -145,12 +145,12 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                   padding: EdgeInsets.all(3.w),
                   decoration: BoxDecoration(
                     color:
-                        AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     'Quotes automatically refresh at 6 AM and 6 PM every day to keep you motivated throughout your quit-smoking journey!',
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppTheme.textMediumEmphasisLight,
                       fontStyle: FontStyle.italic,
                     ),
@@ -164,7 +164,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 child: Text(
                   'Got it!',
                   style: TextStyle(
-                    color: AppTheme.lightTheme.primaryColor,
+                    color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -186,7 +186,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
           flex: 2,
           child: Text(
             '$label:',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -196,7 +196,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
           flex: 3,
           child: Text(
             value,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
             ),
           ),
@@ -217,19 +217,19 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+              Theme.of(context).primaryColor.withValues(alpha: 0.1),
               AppTheme.accentLight.withValues(alpha: 0.1),
             ],
           ),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.2),
+            color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
             width: 1,
           ),
         ),
         child: Center(
           child: CircularProgressIndicator(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       );
@@ -245,13 +245,13 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+            Theme.of(context).primaryColor.withValues(alpha: 0.1),
             AppTheme.accentLight.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.2),
+          color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
           width: 1,
         ),
       ),
@@ -264,16 +264,16 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               children: [
                 CustomIconWidget(
                   iconName: 'format_quote',
-                  color: AppTheme.lightTheme.primaryColor,
+                  color: Theme.of(context).primaryColor,
                   size: 6.w,
                 ),
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Text(
                     'Daily Motivation',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.lightTheme.primaryColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -282,7 +282,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                   icon: CustomIconWidget(
                     iconName: 'info_outline',
                     color:
-                        AppTheme.lightTheme.primaryColor.withValues(alpha: 0.7),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.7),
                     size: 5.w,
                   ),
                   padding: EdgeInsets.all(1.w),
@@ -297,12 +297,12 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                           height: 4.w,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            color: AppTheme.lightTheme.primaryColor,
+                            color: Theme.of(context).primaryColor,
                           ),
                         )
                       : CustomIconWidget(
                           iconName: 'refresh',
-                          color: AppTheme.lightTheme.primaryColor
+                          color: Theme.of(context).primaryColor
                               .withValues(alpha: 0.7),
                           size: 5.w,
                         ),
@@ -314,10 +314,11 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
             SizedBox(height: 3.h),
             Text(
               quote['message']!,
-              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 fontWeight: FontWeight.w500,
                 height: 1.4,
                 fontStyle: FontStyle.italic,
+                color: Theme.of(context).colorScheme.surface
               ),
               textAlign: TextAlign.left,
             ),
@@ -326,8 +327,8 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               alignment: Alignment.centerRight,
               child: Text(
                 '- ${quote['author']}',
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                  color: AppTheme.textMediumEmphasisLight,
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.secondary,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -340,13 +341,13 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                       EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
                   decoration: BoxDecoration(
                     color:
-                        AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
                     'Auto-refreshes 2x daily',
-                    style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
-                      color: AppTheme.lightTheme.primaryColor,
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -354,7 +355,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 Spacer(),
                 Text(
                   '${MotivationalQuotesService.getTotalQuotesCount()}+ unique quotes',
-                  style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppTheme.textMediumEmphasisLight,
                     fontWeight: FontWeight.w500,
                   ),

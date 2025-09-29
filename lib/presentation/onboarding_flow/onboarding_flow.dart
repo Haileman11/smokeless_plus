@@ -122,31 +122,31 @@ class _OnboardingFlowState extends State<OnboardingFlow>
             Container(
               padding: EdgeInsets.all(4.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.secondary.withValues(
+                color: Theme.of(context).colorScheme.secondary.withValues(
                   alpha: 0.1,
                 ),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: CustomIconWidget(
                 iconName: 'celebration',
-                color: AppTheme.lightTheme.colorScheme.secondary,
+                color: Theme.of(context).colorScheme.secondary,
                 size: 15.w,
               ),
             ),
             SizedBox(height: 2.h),
             Text(
               'Welcome to Your Journey!',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 1.h),
             Text(
               'You\'re all set to start your smoke-free life. Let\'s begin this amazing journey together!',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
               textAlign: TextAlign.center,
             ),
@@ -163,7 +163,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -171,7 +171,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                 ),
                 child: Text(
                   'Start My Journey',
-                  style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                   ),
@@ -202,7 +202,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -211,7 +211,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                 onPressed: _previousStep,
                 icon: CustomIconWidget(
                   iconName: 'arrow_back',
-                  color: AppTheme.lightTheme.colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onSurface,
                   size: 6.w,
                 ),
               )
@@ -222,8 +222,8 @@ class _OnboardingFlowState extends State<OnboardingFlow>
               onPressed: _skipToEnd,
               child: Text(
                 'Skip',
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               ),
             ),
@@ -241,15 +241,15 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   children: [
                     Text(
                       'Step ${_currentStep + 1} of $_totalSteps',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
                       '${((_currentStep + 1) / _totalSteps * 100).round()}%',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.primary,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -260,8 +260,8 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   activeIndex: _currentStep,
                   count: _totalSteps,
                   effect: WormEffect(
-                    dotColor: AppTheme.lightTheme.colorScheme.outline,
-                    activeDotColor: AppTheme.lightTheme.colorScheme.primary,
+                    dotColor: Theme.of(context).colorScheme.outline,
+                    activeDotColor: Theme.of(context).colorScheme.primary,
                     dotHeight: 1.h,
                     dotWidth: 15.w,
                     spacing: 2.w,

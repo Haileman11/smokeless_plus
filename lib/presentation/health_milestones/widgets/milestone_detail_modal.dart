@@ -20,7 +20,7 @@ class MilestoneDetailModal extends StatelessWidget {
     return Container(
       height: 80.h,
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
@@ -31,7 +31,7 @@ class MilestoneDetailModal extends StatelessWidget {
             width: 12.w,
             height: 0.5.h,
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.colorScheme.outline
+              color: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(10),
             ),
@@ -47,8 +47,8 @@ class MilestoneDetailModal extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: isAchieved
-                        ? AppTheme.lightTheme.colorScheme.primary
-                        : AppTheme.lightTheme.colorScheme.outline
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.3),
                   ),
                   child: isAchieved
@@ -60,7 +60,7 @@ class MilestoneDetailModal extends StatelessWidget {
                       : CustomIconWidget(
                           iconName: 'schedule',
                           color:
-                              AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                              Theme.of(context).colorScheme.onSurfaceVariant,
                           size: 6.w,
                         ),
                 ),
@@ -74,18 +74,18 @@ class MilestoneDetailModal extends StatelessWidget {
                             horizontal: 2.w, vertical: 0.5.h),
                         decoration: BoxDecoration(
                           color: isAchieved
-                              ? AppTheme.lightTheme.colorScheme.primary
-                              : AppTheme.lightTheme.colorScheme.outline
+                              ? Theme.of(context).colorScheme.primary
+                              : Theme.of(context).colorScheme.outline
                                   .withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
                           milestone['timeframe'] ?? '',
-                          style: AppTheme.lightTheme.textTheme.labelMedium
+                          style: Theme.of(context).textTheme.labelMedium
                               ?.copyWith(
                             color: isAchieved
                                 ? Colors.white
-                                : AppTheme.lightTheme.colorScheme.onSurface,
+                                : Theme.of(context).colorScheme.onSurface,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -94,7 +94,7 @@ class MilestoneDetailModal extends StatelessWidget {
                       Text(
                         milestone['title'] ?? '',
                         style:
-                            AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                            Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -105,7 +105,7 @@ class MilestoneDetailModal extends StatelessWidget {
                   onPressed: () => Navigator.pop(context),
                   icon: CustomIconWidget(
                     iconName: 'close',
-                    color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
                     size: 6.w,
                   ),
                 ),
@@ -125,11 +125,11 @@ class MilestoneDetailModal extends StatelessWidget {
                       padding:
                           EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.tertiary
+                        color: Theme.of(context).colorScheme.tertiary
                             .withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppTheme.lightTheme.colorScheme.tertiary,
+                          color: Theme.of(context).colorScheme.tertiary,
                           width: 1,
                         ),
                       ),
@@ -138,15 +138,15 @@ class MilestoneDetailModal extends StatelessWidget {
                         children: [
                           CustomIconWidget(
                             iconName: 'emoji_events',
-                            color: AppTheme.lightTheme.colorScheme.tertiary,
+                            color: Theme.of(context).colorScheme.tertiary,
                             size: 5.w,
                           ),
                           SizedBox(width: 2.w),
                           Text(
                             'Milestone Achieved!',
-                            style: AppTheme.lightTheme.textTheme.labelLarge
+                            style: Theme.of(context).textTheme.labelLarge
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.tertiary,
+                              color: Theme.of(context).colorScheme.tertiary,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -158,14 +158,14 @@ class MilestoneDetailModal extends StatelessWidget {
                   // Description
                   Text(
                     'Health Benefit',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(height: 1.h),
                   Text(
                     milestone['description'] ?? '',
-                    style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       height: 1.5,
                     ),
                   ),
@@ -173,7 +173,7 @@ class MilestoneDetailModal extends StatelessWidget {
                   // Scientific explanation
                   Text(
                     'Medical Explanation',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -181,18 +181,18 @@ class MilestoneDetailModal extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(4.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.primary
+                      color: Theme.of(context).colorScheme.primary
                           .withValues(alpha: 0.05),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppTheme.lightTheme.colorScheme.primary
+                        color: Theme.of(context).colorScheme.primary
                             .withValues(alpha: 0.2),
                         width: 1,
                       ),
                     ),
                     child: Text(
                       milestone['scientificExplanation'] ?? '',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         height: 1.5,
                       ),
                     ),
@@ -203,7 +203,7 @@ class MilestoneDetailModal extends StatelessWidget {
                     Text(
                       'Tips to Maximize Benefits',
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -247,9 +247,9 @@ class MilestoneDetailModal extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          AppTheme.lightTheme.colorScheme.secondary
+                          Theme.of(context).colorScheme.secondary
                               .withValues(alpha: 0.1),
-                          AppTheme.lightTheme.colorScheme.tertiary
+                          Theme.of(context).colorScheme.tertiary
                               .withValues(alpha: 0.1),
                         ],
                         begin: Alignment.topLeft,
@@ -264,16 +264,16 @@ class MilestoneDetailModal extends StatelessWidget {
                           children: [
                             CustomIconWidget(
                               iconName: 'psychology',
-                              color: AppTheme.lightTheme.colorScheme.secondary,
+                              color: Theme.of(context).colorScheme.secondary,
                               size: 5.w,
                             ),
                             SizedBox(width: 2.w),
                             Text(
                               'Motivation',
-                              style: AppTheme.lightTheme.textTheme.titleMedium
+                              style: Theme.of(context).textTheme.titleMedium
                                   ?.copyWith(
                                 color:
-                                    AppTheme.lightTheme.colorScheme.secondary,
+                                    Theme.of(context).colorScheme.secondary,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -283,7 +283,7 @@ class MilestoneDetailModal extends StatelessWidget {
                         Text(
                           milestone['motivationalMessage'] ??
                               'Every step forward is a victory for your health!',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                             fontStyle: FontStyle.italic,
                             height: 1.4,
@@ -302,10 +302,10 @@ class MilestoneDetailModal extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(4.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.surface,
+                color: Theme.of(context).colorScheme.surface,
                 border: Border(
                   top: BorderSide(
-                    color: AppTheme.lightTheme.colorScheme.outline
+                    color: Theme.of(context).colorScheme.outline
                         .withValues(alpha: 0.2),
                     width: 1,
                   ),
@@ -318,7 +318,7 @@ class MilestoneDetailModal extends StatelessWidget {
                       onPressed: onShare,
                       icon: CustomIconWidget(
                         iconName: 'share',
-                        color: AppTheme.lightTheme.colorScheme.primary,
+                        color: Theme.of(context).colorScheme.primary,
                         size: 5.w,
                       ),
                       label: Text('Share Achievement'),

@@ -29,8 +29,8 @@ class PointsLevelHeaderWidget extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppTheme.lightTheme.primaryColor,
-            AppTheme.lightTheme.primaryColor.withValues(alpha: 0.8),
+            Theme.of(context).primaryColor,
+            Theme.of(context).primaryColor.withValues(alpha: 0.8),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -38,7 +38,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.3),
+            color: Theme.of(context).primaryColor.withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -55,7 +55,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                 children: [
                   Text(
                     'Total Points',
-                    style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
@@ -63,7 +63,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                   Text(
                     totalPoints.toString(),
                     style:
-                        AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
+                        Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -88,7 +88,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                     Text(
                       'Level $currentLevel',
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),
@@ -110,14 +110,14 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                 children: [
                   Text(
                     'Progress to Level ${currentLevel + 1}',
-                    style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.9),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
                     '$pointsToNextLevel points to go',
-                    style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),

@@ -90,7 +90,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
@@ -119,7 +119,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
                 Expanded(
                   child: Text(
                     'Craving Support',
-                    style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -153,7 +153,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
         children: [
           Text(
             'Choose what helps you most right now:',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
             ),
             textAlign: TextAlign.center,
@@ -172,7 +172,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
       child: ElevatedButton(
         onPressed: () => _handleSupportAction(option['action']),
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppTheme.lightTheme.colorScheme.surface,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           foregroundColor: AppTheme.textHighEmphasisLight,
           elevation: 2,
           padding: EdgeInsets.all(4.w),
@@ -208,14 +208,14 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
                 children: [
                   Text(
                     option['title'],
-                    style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(height: 0.5.h),
                   Text(
                     option['subtitle'],
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppTheme.textMediumEmphasisLight,
                     ),
                   ),
@@ -240,14 +240,14 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
         children: [
           Text(
             '4-7-8 Breathing Exercise',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(height: 2.h),
           Text(
             'Breathe in for 4, hold for 7, exhale for 8',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
             ),
             textAlign: TextAlign.center,
@@ -265,15 +265,15 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
                     shape: BoxShape.circle,
                     gradient: RadialGradient(
                       colors: [
-                        AppTheme.lightTheme.primaryColor.withValues(alpha: 0.3),
-                        AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.3),
+                        Theme.of(context).primaryColor.withValues(alpha: 0.1),
                       ],
                     ),
                   ),
                   child: Center(
                     child: CustomIconWidget(
                       iconName: 'air',
-                      color: AppTheme.lightTheme.primaryColor,
+                      color: Theme.of(context).primaryColor,
                       size: 12.w,
                     ),
                   ),
@@ -288,12 +288,12 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
               ElevatedButton(
                 onPressed: _startBreathing,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.lightTheme.primaryColor,
+                  backgroundColor: Theme.of(context).primaryColor,
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 ),
                 child: Text(
                   'Start',
-                  style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
                     color: AppTheme.onPrimaryLight,
                   ),
                 ),
@@ -343,7 +343,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
           children: [
             CustomIconWidget(
               iconName: 'psychology',
-              color: AppTheme.lightTheme.primaryColor,
+              color: Theme.of(context).primaryColor,
               size: 6.w,
             ),
             SizedBox(width: 3.w),
@@ -352,7 +352,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
         ),
         content: Text(
           quote,
-          style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             fontStyle: FontStyle.italic,
             height: 1.4,
           ),
@@ -431,7 +431,7 @@ class _CravingSupportSheetState extends State<CravingSupportSheet>
         ),
         content: Text(
           activity,
-          style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),

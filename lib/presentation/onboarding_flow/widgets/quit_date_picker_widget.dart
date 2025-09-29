@@ -36,7 +36,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: AppTheme.lightTheme.colorScheme,
+            colorScheme: Theme.of(context).colorScheme,
           ),
           child: child!,
         );
@@ -54,7 +54,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: AppTheme.lightTheme.colorScheme,
+            colorScheme: Theme.of(context).colorScheme,
           ),
           child: child!,
         );
@@ -102,12 +102,12 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
       width: double.infinity,
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: _selectedDateTime != null
-              ? AppTheme.lightTheme.colorScheme.primary
-              : AppTheme.lightTheme.colorScheme.outline,
+              ? Theme.of(context).colorScheme.primary
+              : Theme.of(context).colorScheme.outline,
           width: 2,
         ),
       ),
@@ -118,12 +118,12 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.primary.withAlpha(25),
+                  color: Theme.of(context).colorScheme.primary.withAlpha(25),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
                   iconName: 'calendar_today',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 6.w,
                 ),
               ),
@@ -135,9 +135,9 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                     Text(
                       'Quit Date & Time',
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.lightTheme.colorScheme.onSurface,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
@@ -145,10 +145,10 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                       _selectedDateTime != null
                           ? _formatDateTime(_selectedDateTime!)
                           : 'Select your quit date and time',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: _selectedDateTime != null
-                            ? AppTheme.lightTheme.colorScheme.onSurface
-                            : AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                            ? Theme.of(context).colorScheme.onSurface
+                            : Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -164,7 +164,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
               onPressed: _selectDateTime,
               style: OutlinedButton.styleFrom(
                 side: BorderSide(
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   width: 1.5,
                 ),
                 shape: RoundedRectangleBorder(
@@ -173,8 +173,8 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
               ),
               child: Text(
                 _selectedDateTime != null ? 'Change Date & Time' : 'Select Date & Time',
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.w500,
                 ),
               ),

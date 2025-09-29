@@ -55,8 +55,8 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppTheme.lightTheme.colorScheme.primary,
-            AppTheme.lightTheme.colorScheme.secondary,
+            Theme.of(context).colorScheme.primary,
+            Theme.of(context).colorScheme.secondary,
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -65,7 +65,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
         boxShadow: [
           BoxShadow(
             color:
-                AppTheme.lightTheme.colorScheme.primary.withValues(alpha: 0.3),
+                Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -86,7 +86,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
               Expanded(
                 child: Text(
                   'Health Recovery Progress',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w700,
                   ),
@@ -104,7 +104,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
                 children: [
                   Text(
                     'Milestones Achieved',
-                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.9),
                     ),
                   ),
@@ -112,7 +112,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
                   Text(
                     '${widget.achievedCount}/${widget.totalCount}',
                     style:
-                        AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
+                        Theme.of(context).textTheme.headlineMedium?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
                     ),
@@ -130,7 +130,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
                   builder: (context, child) {
                     return Text(
                       '${_progressAnimation.value.toInt()}%',
-                      style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                       ),
@@ -170,7 +170,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
             widget.progressPercentage >= 50
                 ? 'Amazing progress! Your body is healing beautifully.'
                 : 'Every milestone brings you closer to complete recovery.',
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white.withValues(alpha: 0.9),
               fontStyle: FontStyle.italic,
             ),

@@ -50,9 +50,9 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
         children: [
           Text(
             'Milestone Categories',
-            style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+            style: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w600,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
           SizedBox(height: 1.h),
@@ -81,13 +81,13 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
                             decoration: BoxDecoration(
                               color:
                                   isSelected
-                                      ? AppTheme.lightTheme.primaryColor
-                                      : AppTheme.lightTheme.colorScheme.surface,
+                                      ? Theme.of(context).primaryColor
+                                      : Theme.of(context).colorScheme.surface,
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
                                 color:
                                     isSelected
-                                        ? AppTheme.lightTheme.primaryColor
+                                        ? Theme.of(context).primaryColor
                                         : AppTheme
                                             .lightTheme
                                             .colorScheme
@@ -167,7 +167,7 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
                                 SizedBox(height: 0.5.h),
                                 Text(
                                   category['description'] as String,
-                                  style: AppTheme.lightTheme.textTheme.bodySmall
+                                  style: Theme.of(context).textTheme.bodySmall
                                       ?.copyWith(
                                         color:
                                             isSelected

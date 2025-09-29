@@ -18,9 +18,9 @@ class GradientBackgroundWidget extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppTheme.lightTheme.colorScheme.primary.withValues(alpha: 0.1),
-            AppTheme.lightTheme.colorScheme.secondary.withValues(alpha: 0.05),
-            AppTheme.lightTheme.colorScheme.surface,
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.05),
+            Theme.of(context).colorScheme.surface,
           ],
           stops: const [0.0, 0.5, 1.0],
         ),

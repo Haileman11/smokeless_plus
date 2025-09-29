@@ -31,8 +31,8 @@ class DashboardPreviewWidget extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                AppTheme.lightTheme.colorScheme.primary,
-                AppTheme.lightTheme.colorScheme.secondary,
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.secondary,
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -43,7 +43,7 @@ class DashboardPreviewWidget extends StatelessWidget {
             children: [
               Text(
                 'Your Personalized Dashboard',
-                style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
                 ),
@@ -52,7 +52,7 @@ class DashboardPreviewWidget extends StatelessWidget {
               SizedBox(height: 1.h),
               Text(
                 'Based on your quit date and smoking habits',
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Colors.white.withValues(alpha: 0.9),
                 ),
                 textAlign: TextAlign.center,
@@ -69,7 +69,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                 title: 'Days Smoke-Free',
                 value: daysSinceQuit.toString(),
                 icon: 'calendar_today',
-                color: AppTheme.lightTheme.colorScheme.primary,
+                color: Theme.of(context).colorScheme.primary,
+                context: context
               ),
             ),
             SizedBox(width: 3.w),
@@ -78,7 +79,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                 title: 'Money Saved',
                 value: '\$${moneySaved.toStringAsFixed(0)}',
                 icon: 'savings',
-                color: AppTheme.lightTheme.colorScheme.secondary,
+                color: Theme.of(context).colorScheme.secondary,
+                context: context
               ),
             ),
           ],
@@ -91,7 +93,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                 title: 'Cigarettes Avoided',
                 value: cigarettesAvoided.toString(),
                 icon: 'block',
-                color: AppTheme.lightTheme.colorScheme.tertiary,
+                color: Theme.of(context).colorScheme.tertiary,
+                context: context
               ),
             ),
             SizedBox(width: 3.w),
@@ -100,7 +103,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                 title: 'Health Progress',
                 value: '${healthProgress.toInt()}%',
                 icon: 'favorite',
-                color: AppTheme.lightTheme.colorScheme.secondary,
+                color: Theme.of(context).colorScheme.secondary,
+                context: context
               ),
             ),
           ],
@@ -111,10 +115,10 @@ class DashboardPreviewWidget extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline,
               width: 1,
             ),
           ),
@@ -126,13 +130,13 @@ class DashboardPreviewWidget extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.secondary
+                      color: Theme.of(context).colorScheme.secondary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: CustomIconWidget(
                       iconName: 'health_and_safety',
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 6.w,
                     ),
                   ),
@@ -143,10 +147,10 @@ class DashboardPreviewWidget extends StatelessWidget {
                       children: [
                         Text(
                           'Next Health Milestone',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: AppTheme.lightTheme.colorScheme.onSurface,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
@@ -159,7 +163,7 @@ class DashboardPreviewWidget extends StatelessWidget {
                                       ? 'Lung function increases'
                                       : 'Heart disease risk reduces',
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: AppTheme
                                 .lightTheme.colorScheme.onSurfaceVariant,
                           ),
@@ -172,10 +176,10 @@ class DashboardPreviewWidget extends StatelessWidget {
               SizedBox(height: 2.h),
               LinearProgressIndicator(
                 value: healthProgress / 100,
-                backgroundColor: AppTheme.lightTheme.colorScheme.secondary
+                backgroundColor: Theme.of(context).colorScheme.secondary
                     .withValues(alpha: 0.2),
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  AppTheme.lightTheme.colorScheme.secondary,
+                  Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ],
@@ -188,10 +192,10 @@ class DashboardPreviewWidget extends StatelessWidget {
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
             color:
-                AppTheme.lightTheme.colorScheme.tertiary.withValues(alpha: 0.1),
+                Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.tertiary,
+              color: Theme.of(context).colorScheme.tertiary,
               width: 1,
             ),
           ),
@@ -200,7 +204,7 @@ class DashboardPreviewWidget extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.tertiary,
+                  color: Theme.of(context).colorScheme.tertiary,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
@@ -219,9 +223,9 @@ class DashboardPreviewWidget extends StatelessWidget {
                           ? 'Achievement Unlocked!'
                           : 'First Achievement Awaits',
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.lightTheme.colorScheme.tertiary,
+                        color: Theme.of(context).colorScheme.tertiary,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
@@ -229,8 +233,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                       daysSinceQuit >= 1
                           ? 'First Day Champion - You\'ve completed your first smoke-free day!'
                           : 'Complete your first smoke-free day to earn your first badge',
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -248,11 +252,12 @@ class DashboardPreviewWidget extends StatelessWidget {
     required String value,
     required String icon,
     required Color color,
+    required BuildContext context,
   }) {
     return Container(
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: color.withValues(alpha: 0.3),
@@ -276,7 +281,7 @@ class DashboardPreviewWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           Text(
             value,
-            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
               color: color,
             ),
@@ -284,8 +289,8 @@ class DashboardPreviewWidget extends StatelessWidget {
           SizedBox(height: 0.5.h),
           Text(
             title,
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
             ),
             textAlign: TextAlign.center,
             maxLines: 2,

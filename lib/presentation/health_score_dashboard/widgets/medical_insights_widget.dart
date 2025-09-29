@@ -21,11 +21,11 @@ class MedicalInsightsWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withAlpha(26),
+            color: Theme.of(context).shadowColor.withAlpha(26),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -38,9 +38,9 @@ class MedicalInsightsWidget extends StatelessWidget {
           children: [
             Text(
               'Medical Insights',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.primaryColor,
+                // color: Theme.of(context).primaryColor,
               ),
             ),
             SizedBox(height: 2.h),
@@ -51,6 +51,7 @@ class MedicalInsightsWidget extends StatelessWidget {
               'medical_information',
               AppTheme.successLight,
               insights,
+              context
             ),
 
             SizedBox(height: 2.h),
@@ -61,6 +62,7 @@ class MedicalInsightsWidget extends StatelessWidget {
               'flag',
               AppTheme.accentLight,
               upcomingMilestones,
+              context
             ),
           ],
         ),
@@ -73,6 +75,7 @@ class MedicalInsightsWidget extends StatelessWidget {
     String iconName,
     Color color,
     List<String> items,
+    BuildContext context
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,7 +97,7 @@ class MedicalInsightsWidget extends StatelessWidget {
             SizedBox(width: 3.w),
             Text(
               title,
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -212,8 +215,8 @@ class InsightItemWidget extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurface,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurface,
                 height: 1.4,
               ),
             ),

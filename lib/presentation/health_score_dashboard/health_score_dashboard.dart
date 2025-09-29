@@ -51,21 +51,21 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
 
     if (_isLoading) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Center(
           child: CircularProgressIndicator(
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       );
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _loadUserData,
-          color: AppTheme.lightTheme.primaryColor,
+          color: Theme.of(context).primaryColor,
           child: CustomScrollView(
             slivers: [
               _buildAppBar(l10n),
@@ -97,29 +97,28 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
     return SliverAppBar(
       floating: true,
       snap: true,
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       elevation: 0,
       // leading: IconButton(
       //   onPressed: () => Navigator.pop(context),
       //   icon: CustomIconWidget(
       //     iconName: 'arrow_back',
-      //     color: AppTheme.lightTheme.primaryColor,
+      //     color: Theme.of(context).primaryColor,
       //     size: 6.w,
       //   ),
       // ),
       title: Text(
         'Health Score Dashboard',
-        style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-          fontWeight: FontWeight.w700,
-          color: AppTheme.lightTheme.primaryColor,
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          fontWeight: FontWeight.w700,   
+          color: Theme.of(context).colorScheme.primary,        
         ),
       ),
       actions: [
         IconButton(
           onPressed: _exportHealthReport,
           icon: CustomIconWidget(
-            iconName: 'share',
-            color: AppTheme.lightTheme.primaryColor,
+            iconName: 'share',            
             size: 6.w,
           ),
         ),
@@ -187,7 +186,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Health report export feature coming soon'),
-        backgroundColor: AppTheme.lightTheme.primaryColor,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }

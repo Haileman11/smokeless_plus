@@ -27,11 +27,11 @@ class FilterOptionsWidget extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 4,
             offset: const Offset(0, 1),
           ),
@@ -40,19 +40,19 @@ class FilterOptionsWidget extends StatelessWidget {
       child: ExpansionTile(
         leading: CustomIconWidget(
           iconName: 'tune',
-          color: AppTheme.lightTheme.colorScheme.primary,
+          color: Theme.of(context).colorScheme.primary,
           size: 24,
         ),
         title: Text(
           'Filter Options',
-          style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+          style: Theme.of(context).textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
         subtitle: Text(
           '$selectedDateRange • $selectedMetricType',
-          style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-            color: AppTheme.lightTheme.colorScheme.onSurface
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface
                 .withValues(alpha: 0.7),
           ),
         ),
@@ -73,6 +73,7 @@ class FilterOptionsWidget extends StatelessWidget {
                   ],
                   selectedDateRange,
                   onDateRangeChanged,
+                  context
                 ),
                 SizedBox(height: 2.h),
                 _buildFilterSection(
@@ -85,6 +86,7 @@ class FilterOptionsWidget extends StatelessWidget {
                   ],
                   selectedMetricType,
                   onMetricTypeChanged,
+                  context
                 ),
                 SizedBox(height: 2.h),
                 _buildFilterSection(
@@ -97,6 +99,7 @@ class FilterOptionsWidget extends StatelessWidget {
                   ],
                   selectedComparison,
                   onComparisonChanged,
+                  context
                 ),
               ],
             ),
@@ -111,15 +114,15 @@ class FilterOptionsWidget extends StatelessWidget {
     List<String> options,
     String selectedValue,
     Function(String) onChanged,
+    BuildContext context
   ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
-          style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: AppTheme.lightTheme.colorScheme.primary,
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+            fontWeight: FontWeight.w600,            
           ),
         ),
         SizedBox(height: 1.h),
@@ -135,23 +138,23 @@ class FilterOptionsWidget extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
                 decoration: BoxDecoration(
                   color: isSelected
-                      ? AppTheme.lightTheme.colorScheme.primary
-                      : AppTheme.lightTheme.colorScheme.surface,
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
                     color: isSelected
-                        ? AppTheme.lightTheme.colorScheme.primary
-                        : AppTheme.lightTheme.colorScheme.outline
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
                 child: Text(
                   option,
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: isSelected
-                        ? AppTheme.lightTheme.colorScheme.onPrimary
-                        : AppTheme.lightTheme.colorScheme.onSurface,
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.onSurface,
                     fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
                   ),
                 ),

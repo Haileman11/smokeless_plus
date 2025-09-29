@@ -18,11 +18,11 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withAlpha(26),
+            color: Theme.of(context).shadowColor.withAlpha(26),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -35,20 +35,20 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
           children: [
             Text(
               'Health Category Breakdown',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.primaryColor,
+                // color: Theme.of(context).primaryColor,
               ),
             ),
             SizedBox(height: 2.h),
-            ...categories.map((category) => _buildCategoryItem(category)),
+            ...categories.map((category) => _buildCategoryItem(category, context)),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildCategoryItem(Map<String, dynamic> category) {
+  Widget _buildCategoryItem(Map<String, dynamic> category, BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 2.h),
       child: Column(
@@ -74,7 +74,7 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
                   SizedBox(width: 3.w),
                   Text(
                     category['title'],
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -82,7 +82,7 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
               ),
               Text(
                 '${category['score']}%',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                   color: category['color'],
                 ),
@@ -99,7 +99,7 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           Text(
             category['description'],
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
             ),
           ),

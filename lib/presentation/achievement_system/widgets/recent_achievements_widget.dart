@@ -28,13 +28,13 @@ class RecentAchievementsWidget extends StatelessWidget {
             children: [
               CustomIconWidget(
                 iconName: 'new_releases',
-                color: AppTheme.lightTheme.colorScheme.tertiary,
+                color: Theme.of(context).colorScheme.tertiary,
                 size: 5.w,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Recent Achievements',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -55,15 +55,15 @@ class RecentAchievementsWidget extends StatelessWidget {
                     margin: EdgeInsets.only(right: 3.w),
                     padding: EdgeInsets.all(4.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.surface,
+                      color: Theme.of(context).colorScheme.surface,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: AppTheme.lightTheme.colorScheme.tertiary
+                        color: Theme.of(context).colorScheme.tertiary
                             .withValues(alpha: 0.3),
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: AppTheme.lightTheme.colorScheme.tertiary
+                          color: Theme.of(context).colorScheme.tertiary
                               .withValues(alpha: 0.1),
                           blurRadius: 8,
                           offset: const Offset(0, 2),
@@ -77,7 +77,7 @@ class RecentAchievementsWidget extends StatelessWidget {
                           width: 12.w,
                           height: 12.w,
                           decoration: BoxDecoration(
-                            color: AppTheme.lightTheme.colorScheme.tertiary,
+                            color: Theme.of(context).colorScheme.tertiary,
                             shape: BoxShape.circle,
                           ),
                           child: CustomIconWidget(
@@ -131,17 +131,17 @@ class RecentAchievementsWidget extends StatelessWidget {
                               SizedBox(height: 0.5.h),
                               Text(
                                 '+${achievement['points'] ?? 0} points earned',
-                                style: AppTheme.lightTheme.textTheme.bodySmall
+                                style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
                                   color:
-                                      AppTheme.lightTheme.colorScheme.secondary,
+                                      Theme.of(context).colorScheme.secondary,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               SizedBox(height: 0.5.h),
                               Text(
                                 achievement['unlockDate'] ?? 'Just now',
-                                style: AppTheme.lightTheme.textTheme.bodySmall
+                                style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
                                   color: AppTheme
                                       .lightTheme.colorScheme.onSurface

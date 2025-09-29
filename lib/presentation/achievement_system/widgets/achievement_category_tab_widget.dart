@@ -27,13 +27,13 @@ class AchievementCategoryTabWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppTheme.lightTheme.primaryColor
+              ? Theme.of(context).primaryColor
               : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected
-                ? AppTheme.lightTheme.primaryColor
-                : AppTheme.lightTheme.colorScheme.outline
+                ? Theme.of(context).primaryColor
+                : Theme.of(context).colorScheme.outline
                     .withValues(alpha: 0.3),
             width: 1,
           ),
@@ -45,17 +45,17 @@ class AchievementCategoryTabWidget extends StatelessWidget {
               iconName: iconName,
               color: isSelected
                   ? Colors.white
-                  : AppTheme.lightTheme.colorScheme.onSurface
+                  : Theme.of(context).colorScheme.onSurface
                       .withValues(alpha: 0.7),
               size: 4.w,
             ),
             SizedBox(width: 2.w),
             Text(
               title,
-              style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
                 color: isSelected
                     ? Colors.white
-                    : AppTheme.lightTheme.colorScheme.onSurface
+                    : Theme.of(context).colorScheme.onSurface
                         .withValues(alpha: 0.7),
                 fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
               ),

@@ -48,7 +48,7 @@ class _UserProfileState extends State<UserProfile> {
   late String _selectedCurrency ;
   String _selectedUnits = 'Imperial';
 
-  String _currentLanguage = 'en';
+  late String _currentLanguage ;
 
   @override
   void initState() {
@@ -89,7 +89,7 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   Future<void> _loadCurrentLanguage() async {
-    final language = await context.read<LanguageProvider>().currentLanguage;
+    final language = context.read<LanguageProvider>().currentLanguage;
     setState(() {
       _currentLanguage = language;
     });
@@ -112,18 +112,18 @@ class _UserProfileState extends State<UserProfile> {
 
     if (_isLoading) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(
-                color: AppTheme.lightTheme.colorScheme.primary,
+                color: Theme.of(context).colorScheme.primary,
               ),
               SizedBox(height: 2.h),
               Text(
                 'Loading your profile...',
-                style: AppTheme.lightTheme.textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
           ),
@@ -133,14 +133,14 @@ class _UserProfileState extends State<UserProfile> {
 
     if (_errorMessage.isNotEmpty) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomIconWidget(
                 iconName: 'error_outline',
-                color: AppTheme.lightTheme.colorScheme.error,
+                color: Theme.of(context).colorScheme.error,
                 size: 48,
               ),
               SizedBox(height: 2.h),
@@ -148,7 +148,7 @@ class _UserProfileState extends State<UserProfile> {
                 padding: EdgeInsets.symmetric(horizontal: 8.w),
                 child: Text(
                   _errorMessage,
-                  style: AppTheme.lightTheme.textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -164,7 +164,7 @@ class _UserProfileState extends State<UserProfile> {
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -190,18 +190,19 @@ class _UserProfileState extends State<UserProfile> {
 
   Widget _buildAppBar(AppLocalizations l10n) {
     return SliverAppBar(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: Text('Profile',
-          style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w700,
-            color: AppTheme.lightTheme.colorScheme.onSurface,
-          )),
-      
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+      centerTitle: false,
       actions: [
         IconButton(
           icon: CustomIconWidget(
             iconName: 'edit',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 24,
           ),
           onPressed: _showEditProfileDialog,
@@ -238,12 +239,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Quit date, daily cigarettes, pack cost',
                     icon: CustomIconWidget(
                       iconName: 'edit',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: _showQuitDetailsDialog,
@@ -253,12 +254,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Start your journey over',
                     icon: CustomIconWidget(
                       iconName: 'refresh',
-                      color: AppTheme.lightTheme.colorScheme.error,
+                      color: Theme.of(context).colorScheme.error,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: _showResetConfirmation,
@@ -276,7 +277,7 @@ class _UserProfileState extends State<UserProfile> {
                         : 'Disabled',
                     icon: CustomIconWidget(
                       iconName: 'notifications',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: Switch(
@@ -301,7 +302,7 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Celebrate your achievements',
                     icon: CustomIconWidget(
                       iconName: 'emoji_events',
-                      color: AppTheme.lightTheme.colorScheme.tertiary,
+                      color: Theme.of(context).colorScheme.tertiary,
                       size: 24,
                     ),
                     trailing: Switch(
@@ -318,7 +319,7 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Get tips when you need them',
                     icon: CustomIconWidget(
                       iconName: 'psychology',
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 24,
                     ),
                     trailing: Switch(
@@ -337,7 +338,7 @@ class _UserProfileState extends State<UserProfile> {
                         : 'Disabled',
                     icon: CustomIconWidget(
                       iconName: 'bedtime',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: Switch(
@@ -368,12 +369,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Download your progress history',
                     icon: CustomIconWidget(
                       iconName: 'download',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: _showDataExportDialog,
@@ -383,12 +384,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'How we protect your data',
                     icon: CustomIconWidget(
                       iconName: 'privacy_tip',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'open_in_new',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () {
@@ -400,12 +401,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Permanently remove your data',
                     icon: CustomIconWidget(
                       iconName: 'delete_forever',
-                      color: AppTheme.lightTheme.colorScheme.error,
+                      color: Theme.of(context).colorScheme.error,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: _showDeleteAccountConfirmation,
@@ -421,12 +422,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: _selectedTheme,
                     icon: CustomIconWidget(
                       iconName: 'palette',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () => _showSelectionDialog(
@@ -446,12 +447,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: _selectedCurrency,
                     icon: CustomIconWidget(
                       iconName: 'attach_money',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () => _showSelectionDialog(
@@ -486,12 +487,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: _selectedUnits,
                     icon: CustomIconWidget(
                       iconName: 'straighten',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'chevron_right',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () => _showSelectionDialog(
@@ -520,7 +521,7 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Share achievements and compare progress',
                     icon: CustomIconWidget(
                       iconName: 'share',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: Switch(
@@ -543,12 +544,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'FAQs and user guides',
                     icon: CustomIconWidget(
                       iconName: 'help',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'open_in_new',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () {
@@ -560,12 +561,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Get help from our team',
                     icon: CustomIconWidget(
                       iconName: 'support_agent',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'open_in_new',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () {
@@ -577,12 +578,12 @@ class _UserProfileState extends State<UserProfile> {
                     subtitle: 'Share your experience',
                     icon: CustomIconWidget(
                       iconName: 'star',
-                      color: AppTheme.lightTheme.colorScheme.tertiary,
+                      color: Theme.of(context).colorScheme.tertiary,
                       size: 24,
                     ),
                     trailing: CustomIconWidget(
                       iconName: 'open_in_new',
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                       size: 20,
                     ),
                     onTap: () {
@@ -640,7 +641,7 @@ class _UserProfileState extends State<UserProfile> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Quit details updated successfully!'),
-                    backgroundColor: AppTheme.lightTheme.colorScheme.primary,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
                   ),
                 );
               }
@@ -650,7 +651,7 @@ class _UserProfileState extends State<UserProfile> {
                   SnackBar(
                     content: Text(
                         'Failed to update quit details. Please try again.'),
-                    backgroundColor: AppTheme.lightTheme.colorScheme.error,
+                    backgroundColor: Theme.of(context).colorScheme.error,
                   ),
                 );
               }
@@ -692,7 +693,7 @@ class _UserProfileState extends State<UserProfile> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Quit details updated successfully'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       } else {
@@ -702,7 +703,7 @@ class _UserProfileState extends State<UserProfile> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to update quit details: $e'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }
@@ -739,7 +740,7 @@ class _UserProfileState extends State<UserProfile> {
       builder: (context) => AlertDialog(
         title: Text(
           'Select $title',
-          style: AppTheme.lightTheme.textTheme.titleLarge,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -775,7 +776,7 @@ class _UserProfileState extends State<UserProfile> {
           children: [
             CustomIconWidget(
               iconName: 'warning',
-              color: AppTheme.lightTheme.colorScheme.error,
+              color: Theme.of(context).colorScheme.error,
               size: 24,
             ),
             SizedBox(width: 3.w),
@@ -784,7 +785,7 @@ class _UserProfileState extends State<UserProfile> {
         ),
         content: Text(
           'Are you sure you want to reset your quit progress? This action cannot be undone and will clear all your achievements and statistics.',
-          style: AppTheme.lightTheme.textTheme.bodyMedium,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
         actions: [
           TextButton(
@@ -797,7 +798,7 @@ class _UserProfileState extends State<UserProfile> {
               _resetProgress();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppTheme.lightTheme.colorScheme.error,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
             child: Text('Reset'),
           ),
@@ -814,7 +815,7 @@ class _UserProfileState extends State<UserProfile> {
           children: [
             CustomIconWidget(
               iconName: 'delete_forever',
-              color: AppTheme.lightTheme.colorScheme.error,
+              color: Theme.of(context).colorScheme.error,
               size: 24,
             ),
             SizedBox(width: 3.w),
@@ -827,20 +828,20 @@ class _UserProfileState extends State<UserProfile> {
           children: [
             Text(
               'This will permanently delete your account and all associated data including:',
-              style: AppTheme.lightTheme.textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             SizedBox(height: 2.h),
             Text(
               '• Quit progress and statistics\n• Achievement history\n• Personal preferences\n• All saved data',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
             SizedBox(height: 2.h),
             Text(
               'This action cannot be undone.',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.error,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.error,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -857,7 +858,7 @@ class _UserProfileState extends State<UserProfile> {
               _deleteAccount();
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: AppTheme.lightTheme.colorScheme.error,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
             child: Text('Delete Account'),
           ),
@@ -891,7 +892,7 @@ class _UserProfileState extends State<UserProfile> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Progress reset successfully. You can do this!'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -899,7 +900,7 @@ class _UserProfileState extends State<UserProfile> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to reset progress: $e'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }
@@ -914,7 +915,7 @@ class _UserProfileState extends State<UserProfile> {
         SnackBar(
           content: Text(
               'Account deletion initiated. You will be logged out shortly.'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
 
@@ -929,7 +930,7 @@ class _UserProfileState extends State<UserProfile> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to delete account: $e'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }
@@ -1041,13 +1042,13 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                 children: [
                   CustomIconWidget(
                     iconName: 'person',
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                     size: 24,
                   ),
                   SizedBox(width: 3.w),
                   Text(
                     'Edit Profile',
-                    style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -1059,7 +1060,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                 children: [
                   Text(
                     'Name',
-                    style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -1073,7 +1074,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                         child: CustomIconWidget(
                           iconName: 'person_outline',
                           color:
-                              AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                              Theme.of(context).colorScheme.onSurfaceVariant,
                           size: 20,
                         ),
                       ),
@@ -1133,14 +1134,14 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Profile updated successfully'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+          backgroundColor: Theme.of(context).colorScheme.secondary,
         ),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Failed to update profile: $e'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }
@@ -1155,10 +1156,10 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
       margin: EdgeInsets.symmetric(horizontal: 4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: AppTheme.lightTheme.colorScheme.outline,
+          color: Theme.of(context).colorScheme.outline,
           width: 1,
         ),
       ),
@@ -1167,7 +1168,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
         children: [
           Text(
             'Your Quit Journey Overview',
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -1184,7 +1185,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
               Container(
                 width: 1,
                 height: 4.h,
-                color: AppTheme.lightTheme.colorScheme.outline,
+                color: Theme.of(context).colorScheme.outline,
                 margin: EdgeInsets.symmetric(horizontal: 4.w),
               ),
               Expanded(
@@ -1209,7 +1210,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
               Container(
                 width: 1,
                 height: 4.h,
-                color: AppTheme.lightTheme.colorScheme.outline,
+                color: Theme.of(context).colorScheme.outline,
                 margin: EdgeInsets.symmetric(horizontal: 4.w),
               ),
               Expanded(
@@ -1229,7 +1230,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
               onPressed: _showQuitDetailsDialog,
               icon: CustomIconWidget(
                 iconName: 'edit',
-                color: AppTheme.lightTheme.colorScheme.primary,
+                color: Theme.of(context).colorScheme.primary,
                 size: 20,
               ),
               label: Text('Edit Quit Details'),
@@ -1256,16 +1257,16 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
       children: [
         Text(
           label,
-          style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
-            color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
           ),
         ),
         SizedBox(height: 1.h),
         Text(
           value,
-          style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w600,
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
       ],

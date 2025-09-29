@@ -21,11 +21,11 @@ class ComparisonSectionWidget extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -38,7 +38,7 @@ class ComparisonSectionWidget extends StatelessWidget {
           children: [
             Text(
               'Progress Comparison',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -49,6 +49,7 @@ class ComparisonSectionWidget extends StatelessWidget {
               averageStats['daysQuit'] as int,
               personalGoals['daysGoal'] as int,
               'calendar_today',
+              context
             ),
             SizedBox(height: 1.5.h),
             _buildComparisonItem(
@@ -57,6 +58,7 @@ class ComparisonSectionWidget extends StatelessWidget {
               averageStats['moneySaved'] as int,
               personalGoals['moneyGoal'] as int,
               'attach_money',
+              context
             ),
             SizedBox(height: 1.5.h),
             _buildComparisonItem(
@@ -65,9 +67,10 @@ class ComparisonSectionWidget extends StatelessWidget {
               averageStats['cigarettesAvoided'] as int,
               personalGoals['cigarettesGoal'] as int,
               'smoke_free',
+              context
             ),
             SizedBox(height: 2.h),
-            _buildEncouragingMessage(),
+            _buildEncouragingMessage(context),
           ],
         ),
       ),
@@ -80,6 +83,7 @@ class ComparisonSectionWidget extends StatelessWidget {
     int averageValue,
     int goalValue,
     String iconName,
+    BuildContext context
   ) {
     final isAboveAverage = userValue > averageValue;
     final goalProgress =
@@ -92,14 +96,14 @@ class ComparisonSectionWidget extends StatelessWidget {
           children: [
             CustomIconWidget(
               iconName: iconName,
-              color: AppTheme.lightTheme.colorScheme.primary,
+              color: Theme.of(context).colorScheme.primary,
               size: 20,
             ),
             SizedBox(width: 2.w),
             Expanded(
               child: Text(
                 title,
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -115,15 +119,15 @@ class ComparisonSectionWidget extends StatelessWidget {
               children: [
                 Text(
                   'You: $userValue',
-                  style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
                   'Average: $averageValue',
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface
                         .withValues(alpha: 0.7),
                   ),
                 ),
@@ -133,9 +137,9 @@ class ComparisonSectionWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.5.h),
               decoration: BoxDecoration(
                 color: isAboveAverage
-                    ? AppTheme.lightTheme.colorScheme.secondary
+                    ? Theme.of(context).colorScheme.secondary
                         .withValues(alpha: 0.1)
-                    : AppTheme.lightTheme.colorScheme.tertiary
+                    : Theme.of(context).colorScheme.tertiary
                         .withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -145,17 +149,17 @@ class ComparisonSectionWidget extends StatelessWidget {
                   CustomIconWidget(
                     iconName: isAboveAverage ? 'trending_up' : 'trending_down',
                     color: isAboveAverage
-                        ? AppTheme.lightTheme.colorScheme.secondary
-                        : AppTheme.lightTheme.colorScheme.tertiary,
+                        ? Theme.of(context).colorScheme.secondary
+                        : Theme.of(context).colorScheme.tertiary,
                     size: 16,
                   ),
                   SizedBox(width: 1.w),
                   Text(
                     isAboveAverage ? 'Above Avg' : 'Below Avg',
-                    style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       color: isAboveAverage
-                          ? AppTheme.lightTheme.colorScheme.secondary
-                          : AppTheme.lightTheme.colorScheme.tertiary,
+                          ? Theme.of(context).colorScheme.secondary
+                          : Theme.of(context).colorScheme.tertiary,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -173,15 +177,15 @@ class ComparisonSectionWidget extends StatelessWidget {
               children: [
                 Text(
                   'Goal Progress',
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface
                         .withValues(alpha: 0.7),
                   ),
                 ),
                 Text(
                   '${(goalProgress * 100).toInt()}%',
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -190,10 +194,10 @@ class ComparisonSectionWidget extends StatelessWidget {
             SizedBox(height: 0.5.h),
             LinearProgressIndicator(
               value: goalProgress,
-              backgroundColor: AppTheme.lightTheme.colorScheme.outline
+              backgroundColor: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.2),
               valueColor: AlwaysStoppedAnimation<Color>(
-                AppTheme.lightTheme.colorScheme.primary,
+                Theme.of(context).colorScheme.primary,
               ),
               minHeight: 6,
             ),
@@ -203,7 +207,7 @@ class ComparisonSectionWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildEncouragingMessage() {
+  Widget _buildEncouragingMessage(BuildContext context) {
     final totalUserScore = (userStats['daysQuit'] as int) +
         ((userStats['moneySaved'] as int) / 10).round() +
         ((userStats['cigarettesAvoided'] as int) / 5).round();
@@ -220,17 +224,17 @@ class ComparisonSectionWidget extends StatelessWidget {
       message =
           "Outstanding progress! You're excelling beyond expectations. Keep up the amazing work!";
       iconName = 'star';
-      messageColor = AppTheme.lightTheme.colorScheme.secondary;
+      messageColor = Theme.of(context).colorScheme.secondary;
     } else if (totalUserScore > totalAverageScore) {
       message =
           "Great job! You're performing above average. Your dedication is paying off!";
       iconName = 'thumb_up';
-      messageColor = AppTheme.lightTheme.colorScheme.primary;
+      messageColor = Theme.of(context).colorScheme.primary;
     } else {
       message =
           "You're making progress! Every step counts. Stay focused on your goals!";
       iconName = 'favorite';
-      messageColor = AppTheme.lightTheme.colorScheme.tertiary;
+      messageColor = Theme.of(context).colorScheme.tertiary;
     }
 
     return Container(
@@ -255,7 +259,7 @@ class ComparisonSectionWidget extends StatelessWidget {
           Expanded(
             child: Text(
               message,
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: messageColor,
                 fontWeight: FontWeight.w500,
               ),

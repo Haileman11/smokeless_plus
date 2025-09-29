@@ -238,14 +238,14 @@ class _HealthMilestonesState extends State<HealthMilestones> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Health Milestones'),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: CustomIconWidget(
             iconName: 'arrow_back',
-            color: AppTheme.lightTheme.colorScheme.onSurface,
+            color: Theme.of(context).colorScheme.onSurface,
             size: 6.w,
           ),
         ),
@@ -254,7 +254,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
             onPressed: _refreshMilestones,
             icon: CustomIconWidget(
               iconName: 'refresh',
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 6.w,
             ),
           ),
@@ -262,7 +262,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
       ),
       body: RefreshIndicator(
         onRefresh: _refreshMilestones,
-        color: AppTheme.lightTheme.colorScheme.primary,
+        color: Theme.of(context).colorScheme.primary,
         child: CustomScrollView(
           slivers: [
             // Progress header
@@ -281,13 +281,13 @@ class _HealthMilestonesState extends State<HealthMilestones> {
                   children: [
                     CustomIconWidget(
                       iconName: 'timeline',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 6.w,
                     ),
                     SizedBox(width: 3.w),
                     Text(
                       'Recovery Timeline',
-                      style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -302,7 +302,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
                   height: 20.h,
                   child: Center(
                     child: CircularProgressIndicator(
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -332,7 +332,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
                             margin: EdgeInsets.only(left: 8.w),
                             width: 2,
                             height: 3.h,
-                            color: AppTheme.lightTheme.colorScheme.outline
+                            color: Theme.of(context).colorScheme.outline
                                 .withValues(alpha: 0.3),
                           ),
                       ],
@@ -356,7 +356,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
           size: 5.w,
         ),
         label: Text('Share Progress'),
-        backgroundColor: AppTheme.lightTheme.colorScheme.tertiary,
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
       ),
     );
   }
@@ -379,7 +379,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Milestones updated successfully!'),
-        backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }
@@ -410,7 +410,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
           children: [
             Text(
               'Share Achievement',
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -418,7 +418,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
             ListTile(
               leading: CustomIconWidget(
                 iconName: 'share',
-                color: AppTheme.lightTheme.colorScheme.primary,
+                color: Theme.of(context).colorScheme.primary,
                 size: 6.w,
               ),
               title: Text('Share to Social Media'),
@@ -430,7 +430,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
             ListTile(
               leading: CustomIconWidget(
                 iconName: 'note_add',
-                color: AppTheme.lightTheme.colorScheme.secondary,
+                color: Theme.of(context).colorScheme.secondary,
                 size: 6.w,
               ),
               title: Text('Add Personal Note'),
@@ -456,7 +456,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Progress shared successfully!'),
-        backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         action: SnackBarAction(
           label: 'View',
           textColor: Colors.white,
@@ -476,7 +476,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Milestone shared successfully!'),
-        backgroundColor: AppTheme.lightTheme.colorScheme.tertiary,
+        backgroundColor: Theme.of(context).colorScheme.tertiary,
       ),
     );
   }
@@ -491,7 +491,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
           children: [
             Text(
               'Add a personal note about achieving: ${milestone['title']}',
-              style: AppTheme.lightTheme.textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.bodyMedium,
             ),
             SizedBox(height: 2.h),
             TextField(
@@ -514,7 +514,7 @@ class _HealthMilestonesState extends State<HealthMilestones> {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text('Personal note saved!'),
-                  backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               );
             },

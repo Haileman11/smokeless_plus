@@ -39,20 +39,20 @@ class ProgressCategoryTabs extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? AppTheme.lightTheme.primaryColor
-                    : AppTheme.lightTheme.colorScheme.surface,
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: isSelected
-                      ? AppTheme.lightTheme.primaryColor
-                      : AppTheme.lightTheme.colorScheme.outline
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.outline
                           .withValues(alpha: 0.3),
                   width: 1,
                 ),
                 boxShadow: isSelected
                     ? [
                         BoxShadow(
-                          color: AppTheme.lightTheme.primaryColor
+                          color: Theme.of(context).colorScheme.primary
                               .withValues(alpha: 0.3),
                           blurRadius: 8,
                           offset: Offset(0, 2),
@@ -66,17 +66,17 @@ class ProgressCategoryTabs extends StatelessWidget {
                   CustomIconWidget(
                     iconName: category['icon'] as String,
                     color: isSelected
-                        ? AppTheme.lightTheme.colorScheme.onPrimary
-                        : AppTheme.lightTheme.colorScheme.onSurface,
+                        ? Theme.of(context).colorScheme.onPrimary
+                        : Theme.of(context).colorScheme.onSurface,
                     size: 20,
                   ),
                   SizedBox(width: 2.w),
                   Text(
                     category['name'] as String,
-                    style: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: isSelected
-                          ? AppTheme.lightTheme.colorScheme.onPrimary
-                          : AppTheme.lightTheme.colorScheme.onSurface,
+                          ? Theme.of(context).colorScheme.onPrimary
+                          : Theme.of(context).colorScheme.onSurface,
                       fontWeight:
                           isSelected ? FontWeight.w600 : FontWeight.w400,
                     ),

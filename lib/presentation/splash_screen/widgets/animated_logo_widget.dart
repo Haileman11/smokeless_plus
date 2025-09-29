@@ -62,11 +62,11 @@ class _AnimatedLogoWidgetState extends State<AnimatedLogoWidget>
               width: 25.w,
               height: 25.w,
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.surface,
+                color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(20.0),
                 boxShadow: [
                   BoxShadow(
-                    color: AppTheme.lightTheme.colorScheme.primary
+                    color: Theme.of(context).colorScheme.primary
                         .withValues(alpha: 0.3),
                     blurRadius: 20.0,
                     spreadRadius: 5.0,
@@ -78,22 +78,22 @@ class _AnimatedLogoWidgetState extends State<AnimatedLogoWidget>
                 children: [
                   CustomIconWidget(
                     iconName: 'smoke_free',
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                     size: 8.w,
                   ),
                   SizedBox(height: 1.h),
                   Text(
                     'QuitSmoking',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w700,
                       fontSize: 14.sp,
                     ),
                   ),
                   Text(
                     'Tracker',
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
                       fontWeight: FontWeight.w500,
                       fontSize: 10.sp,
                     ),

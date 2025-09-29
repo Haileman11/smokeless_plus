@@ -67,11 +67,11 @@ class CravingFrequencyChart extends StatelessWidget {
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -84,13 +84,13 @@ class CravingFrequencyChart extends StatelessWidget {
             children: [
               CustomIconWidget(
                 iconName: 'trending_down',
-                color: AppTheme.lightTheme.colorScheme.error,
+                color: Theme.of(context).colorScheme.error,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Craving Frequency',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -106,7 +106,7 @@ class CravingFrequencyChart extends StatelessWidget {
                   horizontalInterval: 2,
                   getDrawingHorizontalLine: (value) {
                     return FlLine(
-                      color: AppTheme.lightTheme.colorScheme.outline
+                      color: Theme.of(context).colorScheme.outline
                           .withValues(alpha: 0.1),
                       strokeWidth: 1,
                     );
@@ -157,7 +157,7 @@ class CravingFrequencyChart extends StatelessWidget {
                         }
                         return Text(
                           text,
-                          style: AppTheme.lightTheme.textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodySmall,
                         );
                       },
                     ),
@@ -169,7 +169,7 @@ class CravingFrequencyChart extends StatelessWidget {
                       getTitlesWidget: (value, meta) {
                         return Text(
                           '${value.toInt()}',
-                          style: AppTheme.lightTheme.textTheme.bodySmall,
+                          style: Theme.of(context).textTheme.bodySmall,
                         );
                       },
                     ),
@@ -192,8 +192,8 @@ class CravingFrequencyChart extends StatelessWidget {
                     isCurved: true,
                     gradient: LinearGradient(
                       colors: [
-                        AppTheme.lightTheme.colorScheme.error,
-                        AppTheme.lightTheme.colorScheme.error
+                        Theme.of(context).colorScheme.error,
+                        Theme.of(context).colorScheme.error
                             .withValues(alpha: 0.6),
                       ],
                     ),
@@ -204,9 +204,9 @@ class CravingFrequencyChart extends StatelessWidget {
                       getDotPainter: (spot, percent, barData, index) {
                         return FlDotCirclePainter(
                           radius: 4,
-                          color: AppTheme.lightTheme.colorScheme.error,
+                          color: Theme.of(context).colorScheme.error,
                           strokeWidth: 2,
-                          strokeColor: AppTheme.lightTheme.colorScheme.surface,
+                          strokeColor: Theme.of(context).colorScheme.surface,
                         );
                       },
                     ),
@@ -214,9 +214,9 @@ class CravingFrequencyChart extends StatelessWidget {
                       show: true,
                       gradient: LinearGradient(
                         colors: [
-                          AppTheme.lightTheme.colorScheme.error
+                          Theme.of(context).colorScheme.error
                               .withValues(alpha: 0.2),
-                          AppTheme.lightTheme.colorScheme.error
+                          Theme.of(context).colorScheme.error
                               .withValues(alpha: 0.05),
                         ],
                         begin: Alignment.topCenter,
@@ -232,8 +232,8 @@ class CravingFrequencyChart extends StatelessWidget {
                       return touchedBarSpots.map((barSpot) {
                         return LineTooltipItem(
                           '${barSpot.y.toInt()} cravings',
-                          AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onPrimary,
+                          Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Theme.of(context).colorScheme.onPrimary,
                             fontWeight: FontWeight.w600,
                           ),
                         );

@@ -61,86 +61,88 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
       child: Container(
         constraints: BoxConstraints(maxHeight: 85.h),
         padding: EdgeInsets.all(6.w),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                CustomIconWidget(
-                  iconName: 'edit',
-                  color: AppTheme.lightTheme.colorScheme.primary,
-                  size: 24,
-                ),
-                SizedBox(width: 3.w),
-                Text(
-                  'Edit Quit Details',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.w600,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  CustomIconWidget(
+                    iconName: 'edit',
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 24,
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 1.h),
-            Text(
-              'Update your quit information. Changes will sync across all app features.',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                  SizedBox(width: 3.w),
+                  Text(
+                    'Edit Quit Details',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 3.h),
-            _buildDateSelector(),
-            SizedBox(height: 3.h),
-            _buildNumberInput(
-              'Years of Smoking',
-              _yearsSmokingController,
-              'years smoked before quitting',
-              const TextInputType.numberWithOptions(decimal: true),
-            ),
-            SizedBox(height: 3.h),
-            _buildNumberInput(
-              'Daily Cigarettes',
-              _cigarettesController,
-              'cigarettes per day',
-              TextInputType.number,
-            ),
-            SizedBox(height: 3.h),
-            _buildNumberInput(
-              'Pack Cost',
-              _packCostController,
-              '\$ per pack',
-              const TextInputType.numberWithOptions(decimal: true),
-            ),
-            SizedBox(height: 2.h),
-            _buildCalculationPreview(),
-            SizedBox(height: 3.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  onPressed:
-                      _isSaving ? null : () => Navigator.of(context).pop(),
-                  child: Text('Cancel'),
+              SizedBox(height: 1.h),
+              Text(
+                'Update your quit information. Changes will sync across all app features.',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
-                SizedBox(width: 3.w),
-                ElevatedButton(
-                  onPressed: _isSaving ? null : _saveChanges,
-                  child: _isSaving
-                      ? SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              AppTheme.lightTheme.colorScheme.onPrimary,
+              ),
+              SizedBox(height: 3.h),
+              _buildDateSelector(),
+              SizedBox(height: 3.h),
+              _buildNumberInput(
+                'Years of Smoking',
+                _yearsSmokingController,
+                'years smoked before quitting',
+                const TextInputType.numberWithOptions(decimal: true),
+              ),
+              SizedBox(height: 3.h),
+              _buildNumberInput(
+                'Daily Cigarettes',
+                _cigarettesController,
+                'cigarettes per day',
+                TextInputType.number,
+              ),
+              SizedBox(height: 3.h),
+              _buildNumberInput(
+                'Pack Cost',
+                _packCostController,
+                '\$ per pack',
+                const TextInputType.numberWithOptions(decimal: true),
+              ),
+              SizedBox(height: 2.h),
+              _buildCalculationPreview(),
+              SizedBox(height: 3.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                    onPressed:
+                        _isSaving ? null : () => Navigator.of(context).pop(),
+                    child: Text('Cancel'),
+                  ),
+                  SizedBox(width: 3.w),
+                  ElevatedButton(
+                    onPressed: _isSaving ? null : _saveChanges,
+                    child: _isSaving
+                        ? SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                Theme.of(context).colorScheme.onPrimary,
+                              ),
                             ),
-                          ),
-                        )
-                      : Text('Save Changes'),
-                ),
-              ],
-            ),
-          ],
+                          )
+                        : Text('Save Changes'),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -159,10 +161,10 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
       return Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.primaryContainer.withAlpha(77),
+          color: Theme.of(context).colorScheme.primaryContainer.withAlpha(77),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: AppTheme.lightTheme.colorScheme.primary.withAlpha(77),
+            color: Theme.of(context).colorScheme.primary.withAlpha(77),
           ),
         ),
         child: Column(
@@ -172,15 +174,15 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
               children: [
                 CustomIconWidget(
                   iconName: 'calculate',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 20,
                 ),
                 SizedBox(width: 2.w),
                 Text(
                   'Smoking Period Impact',
-                  style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ],
@@ -188,20 +190,20 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
             SizedBox(height: 1.h),
             Text(
               '• Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
             Text(
               '• Total money spent: \$$totalSpent',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
             Text(
               '• Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
             ),
           ],
@@ -218,7 +220,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
       children: [
         Text(
           'Quit Date',
-          style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -230,7 +232,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
             padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
             decoration: BoxDecoration(
               border: Border.all(
-                color: AppTheme.lightTheme.colorScheme.outline,
+                color: Theme.of(context).colorScheme.outline,
               ),
               borderRadius: BorderRadius.circular(12),
             ),
@@ -238,13 +240,13 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
               children: [
                 CustomIconWidget(
                   iconName: 'calendar_today',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 20,
                 ),
                 SizedBox(width: 3.w),
                 Text(
                   '${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
-                  style: AppTheme.lightTheme.textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -265,7 +267,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
       children: [
         Text(
           label,
-          style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -287,7 +289,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
                     : label == 'Pack Cost'
                         ? 'attach_money'
                         : 'schedule',
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
                 size: 20,
               ),
             ),
@@ -307,7 +309,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
         return Theme(
           data: Theme.of(
             context,
-          ).copyWith(colorScheme: AppTheme.lightTheme.colorScheme),
+          ).copyWith(colorScheme: Theme.of(context).colorScheme),
           child: child!,
         );
       },
@@ -343,7 +345,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('Failed to save changes: $e'),
-              backgroundColor: AppTheme.lightTheme.colorScheme.error,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
           );
         }
@@ -352,7 +354,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Please enter valid values for all fields'),
-          backgroundColor: AppTheme.lightTheme.colorScheme.error,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }

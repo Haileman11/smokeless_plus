@@ -45,10 +45,10 @@ class OnboardingStepWidget extends StatelessWidget {
                       height: 30.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: AppTheme.lightTheme.colorScheme.surface,
+                        color: Theme.of(context).colorScheme.surface,
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.lightTheme.shadowColor,
+                            color: Theme.of(context).shadowColor,
                             blurRadius: 8,
                             offset: const Offset(0, 4),
                           ),
@@ -68,10 +68,10 @@ class OnboardingStepWidget extends StatelessWidget {
                     // Title
                     Text(
                       title,
-                      style: AppTheme.lightTheme.textTheme.headlineMedium
+                      style: Theme.of(context).textTheme.headlineMedium
                           ?.copyWith(
                         fontWeight: FontWeight.w700,
-                        color: AppTheme.lightTheme.colorScheme.onSurface,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -79,8 +79,8 @@ class OnboardingStepWidget extends StatelessWidget {
                     // Description
                     Text(
                       description,
-                      style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                         height: 1.5,
                       ),
                       textAlign: TextAlign.center,
@@ -106,8 +106,8 @@ class OnboardingStepWidget extends StatelessWidget {
                     onPressed: onNext,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: isLastStep
-                          ? AppTheme.lightTheme.colorScheme.secondary
-                          : AppTheme.lightTheme.colorScheme.primary,
+                          ? Theme.of(context).colorScheme.secondary
+                          : Theme.of(context).colorScheme.primary,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -117,8 +117,8 @@ class OnboardingStepWidget extends StatelessWidget {
                     child: Text(
                       buttonText,
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
-                        color: onNext!=null ? Colors.white : AppTheme.lightTheme.colorScheme.onSurface.withAlpha(100),
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: onNext!=null ? Colors.white : Theme.of(context).colorScheme.onSurface.withAlpha(100),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -130,8 +130,8 @@ class OnboardingStepWidget extends StatelessWidget {
                 //     onPressed: onSkip,
                 //     child: Text(
                 //       'Skip',
-                //       style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                //         color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                //       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                //         color: Theme.of(context).colorScheme.onSurfaceVariant,
                 //       ),
                 //     ),
                 //   ),

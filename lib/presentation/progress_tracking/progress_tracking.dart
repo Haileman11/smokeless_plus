@@ -143,12 +143,12 @@ All data synchronized across the entire app!
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Synchronized progress report exported successfully'),
-        backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         action: SnackBarAction(
           label: 'View',
-          textColor: AppTheme.lightTheme.colorScheme.onSecondary,
+          textColor: Theme.of(context).colorScheme.onSecondary,
           onPressed: () {
             // In a real app, this would open the exported file
             showDialog(
@@ -158,7 +158,7 @@ All data synchronized across the entire app!
                 content: SingleChildScrollView(
                   child: Text(
                     reportData,
-                    style: AppTheme.lightTheme.textTheme.bodySmall,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ),
                 actions: [
@@ -182,7 +182,7 @@ All data synchronized across the entire app!
       builder: (context) => Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
@@ -194,7 +194,7 @@ All data synchronized across the entire app!
                 width: 10.w,
                 height: 0.5.h,
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.outline.withValues(
+                  color: Theme.of(context).colorScheme.outline.withValues(
                     alpha: 0.3,
                   ),
                   borderRadius: BorderRadius.circular(2),
@@ -204,7 +204,7 @@ All data synchronized across the entire app!
             SizedBox(height: 2.h),
             Text(
               'Filter Options',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -230,16 +230,16 @@ All data synchronized across the entire app!
 
   Widget _buildFilterOption(String title, bool isSelected) {
     return ListTile(
-      title: Text(title, style: AppTheme.lightTheme.textTheme.bodyMedium),
+      title: Text(title, style: Theme.of(context).textTheme.bodyMedium),
       trailing: isSelected
           ? CustomIconWidget(
               iconName: 'check_circle',
-              color: AppTheme.lightTheme.colorScheme.secondary,
+              color: Theme.of(context).colorScheme.secondary,
               size: 24,
             )
           : CustomIconWidget(
               iconName: 'radio_button_unchecked',
-              color: AppTheme.lightTheme.colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline,
               size: 24,
             ),
       onTap: () {
@@ -257,20 +257,20 @@ All data synchronized across the entire app!
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppTheme.lightTheme.primaryColor,
-            AppTheme.lightTheme.primaryColor.withValues(alpha: 0.8),
+            Theme.of(context).primaryColor.withValues(alpha: 0.1),
+            Theme.of(context).primaryColor.withValues(alpha: 0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.3),
-            blurRadius: 12,
-            offset: Offset(0, 4),
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Theme.of(context).primaryColor.withValues(alpha: 0.3),
+        //     blurRadius: 12,
+        //     offset: Offset(0, 4),
+        //   ),
+        // ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -281,9 +281,8 @@ All data synchronized across the entire app!
               Expanded(
                 child: Text(
                   'Your Synchronized Progress',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onPrimary,
-                    fontWeight: FontWeight.w700,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.w600,
                   ),
                   maxLines: 2,
                   
@@ -292,7 +291,7 @@ All data synchronized across the entire app!
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.onPrimary.withValues(
+                  color: Theme.of(context).colorScheme.primary.withValues(
                     alpha: 0.2,
                   ),
                   borderRadius: BorderRadius.circular(12),
@@ -302,15 +301,13 @@ All data synchronized across the entire app!
                   children: [
                     CustomIconWidget(
                       iconName: 'sync',
-                      color: AppTheme.lightTheme.colorScheme.onPrimary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 16,
                     ),
                     SizedBox(width: 1.w),
                     Text(
                       'Live sync: ${_formatLastSync()}',
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onPrimary,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall                      
                     ),
                   ],
                 ),
@@ -321,10 +318,7 @@ All data synchronized across the entire app!
           if (_progressData["quitDate"] != null) ...[
             Text(
               'Quit Date: ${DateTime.parse(_progressData["quitDate"]).toString().split(' ')[0]}',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onPrimary
-                    .withValues(alpha: 0.8),
-              ),
+              style: Theme.of(context).textTheme.bodySmall
             ),
             SizedBox(height: 2.h),
           ],
@@ -376,7 +370,7 @@ All data synchronized across the entire app!
     return Container(
       padding: EdgeInsets.all(3.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.onPrimary.withValues(
+        color: Theme.of(context).colorScheme.primary.withValues(
           alpha: 0.15,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -388,14 +382,14 @@ All data synchronized across the entire app!
             children: [
               CustomIconWidget(
                 iconName: iconName,
-                color: AppTheme.lightTheme.colorScheme.onPrimary,
+                color: Theme.of(context).colorScheme.primary,
                 size: 20,
               ),
               SizedBox(width: 2.w),
               Text(
                 title,
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onPrimary.withValues(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.primary.withValues(
                     alpha: 0.8,
                   ),
                 ),
@@ -405,8 +399,8 @@ All data synchronized across the entire app!
           SizedBox(height: 1.h),
           Text(
             value,
-            style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -462,7 +456,7 @@ All data synchronized across the entire app!
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Achievement shared successfully!'),
-                    backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+                    backgroundColor: Theme.of(context).colorScheme.secondary,
                     behavior: SnackBarBehavior.floating,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -506,11 +500,11 @@ All data synchronized across the entire app!
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -523,13 +517,13 @@ All data synchronized across the entire app!
             children: [
               CustomIconWidget(
                 iconName: 'people',
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Social Impact',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -553,13 +547,13 @@ All data synchronized across the entire app!
           width: 10.w,
           height: 10.w,
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+            color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Center(
             child: CustomIconWidget(
               iconName: iconName,
-              color: AppTheme.lightTheme.primaryColor,
+              color: Theme.of(context).primaryColor,
               size: 20,
             ),
           ),
@@ -571,15 +565,15 @@ All data synchronized across the entire app!
             children: [
               Text(
                 title,
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurface.withValues(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface.withValues(
                     alpha: 0.7,
                   ),
                 ),
               ),
               Text(
                 value,
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -595,10 +589,14 @@ All data synchronized across the entire app!
     // Show loading screen while data is being fetched
     if (_isLoading) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          title: Text('Progress Tracking'),
-          backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
+          title: Text('Progress Tracking', 
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.primary, 
+            )),
+          backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
           elevation: 0,
         ),
         body: Center(
@@ -606,12 +604,12 @@ All data synchronized across the entire app!
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
               ),
               SizedBox(height: 2.h),
               Text(
                 'Synchronizing your progress data...',
-                style: AppTheme.lightTheme.textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
           ),
@@ -620,21 +618,21 @@ All data synchronized across the entire app!
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Progress Tracking',
-            style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.primary,
             )),
-        backgroundColor: AppTheme.lightTheme.appBarTheme.backgroundColor,
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         actions: [          
           IconButton(
             onPressed: _showFilterOptions,
             icon: CustomIconWidget(
               iconName: 'tune',
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
             tooltip: 'Filter Options',
@@ -643,7 +641,7 @@ All data synchronized across the entire app!
             onPressed: _exportProgress,
             icon: CustomIconWidget(
               iconName: 'share',
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
             tooltip: 'Export Synchronized Progress',
@@ -652,7 +650,7 @@ All data synchronized across the entire app!
             onPressed: _loadUserData,
             icon: CustomIconWidget(
               iconName: 'refresh',
-              color: AppTheme.lightTheme.colorScheme.onSurface,
+              color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
             tooltip: 'Refresh Data',
@@ -664,7 +662,7 @@ All data synchronized across the entire app!
         child: SafeArea(
           child: RefreshIndicator(
             onRefresh: _loadUserData,
-            color: AppTheme.lightTheme.primaryColor,
+            color: Theme.of(context).primaryColor,
             child: CustomScrollView(
               controller: _scrollController,
               slivers: [

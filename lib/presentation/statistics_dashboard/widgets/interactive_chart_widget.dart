@@ -29,11 +29,11 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
       height: 35.h,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -46,7 +46,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
           children: [
             Text(
               _getChartTitle(),
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -99,7 +99,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
           horizontalInterval: 1,
           getDrawingHorizontalLine: (value) {
             return FlLine(
-              color: AppTheme.lightTheme.colorScheme.outline
+              color: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.2),
               strokeWidth: 1,
             );
@@ -123,7 +123,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
                     
                     child: Text(
                       widget.chartData[value.toInt()]['label'] as String,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 10.sp,
                       ),
                     ),
@@ -140,7 +140,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
               getTitlesWidget: (double value, TitleMeta meta) {
                 return Text(
                   value.toInt().toString(),
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontSize: 10.sp,
                   ),
                 );
@@ -153,7 +153,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
           show: true,
           border: Border.all(
             color:
-                AppTheme.lightTheme.colorScheme.outline.withValues(alpha: 0.2),
+                Theme.of(context).colorScheme.outline.withValues(alpha: 0.2),
           ),
         ),
         minX: 0,
@@ -171,8 +171,8 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
             isCurved: true,
             gradient: LinearGradient(
               colors: [
-                AppTheme.lightTheme.colorScheme.primary,
-                AppTheme.lightTheme.colorScheme.secondary,
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.secondary,
               ],
             ),
             barWidth: 3,
@@ -182,9 +182,9 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
               getDotPainter: (spot, percent, barData, index) {
                 return FlDotCirclePainter(
                   radius: 4,
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   strokeWidth: 2,
-                  strokeColor: AppTheme.lightTheme.colorScheme.surface,
+                  strokeColor: Theme.of(context).colorScheme.surface,
                 );
               },
             ),
@@ -192,9 +192,9 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
               show: true,
               gradient: LinearGradient(
                 colors: [
-                  AppTheme.lightTheme.colorScheme.primary
+                  Theme.of(context).colorScheme.primary
                       .withValues(alpha: 0.3),
-                  AppTheme.lightTheme.colorScheme.primary
+                  Theme.of(context).colorScheme.primary
                       .withValues(alpha: 0.1),
                 ],
                 begin: Alignment.topCenter,
@@ -206,14 +206,14 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
         lineTouchData: LineTouchData(
           enabled: true,
           touchTooltipData: LineTouchTooltipData(
-            // tooltipBgColor: AppTheme.lightTheme.colorScheme.surface,
+            // tooltipBgColor: Theme.of(context).colorScheme.surface,
             getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
               return touchedBarSpots.map((barSpot) {
                 final flSpot = barSpot;
                 return LineTooltipItem(
                   '${widget.chartData[flSpot.x.toInt()]['label']}\n${flSpot.y.toInt()}',
-                  AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface,
+                  Theme.of(context).textTheme.bodySmall!.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.w600,
                   ),
                 );
@@ -233,12 +233,12 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
         barTouchData: BarTouchData(
           enabled: true,
           touchTooltipData: BarTouchTooltipData(
-            // tooltipBgColor: AppTheme.lightTheme.colorScheme.surface,
+            // tooltipBgColor: Theme.of(context).colorScheme.surface,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
               return BarTooltipItem(
                 '${widget.chartData[group.x]['label']}\n${rod.toY.toInt()}',
-                AppTheme.lightTheme.textTheme.bodySmall!.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurface,
+                Theme.of(context).textTheme.bodySmall!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontWeight: FontWeight.w600,
                 ),
               );
@@ -261,7 +261,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
                     meta: meta,
                     child: Text(
                       widget.chartData[value.toInt()]['label'] as String,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 10.sp,
                       ),
                     ),
@@ -280,7 +280,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
               getTitlesWidget: (double value, TitleMeta meta) {
                 return Text(
                   value.toInt().toString(),
-                  style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     fontSize: 10.sp,
                   ),
                 );
@@ -299,8 +299,8 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
                 toY: (entry.value['value'] as num).toDouble(),
                 gradient: LinearGradient(
                   colors: [
-                    AppTheme.lightTheme.colorScheme.secondary,
-                    AppTheme.lightTheme.colorScheme.primary,
+                    Theme.of(context).colorScheme.secondary,
+                    Theme.of(context).colorScheme.primary,
                   ],
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
@@ -317,7 +317,7 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
           horizontalInterval: 1,
           getDrawingHorizontalLine: (value) {
             return FlLine(
-              color: AppTheme.lightTheme.colorScheme.outline
+              color: Theme.of(context).colorScheme.outline
                   .withValues(alpha: 0.2),
               strokeWidth: 1,
             );
@@ -357,10 +357,10 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
             value: (entry.value['value'] as num).toDouble(),
             title: '${entry.value['value']}%',
             radius: radius,
-            titleStyle: AppTheme.lightTheme.textTheme.labelMedium?.copyWith(
+            titleStyle: Theme.of(context).textTheme.labelMedium?.copyWith(
               fontSize: fontSize,
               fontWeight: FontWeight.bold,
-              color: AppTheme.lightTheme.colorScheme.onPrimary,
+              color: Theme.of(context).colorScheme.onPrimary,
             ),
           );
         }).toList(),
@@ -370,10 +370,10 @@ class _InteractiveChartWidgetState extends State<InteractiveChartWidget> {
 
   Color _getPieChartColor(int index) {
     final colors = [
-      AppTheme.lightTheme.colorScheme.primary,
-      AppTheme.lightTheme.colorScheme.secondary,
-      AppTheme.lightTheme.colorScheme.tertiary,
-      AppTheme.lightTheme.colorScheme.primary.withValues(alpha: 0.7),
+      Theme.of(context).colorScheme.primary,
+      Theme.of(context).colorScheme.secondary,
+      Theme.of(context).colorScheme.tertiary,
+      Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
     ];
     return colors[index % colors.length];
   }

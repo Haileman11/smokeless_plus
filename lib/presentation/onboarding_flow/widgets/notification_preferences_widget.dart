@@ -39,7 +39,7 @@ class _NotificationPreferencesWidgetState
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: AppTheme.lightTheme.colorScheme,
+            colorScheme: Theme.of(context).colorScheme,
           ),
           child: child!,
         );
@@ -72,12 +72,12 @@ class _NotificationPreferencesWidgetState
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.only(bottom: 3.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: value
-              ? AppTheme.lightTheme.colorScheme.primary
-              : AppTheme.lightTheme.colorScheme.outline,
+              ? Theme.of(context).colorScheme.primary
+              : Theme.of(context).colorScheme.outline,
           width: value ? 2 : 1,
         ),
       ),
@@ -105,16 +105,16 @@ class _NotificationPreferencesWidgetState
                     Text(
                       title,
                       style:
-                          AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                          Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.lightTheme.colorScheme.onSurface,
+                        color: Theme.of(context).colorScheme.onSurface,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
                       description,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -123,7 +123,7 @@ class _NotificationPreferencesWidgetState
               Switch(
                 value: value,
                 onChanged: onChanged,
-                activeColor: AppTheme.lightTheme.colorScheme.primary,
+                activeColor: Theme.of(context).colorScheme.primary,
               ),
             ],
           ),
@@ -144,14 +144,14 @@ class _NotificationPreferencesWidgetState
           title: 'Daily Motivation',
           description: 'Receive daily encouraging messages and tips',
           iconName: 'favorite',
-          iconColor: AppTheme.lightTheme.colorScheme.secondary,
+          iconColor: Theme.of(context).colorScheme.secondary,
           value: widget.dailyMotivation,
           onChanged: widget.onDailyMotivationChanged,
           additionalContent: widget.dailyMotivation
               ? Container(
                   padding: EdgeInsets.all(3.w),
                   decoration: BoxDecoration(
-                    color: AppTheme.lightTheme.colorScheme.secondary
+                    color: Theme.of(context).colorScheme.secondary
                         .withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -159,16 +159,16 @@ class _NotificationPreferencesWidgetState
                     children: [
                       CustomIconWidget(
                         iconName: 'schedule',
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.secondary,
                         size: 5.w,
                       ),
                       SizedBox(width: 3.w),
                       Expanded(
                         child: Text(
                           'Notification Time: ${_formatTime(widget.motivationTime)}',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onSurface,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                       ),
@@ -177,8 +177,8 @@ class _NotificationPreferencesWidgetState
                         child: Text(
                           'Change',
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.primary,
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -192,7 +192,7 @@ class _NotificationPreferencesWidgetState
           title: 'Milestone Alerts',
           description: 'Get notified when you reach important milestones',
           iconName: 'emoji_events',
-          iconColor: AppTheme.lightTheme.colorScheme.tertiary,
+          iconColor: Theme.of(context).colorScheme.tertiary,
           value: widget.milestoneAlerts,
           onChanged: widget.onMilestoneAlertsChanged,
         ),
@@ -200,7 +200,7 @@ class _NotificationPreferencesWidgetState
           title: 'Craving Support',
           description: 'Instant help and motivation during difficult moments',
           iconName: 'support_agent',
-          iconColor: AppTheme.lightTheme.colorScheme.primary,
+          iconColor: Theme.of(context).colorScheme.primary,
           value: widget.cravingSupport,
           onChanged: widget.onCravingSupportChanged,
         ),

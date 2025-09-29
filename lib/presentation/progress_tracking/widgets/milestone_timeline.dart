@@ -114,11 +114,11 @@ class MilestoneTimeline extends StatelessWidget {
       padding: EdgeInsets.all(4.w),
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: Offset(0, 2),
           ),
@@ -131,13 +131,13 @@ class MilestoneTimeline extends StatelessWidget {
             children: [
               CustomIconWidget(
                 iconName: 'flag',
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
                 'Health Milestones',
-                style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -157,14 +157,14 @@ class MilestoneTimeline extends StatelessWidget {
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
                   color: isAchieved
-                      ? AppTheme.lightTheme.colorScheme.secondary
+                      ? Theme.of(context).colorScheme.secondary
                           .withValues(alpha: 0.1)
-                      : AppTheme.lightTheme.colorScheme.surface,
+                      : Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isAchieved
-                        ? AppTheme.lightTheme.colorScheme.secondary
-                        : AppTheme.lightTheme.colorScheme.outline
+                        ? Theme.of(context).colorScheme.secondary
+                        : Theme.of(context).colorScheme.outline
                             .withValues(alpha: 0.2),
                     width: 1,
                   ),
@@ -176,8 +176,8 @@ class MilestoneTimeline extends StatelessWidget {
                       height: 12.w,
                       decoration: BoxDecoration(
                         color: isAchieved
-                            ? AppTheme.lightTheme.colorScheme.secondary
-                            : AppTheme.lightTheme.colorScheme.outline
+                            ? Theme.of(context).colorScheme.secondary
+                            : Theme.of(context).colorScheme.outline
                                 .withValues(alpha: 0.3),
                         shape: BoxShape.circle,
                       ),
@@ -185,8 +185,8 @@ class MilestoneTimeline extends StatelessWidget {
                         child: CustomIconWidget(
                           iconName: milestone["icon"] as String,
                           color: isAchieved
-                              ? AppTheme.lightTheme.colorScheme.onSecondary
-                              : AppTheme.lightTheme.colorScheme.onSurface
+                              ? Theme.of(context).colorScheme.onSecondary
+                              : Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.6),
                           size: 20,
                         ),
@@ -201,7 +201,7 @@ class MilestoneTimeline extends StatelessWidget {
                             children: [
                               Text(
                                 milestone["title"] as String,
-                                style: AppTheme.lightTheme.textTheme.titleSmall
+                                style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   color: isAchieved
@@ -216,7 +216,7 @@ class MilestoneTimeline extends StatelessWidget {
                                 CustomIconWidget(
                                   iconName: 'check_circle',
                                   color:
-                                      AppTheme.lightTheme.colorScheme.secondary,
+                                      Theme.of(context).colorScheme.secondary,
                                   size: 16,
                                 ),
                               ],
@@ -225,9 +225,9 @@ class MilestoneTimeline extends StatelessWidget {
                           SizedBox(height: 0.5.h),
                           Text(
                             milestone["description"] as String,
-                            style: AppTheme.lightTheme.textTheme.bodySmall
+                            style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.7),
                             ),
                             maxLines: 2,
@@ -241,11 +241,11 @@ class MilestoneTimeline extends StatelessWidget {
                       children: [
                         Text(
                           isAchieved ? 'Achieved' : 'Upcoming',
-                          style: AppTheme.lightTheme.textTheme.labelSmall
+                          style: Theme.of(context).textTheme.labelSmall
                               ?.copyWith(
                             color: isAchieved
-                                ? AppTheme.lightTheme.colorScheme.secondary
-                                : AppTheme.lightTheme.colorScheme.onSurface
+                                ? Theme.of(context).colorScheme.secondary
+                                : Theme.of(context).colorScheme.onSurface
                                     .withValues(alpha: 0.6),
                             fontWeight: FontWeight.w500,
                           ),
@@ -254,8 +254,8 @@ class MilestoneTimeline extends StatelessWidget {
                         Text(
                           _formatDate(milestone["date"] as DateTime),
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onSurface
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurface
                                 .withValues(alpha: 0.5),
                           ),
                         ),

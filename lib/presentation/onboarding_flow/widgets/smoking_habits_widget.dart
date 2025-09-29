@@ -94,10 +94,10 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
           width: double.infinity,
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline,
               width: 1,
             ),
           ),
@@ -109,13 +109,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.primary
+                      color: Theme.of(context).colorScheme.primary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: CustomIconWidget(
                       iconName: 'schedule',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 6.w,
                     ),
                   ),
@@ -126,17 +126,17 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       children: [
                         Text(
                           'How many years have you been smoking?',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: AppTheme.lightTheme.colorScheme.onSurface,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
                           'Years smoked before quitting',
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: AppTheme
                                 .lightTheme.colorScheme.onSurfaceVariant,
                           ),
@@ -158,20 +158,20 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   hintText: '0.0',
                   suffixText: 'years',
                   suffixStyle:
-                      AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                    color: AppTheme.lightTheme.colorScheme.onSurface,
+                      Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontWeight: FontWeight.w500,
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(
-                      color: AppTheme.lightTheme.colorScheme.outline,
+                      color: Theme.of(context).colorScheme.outline,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       width: 2,
                     ),
                   ),
@@ -187,10 +187,10 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
           width: double.infinity,
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline,
               width: 1,
             ),
           ),
@@ -202,13 +202,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.secondary
+                      color: Theme.of(context).colorScheme.secondary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: CustomIconWidget(
                       iconName: 'smoking_rooms',
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 6.w,
                     ),
                   ),
@@ -219,17 +219,17 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       children: [
                         Text(
                           'Cigarettes per Day',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: AppTheme.lightTheme.colorScheme.onSurface,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
                           'How many cigarettes do you smoke daily?',
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: AppTheme
                                 .lightTheme.colorScheme.onSurfaceVariant,
                           ),
@@ -249,8 +249,8 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                     height: 12.w,
                     decoration: BoxDecoration(
                       color: _cigarettesPerDay > 0
-                          ? AppTheme.lightTheme.colorScheme.primary
-                          : AppTheme.lightTheme.colorScheme.outline,
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.outline,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: IconButton(
@@ -270,21 +270,21 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                     width: 20.w,
                     height: 12.w,
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.primary
+                      color: Theme.of(context).colorScheme.primary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: AppTheme.lightTheme.colorScheme.primary,
+                        color: Theme.of(context).colorScheme.primary,
                         width: 2,
                       ),
                     ),
                     child: Center(
                       child: Text(
                         _cigarettesPerDay.toString(),
-                        style: AppTheme.lightTheme.textTheme.headlineSmall
+                        style: Theme.of(context).textTheme.headlineSmall
                             ?.copyWith(
                           fontWeight: FontWeight.w700,
-                          color: AppTheme.lightTheme.colorScheme.primary,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ),
@@ -296,8 +296,8 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                     height: 12.w,
                     decoration: BoxDecoration(
                       color: _cigarettesPerDay < 100
-                          ? AppTheme.lightTheme.colorScheme.primary
-                          : AppTheme.lightTheme.colorScheme.outline,
+                          ? Theme.of(context).colorScheme.primary
+                          : Theme.of(context).colorScheme.outline,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: IconButton(
@@ -322,10 +322,10 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
           width: double.infinity,
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.surface,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.outline,
+              color: Theme.of(context).colorScheme.outline,
               width: 1,
             ),
           ),
@@ -337,13 +337,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: AppTheme.lightTheme.colorScheme.tertiary
+                      color: Theme.of(context).colorScheme.tertiary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: CustomIconWidget(
                       iconName: 'attach_money',
-                      color: AppTheme.lightTheme.colorScheme.tertiary,
+                      color: Theme.of(context).colorScheme.tertiary,
                       size: 6.w,
                     ),
                   ),
@@ -354,17 +354,17 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       children: [
                         Text(
                           'Cost per Pack',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: AppTheme.lightTheme.colorScheme.onSurface,
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
                           'Average cost of a cigarette pack',
                           style:
-                              AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: AppTheme
                                 .lightTheme.colorScheme.onSurfaceVariant,
                           ),
@@ -395,8 +395,8 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                             value: value,
                             child: Text(
                               value,
-                              style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                                color: AppTheme.lightTheme.colorScheme.onSurface,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -410,13 +410,13 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(
-                      color: AppTheme.lightTheme.colorScheme.outline,
+                      color: Theme.of(context).colorScheme.outline,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       width: 2,
                     ),
                   ),
@@ -467,10 +467,10 @@ final lifeLostMinutes =
         margin: EdgeInsets.only(top: 3.h),
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.primaryContainer.withValues(alpha: opacity),
+          color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: opacity),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: AppTheme.lightTheme.colorScheme.primary.withValues(alpha: opacity * 0.5),
+            color: Theme.of(context).colorScheme.primary.withValues(alpha: opacity * 0.5),
           ),
         ),
         child: Column(
@@ -480,25 +480,25 @@ final lifeLostMinutes =
               children: [
                 CustomIconWidget(
                   iconName: 'calculate',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 5.w,
                 ),
                 SizedBox(width: 2.w),
                 Text(
                   'Estimated Smoking Impact',
-                  style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ],
             ),
             SizedBox(height: 2.5.h),
-            InsightItemWidget(text: 'Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}', color: AppTheme.lightTheme.colorScheme.primary),
+            InsightItemWidget(text: 'Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}', color: Theme.of(context).colorScheme.primary),
             if (packCost > 0)
-              InsightItemWidget(text: 'Total money spent: \$$totalSpent', color: AppTheme.lightTheme.colorScheme.primary),
-            InsightItemWidget(text: 'Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days', color: AppTheme.lightTheme.colorScheme.primary),
-            InsightItemWidget(text: 'Life lost: $lifeLostDuration', color: AppTheme.lightTheme.colorScheme.primary),
+              InsightItemWidget(text: 'Total money spent: \$$totalSpent', color: Theme.of(context).colorScheme.primary),
+            InsightItemWidget(text: 'Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days', color: Theme.of(context).colorScheme.primary),
+            InsightItemWidget(text: 'Life lost: $lifeLostDuration', color: Theme.of(context).colorScheme.primary),
             //            
           ],
         ),

@@ -43,14 +43,14 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
               children: [
                 CustomIconWidget(
                   iconName: 'schedule',
-                  color: AppTheme.lightTheme.colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   size: 24,
                 ),
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Text(
                     widget.title,
-                    style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -61,7 +61,7 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
             Container(
               padding: EdgeInsets.all(4.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.primaryContainer
+                color: Theme.of(context).colorScheme.primaryContainer
                     .withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -69,8 +69,8 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
                 children: [
                   Text(
                     'Current Time',
-                    style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                   ),
                   SizedBox(height: 2.h),
@@ -80,17 +80,17 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.surface,
+                        color: Theme.of(context).colorScheme.surface,
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: AppTheme.lightTheme.colorScheme.outline,
+                          color: Theme.of(context).colorScheme.outline,
                         ),
                       ),
                       child: Text(
                         _formatTime(_selectedTime),
-                        style: AppTheme.lightTheme.textTheme.headlineSmall
+                        style: Theme.of(context).textTheme.headlineSmall
                             ?.copyWith(
-                          color: AppTheme.lightTheme.colorScheme.primary,
+                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -107,8 +107,8 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text(
                     'Cancel',
-                    style: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
                   ),
                 ),
@@ -135,7 +135,7 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: AppTheme.lightTheme.colorScheme,
+            colorScheme: Theme.of(context).colorScheme,
           ),
           child: child!,
         );

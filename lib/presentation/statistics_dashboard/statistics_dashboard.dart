@@ -160,7 +160,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: _buildAppBar(),
       body: RefreshIndicator(
         onRefresh: _refreshData,
@@ -185,8 +185,9 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
     return AppBar(
       title: Text(
         'Statistics Dashboard',
-        style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
           fontWeight: FontWeight.w600,
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
       centerTitle: true,
@@ -194,7 +195,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         onPressed: () => Navigator.pop(context),
         icon: CustomIconWidget(
           iconName: 'arrow_back',
-          color: AppTheme.lightTheme.colorScheme.onSurface,
+          color: Theme.of(context).colorScheme.onSurface,
           size: 24,
         ),
       ),
@@ -203,7 +204,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
           onPressed: _showFilterBottomSheet,
           icon: CustomIconWidget(
             iconName: 'tune',
-            color: AppTheme.lightTheme.colorScheme.primary,
+            color: Theme.of(context).colorScheme.primary,
             size: 24,
           ),
         ),
@@ -217,15 +218,15 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
             children: [
               Text(
                 'Last updated: ${_formatLastUpdated()}',
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                  color: AppTheme.lightTheme.colorScheme.onSurface
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface
                       .withValues(alpha: 0.6),
                 ),
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 0.5.h),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.secondary
+                  color: Theme.of(context).colorScheme.secondary
                       .withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -234,14 +235,14 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                   children: [
                     CustomIconWidget(
                       iconName: 'wifi',
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 12,
                     ),
                     SizedBox(width: 1.w),
                     Text(
                       'Online',
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: 10.sp,
                       ),
                     ),
@@ -265,7 +266,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
             padding: EdgeInsets.symmetric(horizontal: 4.w),
             child: Text(
               'Key Metrics',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -298,11 +299,11 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 4,
             offset: const Offset(0, 1),
           ),
@@ -315,11 +316,11 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
           Tab(text: 'Comparison'),
           Tab(text: 'Export'),
         ],
-        labelStyle: AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+        labelStyle: Theme.of(context).textTheme.labelLarge?.copyWith(
           fontWeight: FontWeight.w600,
         ),
         unselectedLabelStyle:
-            AppTheme.lightTheme.textTheme.labelLarge?.copyWith(
+            Theme.of(context).textTheme.labelLarge?.copyWith(
           fontWeight: FontWeight.w400,
         ),
         indicatorSize: TabBarIndicatorSize.tab,
@@ -411,11 +412,11 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -428,7 +429,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
           children: [
             Text(
               'Recent Achievements',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -438,11 +439,11 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                 margin: EdgeInsets.only(bottom: 1.h),
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.secondary
+                  color: Theme.of(context).colorScheme.secondary
                       .withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: AppTheme.lightTheme.colorScheme.secondary
+                    color: Theme.of(context).colorScheme.secondary
                         .withValues(alpha: 0.3),
                   ),
                 ),
@@ -451,12 +452,12 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                     Container(
                       padding: EdgeInsets.all(2.w),
                       decoration: BoxDecoration(
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.secondary,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: CustomIconWidget(
                         iconName: achievement['icon'] as String,
-                        color: AppTheme.lightTheme.colorScheme.onSecondary,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         size: 20,
                       ),
                     ),
@@ -467,17 +468,17 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                         children: [
                           Text(
                             achievement['title'] as String,
-                            style: AppTheme.lightTheme.textTheme.labelLarge
+                            style: Theme.of(context).textTheme.labelLarge
                                 ?.copyWith(
                               fontWeight: FontWeight.w600,
-                              color: AppTheme.lightTheme.colorScheme.secondary,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                           Text(
                             achievement['description'] as String,
-                            style: AppTheme.lightTheme.textTheme.bodySmall
+                            style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.7),
                             ),
                           ),
@@ -486,8 +487,8 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                     ),
                     Text(
                       achievement['date'] as String,
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.secondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -527,11 +528,11 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.shadow,
+            color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -544,7 +545,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
           children: [
             Text(
               'Export History',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -554,10 +555,10 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                 margin: EdgeInsets.only(bottom: 1.h),
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.surface,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: AppTheme.lightTheme.colorScheme.outline
+                    color: Theme.of(context).colorScheme.outline
                         .withValues(alpha: 0.2),
                   ),
                 ),
@@ -565,7 +566,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                   children: [
                     CustomIconWidget(
                       iconName: export['icon'] as String,
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 20,
                     ),
                     SizedBox(width: 3.w),
@@ -575,16 +576,16 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                         children: [
                           Text(
                             export['type'] as String,
-                            style: AppTheme.lightTheme.textTheme.labelMedium
+                            style: Theme.of(context).textTheme.labelMedium
                                 ?.copyWith(
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                           Text(
                             '${export['date']} • ${export['size']}',
-                            style: AppTheme.lightTheme.textTheme.bodySmall
+                            style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.6),
                             ),
                           ),
@@ -596,7 +597,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                           _downloadExportedFile(export['type'] as String),
                       icon: CustomIconWidget(
                         iconName: 'download',
-                        color: AppTheme.lightTheme.colorScheme.primary,
+                        color: Theme.of(context).colorScheme.primary,
                         size: 20,
                       ),
                     ),
@@ -618,7 +619,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
       builder: (context) => Container(
         height: 70.h,
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
@@ -628,7 +629,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
               height: 0.5.h,
               margin: EdgeInsets.symmetric(vertical: 1.h),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.outline
+                color: Theme.of(context).colorScheme.outline
                     .withValues(alpha: 0.3),
                 borderRadius: BorderRadius.circular(2),
               ),
@@ -695,7 +696,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('Infographic exported successfully!'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -704,7 +705,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('Failed to export infographic'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.error,
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
       }
@@ -720,7 +721,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('CSV report exported successfully!'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -729,7 +730,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('Failed to export CSV report'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.error,
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
       }
@@ -745,7 +746,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: const Text('Statistics copied to clipboard!'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -756,7 +757,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
           SnackBar(
             content:
                 const Text('Share functionality would open native share sheet'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         );
       }
@@ -782,7 +783,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('$fileType downloaded successfully!'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+            backgroundColor: Theme.of(context).colorScheme.secondary,
           ),
         );
       }
@@ -791,7 +792,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Failed to download $fileType'),
-            backgroundColor: AppTheme.lightTheme.colorScheme.error,
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
       }

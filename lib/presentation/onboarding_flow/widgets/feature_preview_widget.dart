@@ -14,28 +14,28 @@ class FeaturePreviewWidget extends StatelessWidget {
         "description":
             "Monitor your smoke-free journey with detailed statistics",
         "icon": "trending_up",
-        "color": AppTheme.lightTheme.colorScheme.primary,
+        "color": Theme.of(context).colorScheme.primary,
         "route": "/progress-tracking",
       },
       {
         "title": "Health Milestones",
         "description": "See how your body recovers over time",
         "icon": "favorite",
-        "color": AppTheme.lightTheme.colorScheme.secondary,
+        "color": Theme.of(context).colorScheme.secondary,
         "route": "/health-milestones",
       },
       {
         "title": "Achievement System",
         "description": "Earn badges and rewards for your progress",
         "icon": "emoji_events",
-        "color": AppTheme.lightTheme.colorScheme.tertiary,
+        "color": Theme.of(context).colorScheme.tertiary,
         "route": "/achievement-system",
       },
       {
         "title": "Craving Support",
         "description": "Get instant help when you need it most",
         "icon": "support_agent",
-        "color": AppTheme.lightTheme.colorScheme.primary,
+        "color": Theme.of(context).colorScheme.primary,
         "route": "/craving-support",
       },
     ];
@@ -69,11 +69,11 @@ class FeaturePreviewWidget extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            color: AppTheme.lightTheme.colorScheme.secondary
+            color: Theme.of(context).colorScheme.secondary
                 .withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: AppTheme.lightTheme.colorScheme.secondary,
+              color: Theme.of(context).colorScheme.secondary,
               width: 1,
             ),
           ),
@@ -82,7 +82,7 @@ class FeaturePreviewWidget extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(3.w),
                 decoration: BoxDecoration(
-                  color: AppTheme.lightTheme.colorScheme.secondary,
+                  color: Theme.of(context).colorScheme.secondary,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomIconWidget(
@@ -98,16 +98,16 @@ class FeaturePreviewWidget extends StatelessWidget {
                   children: [
                     Text(
                       'Tap any feature to explore',
-                      style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.lightTheme.colorScheme.secondary,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
                       'Get a preview of what awaits you',
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ],
@@ -137,15 +137,15 @@ class FeaturePreviewWidget extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: AppTheme.lightTheme.colorScheme.outline,
+            color: Theme.of(context).colorScheme.outline,
             width: 1,
           ),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.lightTheme.shadowColor,
+              color: Theme.of(context).shadowColor,
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -169,9 +169,9 @@ class FeaturePreviewWidget extends StatelessWidget {
             SizedBox(height: 2.h),
             Text(
               title,
-              style: AppTheme.lightTheme.textTheme.titleSmall?.copyWith(
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
                 fontWeight: FontWeight.w600,
-                color: AppTheme.lightTheme.colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               textAlign: TextAlign.center,
               maxLines: 2,
@@ -180,8 +180,8 @@ class FeaturePreviewWidget extends StatelessWidget {
             SizedBox(height: 1.h),
             Text(
               description,
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
               textAlign: TextAlign.center,
               maxLines: 3,
@@ -225,17 +225,17 @@ class FeaturePreviewWidget extends StatelessWidget {
             SizedBox(height: 2.h),
             Text(
               title,
-              style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
-                color: AppTheme.lightTheme.colorScheme.onSurface,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 1.h),
             Text(
               description,
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
               textAlign: TextAlign.center,
             ),
@@ -247,8 +247,8 @@ class FeaturePreviewWidget extends StatelessWidget {
                     onPressed: () => Navigator.of(context).pop(),
                     child: Text(
                       'Close',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),
                     ),
                   ),
@@ -268,7 +268,7 @@ class FeaturePreviewWidget extends StatelessWidget {
                     ),
                     child: Text(
                       'Explore',
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),

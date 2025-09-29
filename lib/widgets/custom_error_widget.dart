@@ -28,7 +28,7 @@ class CustomErrorWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                'assets/images/sad_face.svg',
+                'assets/images/sad-face.svg',
                 height: 42,
                 width: 42,
               ),
@@ -66,7 +66,7 @@ class CustomErrorWidget extends StatelessWidget {
                     const Icon(Icons.arrow_back, size: 18, color: Colors.white),
                 label: const Text('Back'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.lightTheme.primaryColor,
+                  backgroundColor: Theme.of(context).primaryColor,
                   foregroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

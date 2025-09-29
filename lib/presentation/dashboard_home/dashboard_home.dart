@@ -79,34 +79,24 @@ class _DashboardHomeState extends State<DashboardHome> {
 
     if (_isLoading) {
       return Scaffold(
-        backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: const Center(child: CircularProgressIndicator()),
       );
     }
 
     return Scaffold(
-      backgroundColor: AppTheme.lightTheme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
           l10n.appTitle,
-          style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w700,
-            color: AppTheme.lightTheme.primaryColor,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w700,            
+            color: Theme.of(context).colorScheme.primary
           ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () => Navigator.pushNamed(context, '/user-profile'),
-            icon: CustomIconWidget(
-              iconName: 'account_circle',
-              color: AppTheme.lightTheme.primaryColor,
-              size: 7.w,
-            ),
-          ),
-          SizedBox(width: 2.w),
-        ],
+        centerTitle: false,
       ),
       body: RefreshIndicator(
         onRefresh: _loadUserData,
@@ -123,8 +113,8 @@ class _DashboardHomeState extends State<DashboardHome> {
               AnimatedTimeCounterWidget(
                 quitDate: DateTime.parse(_userData['quitDate'] as String),
                 title: l10n.timeSmokeFree,
-                primaryColor: AppTheme.lightTheme.primaryColor,
-                accentColor: AppTheme.lightTheme.colorScheme.secondary,
+                primaryColor: Theme.of(context).primaryColor,
+                accentColor: Theme.of(context).colorScheme.secondary,
               ),
 
               SizedBox(height: 3.h),
@@ -173,14 +163,14 @@ class _DashboardHomeState extends State<DashboardHome> {
         children: [
           Text(
             '$greeting, ${_userData["name"]}!',
-            style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.w600,
             ),
           ),
           SizedBox(height: 1.h),
           Text(
             l10n.smokeFreeJourney,
-            style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: AppTheme.textMediumEmphasisLight,
             ),
           ),
@@ -204,7 +194,7 @@ class _DashboardHomeState extends State<DashboardHome> {
                       '\$${(_userData['moneySaved'] as double).toStringAsFixed(0)}',
                   subtitle: l10n.keepItUp,
                   iconName: 'savings',
-                  iconColor: AppTheme.lightTheme.colorScheme.secondary,
+                  iconColor: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(width: 3.w),
@@ -214,7 +204,7 @@ class _DashboardHomeState extends State<DashboardHome> {
                   value: '${_userData['cigarettesAvoided']}',
                   subtitle: l10n.basedOnProgress,
                   iconName: 'smoke_free',
-                  iconColor: AppTheme.lightTheme.colorScheme.tertiary,
+                  iconColor: Theme.of(context).colorScheme.tertiary,
                 ),
               ),
             ],
@@ -232,7 +222,7 @@ class _DashboardHomeState extends State<DashboardHome> {
                       '${((_userData['healthProgress'] as double) * 100).round()}%',
                   subtitle: l10n.improvingDaily,
                   iconName: 'favorite',
-                  iconColor: AppTheme.lightTheme.colorScheme.primary,
+                  iconColor: Theme.of(context).colorScheme.primary,
                   onTap: () {
                     // Navigate to Health Score Dashboard to show health data and notifications
                     Navigator.pushNamed(context, '/health-score-dashboard');
@@ -282,14 +272,14 @@ class _DashboardHomeState extends State<DashboardHome> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppTheme.lightTheme.colorScheme.secondary,
-            AppTheme.lightTheme.colorScheme.secondary.withValues(alpha: 0.8),
+            Theme.of(context).colorScheme.secondary,
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.8),
           ],
         ),
         shape: BoxShape.circle,
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.colorScheme.secondary
+            color: Theme.of(context).colorScheme.secondary
                 .withValues(alpha: 0.4),
             blurRadius: 12,
             offset: const Offset(0, 4),

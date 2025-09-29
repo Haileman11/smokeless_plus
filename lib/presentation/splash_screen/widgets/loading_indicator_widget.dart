@@ -57,14 +57,14 @@ class _LoadingIndicatorWidgetState extends State<LoadingIndicatorWidget>
                 height: 1.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
-                  color: AppTheme.lightTheme.colorScheme.primary
+                  color: Theme.of(context).colorScheme.primary
                       .withValues(alpha: 0.2),
                 ),
                 child: LinearProgressIndicator(
                   value: widget.progress,
                   backgroundColor: Colors.transparent,
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    AppTheme.lightTheme.colorScheme.primary,
+                    Theme.of(context).colorScheme.primary,
                   ),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
@@ -75,8 +75,8 @@ class _LoadingIndicatorWidgetState extends State<LoadingIndicatorWidget>
         SizedBox(height: 2.h),
         Text(
           'Initializing your quit journey...',
-          style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-            color: AppTheme.lightTheme.colorScheme.onSurface
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface
                 .withValues(alpha: 0.7),
             fontSize: 12.sp,
           ),

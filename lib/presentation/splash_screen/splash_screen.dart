@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    _setupStatusBar();
+    // _setupStatusBar();
     _initializeAnimations();
     _startInitialization();
   }
@@ -39,12 +39,16 @@ class _SplashScreenState extends State<SplashScreen>
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: AppTheme.lightTheme.colorScheme.surface,
+        systemNavigationBarColor: Theme.of(context).colorScheme.surface,
         systemNavigationBarIconBrightness: Brightness.dark,
       ),
     );
   }
-
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _setupStatusBar(); // ✅ Safe here
+  }
   void _initializeAnimations() {
     _fadeController = AnimationController(
       duration: const Duration(milliseconds: 500),
@@ -304,9 +308,9 @@ class _SplashScreenState extends State<SplashScreen>
                         child: Text(
                           _loadingMessage,
                           key: ValueKey(_loadingMessage),
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onSurface
+                            color: Theme.of(context).colorScheme.onSurface
                                 .withValues(alpha: 0.7),
                             fontSize: 12.sp,
                           ),
@@ -321,9 +325,9 @@ class _SplashScreenState extends State<SplashScreen>
                         children: [
                           Text(
                             'Version 1.0.0',
-                            style: AppTheme.lightTheme.textTheme.bodySmall
+                            style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.5),
                               fontSize: 10.sp,
                             ),
@@ -331,9 +335,9 @@ class _SplashScreenState extends State<SplashScreen>
                           SizedBox(height: 0.5.h),
                           Text(
                             '© 2024 QuitSmoking Tracker',
-                            style: AppTheme.lightTheme.textTheme.bodySmall
+                            style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface
+                              color: Theme.of(context).colorScheme.onSurface
                                   .withValues(alpha: 0.5),
                               fontSize: 10.sp,
                             ),

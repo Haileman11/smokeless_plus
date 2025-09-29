@@ -89,19 +89,19 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppTheme.lightTheme.colorScheme.secondary.withValues(alpha: 0.1),
-            AppTheme.lightTheme.colorScheme.tertiary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.tertiary.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color:
-              AppTheme.lightTheme.colorScheme.secondary.withValues(alpha: 0.2),
+              Theme.of(context).colorScheme.secondary.withValues(alpha: 0.2),
           width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor.withValues(alpha: 0.1),
+            color: Theme.of(context).shadowColor.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -118,13 +118,13 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                 Container(
                   padding: EdgeInsets.all(2.5.w),
                   decoration: BoxDecoration(
-                    color: AppTheme.lightTheme.colorScheme.secondary
+                    color: Theme.of(context).colorScheme.secondary
                         .withValues(alpha: 0.15),
                     shape: BoxShape.circle,
                   ),
                   child: CustomIconWidget(
                     iconName: 'auto_awesome',
-                    color: AppTheme.lightTheme.colorScheme.secondary,
+                    color: Theme.of(context).colorScheme.secondary,
                     size: 5.w,
                   ),
                 ),
@@ -132,9 +132,9 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                 Expanded(
                   child: Text(
                     'Daily Motivation',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.lightTheme.colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                 ),
@@ -146,7 +146,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                     decoration: BoxDecoration(
                       color: _isRefreshing
                           ? AppTheme.textDisabledLight.withValues(alpha: 0.1)
-                          : AppTheme.lightTheme.colorScheme.secondary
+                          : Theme.of(context).colorScheme.secondary
                               .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                     ),
@@ -157,7 +157,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                         iconName: 'refresh',
                         color: _isRefreshing
                             ? AppTheme.textDisabledLight
-                            : AppTheme.lightTheme.colorScheme.secondary,
+                            : Theme.of(context).colorScheme.secondary,
                         size: 4.5.w,
                       ),
                     ),
@@ -222,8 +222,8 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
           children: [
             Text(
               '"',
-              style: AppTheme.lightTheme.textTheme.headlineLarge?.copyWith(
-                color: AppTheme.lightTheme.colorScheme.secondary
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                color: Theme.of(context).colorScheme.secondary
                     .withValues(alpha: 0.6),
                 fontWeight: FontWeight.w700,
                 height: 1.0,
@@ -237,17 +237,17 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                   Text(
                     _currentQuote["message"] ??
                         "Stay strong on your quit smoking journey!",
-                    style: AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       fontWeight: FontWeight.w500,
                       height: 1.5,
-                      color: AppTheme.textHighEmphasisLight,
+                      // color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                   Text(
                     '"',
                     style:
-                        AppTheme.lightTheme.textTheme.headlineLarge?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.secondary
+                        Theme.of(context).textTheme.headlineLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary
                           .withValues(alpha: 0.6),
                       fontWeight: FontWeight.w700,
                       height: 1.0,
@@ -268,13 +268,13 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
             Container(
               padding: EdgeInsets.all(1.5.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.tertiary
+                color: Theme.of(context).colorScheme.tertiary
                     .withValues(alpha: 0.15),
                 shape: BoxShape.circle,
               ),
               child: CustomIconWidget(
                 iconName: 'person',
-                color: AppTheme.lightTheme.colorScheme.tertiary,
+                color: Theme.of(context).colorScheme.tertiary,
                 size: 3.5.w,
               ),
             ),
@@ -282,10 +282,10 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
             Expanded(
               child: Text(
                 "- ${_currentQuote["author"] ?? "Anonymous"}",
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                   fontStyle: FontStyle.italic,
-                  color: AppTheme.textMediumEmphasisLight,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
@@ -332,7 +332,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
           SizedBox(width: 2.w),
           Text(
             isMorning ? 'Morning Motivation' : 'Evening Inspiration',
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.w500,
               color: isMorning ? Colors.amber.shade700 : Colors.indigo.shade700,
             ),

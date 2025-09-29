@@ -119,7 +119,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
   @override
   Widget build(BuildContext context) {
     final primaryColor =
-        widget.primaryColor ?? AppTheme.lightTheme.primaryColor;
+        widget.primaryColor ?? Theme.of(context).primaryColor;
     final accentColor = widget.accentColor ?? AppTheme.accentLight;
 
     return ScaleTransition(
@@ -170,7 +170,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
                             ? widget.title
                             : 'Time Until Quit Date',
                         style:
-                            AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
                           color: AppTheme.onPrimaryLight,
                           fontWeight: FontWeight.w600,
                         ),
@@ -201,7 +201,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
               _hasStartedQuitting
                   ? 'Every second counts - $_seconds seconds and counting!'
                   : 'Get ready - $_seconds seconds until you start!',
-              style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppTheme.onPrimaryLight.withValues(alpha: 0.9),
                 fontWeight: FontWeight.w500,
               ),
@@ -234,7 +234,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
               child: Center(
                 child: Text(
                   animatedValue.toString().padLeft(2, '0'),
-                  style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: AppTheme.onPrimaryLight,
                     fontWeight: FontWeight.w800,
                   ),
@@ -246,7 +246,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
         SizedBox(height: 1.h),
         Text(
           label,
-          style: AppTheme.lightTheme.textTheme.labelSmall?.copyWith(
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
             color: AppTheme.onPrimaryLight.withValues(alpha: 0.9),
             fontWeight: FontWeight.w600,
           ),
@@ -266,7 +266,7 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
               opacity: _pulseAnimation.value - 0.3,
               child: Text(
                 ':',
-                style: AppTheme.lightTheme.textTheme.headlineMedium?.copyWith(
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   color: AppTheme.onPrimaryLight,
                   fontWeight: FontWeight.w800,
                 ),

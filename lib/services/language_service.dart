@@ -23,7 +23,7 @@ class LanguageProvider with ChangeNotifier {
 
   String get languageCode => _languageCode;
   Locale get locale => Locale(_languageCode);
-  String get currentLanguage => getLanguageName(_languageCode);
+  String get currentLanguage => _languageCode;
 
   LanguageProvider(this._prefs) {
     _loadLanguage();

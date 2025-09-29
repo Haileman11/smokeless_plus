@@ -125,9 +125,9 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
   Color _getEffectivenessColor(String effectiveness) {
     switch (effectiveness.toLowerCase()) {
       case 'very high':
-        return AppTheme.lightTheme.colorScheme.secondary;
+        return Theme.of(context).colorScheme.secondary;
       case 'high':
-        return AppTheme.lightTheme.colorScheme.primary;
+        return Theme.of(context).colorScheme.primary;
       case 'medium':
         return Colors.orange;
       default:
@@ -150,23 +150,23 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
               children: [
                 Text(
                   'Quick Coping Tips',
-                  style: AppTheme.lightTheme.textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
-                    color: AppTheme.lightTheme.colorScheme.primary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
                 Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.5.h),
                   decoration: BoxDecoration(
-                    color: AppTheme.lightTheme.colorScheme.primary
+                    color: Theme.of(context).colorScheme.primary
                         .withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
                     '${_currentIndex + 1}/${_copingStrategies.length}',
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -204,7 +204,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                           colors: [
                             Color(strategy["color"] as int)
                                 .withValues(alpha: 0.1),
-                            AppTheme.lightTheme.colorScheme.surface,
+                            Theme.of(context).colorScheme.surface,
                           ],
                         ),
                       ),
@@ -282,7 +282,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                           style: AppTheme
                                               .lightTheme.textTheme.bodySmall
                                               ?.copyWith(
-                                            color: AppTheme.lightTheme
+                                            color: Theme.of(context)
                                                 .colorScheme.onSurface
                                                 .withValues(alpha: 0.6),
                                           ),
@@ -300,9 +300,9 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                           // Description
                           Text(
                             strategy["description"] as String,
-                            style: AppTheme.lightTheme.textTheme.bodyMedium
+                            style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
-                              color: AppTheme.lightTheme.colorScheme.onSurface,
+                              color: Theme.of(context).colorScheme.onSurface,
                               height: 1.5,
                             ),
                           ),
@@ -343,7 +343,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                               ),
                               child: Text(
                                 'Try This Now',
-                                style: AppTheme.lightTheme.textTheme.titleSmall
+                                style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
@@ -371,8 +371,8 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                   icon: CustomIconWidget(
                     iconName: 'arrow_back_ios',
                     color: _currentIndex > 0
-                        ? AppTheme.lightTheme.colorScheme.primary
-                        : AppTheme.lightTheme.colorScheme.onSurface
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.onSurface
                             .withValues(alpha: 0.3),
                     size: 20,
                   ),
@@ -389,8 +389,8 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: _currentIndex == index
-                            ? AppTheme.lightTheme.colorScheme.primary
-                            : AppTheme.lightTheme.colorScheme.onSurface
+                            ? Theme.of(context).colorScheme.primary
+                            : Theme.of(context).colorScheme.onSurface
                                 .withValues(alpha: 0.3),
                       ),
                     ),
@@ -404,8 +404,8 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                   icon: CustomIconWidget(
                     iconName: 'arrow_forward_ios',
                     color: _currentIndex < _copingStrategies.length - 1
-                        ? AppTheme.lightTheme.colorScheme.primary
-                        : AppTheme.lightTheme.colorScheme.onSurface
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.onSurface
                             .withValues(alpha: 0.3),
                     size: 20,
                   ),

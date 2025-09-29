@@ -161,11 +161,11 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
       SnackBar(
         content: Text(
           'Great job! You completed the breathing exercise.',
-          style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-            color: AppTheme.lightTheme.colorScheme.onPrimary,
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            color: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
-        backgroundColor: AppTheme.lightTheme.colorScheme.secondary,
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         duration: const Duration(seconds: 3),
       ),
     );
@@ -206,8 +206,8 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            AppTheme.lightTheme.colorScheme.primary.withValues(alpha: 0.1),
-            AppTheme.lightTheme.colorScheme.secondary.withValues(alpha: 0.05),
+            Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+            Theme.of(context).colorScheme.secondary.withValues(alpha: 0.05),
           ],
         ),
       ),
@@ -223,16 +223,16 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                   Text(
                     'Breathing Exercise',
                     style:
-                        AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
+                        Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                   IconButton(
                     onPressed: _stopExercise,
                     icon: CustomIconWidget(
                       iconName: 'close',
-                      color: AppTheme.lightTheme.colorScheme.primary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24,
                     ),
                   ),
@@ -251,9 +251,9 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                       children: [
                         Text(
                           'Cycle $_currentCycle of $_totalCycles',
-                          style: AppTheme.lightTheme.textTheme.bodyMedium
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -267,9 +267,9 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                             int seconds = remainingTime % 60;
                             return Text(
                               '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
-                              style: AppTheme.lightTheme.textTheme.bodyMedium
+                              style: Theme.of(context).textTheme.bodyMedium
                                   ?.copyWith(
-                                color: AppTheme.lightTheme.colorScheme.primary,
+                                color: Theme.of(context).colorScheme.primary,
                                 fontWeight: FontWeight.w500,
                               ),
                             );
@@ -287,7 +287,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                               .lightTheme.colorScheme.primary
                               .withValues(alpha: 0.2),
                           valueColor: AlwaysStoppedAnimation<Color>(
-                            AppTheme.lightTheme.colorScheme.secondary,
+                            Theme.of(context).colorScheme.secondary,
                           ),
                         );
                       },
@@ -315,15 +315,15 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                             shape: BoxShape.circle,
                             gradient: RadialGradient(
                               colors: [
-                                AppTheme.lightTheme.colorScheme.primary
+                                Theme.of(context).colorScheme.primary
                                     .withValues(alpha: 0.3),
-                                AppTheme.lightTheme.colorScheme.secondary
+                                Theme.of(context).colorScheme.secondary
                                     .withValues(alpha: 0.1),
                               ],
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: AppTheme.lightTheme.colorScheme.primary
+                                color: Theme.of(context).colorScheme.primary
                                     .withValues(alpha: 0.2),
                                 blurRadius: 20,
                                 spreadRadius: 5,
@@ -336,14 +336,14 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                               height: 30.w,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: AppTheme.lightTheme.colorScheme.primary
+                                color: Theme.of(context).colorScheme.primary
                                     .withValues(alpha: 0.8),
                               ),
                               child: Center(
                                 child: CustomIconWidget(
                                   iconName: 'air',
                                   color:
-                                      AppTheme.lightTheme.colorScheme.onPrimary,
+                                      Theme.of(context).colorScheme.onPrimary,
                                   size: 32,
                                 ),
                               ),
@@ -359,36 +359,36 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                     if (_isExerciseActive) ...[
                       Text(
                         _currentPhase,
-                        style: AppTheme.lightTheme.textTheme.headlineMedium
+                        style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.lightTheme.colorScheme.primary,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       SizedBox(height: 1.h),
                       Text(
                         _phaseCountdown.toString(),
-                        style: AppTheme.lightTheme.textTheme.displaySmall
+                        style: Theme.of(context).textTheme.displaySmall
                             ?.copyWith(
                           fontWeight: FontWeight.w300,
-                          color: AppTheme.lightTheme.colorScheme.secondary,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                     ] else ...[
                       Text(
                         'Ready to breathe?',
-                        style: AppTheme.lightTheme.textTheme.headlineMedium
+                        style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(
                           fontWeight: FontWeight.w600,
-                          color: AppTheme.lightTheme.colorScheme.primary,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       SizedBox(height: 1.h),
                       Text(
                         '4-7-8 Breathing Technique',
                         style:
-                            AppTheme.lightTheme.textTheme.bodyLarge?.copyWith(
-                          color: AppTheme.lightTheme.colorScheme.onSurface,
+                            Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
                         ),
                       ),
                     ],
@@ -402,7 +402,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
               margin: EdgeInsets.symmetric(horizontal: 4.w),
               padding: EdgeInsets.all(4.w),
               decoration: BoxDecoration(
-                color: AppTheme.lightTheme.colorScheme.surface,
+                color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -415,9 +415,9 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
               child: Text(
                 _currentQuote,
                 textAlign: TextAlign.center,
-                style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontStyle: FontStyle.italic,
-                  color: AppTheme.lightTheme.colorScheme.onSurface,
+                  color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
             ),
@@ -441,9 +441,9 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                         ),
                         child: Text(
                           'Start Exercise',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onPrimary,
+                            color: Theme.of(context).colorScheme.onPrimary,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -461,9 +461,9 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                         ),
                         child: Text(
                           'Extend (+2 cycles)',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -476,16 +476,16 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(vertical: 2.h),
                           backgroundColor:
-                              AppTheme.lightTheme.colorScheme.error,
+                              Theme.of(context).colorScheme.error,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         child: Text(
                           'Stop',
-                          style: AppTheme.lightTheme.textTheme.titleMedium
+                          style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
-                            color: AppTheme.lightTheme.colorScheme.onError,
+                            color: Theme.of(context).colorScheme.onError,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

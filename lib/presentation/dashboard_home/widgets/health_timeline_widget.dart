@@ -23,11 +23,11 @@ class HealthTimelineWidget extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
       decoration: BoxDecoration(
-        color: AppTheme.lightTheme.colorScheme.surface,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: AppTheme.lightTheme.shadowColor,
+            color: Theme.of(context).shadowColor,
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -49,7 +49,7 @@ class HealthTimelineWidget extends StatelessWidget {
                 Expanded(
                   child: Text(
                     'Health Recovery Timeline',
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -68,7 +68,7 @@ class HealthTimelineWidget extends StatelessWidget {
                 children: [
                   Text(
                     'Current Stage',
-                    style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppTheme.textMediumEmphasisLight,
                       fontWeight: FontWeight.w500,
                     ),
@@ -76,7 +76,7 @@ class HealthTimelineWidget extends StatelessWidget {
                   SizedBox(height: 1.h),
                   Text(
                     currentStage,
-                    style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: AppTheme.successLight,
                       fontWeight: FontWeight.w600,
                     ),
@@ -87,7 +87,7 @@ class HealthTimelineWidget extends StatelessWidget {
             SizedBox(height: 3.h),
             Text(
               'Progress to Next Milestone',
-              style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -120,7 +120,7 @@ class HealthTimelineWidget extends StatelessWidget {
                       Text(
                         'Next Milestone',
                         style:
-                            AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                            Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: AppTheme.textMediumEmphasisLight,
                         ),
                       ),
@@ -128,7 +128,7 @@ class HealthTimelineWidget extends StatelessWidget {
                       Text(
                         nextMilestone,
                         style:
-                            AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                            Theme.of(context).textTheme.bodyMedium?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                         maxLines: 2,
@@ -143,16 +143,16 @@ class HealthTimelineWidget extends StatelessWidget {
                   children: [
                     Text(
                       'Time Remaining',
-                      style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: AppTheme.textMediumEmphasisLight,
                       ),
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
                       timeToNext,
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         fontWeight: FontWeight.w600,
-                        color: AppTheme.lightTheme.primaryColor,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ],

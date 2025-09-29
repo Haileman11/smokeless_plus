@@ -31,11 +31,11 @@ class MetricCardWidget extends StatelessWidget {
         height: 20.h,
         margin: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
         decoration: BoxDecoration(
-          color: AppTheme.lightTheme.colorScheme.surface,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppTheme.lightTheme.shadowColor,
+              color: Theme.of(context).shadowColor,
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -53,8 +53,8 @@ class MetricCardWidget extends StatelessWidget {
                   Expanded(
                     child: Text(
                       title,
-                      style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
-                        color: AppTheme.textMediumEmphasisLight,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        // color: Theme.of(context).colorScheme.surface,
                         fontWeight: FontWeight.w500,
                       ),
                       maxLines: 1,
@@ -71,8 +71,8 @@ class MetricCardWidget extends StatelessWidget {
               SizedBox(height: 1.h),
               Text(
                 value,
-                style: AppTheme.lightTheme.textTheme.headlineSmall?.copyWith(
-                  color: AppTheme.textHighEmphasisLight,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.7),
                   fontWeight: FontWeight.w700,
                 ),
                 maxLines: 1,
@@ -81,7 +81,7 @@ class MetricCardWidget extends StatelessWidget {
               SizedBox(height: 0.5.h),
               Text(
                 subtitle,
-                style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: AppTheme.textMediumEmphasisLight,
                 ),
                 maxLines: 2,
@@ -97,7 +97,7 @@ class MetricCardWidget extends StatelessWidget {
   void _showShareOptions(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      backgroundColor: AppTheme.lightTheme.colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
@@ -117,7 +117,7 @@ class MetricCardWidget extends StatelessWidget {
             SizedBox(height: 3.h),
             Text(
               'Share Progress',
-              style: AppTheme.lightTheme.textTheme.titleMedium?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -153,13 +153,13 @@ class MetricCardWidget extends StatelessWidget {
             width: 12.w,
             height: 12.w,
             decoration: BoxDecoration(
-              color: AppTheme.lightTheme.primaryColor.withValues(alpha: 0.1),
+              color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Center(
               child: CustomIconWidget(
                 iconName: iconName,
-                color: AppTheme.lightTheme.primaryColor,
+                color: Theme.of(context).primaryColor,
                 size: 6.w,
               ),
             ),
@@ -167,7 +167,7 @@ class MetricCardWidget extends StatelessWidget {
           SizedBox(height: 1.h),
           Text(
             label,
-            style: AppTheme.lightTheme.textTheme.bodySmall?.copyWith(
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.w500,
             ),
           ),
