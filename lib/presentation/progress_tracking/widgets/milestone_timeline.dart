@@ -1,109 +1,102 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/models/milestone.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
 class MilestoneTimeline extends StatelessWidget {
-  final String selectedPeriod;
+  final PeriodType selectedPeriod;
 
   const MilestoneTimeline({
     Key? key,
     required this.selectedPeriod,
   }) : super(key: key);
 
-  List<Map<String, dynamic>> _getMilestones() {
+  List<Milestone> _getMilestones() {
     final allMilestones = [
-      {
-        "id": 1,
-        "title": "20 Minutes",
-        "description": "Heart rate and blood pressure drop",
-        "icon": "favorite",
-        "achieved": true,
-        "date": DateTime.now().subtract(Duration(days: 30)),
-        "category": "Health"
-      },
-      {
-        "id": 2,
-        "title": "12 Hours",
-        "description": "Carbon monoxide level normalizes",
-        "icon": "air",
-        "achieved": true,
-        "date": DateTime.now().subtract(Duration(days: 29)),
-        "category": "Health"
-      },
-      {
-        "id": 3,
-        "title": "2 Weeks",
-        "description": "Circulation improves and lung function increases",
-        "icon": "healing",
-        "achieved": true,
-        "date": DateTime.now().subtract(Duration(days: 16)),
-        "category": "Health"
-      },
-      {
-        "id": 4,
-        "title": "1 Month",
-        "description": "Coughing and shortness of breath decrease",
-        "icon": "self_improvement",
-        "achieved": true,
-        "date": DateTime.now(),
-        "category": "Health"
-      },
-      {
-        "id": 5,
-        "title": "3 Months",
-        "description": "Risk of heart attack begins to drop",
-        "icon": "monitor_heart",
-        "achieved": false,
-        "date": DateTime.now().add(Duration(days: 60)),
-        "category": "Health"
-      },
-      {
-        "id": 6,
-        "title": "1 Year",
-        "description": "Risk of heart disease is cut in half",
-        "icon": "health_and_safety",
-        "achieved": false,
-        "date": DateTime.now().add(Duration(days: 335)),
-        "category": "Health"
-      },
+      Milestone(
+        id: 1,
+        titleKey: 'milestone_20_minutes_title',
+        descriptionKey: 'milestone_20_minutes_description',
+        icon: "favorite",
+        achieved: true,
+        date: DateTime.now().subtract(Duration(days: 30)),
+        category: MotivationCategory.health,
+      ),
+      Milestone(
+        id: 2,
+        titleKey: 'milestone_12_hours_title',
+        descriptionKey: 'milestone_12_hours_description',
+        icon: "air",
+        achieved: true,
+        date: DateTime.now().subtract(Duration(days: 29)),
+        category: MotivationCategory.health,
+      ),
+      Milestone(
+        id: 3,
+        titleKey: 'milestone_2_weeks_title',
+        descriptionKey: 'milestone_2_weeks_description',
+        icon: "healing",
+        achieved: true,
+        date: DateTime.now().subtract(Duration(days: 16)),
+        category: MotivationCategory.health,
+      ),
+      Milestone(
+        id: 4,
+        titleKey: 'milestone_1_month_title',
+        descriptionKey: 'milestone_1_month_description',
+        icon: "self_improvement",
+        achieved: true,
+        date: DateTime.now(),
+        category: MotivationCategory.health,
+      ),
+      Milestone(
+        id: 5,
+        titleKey: 'milestone_3_months_title',
+        descriptionKey: 'milestone_3_months_description',
+        icon: "monitor_heart",
+        achieved: false,
+        date: DateTime.now().add(Duration(days: 60)),
+        category: MotivationCategory.health,
+      ),
+      Milestone(
+        id: 6,
+        titleKey: 'milestone_1_year_title',
+        descriptionKey: 'milestone_1_year_description',
+        icon: "health_and_safety",
+        achieved: false,
+        date: DateTime.now().add(Duration(days: 335)),
+        category: MotivationCategory.health,
+      ),
     ];
+      
 
     // Filter milestones based on selected period
     switch (selectedPeriod) {
-      case 'Week':
+      case PeriodType.week:
         return allMilestones
             .where((m) =>
-                (m["date"] as DateTime)
-                    .difference(DateTime.now())
-                    .inDays
-                    .abs() <=
-                7)
+                m.date.difference(DateTime.now()).inDays.abs() <= 7)
             .toList();
-      case 'Month':
+      case PeriodType.month:
         return allMilestones
             .where((m) =>
-                (m["date"] as DateTime)
-                    .difference(DateTime.now())
-                    .inDays
-                    .abs() <=
-                30)
+                m.date.difference(DateTime.now()).inDays.abs() <= 30)
             .toList();
-      case '3 Months':
+      case PeriodType.threeMonths:
         return allMilestones
             .where((m) =>
-                (m["date"] as DateTime)
-                    .difference(DateTime.now())
-                    .inDays
-                    .abs() <=
-                90)
+                m.date.difference(DateTime.now()).inDays.abs() <= 90)
             .toList();
-      case 'Year':
+      case PeriodType.year:
         return allMilestones;
       default:
         return allMilestones.take(3).toList();
     }
   }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +144,7 @@ class MilestoneTimeline extends StatelessWidget {
             separatorBuilder: (context, index) => SizedBox(height: 1.h),
             itemBuilder: (context, index) {
               final milestone = milestones[index];
-              final isAchieved = milestone["achieved"] as bool;
+              final isAchieved = milestone.achieved;
 
               return Container(
                 padding: EdgeInsets.all(3.w),
@@ -183,7 +176,7 @@ class MilestoneTimeline extends StatelessWidget {
                       ),
                       child: Center(
                         child: CustomIconWidget(
-                          iconName: milestone["icon"] as String,
+                          iconName: milestone.icon,
                           color: isAchieved
                               ? Theme.of(context).colorScheme.onSecondary
                               : Theme.of(context).colorScheme.onSurface
@@ -200,7 +193,7 @@ class MilestoneTimeline extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                milestone["title"] as String,
+                                milestone.title(AppLocalizations.of(context)!),
                                 style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(
                                   fontWeight: FontWeight.w600,
@@ -224,7 +217,7 @@ class MilestoneTimeline extends StatelessWidget {
                           ),
                           SizedBox(height: 0.5.h),
                           Text(
-                            milestone["description"] as String,
+                            milestone.description(AppLocalizations.of(context)!),
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                               color: Theme.of(context).colorScheme.onSurface
@@ -252,7 +245,7 @@ class MilestoneTimeline extends StatelessWidget {
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
-                          _formatDate(milestone["date"] as DateTime),
+                          _formatDate(milestone.date),
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: Theme.of(context).colorScheme.onSurface

@@ -82,7 +82,7 @@ class MetricCardWidget extends StatelessWidget {
               Text(
                 subtitle,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppTheme.textMediumEmphasisLight,
+                  color: Theme.of(context).colorScheme.onSurface
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

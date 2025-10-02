@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 import '../../../services/motivational_quotes_service.dart';
@@ -13,10 +14,7 @@ class DailyMotivationWidget extends StatefulWidget {
 }
 
 class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
-  Map<String, String> _currentQuote = {
-    "message": "Loading your daily motivation...",
-    "author": "Loading..."
-  };
+  late Map<String, String> _currentQuote ;
 
   bool _isLoading = true;
   bool _isRefreshing = false;
@@ -26,7 +24,16 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
     super.initState();
     _loadDailyQuote();
   }
-
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Preload a random quote to show immediately
+    final l10n = AppLocalizations.of(context)!;
+    _currentQuote = {
+    "message": l10n.loadingYourDailyMotivation,
+    "author": l10n.loading
+  };
+  }
   /// Load the daily motivational quote
   Future<void> _loadDailyQuote() async {
     setState(() => _isLoading = true);
@@ -41,7 +48,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
       }
     } catch (e) {
       // Fallback to a random quote if daily quote fails
-      final fallbackQuote = MotivationalQuotesService.getRandomQuote();
+      final fallbackQuote = await MotivationalQuotesService.forceRefreshQuote();
       if (mounted) {
         setState(() {
           _currentQuote = fallbackQuote;
@@ -52,7 +59,8 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
   }
 
   /// Manually refresh the quote
-  Future<void> _refreshQuote() async {
+  Future<void> _refreshQuote(BuildContext context) async {
+    final l10n = AppLocalizations.of(context)!;
     setState(() => _isRefreshing = true);
 
     try {
@@ -69,8 +77,8 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
         setState(() => _isRefreshing = false);
 
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Unable to refresh quote. Try again later.'),
+          SnackBar(
+            content: Text(l10n.unableToRefreshQuote),
             backgroundColor: Colors.orange,
             duration: Duration(seconds: 2),
           ),
@@ -81,6 +89,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
@@ -131,7 +140,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Text(
-                    'Daily Motivation',
+                    l10n.dailyMotivation,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).colorScheme.secondary,
@@ -140,7 +149,7 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
                 ),
                 // Refresh button
                 GestureDetector(
-                  onTap: _isRefreshing ? null : _refreshQuote,
+                  onTap: _isRefreshing ? null : () => _refreshQuote(context),
                   child: Container(
                     padding: EdgeInsets.all(2.w),
                     decoration: BoxDecoration(
@@ -322,23 +331,29 @@ class _DailyMotivationWidgetState extends State<DailyMotivationWidget> {
         ),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.min, // Keeps the Row as compact as possible
         children: [
+          // 🌞 or 🌜 icon based on time of day
           CustomIconWidget(
             iconName: isMorning ? 'wb_sunny' : 'nights_stay',
             color: isMorning ? Colors.amber.shade600 : Colors.indigo.shade600,
-            size: 4.w,
+            size: 4.w, // Responsive sizing
           ),
           SizedBox(width: 2.w),
+
+          // Text: Morning or Evening
           Text(
-            isMorning ? 'Morning Motivation' : 'Evening Inspiration',
+            isMorning
+                ? AppLocalizations.of(context)!.morningMotivation
+                : AppLocalizations.of(context)!.eveningInspiration,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.w500,
               color: isMorning ? Colors.amber.shade700 : Colors.indigo.shade700,
             ),
           ),
         ],
-      ),
+      )
+
     );
   }
 }

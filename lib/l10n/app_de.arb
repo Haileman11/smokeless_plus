@@ -1,89 +1,1772 @@
 {
-    "@@locale": "de",
-    "appTitle": "Rauchen Aufh\u00f6ren",
-    "goodMorning": "Guten Morgen",
-    "goodAfternoon": "Guten Tag",
-    "goodEvening": "Guten Abend",
-    "smokeFreeJourney": "Sie machen das fantastisch auf Ihrem rauchfreien Weg",
-    "currentStreak": "Aktuelle Serie",
-    "daysSmokeFree": "Rauchfreie Tage",
-    "timeSmokeFree": "Rauchfreie Zeit",
-    "moneySaved": "Geld Gespart",
-    "cigarettesAvoided": "Zigaretten Vermieden",
-    "healthScore": "Gesundheits-Score",
-    "achievements": "Erfolge",
-    "keepItUp": "Weiter so!",
-    "improvingDaily": "T\u00e4glich besser",
-    "basedOnProgress": "Basierend auf Fortschritt",
-    "thatsPacks": "Das sind {count} Packungen",
-    "navigationHome": "Startseite",
-    "navigationProgress": "Fortschritt",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "Gesundheits-Score",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "Erfolge",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "Profil",
-    "progressUpdated": "Fortschritt erfolgreich aktualisiert!",
-    "errorLoadingData": "Fehler beim Laden der Daten. Standardwerte werden verwendet.",
-    "motivationalMessage1": "Jeder rauchfreie Tag ist ein Sieg. Sie bauen mit jedem Moment eine ges\u00fcndere, st\u00e4rkere Version Ihrer selbst auf.",
-    "motivationalMessage2": "Ihre Lungen danken es Ihnen gerade jetzt. Jeder Atemzug ist sauberer, jeder Herzschlag st\u00e4rker.",
-    "motivationalMessage3": "Das Geld, das Sie sparen, ist nur der Anfang. Der wahre Schatz sind die Jahre, die Sie Ihrem Leben hinzuf\u00fcgen.",
-    "drMichaelChen": "Dr. Michael Chen",
-    "healthCoachMaria": "Gesundheitscoach Maria",
-    "wellnessExpertJohn": "Wellness-Experte John",
-    "healthStageStarting": "Erholung Beginnt",
-    "healthStageBegin": "Bereit zum Beginnen",
-    "healthStageJourney": "Die Reise Beginnt",
-    "healthStageNicotineDropping": "Nikotin Sinkt",
-    "healthStageCONormalizing": "CO-Werte Normalisieren",
-    "healthStageHeartRisk": "Herzrisiko Sinkt",
-    "healthStageNicotineFree": "Nikotinfreier K\u00f6rper",
-    "healthStageSensesImproving": "Sinne Verbessern Sich",
-    "healthStageCirculation": "Durchblutung Verbessert Sich",
-    "healthStageLungFunction": "Lungenfunktion Verbessert Sich",
-    "healthStageSignificant": "Signifikante Erholung",
-    "healthStageHeartDisease": "Herzkrankheitsrisiko Reduziert",
-    "healthStageStroke": "Schlaganfallrisiko Normalisiert",
-    "healthStageMaximum": "Maximale Gesundheitserholung",
-    "milestoneStartJourney": "Beginnen Sie Ihre Reise",
-    "milestoneNicotineDropping": "Nikotinwerte Sinken",
-    "milestoneCOClearing": "Kohlenmonoxid Kl\u00e4rt Sich",
-    "milestoneHeartAttack": "Herzinfarktrisiko Sinkt",
-    "milestoneNicotineElimination": "Nikotin-Elimination",
-    "milestoneTasteSmell": "Geschmack & Geruch Wiedergeburt",
-    "milestoneCirculationBoost": "Durchblutungsschub",
-    "milestoneLungBoost": "Lungenfunktionsschub",
-    "milestoneMajorLung": "Gro\u00dfe Lungenerholung",
-    "milestoneHeartRisk": "Herzrisiko Halbiert",
-    "milestoneStrokeRisk": "Schlaganfallrisiko Normalisiert",
-    "milestoneCancerRisk": "Krebsrisiko Halbiert",
-    "milestoneMaintaining": "Exzellenz Aufrechterhalten",
-    "achievedStatus": "Erreicht",
-    "soonStatus": "Bald",
-    "notStartedStatus": "Nicht Begonnen",
-    "timeInDays": "In {count} Tag",
-    "timeInDaysPlural": "In {count} Tagen",
-    "timeInHours": "In {count} Stunde",
-    "timeInHoursPlural": "In {count} Stunden",
-    "timeInMinutes": "In {count} Minuten",
-    "languageSettings": "Spracheinstellungen",
-    "selectLanguage": "Sprache Ausw\u00e4hlen",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "de",
+  "appTitle": "Smokeless Plus",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "Guten Morgen",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "Guter Nachmittag",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "Guten Abend",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "Sie machen erstaunlich auf Ihrer rauchfreien Reise",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "Tage Rauchfrei",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "Zeit drosselfrei",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "Geld gespart",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "Zigaretten vermeiden",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "Gesundheitsindikatoren",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "Erfolge",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "Steh auf!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "Verbesserung des Tages",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "Fortschritte",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "Das ist {count} Packs",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "Home",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "Fortschritte",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "Gesundheitsindikatoren",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "Erfolge",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "Profil",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "Fortschritt erfolgreich aktualisiert!",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "Fehler beim Laden von Daten. Standardwerte verwenden.",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "Jeden Tag ist rauchfrei ein Sieg. Sie bauen eine gesündere, stärkere Version von sich selbst mit jedem vorbeigehenden Moment.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "Ihre Lungen danken Ihnen jetzt. Jeder Atem ist sauberer, jeder Herzschlag stärker.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "Das Geld, das Sie sparen, ist nur der Anfang. Der wahre Schatz ist die Jahre, die Sie Ihrem Leben hinzufügen.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "Dr. Michael Chen",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "Gesundheit Coach Maria",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "Wellness Experte John",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "Starting Recovery",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "Bereit zu beginnen",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "Fahrt beginnt",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "Nikotin Droping",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "CO Levels Normalisierung",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "Herzrisiko verringert",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "Nikotinfreier Körper",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "Senses Improving",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "Zirkulation Improving",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "Lung Funktion Verbesserung",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "Signifikante Erholung",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "Herz-Krankheit Risiko reduziert",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "Stroke Risk Normalisiert",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "Maximale Gesundheitsrückgewinnung",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "Starten Sie Ihre Reise",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "Nikotin Levels Dropping",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "Kohlenstoffmonoxid Clearing",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "Herzinfarkt Risiko",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "Nikotin Elimination",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "Geschmack & Smell Revival",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "Zirkulation Boost",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "Lungenfunktion Boost",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "Major Lung Erholung",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "Herz-Kreislauf",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "Stroke Risk Normalisiert",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "Cancer Risk Halved",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "Exzellenz aufrecht erhalten",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "Erfolgreich",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "Bald",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "Nicht gestartet",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "In {count} Tag",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "In {count} Tage",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "In {count} Stunde",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "In {count} Stunden",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "In {count} Minuten",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "Spracheinstellungen",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "Sprache auswählen",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "Englisch",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "Español",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "Français",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "Deutsch",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "Italienisch",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "Português",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "العربيالعربيالعربيالعربيبيا العربيالعربيالعربيا العربيا العربيا العربيبيا العربيالعربيا العربيالعربيالعربيبيالعربيالع العربيالعربيبيالعربيالعربيبيبيبيبيا ا الع العربيبيالع ا العربيبيالعربيالع ا الع ا الع الع الع ا الع الع الع ا الع الع ا الع ا الع ا ا ا ا",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "中文",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": "日本語",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "Русский",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": "Пoдли",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "Gesundheit Erholung Timeline",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "Aktuelle Etappe",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "Fortschritt zum nächsten Meilenstein",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "Nächster Meilenstein",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "Zeit bleibt",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "Belastung Ihrer täglichen Motivation...",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "Unfähig, Zitat zu aktualisieren. Versuchen Sie es später noch mal.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "Morgen Motivation",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "Abend Inspiration",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "Jede Sekunde zählt - {second} Sekunden und zählt!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "Machen Sie sich bereit - {second} Sekunden, bis Sie beginnen!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "Tage",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "Stunden",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "Minuten",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "Ihre Erfolge...",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "Erfolgssystem",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "Entriegelt",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "Insgesamt",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "Fortschritte",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "Neue Erfolge",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "Ihr synchronisierter Fortschritt",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "Live-Synchronisation",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "Datum",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "Stränge",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "Gespeichert",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "Vermeiden",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "Gesundheit",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "Soziale Auswirkungen",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "Freunde inspiriert",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "Unterstützungsnachrichten",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "Gemeinschaftsrang",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "Synchronisieren Ihrer Fortschrittsdaten",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "Filteroptionen",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "Export synchronisiert Fortschritte",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "Export erfolgreich",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "Daten aktualisieren",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "Erfolg geteilt erfolgreich!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "Gesundheitsverbesserung",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "Woche",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "Monat",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3 Monate",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "Jahr",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "Bearbeitungsfrequenz",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "Garne",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "Synchronisierte Smoke-Free Streak",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "Aktueller Schritt",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "Ihre Reise hat noch nicht begonnen",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "Überprüfen Sie Ihr Datum der Kündigung in Profileinstellungen",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "Alle Meilensteine",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "Alle Meilensteine der Gesundheit anzeigen",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "Kurzfristig",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20 min - 48 stunden",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "Mittelfristig",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "2 wochen - 9 monate",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "Langfristig",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10+ jahre",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "Finanzen",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "Gesundheit",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "Verhalten",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "Soziales",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "Milestone Kategorien",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "Milestone erreicht! 🎉\n\n{title} \n{timeframe} \n{description}_\n\nWissenschaftliche Fakten: {scientificBasis}\n\n#QuitSmoking #HealthJourney #MilestoneAchieved",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "Achievement hat es geschafft zu teilen!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "Warenbezeichnung",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "Wissenschaftliche Grundlage",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "Komplettes Setup Erst",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "Richten Sie Ihren Termin auf, um gesundheitliche Meilensteine zu verfolgen",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "Health Milestones Timeline",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "Verfolgen Sie Ihren wissenschaftlich fundierten Wiederherstellungsfortschritt",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "Lunge\nFunktion\n {percent}%",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "Herz\nGesundheit\n {percent}%",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": "Insgesamt\nWellness\n {percent}%",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20 Minuten",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "Herzfrequenz und Blutdruckabfall",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12 Stunden",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "Kohlenmonoxid normalisiert",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "2 Wochen",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "Zirkulation verbessert und Lungenfunktion erhöht",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "1 Monat",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "Husten und Atemnot verringern",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3 Monate",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "Risiko von Herzinfarkt beginnt zu fallen",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "1 Jahr",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "Risiko von Herzerkrankungen wird in der Hälfte geschnitten",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "Gespeichertes Geld synchronisiert",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "Insgesamt gespeichert: {saved}_",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": "Fang heute an, Geld zu sparen!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "Legen Sie Ihr Datum auf, um Einsparungen zu sehen",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "Willkommen auf Ihrer Reise!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "Sie sind alle bereit, Ihr rauchfreies Leben zu beginnen. Beginnen wir diese erstaunliche Reise zusammen!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "Skip user information",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "Schritt {currentStep}_ von {totalSteps}",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "Wann hast du aufgehört zu rauchen?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "Wählen Sie Ihr Datum aus, um Ihren Fortschritt zu verfolgen und Meilensteine zu feiern.",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "Erzählen Sie uns über Ihre Rauchergewohnheiten",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "Dies hilft uns, Ihre Einsparungen zu berechnen und Ihre Erfahrung zu personalisieren.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "Bleiben Sie motiviert mit Benachrichtigungen",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "Wählen Sie, wie Sie Unterstützung und Ermutigung erhalten möchten.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "Entdecken Sie leistungsstarke Features",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "Entdecken Sie die Werkzeuge, die Sie auf Ihrer rauchfreien Reise unterstützen.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "Ihr personalisiertes Dashboard",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "Hier ist eine Vorschau Ihres Fortschritts basierend auf den bereitgestellten Informationen.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "Fortsetzung",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "Komplettes Setup",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "Gesundheit und Gesundheit",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "Nächster Health Milestone",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "Blutsauerstoffspiegel normalisieren",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "Basierend auf Ihrem gekündigten Datum und rauchen Gewohnheiten",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "Geschmack und Geruch verbessern",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "Lungenfunktion erhöht",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "Herzkrankheit Risiko reduziert",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "Erfolg entsperrt!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "Erster Erfolg Wachen",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "First Day Champion - Sie haben Ihren ersten rauchfreien Tag abgeschlossen!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "Vervollständigen Sie Ihren ersten rauchfreien Tag, um Ihre erste Abzeichen zu verdienen",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "Fortschrittsverfolgung",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "Überwachen Sie Ihre rauchfreie Reise mit detaillierten Statistiken",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "Gesundheit Meilensteine",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "Sehen Sie, wie sich Ihr Körper im Laufe der Zeit erholt",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "Erfolgssystem",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "Gewinnen Sie Abzeichen und Belohnungen für Ihren Fortschritt",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "Bearbeitungsunterstützung",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "Erhalten Sie sofort Hilfe, wenn Sie es am meisten brauchen",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "Tippen Sie auf jede Funktion zu erkunden",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "Erhalten Sie eine Vorschau von dem, was erwartet Sie",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "Schließen",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "Entdecken Sie",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "Tägliche Motivation",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "Täglich ermutigende Botschaften und Tipps erhalten",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "Notifizierungszeit",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "Veränderung",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "Milestone Alerts",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "Werden Sie informiert, wenn Sie wichtige Meilensteine erreichen",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "Bearbeitungsunterstützung",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "Soforthilfe und Motivation während schwieriger Momente",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "Datum und Uhrzeit",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "Wählen Sie Ihr Datum und Uhrzeit aus",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "Datum und Uhrzeit ändern",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "Datum und Uhrzeit wählen",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "Wie viele Jahre haben Sie geraucht?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "Jahre geräuchert vor dem Austritt",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "Gesundheit & Wellness",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "NEU",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "Wie man entsperrt",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "Füllen Sie die erforderlichen Maßnahmen, um diese Leistung zu entsperren.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "Teilen Erfolg",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "Gesamtpunkte",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "Ebene",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "Fortschritte auf Ebene",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "punkte zu gehen",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "verdiente punkte",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "Premium Motivationsinhalte",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "Zugang exklusive tägliche Motivation Zitate und Erfolgsgeschichten",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "Ozean Thema",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "Schöne Ocean-themed App-Schnittstelle mit beruhigenden Farben",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "Thema Wald",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "Natur inspiriertes grünes Thema für ein erfrischendes Erlebnis",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "Charity Spenden",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "Spenden Sie $5 zu Lungenkrebs Forschung in Ihrem Namen",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "Fortgeschrittene Statistiken",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "Entsperren Sie detaillierte Gesundheitsanalysen und Fortschritte Einblicke",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "Personal Coach Session",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "30 minuten virtuelle sitzung mit einem zertifizierten kutscher",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "Bestätigen Sie die Erlösung",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "Sind Sie sicher, dass Sie {title} für {points} Punkte einlösen wollen?",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "Sie haben noch {availablePoints} Punkte.",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": "Sie haben erfolgreich {title}. Überprüfen Sie Ihr Profil für Details.",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "Reward Redeemed!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "Großartig",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "Du machst das toll!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit} Tage rauchfrei",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "Nicht geraucht",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "Atmen\nÜbung",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "Anruf\nUnterstützung",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "Blick\nFortschritte",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "Ablenkung Spiele",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "Hast du Lust? Du bist nicht allein. Wählen Sie eine Kopierstrategie unten.",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "Kürzliche Sitzungen",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "Schneller Atemzug",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "Richten Sie Ihren Notfallkontakt in Einstellungen ein",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "Einstellungen",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "Anruf Notfall Kontakt",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "Erhalten Sie Ihre Unterstützung Person",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "Unterstützung erhalten",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "Craving Session angemeldet. Tolle Arbeit mit {method}!",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "Quick Coping Tipps",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "Versuchen Sie es jetzt",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "Tolle Wahl! {title} ist eine effektive Kopierstrategie.",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "Gesundheitsleistungen",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "Wasser",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "Trinken Sie Ihren Körper und halten Sie Ihre Hände beschäftigt. Wasser hilft Flush Giftstoffe und reduziert Verlangen.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3 minuten",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "Gehen Sie",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "Beweg dich! Physikalische Aktivität löst Endorphine und ablenkt vom Verlangen.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5-10 minuten",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "Ruf einen Freund an",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "Für Unterstützung. Mit jemandem zu sprechen kann Motivation und Ablenkung bieten.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5-15 minuten",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "Ihre Gründe überprüfen",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "Denken Sie daran, warum Sie sich entschieden haben zu kündigen. Fokussiere dich auf deine Gesundheit, deine Familie und deine finanziellen Ziele.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5 minuten",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "Tief atmen",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "Übe langsame, tiefe Atemzüge. 4 Sekunden lang einatmen.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5 minuten",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "Kaugummi",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "Halten Sie Ihren Mund mit zuckerfreiem Gummi. Es hilft bei oralen Fixiergewohnheiten.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "Weitergehen",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "Musik hören",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "Legen Sie auf Ihre Lieblings-Playlist. Musik kann die Stimmung verbessern und Ablenkung bieten.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3-10 minuten",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "Praxis Breite",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "Denken Sie an drei Dinge, für die Sie dankbar sind. Positives Denken reduziert Stress und Verlangen.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3 minuten",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "Hoch",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "Sehr hoch",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "Mittel",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "Herausforderung für den Fokus",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "Finden Sie 5 {randomColor} Objekte rund um Sie",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "Schauen Sie sich um Ihre Umgebung und identifizieren Sie 5 Objekte, die {randomColor} sind. Nehmen Sie sich Zeit und konzentrieren Sie sich auf jedes Objekt.",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "Neue Farbe Herausforderung",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "Counting Challenge",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "Diese mentale Mathe-Übung erfordert Fokus und Konzentration, hilft ablenken von Verlangen.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "Zeige Hinweise",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "Neue Herausforderung",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "Palast",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "Visualisieren Sie Ihre Kindheit zu Hause",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "Anleitung",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "ANHANG Schließen Sie Ihre Augen und stellen Sie sich vor, durch Ihre Kindheit zu gehen\n\n2. Starten Sie an der Haustür und bewegen Sie Raum für Zimmer\n\n3. Details: Farben, Möbel, Dekorationen\n\n4. Verbringen Sie Zeit in jedem Raum, um bestimmte Objekte zu erinnern\n\n5. Erinnern Sie sich an Geräusche, Gerüche und Gefühle",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "Toller Job! Speicherübungen stärken den Fokus und reduzieren das Verlangen.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "Vollständige Übung",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "Wortvereinigung",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "Anfangswort",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "Erstellen Sie eine Kette von verwandten Wörtern. Jedes neue Wort sollte sich mit dem vorherigen verbinden.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "Beispiel: Ozean → Wasser → Regen → Wolken → Himmel → Vögel → Freiheit",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "Neues Anfangswort",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "Ozean",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "Berg",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "Wald",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "Stadt",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "Garten",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "Bibliothek",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "Küche",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "Musik",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "Jeder Atem ist ein neuer Anfang",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "Du bist stärker als dein Verlangen",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "Dieser Moment wird passieren, Sie werden überwunden",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "Atme in Frieden, atme Stress aus",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "Deine Gesundheit ist jeden Atem wert",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "Ein Atem zu einer Zeit, eines Tages zu einer Zeit",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "Inhalieren",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "Warte",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "Ausatmen",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "Bereit zum Atmen?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 Atemtechnik",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "Übung starten",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "Extend (+2 Zyklen)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "Stopp",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "Neues Motivationsangebot geladen!",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "Versäumt, Zitat zu aktualisieren. Versuchen Sie es später noch mal.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "Fälligkeitsplan",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "Refresh Schedule",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "Nächster Refresh",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "Zitate insgesamt",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "Aktueller Zeitraum",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "{number} einzigartige Zitate",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod} in {hours} Stunden und {minutes} Minuten",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "Zitate erfrischen täglich um 6 Uhr und 18 Uhr automatisch, um Sie während Ihrer Ausreise motiviert zu halten!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "Verstanden!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "Auto-refreshes 2x täglich",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "Rufen Sie Ihre Support-Person an oder beenden Sie:",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "Soforthilfe",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "Danke",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "Du hast das!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "Zurück",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "Start",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "Atmen Sie für 4, halten Sie für 7, Ausatmen für 8",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "Wählen Sie, was Ihnen am meisten hilft jetzt:",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "Atemübung",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "4-7-8 technik zur verringerung der sehnsucht",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "Motivationsangebot",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "Sofortige Ermutigung erhalten",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "Kontakt",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "Rufen Sie Ihren Support an",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "Ablenkungsaktivität",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "5-minütige Aktivitäten",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "Jede Zigarette, die du nicht rauchst, tut dir gut.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "Du bist stärker als dein Verlangen.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "Dieses Verlangen wird passieren. Du hast das!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "Denk daran, wie stolz du morgen sein wirst.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "Deine Gesundheit ist mehr wert als jede Zigarette.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "Do 10 springende Jacken",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "Trinken Sie ein Glas Wasser langsam",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "Nehmen Sie 5 tiefe Atemzüge",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "Rufen Sie einen Freund oder ein Familienmitglied an",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "Gehen Sie zu einem kurzen Spaziergang",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "Hören Sie auf Ihr Lieblingslied",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "Gesundheit Erholung Fortschritte",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "Meilensteine erzielt",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "Erstaunliche Fortschritte! Dein Körper heilt schön.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "Jeder Meilenstein bringt Sie näher an die vollständige Erholung.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "Speichern",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "Abbrechen",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "Aktuelle Zeit",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "Blick",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "Synchronisierte Exportvorschau",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "Initialisierung Ihrer Ausreise...",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "Benutzereinstellungen laden...",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "Das Datum der Kündigung...",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "Fortschrittsdaten laden...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "Berechnen von Streak...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "Vorbereitung von Motivationsinhalten...",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "Gesundheitskategorie Aufschlüsselung",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "Quitten Details bearbeiten",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "Aktualisieren Sie Ihre fehlenden Informationen. Änderungen werden über alle App-Funktionen synchronisiert.",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "Jahre des Rauchens",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "Tägliche Zigaretten",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "zigaretten pro tag",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "Kosten",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "Änderungen speichern",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "Gesamte Gesundheitsbewertung",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "Tage Quit",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "Vollständige Dauer",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "Erholung",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "Ausgezeichnet",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "Gut",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "Verbesserung",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

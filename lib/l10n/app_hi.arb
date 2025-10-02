@@ -1,89 +1,1772 @@
 {
-    "@@locale": "hi",
-    "appTitle": "\u0927\u0942\u092e\u094d\u0930\u092a\u093e\u0928 \u091b\u094b\u0921\u093c\u0928\u093e \u091f\u094d\u0930\u0948\u0915\u0930",
-    "goodMorning": "\u0938\u0941\u092a\u094d\u0930\u092d\u093e\u0924",
-    "goodAfternoon": "\u0928\u092e\u0938\u094d\u0915\u093e\u0930",
-    "goodEvening": "\u0936\u0941\u092d \u0938\u0902\u0927\u094d\u092f\u093e",
-    "smokeFreeJourney": "\u0906\u092a \u0905\u092a\u0928\u0940 \u0927\u0942\u092e\u094d\u0930\u092a\u093e\u0928 \u092e\u0941\u0915\u094d\u0924 \u092f\u093e\u0924\u094d\u0930\u093e \u092e\u0947\u0902 \u0905\u0926\u094d\u092d\u0941\u0924 \u0915\u093e\u092e \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902",
-    "currentStreak": "\u0935\u0930\u094d\u0924\u092e\u093e\u0928 \u0938\u094d\u091f\u094d\u0930\u0940\u0915",
-    "daysSmokeFree": "\u0927\u0942\u092e\u094d\u0930\u092a\u093e\u0928 \u092e\u0941\u0915\u094d\u0924 \u0926\u093f\u0928",
-    "timeSmokeFree": "\u0927\u0942\u092e\u094d\u0930\u092a\u093e\u0928 \u092e\u0941\u0915\u094d\u0924 \u0938\u092e\u092f",
-    "moneySaved": "\u092a\u0948\u0938\u0947 \u092c\u091a\u093e\u090f",
-    "cigarettesAvoided": "\u0938\u093f\u0917\u0930\u0947\u091f \u0938\u0947 \u092c\u091a\u0947",
-    "healthScore": "\u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0938\u094d\u0915\u094b\u0930",
-    "achievements": "\u0909\u092a\u0932\u092c\u094d\u0927\u093f\u092f\u093e\u0902",
-    "keepItUp": "\u091c\u093e\u0930\u0940 \u0930\u0916\u0947\u0902!",
-    "improvingDaily": "\u0926\u0948\u0928\u093f\u0915 \u0938\u0941\u0927\u093e\u0930",
-    "basedOnProgress": "\u092a\u094d\u0930\u0917\u0924\u093f \u0915\u0947 \u0906\u0927\u093e\u0930 \u092a\u0930",
-    "thatsPacks": "\u092f\u0939 {count} \u092a\u0948\u0915\u0947\u091f \u0939\u0948",
-    "navigationHome": "\u0918\u0930",
-    "navigationProgress": "प्रगति",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "स्वास्थ्य स्कोर",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "उपलब्धियां",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "\u092a\u094d\u0930\u094b\u092b\u093c\u093e\u0907\u0932",
-    "progressUpdated": "\u092a\u094d\u0930\u0917\u0924\u093f \u0938\u092b\u0932\u0924\u093e\u092a\u0942\u0930\u094d\u0935\u0915 \u0905\u092a\u0921\u0947\u091f \u0939\u0941\u0908!",
-    "errorLoadingData": "\u0921\u0947\u091f\u093e \u0932\u094b\u0921 \u0915\u0930\u0928\u0947 \u092e\u0947\u0902 \u0924\u094d\u0930\u0941\u091f\u093f\u0964 \u0921\u093f\u092b\u093c\u0949\u0932\u094d\u091f \u092e\u093e\u0928 \u0915\u093e \u0909\u092a\u092f\u094b\u0917 \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964",
-    "motivationalMessage1": "\u0927\u0942\u092e\u094d\u0930\u092a\u093e\u0928 \u092e\u0941\u0915\u094d\u0924 \u0939\u0930 \u0926\u093f\u0928 \u090f\u0915 \u091c\u0940\u0924 \u0939\u0948\u0964 \u0906\u092a \u0939\u0930 \u0917\u0941\u091c\u0930\u0924\u0947 \u092a\u0932 \u0915\u0947 \u0938\u093e\u0925 \u0905\u092a\u0928\u093e \u090f\u0915 \u0938\u094d\u0935\u0938\u094d\u0925, \u092e\u091c\u092c\u0942\u0924 \u0938\u0902\u0938\u094d\u0915\u0930\u0923 \u092c\u0928\u093e \u0930\u0939\u0947 \u0939\u0948\u0902\u0964",
-    "motivationalMessage2": "\u0906\u092a\u0915\u0947 \u092b\u0947\u092b\u0921\u093c\u0947 \u0905\u092d\u0940 \u0906\u092a\u0915\u093e \u0927\u0928\u094d\u092f\u0935\u093e\u0926 \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964 \u0939\u0930 \u0938\u093e\u0902\u0938 \u0938\u093e\u092b \u0939\u0948, \u0939\u0930 \u0927\u0921\u093c\u0915\u0928 \u092e\u091c\u092c\u0942\u0924 \u0939\u0948\u0964",
-    "motivationalMessage3": "\u0906\u092a \u091c\u094b \u092a\u0948\u0938\u093e \u092c\u091a\u093e \u0930\u0939\u0947 \u0939\u0948\u0902 \u0935\u0939 \u0938\u093f\u0930\u094d\u092b \u0936\u0941\u0930\u0941\u0906\u0924 \u0939\u0948\u0964 \u0905\u0938\u0932\u0940 \u0916\u091c\u093e\u0928\u093e \u0935\u0947 \u0938\u093e\u0932 \u0939\u0948\u0902 \u091c\u094b \u0906\u092a \u0905\u092a\u0928\u0947 \u091c\u0940\u0935\u0928 \u092e\u0947\u0902 \u091c\u094b\u0921\u093c \u0930\u0939\u0947 \u0939\u0948\u0902\u0964",
-    "drMichaelChen": "\u0921\u0949. \u092e\u093e\u0907\u0915\u0932 \u091a\u0947\u0928",
-    "healthCoachMaria": "\u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0915\u094b\u091a \u092e\u093e\u0930\u093f\u092f\u093e",
-    "wellnessExpertJohn": "\u0915\u0932\u094d\u092f\u093e\u0923 \u0935\u093f\u0936\u0947\u0937\u091c\u094d\u091e \u091c\u0949\u0928",
-    "healthStageStarting": "\u0930\u093f\u0915\u0935\u0930\u0940 \u0936\u0941\u0930\u0942",
-    "healthStageBegin": "\u0936\u0941\u0930\u0942 \u0915\u0930\u0928\u0947 \u0915\u0947 \u0932\u093f\u090f \u0924\u0948\u092f\u093e\u0930",
-    "healthStageJourney": "\u092f\u093e\u0924\u094d\u0930\u093e \u0936\u0941\u0930\u0942",
-    "healthStageNicotineDropping": "\u0928\u093f\u0915\u094b\u091f\u0940\u0928 \u0918\u091f \u0930\u0939\u093e",
-    "healthStageCONormalizing": "CO \u0938\u094d\u0924\u0930 \u0938\u093e\u092e\u093e\u0928\u094d\u092f \u0939\u094b \u0930\u0939\u0947",
-    "healthStageHeartRisk": "\u0939\u0943\u0926\u092f \u091c\u094b\u0916\u093f\u092e \u0918\u091f \u0930\u0939\u093e",
-    "healthStageNicotineFree": "\u0928\u093f\u0915\u094b\u091f\u0940\u0928 \u092e\u0941\u0915\u094d\u0924 \u0936\u0930\u0940\u0930",
-    "healthStageSensesImproving": "\u0907\u0902\u0926\u094d\u0930\u093f\u092f\u093e\u0902 \u0938\u0941\u0927\u0930 \u0930\u0939\u0940\u0902",
-    "healthStageCirculation": "\u092a\u0930\u093f\u0938\u0902\u091a\u0930\u0923 \u0938\u0941\u0927\u0930 \u0930\u0939\u093e",
-    "healthStageLungFunction": "\u092b\u0947\u092b\u0921\u093c\u094b\u0902 \u0915\u093e \u0915\u093e\u0930\u094d\u092f \u0938\u0941\u0927\u0930 \u0930\u0939\u093e",
-    "healthStageSignificant": "\u092e\u0939\u0924\u094d\u0935\u092a\u0942\u0930\u094d\u0923 \u0930\u093f\u0915\u0935\u0930\u0940",
-    "healthStageHeartDisease": "\u0939\u0943\u0926\u092f \u0930\u094b\u0917 \u0915\u093e \u091c\u094b\u0916\u093f\u092e \u0915\u092e",
-    "healthStageStroke": "\u0938\u094d\u091f\u094d\u0930\u094b\u0915 \u091c\u094b\u0916\u093f\u092e \u0938\u093e\u092e\u093e\u0928\u094d\u092f",
-    "healthStageMaximum": "\u0905\u0927\u093f\u0915\u0924\u092e \u0938\u094d\u0935\u093e\u0938\u094d\u0925\u094d\u092f \u0930\u093f\u0915\u0935\u0930\u0940",
-    "milestoneStartJourney": "\u0905\u092a\u0928\u0940 \u092f\u093e\u0924\u094d\u0930\u093e \u0936\u0941\u0930\u0942 \u0915\u0930\u0947\u0902",
-    "milestoneNicotineDropping": "\u0928\u093f\u0915\u094b\u091f\u0940\u0928 \u0915\u093e \u0938\u094d\u0924\u0930 \u0917\u093f\u0930 \u0930\u0939\u093e",
-    "milestoneCOClearing": "\u0915\u093e\u0930\u094d\u092c\u0928 \u092e\u094b\u0928\u094b\u0911\u0915\u094d\u0938\u093e\u0907\u0921 \u0938\u093e\u092b \u0939\u094b \u0930\u0939\u093e",
-    "milestoneHeartAttack": "\u0939\u093e\u0930\u094d\u091f \u0905\u091f\u0948\u0915 \u0915\u093e \u091c\u094b\u0916\u093f\u092e \u0918\u091f \u0930\u0939\u093e",
-    "milestoneNicotineElimination": "\u0928\u093f\u0915\u094b\u091f\u0940\u0928 \u0909\u0928\u094d\u092e\u0942\u0932\u0928",
-    "milestoneTasteSmell": "\u0938\u094d\u0935\u093e\u0926 \u0914\u0930 \u0917\u0902\u0927 \u0915\u093e \u092a\u0941\u0928\u0930\u094d\u091c\u0928\u094d\u092e",
-    "milestoneCirculationBoost": "\u092a\u0930\u093f\u0938\u0902\u091a\u0930\u0923 \u092c\u0942\u0938\u094d\u091f",
-    "milestoneLungBoost": "\u092b\u0947\u092b\u0921\u093c\u094b\u0902 \u0915\u0947 \u0915\u093e\u0930\u094d\u092f \u092e\u0947\u0902 \u092c\u0942\u0938\u094d\u091f",
-    "milestoneMajorLung": "\u092a\u094d\u0930\u092e\u0941\u0916 \u092b\u0947\u092b\u0921\u093c\u094b\u0902 \u0915\u0940 \u0930\u093f\u0915\u0935\u0930\u0940",
-    "milestoneHeartRisk": "\u0939\u0943\u0926\u092f \u091c\u094b\u0916\u093f\u092e \u0906\u0927\u093e",
-    "milestoneStrokeRisk": "\u0938\u094d\u091f\u094d\u0930\u094b\u0915 \u091c\u094b\u0916\u093f\u092e \u0938\u093e\u092e\u093e\u0928\u094d\u092f",
-    "milestoneCancerRisk": "\u0915\u0948\u0902\u0938\u0930 \u091c\u094b\u0916\u093f\u092e \u0906\u0927\u093e",
-    "milestoneMaintaining": "\u0909\u0924\u094d\u0915\u0943\u0937\u094d\u091f\u0924\u093e \u092c\u0928\u093e\u090f \u0930\u0916\u0928\u093e",
-    "achievedStatus": "\u092a\u094d\u0930\u093e\u092a\u094d\u0924",
-    "soonStatus": "\u091c\u0932\u094d\u0926 \u0939\u0940",
-    "notStartedStatus": "\u0936\u0941\u0930\u0942 \u0928\u0939\u0940\u0902 \u0939\u0941\u0906",
-    "timeInDays": "{count} \u0926\u093f\u0928 \u092e\u0947\u0902",
-    "timeInDaysPlural": "{count} \u0926\u093f\u0928\u094b\u0902 \u092e\u0947\u0902",
-    "timeInHours": "{count} \u0918\u0902\u091f\u0947 \u092e\u0947\u0902",
-    "timeInHoursPlural": "{count} \u0918\u0902\u091f\u094b\u0902 \u092e\u0947\u0902",
-    "timeInMinutes": "{count} \u092e\u093f\u0928\u091f \u092e\u0947\u0902",
-    "languageSettings": "\u092d\u093e\u0937\u093e \u0938\u0947\u091f\u093f\u0902\u0917\u094d\u0938",
-    "selectLanguage": "\u092d\u093e\u0937\u093e \u091a\u0941\u0928\u0947\u0902",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "hi",
+  "appTitle": "स्मोकलेस प्लस",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "गुड मॉर्निंग",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "अच्छा दोपहर",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "अच्छा शाम",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "आप अपने स्मोक-फ्री यात्रा पर अद्भुत काम कर रहे हैं",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "दिन धुआँ मुक्त",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "टाइम स्मोक-फ्री",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "मनी सेव्ड",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "सिगरेट से बचना",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "स्वास्थ्य स्कोर",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "उपलब्धि",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "इसे बनाए रखें!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "दैनिक सुधार",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "प्रगति पर",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "यही है {count} पैक",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "घर",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "प्रगति",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "स्वास्थ्य स्कोर",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "उपलब्धि",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "प्रोफ़ाइल",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "प्रगति सफलतापूर्वक अद्यतन!",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "डेटा लोड करने में त्रुटि। डिफ़ॉल्ट मान का उपयोग करना।.",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "हर दिन धूम्रपान मुक्त एक जीत है। आप प्रत्येक क्षण के साथ अपने आप का एक स्वस्थ, मजबूत संस्करण बना रहे हैं।.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "आपके फेफड़ों को अभी धन्यवाद दे रहे हैं। हर सांस क्लीनर है, हर दिल की धड़कन मजबूत है।.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "जो पैसा आप बचा रहे हैं वह सिर्फ शुरुआत है। वास्तविक खजाना वह वर्ष है जिसे आप अपने जीवन में जोड़ रहे हैं।.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "डॉ माइकल चेन",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "स्वास्थ्य कोच मारिया",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "वेलनेस एक्सपर्ट जॉन",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "रिकवरी शुरू",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "शुरुआत करने के लिए तैयार",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "जर्नी शुरुआती",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "Nicotine dropping",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "CO लेवल सामान्यीकरण",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "दिल जोखिम की कमी",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "निकोटीन फ्री बॉडी",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "सेंसेस इम्प्रूविंग",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "परिसंचरण में सुधार",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "लुंग फंक्शन इम्प्रूविंग",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "महत्वपूर्ण रिकवरी",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "हृदय रोग कम",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "स्ट्रोक जोखिम सामान्यीकृत",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "अधिकतम स्वास्थ्य वसूली",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "अपनी यात्रा शुरू करें",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "निकोटीन लेवल ड्रॉपिंग",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "कार्बन मोनोऑक्साइड क्लियरिंग",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "दिल का दौरा",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "निकोटीन उन्मूलन",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "स्वाद और गंध Revival",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "परिसंचरण बूस्ट",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "लंग फंक्शन बूस्ट",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "मेजर लंग रिकवरी",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "हार्ट जोखिम हल",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "स्ट्रोक जोखिम सामान्यीकृत",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "जोखिम",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "उत्कृष्टता बनाए रखना",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "उपलब्धि",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "सोन",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "शुरू नहीं",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "{count} दिन में",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "{count} दिनों में",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "{count} घंटे में",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "{count} घंटों में",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "{count} मिनट में",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "भाषा सेटिंग",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "भाषा चुनें",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "अंग्रेज़ी",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "हिन्दी",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "English",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "हिन्दी",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "हिन्दी",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "E-Mail _ साइटमैप",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "Affect",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "हिन्दी",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": "A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-A-",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "To be in the same way",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": "हिन्दी",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "हेल्थ रिकवरी टाइमलाइन",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "वर्तमान स्टेज",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "आगामी माइलस्टोन की प्रगति",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "अगला माइलस्टोन",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "समय शेष",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "अपने दैनिक प्रेरणा लोड हो रहा है ...",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "लोड ...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "उद्धरण को ताज़ा करने में असमर्थ। बाद में फिर से प्रयास करें।.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "मॉर्निंग प्रेरणा",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "शाम प्रेरणा",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "हर सेकंड गिनती - {second} सेकंड बचा है!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "तैयार हो जाओ - {second} सेकंड में!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "दिन",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "घंटे",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "मिनट",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "अपनी उपलब्धियों को लोड करना.",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "उपलब्धि प्रणाली",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "अनलॉक",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "कुल",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "प्रगति",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "हाल ही में उपलब्धि",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "आपका सिंक्रनाइज़ प्रगति",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "लाइव सिंक",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "तिथि",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "स्टेरिक",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "सेव",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "बचना",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "स्वास्थ्य",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "सामाजिक प्रभाव",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "मित्र प्रेरित",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "समर्थन संदेश",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "सामुदायिक रैंक",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "अपने प्रगति डेटा को सिंक्रनाइज़ करना",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "फ़िल्टर विकल्प",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "सिंक्रनाइज़ प्रगति",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "सफल निर्यात करें",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "ताज़ा डेटा",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "उपलब्धि सफलतापूर्वक साझा!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "स्वास्थ्य सुधार",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "सप्ताह",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "महीना",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3 महीने",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "साल",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "Craving आवृत्ति",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "Cravings",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "सिंक्रोनाइज़्ड स्मोक-फ्री स्ट्रैक",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "वर्तमान स्टेक",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "आपकी यात्रा अभी तक शुरू नहीं हुई है",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "प्रोफ़ाइल सेटिंग्स में अपनी छुट्टी की तारीख की जाँच करें",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "सभी मील का पत्थर",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "सभी स्वास्थ्य मील का पत्थर दिखाएं",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "लघु अवधि",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20 मिनट - 48 घंटे",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "मध्यम अवधि",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "2 सप्ताह - 9 महीने",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "दीर्घकालिक",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10 वर्ष",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "वित्तीय",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "स्वास्थ्य",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "व्यवहारिक",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "सामाजिक",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "माइलस्टोन",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "मील का पत्थर साझा करें: {title}\n{timeframe} \n{description}\n\nवैज्ञानिक तथ्य: {scientificBasis}\n\n#QuitSmoking #HealthJourney #MilestoneAchieved",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "उपलब्धि साझा करने के लिए कॉपी!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "विवरण",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "वैज्ञानिक आधार",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "पूरा सेटअप पहले",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "स्वास्थ्य मील के पत्थरों को ट्रैक करने के लिए अपनी छुट्टी की तारीख निर्धारित करें",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "स्वास्थ्य लाभ समयरेखा",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "अपने वैज्ञानिक आधार पर वसूली प्रगति ट्रैक",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "फेफड़े\nकार्य\n {percent}%",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "दिल\nस्वास्थ्य\n{percent}%",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": "कुल मिलाकर\nकल्याण\n{percent}%",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20 मिनट",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "हृदय गति और रक्तचाप ड्रॉप",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12 घंटे",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "कार्बन मोनोऑक्साइड स्तर सामान्यीकृत",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "2 सप्ताह",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "परिसंचरण में सुधार और फेफड़ों के कार्य में वृद्धि",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "1 महीना",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "सांस की कमी",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3 महीने",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "दिल के दौरे के जोखिम में गिरावट शुरू होती है",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "1 वर्ष",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "हृदय रोग के जोखिम को आधा में काट दिया जाता है",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "Synchronized Money Saved",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "कुल बचाया: {saved}",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": "आज पैसे बचाना शुरू करें!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "बचत देखने के लिए अपनी छुट्टी की तारीख निर्धारित करें",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "आपका स्वागत है यात्रा!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "आप सभी अपने धूम्रपान मुक्त जीवन शुरू करने के लिए सेट कर रहे हैं। चलो इस अद्भुत यात्रा को एक साथ शुरू करते हैं!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "लॉग इन",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "चरण {currentStep} का {totalSteps}",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "जब आपने धूम्रपान छोड़ दिया था?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "अपनी प्रगति को ट्रैक करने और मील के पत्थरों को मनाने के लिए अपनी छुट्टी की तारीख का चयन करें।.",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "हमें अपनी धूम्रपान आदतों के बारे में बताएं",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "यह हमें आपकी बचत की गणना करने और अपने अनुभव को व्यक्तिगत बनाने में मदद करता है।.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "अधिसूचनाओं के साथ प्रेरित रहें",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "क्या आप समर्थन और प्रोत्साहन प्राप्त करना चाहते हैं.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "शक्तिशाली सुविधाओं की खोज",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "उन उपकरणों का अन्वेषण करें जो आपके धूम्रपान रहित यात्रा पर आपकी सहायता करेंगे।.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "आपका व्यक्तिगत डैशबोर्ड",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "यहां आपके द्वारा प्रदान की गई जानकारी के आधार पर आपकी प्रगति का पूर्वावलोकन है।.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "जारी",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "पूरा सेटअप",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "स्वास्थ्य प्रगति",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "अगला स्वास्थ्य लाभ",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "रक्त ऑक्सीजन स्तर सामान्यीकृत",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "अपनी छुट्टी की तारीख और धूम्रपान आदतों के आधार पर",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "स्वाद और गंध में सुधार",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "फेफड़े का कार्य बढ़ता है",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "हृदय रोग जोखिम कम हो जाता है",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "उपलब्धि खुला!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "प्रथम उपलब्धि Await",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "फर्स्ट डे चैंपियन - आपने अपना पहला धूम्रपान मुक्त दिन पूरा किया है!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "अपना पहला धुआँ-मुक्त दिन पूरा करें",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "प्रगति ट्रैकिंग",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "विस्तृत आंकड़ों के साथ अपने धूम्रपान मुक्त यात्रा की निगरानी करें",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "स्वास्थ्य लाभ",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "देखें कि आपका शरीर समय के साथ कैसे ठीक हो जाए",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "उपलब्धि प्रणाली",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "आपकी प्रगति के लिए बैज अर्जित और पुरस्कार",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "क्राविंग सपोर्ट",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "जब आपको इसकी आवश्यकता होती है तो तत्काल मदद प्राप्त करें",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "पता लगाने के लिए किसी भी सुविधा को टैप करें",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "क्या आप का इंतजार कर रहे हैं",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "बंद",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "अन्वेषण",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "दैनिक प्रेरणा",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "दैनिक संदेश और सुझावों को प्रोत्साहित करना",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "अधिसूचना समय",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "परिवर्तन",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "माइलस्टोन अलर्ट",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "जब आप महत्वपूर्ण मील के पत्थर तक पहुंचते हैं तो अधिसूचित हो जाओ",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "क्राविंग सपोर्ट",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "कठिन क्षणों के दौरान तत्काल मदद और प्रेरणा",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "तारीख और समय",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "अपनी छुट्टी की तारीख और समय चुनें",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "तिथि और समय बदलें",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "तारीख और समय का चयन करें",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "आप कितने साल धूम्रपान कर रहे हैं?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "साल छोड़ने से पहले धूम्रपान",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "स्वास्थ्य स्कोर डैशबोर्ड",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "नया",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "कैसे अनलॉक करें",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "इस उपलब्धि को अनलॉक करने के लिए आवश्यक कार्यों को पूरा करें।.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "शेयर उपलब्धि",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "कुल अंक",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "स्तर",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "स्तर की प्रगति",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "जाने के लिए अंक",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "अर्जित अंक",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "प्रीमियम प्रेरणादायक सामग्री",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "अनन्य दैनिक प्रेरणादायक उद्धरण और सफलता की कहानियां",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "महासागर विषय",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "शांत रंगों के साथ सुंदर महासागर थीम्ड ऐप इंटरफ़ेस",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "वन थीम",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "एक ताज़ा अनुभव के लिए प्रकृति प्रेरित ग्रीन थीम",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "दान",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "अपने नाम में $5 से फेफड़ों के कैंसर अनुसंधान दान करें",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "उन्नत सांख्यिकी",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "विस्तृत स्वास्थ्य विश्लेषण और प्रगति अंतर्दृष्टि अनलॉक करें",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "व्यक्तिगत कोच सत्र",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "एक प्रमाणित छुट्टी कोच के साथ 30 मिनट वर्चुअल सत्र",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "पुनर्जन्म की पुष्टि करें",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "क्या आपको यकीन है कि आप {points} अंक के लिए {title} को पुनः प्राप्त करना चाहते हैं?",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "आपके पास {availablePoints} अंक शेष होंगे।.",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": "आपने सफलतापूर्वक फिर से समझा है {title}_. विवरण के लिए अपनी प्रोफ़ाइल की जाँच करें।.",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "इनाम!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "महान",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "तुम महान हो!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit} दिन धुआँ मुक्त",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "स्मोक्ड नहीं",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "साँस लेना\nव्यायाम",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "कॉल\nसमर्थन",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "देखें\nप्रगति",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "निष्कर्षण खेल",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "क्या आप एक धोखा दे रहे हैं? आप अकेले नहीं हैं। नीचे एक मुकाबला रणनीति चुनें।.",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "हाल ही में कोपिंग सत्र",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "त्वरित श्वास",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "सेटिंग में अपना आपातकालीन संपर्क स्थापित करें",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "सेटिंग",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "आपातकालीन संपर्क",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "अपने समर्थन व्यक्ति तक पहुंचें",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "समर्थन प्राप्त करें",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "क्राविंग सत्र लॉग किया गया। {method}__!",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "क्विक कोपिंग टिप्स",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "अब इसे आज़माएं",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "बढ़िया विकल्प! {title} एक प्रभावी मुकाबला रणनीति है।.",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "स्वास्थ्य लाभ",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "पेयजल",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "अपने शरीर को हाइड्रेट करें और अपने हाथों को व्यस्त रखें। पानी फ्लश विषाक्त पदार्थों में मदद करता है और cravings को कम करता है।.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3 मिनट",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "चलना",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "आगे बढ़ना शारीरिक गतिविधि एंडोर्फिन जारी करती है और cravings से विचलित होती है।.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5-10 मिनट",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "कॉल करें",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "समर्थन के लिए बाहर पहुंचें। किसी से बात करने से प्रेरणा और विचलन हो सकता है।.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5-15 मिनट",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "अपने कारणों की समीक्षा करें",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "आपको क्यों छोड़ने का फैसला किया? अपने स्वास्थ्य, परिवार और वित्तीय लक्ष्यों पर ध्यान केंद्रित करें।.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5 मिनट",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "दीप श्वास",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "अभ्यास धीमी, गहरी सांस। 4 के लिए साँस लें, 4 के लिए पकड़ो, 4 सेकंड के लिए साँस छोड़ो।.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5 मिनट",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "चेव गम",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "अपने मुंह को चीनी मुक्त गोंद के साथ व्यस्त रखें। यह मौखिक निर्धारण आदतों के साथ मदद करता है।.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "Ongoing",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "संगीत सुनना",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "अपनी पसंदीदा प्लेलिस्ट पर रखें। संगीत मूड में सुधार कर सकता है और विचलन प्रदान कर सकता है।.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3-10 मिनट",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "अभ्यास Gratitude",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "तीन चीजें जो आप के लिए आभारी हैं सोचो। सकारात्मक सोच तनाव और cravings को कम कर देता है।.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3 मिनट",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "उच्च",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "बहुत उच्च",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "मध्यम",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "रंग फोकस चैलेंज",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "5 {randomColor}_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "अपने पर्यावरण के आसपास देखो और 5 ऑब्जेक्ट्स की पहचान करें जो {randomColor} हैं। अपने समय ले लो और प्रत्येक वस्तु पर ध्यान केंद्रित करें।.",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "न्यू कलर चैलेंज",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "चैलेंज गिनती",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "इस मानसिक गणित व्यायाम को ध्यान और एकाग्रता की आवश्यकता होती है, जिससे cravings से विचलित होने में मदद मिलती है।.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "Hint",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "नई चुनौती",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "मेमोरी पैलेस",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "अपने बचपन के घर का दृश्य",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "निर्देश",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "1. अपनी आँखों को बंद करें और अपने बचपन के घर से चलने की कल्पना करें\n\n2. सामने के दरवाजे पर शुरू करें और कमरे में प्रवेश करें\n\n3. सूचना विवरण: रंग, फर्नीचर, सजावट\n\n4. प्रत्येक कमरे में विशिष्ट वस्तुओं को याद रखने में समय बिताएं\n\n5. ध्वनि, गंध और भावनाओं को याद करने की कोशिश करें",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "महान काम! मेमोरी एक्सरसाइज फोकस को मजबूत करता है और cravings को कम करता है।.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "पूर्ण व्यायाम",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "वर्ड एसोसिएशन",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "शुरू करना",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "संबंधित शब्दों की एक श्रृंखला बनाएँ। प्रत्येक नए शब्द को पिछले एक से जोड़ा जाना चाहिए।.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "उदाहरण: महासागर → जल → वर्षा → बादल → स्काई → पक्षी → स्वतंत्रता",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "नई शुरुआत",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "महासागर",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "पर्वत",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "वन",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "शहर",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "गार्डन",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "पुस्तकालय",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "रसोई",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "संगीत",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "हर सांस एक नई शुरुआत है",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "आप अपने cravings की तुलना में मजबूत हैं",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "इस क्षण को समाप्त करने के लिए, आप दूर हो जाएंगे",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "शांति में साँस लेना, तनाव को साँस लेना",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "आपका स्वास्थ्य हर सांस के लायक है",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "एक समय में एक सांस, एक दिन एक समय में",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "Inhale",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "होल्ड",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "Exhale",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "सांस लेने के लिए तैयार?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 श्वास तकनीक",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "व्यायाम शुरू करें",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "विस्तार (+2 चक्र)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "रुकना",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "नई प्रेरणादायक उद्धरण लोड हो गया!",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "उद्धरण को ताज़ा करने में विफल रहा। बाद में फिर से प्रयास करें।.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "उद्धरण",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "ताज़ा अनुसूची",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "अगला ताज़ा",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "कुल उद्धरण",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "वर्तमान अवधि",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "{number}_ अद्वितीय उद्धरण",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod} {hours} घंटे और {minutes} मिनट",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "Quotes स्वचालित रूप से 6 AM और 6 PM हर दिन आप अपने छोड़ने-धूम्रने यात्रा के दौरान प्रेरित रखने के लिए!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "यह जाओ!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "दैनिक 2x",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "अपने समर्थन व्यक्ति को कॉल करें या छोड़ दें:",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "आपातकालीन सहायता",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "धन्यवाद",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "तुम यह हो!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "वापस",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "प्रारंभ करना",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "4 के लिए साँस लें, 7 के लिए पकड़ो, 8 के लिए साँस छोड़ो",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "अब आप क्या मदद करते हैं",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "श्वास व्यायाम",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "4-7-8 तकनीक cravings को कम करने के लिए",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "प्रेरणादायक उद्धरण",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "तत्काल प्रोत्साहन प्राप्त करें",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "आपातकालीन संपर्क",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "अपने समर्थन व्यक्ति को बुलाओ",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "व्यसन गतिविधि",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "त्वरित ५ मिनट की गतिविधियाँ",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "हर सिगरेट आप धूम्रपान नहीं करते हैं।.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "आप अपने cravings की तुलना में मजबूत हैं।.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "यह craving पास होगा। आपको यह मिल गया है!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "सोचिए कि आप कल कितने गर्व करेंगे।.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "आपका स्वास्थ्य किसी भी सिगरेट से अधिक है।.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "10 जंपिंग जैक",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "धीरे-धीरे पानी का एक गिलास पीने",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "5 गहरी सांस लें",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "एक दोस्त या परिवार के सदस्य को बुलाओ",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "शॉर्ट वॉक के लिए जाओ",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "अपने पसंदीदा गीत सुनिए",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "स्वास्थ्य रिकवरी प्रगति",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "मिलस्टोन हासिल",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "आश्चर्यजनक प्रगति! आपका शरीर खूबसूरती से ठीक हो रहा है।.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "हर मील का पत्थर आपको पूर्ण वसूली के करीब आता है।.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "सहेजें",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "रद्द करना",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "वर्तमान समय",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "देखें",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "सिंक्रनाइज़ निर्यात पूर्वावलोकन",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "अपनी छुट्टी यात्रा शुरू करना.",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "उपयोगकर्ता वरीयताओं लोड हो रहा है...",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "छुट्टी की तारीख की जाँच...",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "डेटा लोड हो रहा है...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "गणना streak ...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "प्रेरणादायक सामग्री तैयार करना.",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "स्वास्थ्य श्रेणी ब्रेकडाउन",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "Compit Details",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "अपनी छोड़ने की जानकारी अपडेट करें। सभी एप्लिकेशन सुविधाओं में बदलाव होगा।.",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "धूम्रपान वर्ष",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "दैनिक सिगरेट",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "प्रति दिन सिगरेट",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "पैक लागत",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "परिवर्तन सहेजें",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "समग्र स्वास्थ्य स्कोर",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "दिन",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "अवधि",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "वसूली",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "उत्कृष्ट",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "अच्छा",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "सुधार",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

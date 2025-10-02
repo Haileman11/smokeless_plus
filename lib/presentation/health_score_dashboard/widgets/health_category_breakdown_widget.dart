@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -34,7 +35,7 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Health Category Breakdown',
+              AppLocalizations.of(context)!.healthCategoryBreakdown,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
                 // color: Theme.of(context).colorScheme.primary,

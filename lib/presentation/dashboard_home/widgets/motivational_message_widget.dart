@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 import '../../../services/motivational_quotes_service.dart';
@@ -69,7 +70,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
         // Show success feedback
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('New motivational quote loaded!'),
+            content: Text(AppLocalizations.of(context)!.newMotivationalQuoteLoaded),
             backgroundColor: AppTheme.successLight,
             behavior: SnackBarBehavior.floating,
             shape:
@@ -82,7 +83,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Failed to refresh quote. Try again later.'),
+            content: Text(AppLocalizations.of(context)!.failedToRefreshQuote),
             backgroundColor: Colors.orange,
             behavior: SnackBarBehavior.floating,
             shape:
@@ -116,7 +117,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 ),
                 SizedBox(width: 2.w),
                 Text(
-                  'Quote Schedule',
+                  AppLocalizations.of(context)!.quoteSchedule,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).colorScheme.primary,
@@ -128,17 +129,21 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _buildInfoRow('Current Period', scheduleInfo['currentPeriod']),
+                _buildInfoRow(AppLocalizations.of(context)!.currentPeriod, scheduleInfo['currentPeriod']),
                 SizedBox(height: 2.h),
-                _buildInfoRow('Total Quotes',
-                    '${scheduleInfo['totalQuotes']} unique quotes'),
-                SizedBox(height: 2.h),
-                _buildInfoRow(
-                    'Refresh Schedule', scheduleInfo['refreshFrequency']),
+                _buildInfoRow(AppLocalizations.of(context)!.totalQuotes,
+                    AppLocalizations.of(context)!.xUniqueQuotes(scheduleInfo['totalQuotes']!)),
                 SizedBox(height: 2.h),
                 _buildInfoRow(
-                  'Next Refresh',
-                  '${scheduleInfo['nextRefreshPeriod']} in ${scheduleInfo['hoursUntilRefresh']}h ${scheduleInfo['minutesUntilRefresh']}m',
+                    AppLocalizations.of(context)!.refreshSchedule, scheduleInfo['refreshFrequency']),
+                SizedBox(height: 2.h),
+                _buildInfoRow(
+                  AppLocalizations.of(context)!.nextRefresh,
+                  AppLocalizations.of(context)!.periodInHoursAndMinutes(
+                    scheduleInfo['hoursUntilRefresh']!,
+                    scheduleInfo['minutesUntilRefresh']!,
+                    scheduleInfo['nextRefreshPeriod']!,
+                  ),
                 ),
                 SizedBox(height: 3.h),
                 Container(
@@ -149,7 +154,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    'Quotes automatically refresh at 6 AM and 6 PM every day to keep you motivated throughout your quit-smoking journey!',
+                    AppLocalizations.of(context)!.quoteInfoNote,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppTheme.textMediumEmphasisLight,
                       fontStyle: FontStyle.italic,
@@ -162,7 +167,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
               TextButton(
                 onPressed: () => Navigator.pop(context),
                 child: Text(
-                  'Got it!',
+                  AppLocalizations.of(context)!.gotIt,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w600,
@@ -270,7 +275,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Text(
-                    'Daily Motivation',
+                    AppLocalizations.of(context)!.dailyMotivation,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).colorScheme.primary,
@@ -345,7 +350,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    'Auto-refreshes 2x daily',
+                    AppLocalizations.of(context)!.autoRefreshesFrequency,
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w500,
@@ -354,7 +359,7 @@ class _MotivationalMessageWidgetState extends State<MotivationalMessageWidget> {
                 ),
                 Spacer(),
                 Text(
-                  '${MotivationalQuotesService.getTotalQuotesCount()}+ unique quotes',
+                  AppLocalizations.of(context)!.xUniqueQuotes(MotivationalQuotesService.getTotalQuotesCount()),
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                     color: AppTheme.textMediumEmphasisLight,
                     fontWeight: FontWeight.w500,

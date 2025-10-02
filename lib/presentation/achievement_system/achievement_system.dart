@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../core/app_export.dart';
 import '../../services/user_data_service.dart';
@@ -152,7 +153,7 @@ class _AchievementSystemState extends State<AchievementSystem>
     if (_isLoading) {
       return Scaffold(
         appBar: AppBar(
-          title: Text("Achievements", style: Theme.of(context).textTheme.titleLarge?.copyWith(
+          title: Text(AppLocalizations.of(context)!.achievements, style: Theme.of(context).textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w700,
             color: Theme.of(context).colorScheme.primary,
           )),
@@ -167,7 +168,7 @@ class _AchievementSystemState extends State<AchievementSystem>
               ),
               SizedBox(height: 2.h),
               Text(
-                'Loading Your Achievements...',
+                AppLocalizations.of(context)!.loadingAchievements,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: AppTheme.textMediumEmphasisLight,
                 ),
@@ -181,7 +182,7 @@ class _AchievementSystemState extends State<AchievementSystem>
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('Achievement System',
+        title: Text( AppLocalizations.of(context)!.achievementSystem,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
               color: Theme.of(context).colorScheme.primary,
@@ -225,19 +226,19 @@ class _AchievementSystemState extends State<AchievementSystem>
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _buildProgressStat(
-                      'Unlocked',
+                      AppLocalizations.of(context)!.unlocked,
                       '${_achievementData['unlockedCount'] ?? 0}',
                       'emoji_events',
                       AppTheme.successLight,
                     ),
                     _buildProgressStat(
-                      'Total',
+                      AppLocalizations.of(context)!.total,
                       '${_achievementData['totalAchievements'] ?? 0}',
                       'military_tech',
                       Theme.of(context).colorScheme.primary,
                     ),
                     _buildProgressStat(
-                      'Progress',
+                      AppLocalizations.of(context)!.progress,
                       '${((_achievementData['unlockedCount'] ?? 0) / (_achievementData['totalAchievements'] ?? 1) * 100).toInt()}%',
                       'trending_up',
                       AppTheme.accentLight,
@@ -253,7 +254,7 @@ class _AchievementSystemState extends State<AchievementSystem>
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(4.w, 2.h, 4.w, 1.h),
                   child: Text(
-                    'Recent Achievements',
+                    AppLocalizations.of(context)!.recentAchievements,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),

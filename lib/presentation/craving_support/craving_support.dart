@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/services/user_data_service.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/app_export.dart';
@@ -31,19 +34,29 @@ class _CravingSupportState extends State<CravingSupport>
   };
 
   // Mock craving session data
-  final List<Map<String, dynamic>> _cravingSessions = [
-    {
-      "id": 1,
-      "timestamp": DateTime.now().subtract(const Duration(hours: 2)),
-      "method": "Breathing Exercise",
-      "duration": 5,
+  late final List<Map<String, dynamic>> _cravingSessions;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializePulseAnimation();
+  }
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _cravingSessions = [
+      {
+        "id": 1,
+        "timestamp": DateTime.now().subtract(const Duration(hours: 2)),
+        "method": AppLocalizations.of(context)!.breathingExercise,
+        "duration": 5,
       "intensity": "Medium",
       "success": true,
     },
     {
       "id": 2,
       "timestamp": DateTime.now().subtract(const Duration(hours: 8)),
-      "method": "Call Support",
+      "method": AppLocalizations.of(context)!.callSupport,
       "duration": 12,
       "intensity": "High",
       "success": true,
@@ -51,17 +64,12 @@ class _CravingSupportState extends State<CravingSupport>
     {
       "id": 3,
       "timestamp": DateTime.now().subtract(const Duration(days: 1)),
-      "method": "Distraction Games",
+      "method": AppLocalizations.of(context)!.distractionGames,
       "duration": 7,
       "intensity": "Low",
       "success": true,
     },
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    _initializePulseAnimation();
   }
 
   void _initializePulseAnimation() {
@@ -126,7 +134,7 @@ class _CravingSupportState extends State<CravingSupport>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          'Craving session logged. Great job using $method!',
+          AppLocalizations.of(context)!.cravingSessionLogged(method),
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: Theme.of(context).colorScheme.onPrimary,
           ),
@@ -153,7 +161,7 @@ class _CravingSupportState extends State<CravingSupport>
           ),
           SizedBox(height: 3.h),
           Text(
-            'Get Support',
+            AppLocalizations.of(context)!.getSupport,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
@@ -217,26 +225,28 @@ class _CravingSupportState extends State<CravingSupport>
               ),
             ),
             title: Text(
-              'Call Emergency Contact',
+              AppLocalizations.of(context)!.callEmergencyContact,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
             subtitle: Text(
-              'Reach out to your support person',
+              AppLocalizations.of(context)!.reachOutToYourDesignatedContact,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).colorScheme.onSurface
                     .withValues(alpha: 0.7),
               ),
             ),
-            onTap: () {
-              Navigator.pop(context);
+            onTap: () async {
+              final userData = await UserDataService.loadUserData();
+              callNumber(userData?["emergencyContact"]);
+              // Navigator.pop(context);
               // In a real app, this would call the user's designated emergency contact
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Set up your emergency contact in Settings'),
+                  content: Text(AppLocalizations.of(context)!.callingEmergencyContact),
                   action: SnackBarAction(
-                    label: 'Settings',
+                    label: AppLocalizations.of(context)!.settings,
                     onPressed: () =>
                         Navigator.pushNamed(context, '/user-profile'),
                   ),
@@ -286,7 +296,7 @@ class _CravingSupportState extends State<CravingSupport>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'You\'re doing great!',
+                      AppLocalizations.of(context)!.youreDoingGreat,
                       style:
                           Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Theme.of(context).colorScheme.onPrimary,
@@ -295,7 +305,7 @@ class _CravingSupportState extends State<CravingSupport>
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
-                      '$daysSinceQuit days smoke-free',
+                      AppLocalizations.of(context)!.daysSinceQuit(daysSinceQuit),
                       style:
                           Theme.of(context).textTheme.headlineSmall?.copyWith(
                         color: Theme.of(context).colorScheme.onPrimary,
@@ -342,7 +352,7 @@ class _CravingSupportState extends State<CravingSupport>
                         ),
                       ),
                       Text(
-                        'Money Saved',
+                        AppLocalizations.of(context)!.moneySaved,
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary
@@ -373,7 +383,7 @@ class _CravingSupportState extends State<CravingSupport>
                         ),
                       ),
                       Text(
-                        'Not Smoked',
+                        AppLocalizations.of(context)!.notSmoked,
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary
@@ -425,7 +435,7 @@ class _CravingSupportState extends State<CravingSupport>
                             ),
                             SizedBox(height: 1.h),
                             Text(
-                              'Breathing\nExercise',
+                              AppLocalizations.of(context)!.breathingExercise,
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.titleSmall
                                   ?.copyWith(
@@ -462,7 +472,7 @@ class _CravingSupportState extends State<CravingSupport>
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        'Call\nSupport',
+                        AppLocalizations.of(context)!.callSupport,
                         textAlign: TextAlign.center,
                         style:
                             Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -504,7 +514,7 @@ class _CravingSupportState extends State<CravingSupport>
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        'View\nProgress',
+                        AppLocalizations.of(context)!.viewProgress,
                         textAlign: TextAlign.center,
                         style:
                             Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -521,7 +531,7 @@ class _CravingSupportState extends State<CravingSupport>
                 child: OutlinedButton(
                   onPressed: () {
                     HapticFeedback.lightImpact();
-                    _logCravingSession('Distraction Games');
+                    _logCravingSession(AppLocalizations.of(context)!.distractionGames);
                   },
                   style: OutlinedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 2.h),
@@ -542,7 +552,7 @@ class _CravingSupportState extends State<CravingSupport>
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        'Distraction\nGames',
+                        AppLocalizations.of(context)!.distractionGames,
                         textAlign: TextAlign.center,
                         style:
                             Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -575,7 +585,7 @@ class _CravingSupportState extends State<CravingSupport>
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text(
-          'Craving Support',
+          AppLocalizations.of(context)!.cravingSupport,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w600,
             color: Theme.of(context).colorScheme.primary,
@@ -637,7 +647,7 @@ class _CravingSupportState extends State<CravingSupport>
                     SizedBox(width: 3.w),
                     Expanded(
                       child: Text(
-                        'Having a craving? You\'re not alone. Choose a coping strategy below.',
+                        AppLocalizations.of(context)!.havingACraving,
                         style:
                             Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context).colorScheme.onSurface,
@@ -672,7 +682,7 @@ class _CravingSupportState extends State<CravingSupport>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Recent Coping Sessions',
+                      AppLocalizations.of(context)!.recentCopingSessions,
                       style:
                           Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
@@ -789,7 +799,7 @@ class _CravingSupportState extends State<CravingSupport>
           size: 24,
         ),
         label: Text(
-          'Quick Breathe',
+          AppLocalizations.of(context)!.quickBreathe,
           style: Theme.of(context).textTheme.titleSmall?.copyWith(
             color: Theme.of(context).colorScheme.onPrimary,
             fontWeight: FontWeight.w600,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:smokeless_plus/presentation/health_score_dashboard/widgets/medical_insights_widget.dart';
 import 'package:smokeless_plus/utils/utils.dart';
 
@@ -36,7 +37,7 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
   late int _cigarettesPerDay;
   late TextEditingController _costController;
   late TextEditingController _yearsController;
-  final List<String> _currencies = ['USD (\$)', 'EUR (€)', 'GBP (£)', 'INR (₹)', 'JPY (¥)'];
+  late final List<String> _currencies;
   late String _selectedCurrency;
   @override
   void initState() {
@@ -49,6 +50,14 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
     _yearsController = TextEditingController(
       text:
           widget.yearsSmoking > 0 ? widget.yearsSmoking.toStringAsFixed(1) : '',
+    );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _currencies = getLocalizedCurrencyLabels(
+      Localizations.localeOf(context).languageCode,
     );
   }
 
@@ -79,9 +88,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
   }
 
   void _updateCurrency(String? value) {
-    widget.onCurrencyChanged(value ?? 'USD (\$)');
+    widget.onCurrencyChanged(value ?? 'USD');
     setState(() {
-      _selectedCurrency = value ?? 'USD (\$)';
+      _selectedCurrency = value ?? 'USD';
     });
   }
 
@@ -109,7 +118,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -125,21 +136,23 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'How many years have you been smoking?',
-                          style: Theme.of(context).textTheme.titleMedium
+                          AppLocalizations.of(context)!.howManyYearsHaveYouBeenSmoking,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
                               ?.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
-                          'Years smoked before quitting',
+                          AppLocalizations.of(context)!.yearsSmokedBeforeQuitting,
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppTheme
-                                .lightTheme.colorScheme.onSurfaceVariant,
-                          ),
+                                    color: AppTheme.lightTheme.colorScheme
+                                        .onSurfaceVariant,
+                                  ),
                         ),
                       ],
                     ),
@@ -157,11 +170,10 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                 decoration: InputDecoration(
                   hintText: '0.0',
                   suffixText: 'years',
-                  suffixStyle:
-                      Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  suffixStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                        fontWeight: FontWeight.w500,
+                      ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(
@@ -202,7 +214,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.secondary
+                      color: Theme.of(context)
+                          .colorScheme
+                          .secondary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -219,20 +233,22 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       children: [
                         Text(
                           'Cigarettes per Day',
-                          style: Theme.of(context).textTheme.titleMedium
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
                               ?.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
                           'How many cigarettes do you smoke daily?',
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppTheme
-                                .lightTheme.colorScheme.onSurfaceVariant,
-                          ),
+                                    color: AppTheme.lightTheme.colorScheme
+                                        .onSurfaceVariant,
+                                  ),
                         ),
                       ],
                     ),
@@ -270,7 +286,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                     width: 20.w,
                     height: 12.w,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.primary
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
@@ -281,11 +299,11 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                     child: Center(
                       child: Text(
                         _cigarettesPerDay.toString(),
-                        style: Theme.of(context).textTheme.headlineSmall
-                            ?.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
                       ),
                     ),
                   ),
@@ -337,7 +355,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                   Container(
                     padding: EdgeInsets.all(3.w),
                     decoration: BoxDecoration(
-                      color: Theme.of(context).colorScheme.tertiary
+                      color: Theme.of(context)
+                          .colorScheme
+                          .tertiary
                           .withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -354,20 +374,22 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                       children: [
                         Text(
                           'Cost per Pack',
-                          style: Theme.of(context).textTheme.titleMedium
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium
                               ?.copyWith(
-                            fontWeight: FontWeight.w600,
-                            color: Theme.of(context).colorScheme.onSurface,
-                          ),
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
                         ),
                         SizedBox(height: 0.5.h),
                         Text(
                           'Average cost of a cigarette pack',
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppTheme
-                                .lightTheme.colorScheme.onSurfaceVariant,
-                          ),
+                                    color: AppTheme.lightTheme.colorScheme
+                                        .onSurfaceVariant,
+                                  ),
                         ),
                       ],
                     ),
@@ -390,15 +412,20 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
                         value: _selectedCurrency,
                         icon: const Icon(Icons.arrow_drop_down),
                         onChanged: _updateCurrency,
-                        items: _currencies.map<DropdownMenuItem<String>>((String value) {
+                        items: _currencies
+                            .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Text(
                               value,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.onSurface,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
                           );
                         }).toList(),
@@ -430,7 +457,10 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
         if (_cigarettesPerDay > 0 &&
             double.tryParse(_yearsController.text) != null &&
             double.tryParse(_yearsController.text)! > 0)
-          EstimatedSmokingImpact(yearsSmoking: double.tryParse(_yearsController.text) ?? 0.0, packCost: double.tryParse(_costController.text) ?? 0.0, cigarettesPerDay: _cigarettesPerDay),
+          EstimatedSmokingImpact(
+              yearsSmoking: double.tryParse(_yearsController.text) ?? 0.0,
+              packCost: double.tryParse(_costController.text) ?? 0.0,
+              cigarettesPerDay: _cigarettesPerDay),
       ],
     );
   }
@@ -448,29 +478,33 @@ class EstimatedSmokingImpact extends StatelessWidget {
   final double yearsSmoking;
   final double packCost;
   final int cigarettesPerDay;
-  
+
   final double opacity;
 
   @override
-  Widget build(BuildContext context) {   
-
+  Widget build(BuildContext context) {
     if (yearsSmoking > 0 && cigarettesPerDay > 0) {
       final totalDays = (yearsSmoking * 365.25).round();
       final totalCigarettes = totalDays * cigarettesPerDay;
       final totalSpent = packCost > 0
           ? (totalCigarettes * (packCost / 20)).toStringAsFixed(0)
           : '0';
-final lifeLostMinutes =
-        totalCigarettes * 11; // 11 minutes per cigarette
-    final lifeLostDuration = formatLifeLost(lifeLostMinutes);
+      final lifeLostMinutes = totalCigarettes * 11; // 11 minutes per cigarette
+      final lifeLostDuration = formatLifeLost(lifeLostMinutes);
       return Container(
         margin: EdgeInsets.only(top: 3.h),
         padding: EdgeInsets.all(4.w),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primaryContainer.withValues(alpha: opacity),
+          color: Theme.of(context)
+              .colorScheme
+              .primaryContainer
+              .withValues(alpha: opacity),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: Theme.of(context).colorScheme.primary.withValues(alpha: opacity * 0.5),
+            color: Theme.of(context)
+                .colorScheme
+                .primary
+                .withValues(alpha: opacity * 0.5),
           ),
         ),
         child: Column(
@@ -487,19 +521,29 @@ final lifeLostMinutes =
                 Text(
                   'Estimated Smoking Impact',
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
+                        fontWeight: FontWeight.w600,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
                 ),
               ],
             ),
             SizedBox(height: 2.5.h),
-            InsightItemWidget(text: 'Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}', color: Theme.of(context).colorScheme.primary),
+            InsightItemWidget(
+                text:
+                    'Total cigarettes smoked: ${totalCigarettes.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}',
+                color: Theme.of(context).colorScheme.primary),
             if (packCost > 0)
-              InsightItemWidget(text: 'Total money spent: \$$totalSpent', color: Theme.of(context).colorScheme.primary),
-            InsightItemWidget(text: 'Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days', color: Theme.of(context).colorScheme.primary),
-            InsightItemWidget(text: 'Life lost: $lifeLostDuration', color: Theme.of(context).colorScheme.primary),
-            //            
+              InsightItemWidget(
+                  text: 'Total money spent: \$$totalSpent',
+                  color: Theme.of(context).colorScheme.primary),
+            InsightItemWidget(
+                text:
+                    'Smoking period: ${totalDays.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} days',
+                color: Theme.of(context).colorScheme.primary),
+            InsightItemWidget(
+                text: 'Life lost: $lifeLostDuration',
+                color: Theme.of(context).colorScheme.primary),
+            //
           ],
         ),
       );

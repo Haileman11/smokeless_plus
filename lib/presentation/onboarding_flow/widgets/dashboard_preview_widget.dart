@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -42,7 +43,7 @@ class DashboardPreviewWidget extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Your Personalized Dashboard',
+                AppLocalizations.of(context)!.yourPersonalizedDashboard,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.w700,
@@ -51,7 +52,7 @@ class DashboardPreviewWidget extends StatelessWidget {
               ),
               SizedBox(height: 1.h),
               Text(
-                'Based on your quit date and smoking habits',
+                AppLocalizations.of(context)!.basedOnYourQuitDateAndSmokingHabits,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Colors.white.withValues(alpha: 0.9),
                 ),
@@ -66,7 +67,7 @@ class DashboardPreviewWidget extends StatelessWidget {
           children: [
             Expanded(
               child: _buildStatCard(
-                title: 'Days Smoke-Free',
+                title: AppLocalizations.of(context)!.daysSmokeFree,
                 value: daysSinceQuit.toString(),
                 icon: 'calendar_today',
                 color: Theme.of(context).colorScheme.primary,
@@ -76,7 +77,7 @@ class DashboardPreviewWidget extends StatelessWidget {
             SizedBox(width: 3.w),
             Expanded(
               child: _buildStatCard(
-                title: 'Money Saved',
+                title: AppLocalizations.of(context)!.moneySaved,
                 value: '\$${moneySaved.toStringAsFixed(0)}',
                 icon: 'savings',
                 color: Theme.of(context).colorScheme.secondary,
@@ -90,7 +91,7 @@ class DashboardPreviewWidget extends StatelessWidget {
           children: [
             Expanded(
               child: _buildStatCard(
-                title: 'Cigarettes Avoided',
+                title: AppLocalizations.of(context)!.cigarettesAvoided,
                 value: cigarettesAvoided.toString(),
                 icon: 'block',
                 color: Theme.of(context).colorScheme.tertiary,
@@ -100,7 +101,7 @@ class DashboardPreviewWidget extends StatelessWidget {
             SizedBox(width: 3.w),
             Expanded(
               child: _buildStatCard(
-                title: 'Health Progress',
+                title: AppLocalizations.of(context)!.healthProgress,
                 value: '${healthProgress.toInt()}%',
                 icon: 'favorite',
                 color: Theme.of(context).colorScheme.secondary,
@@ -146,7 +147,7 @@ class DashboardPreviewWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Next Health Milestone',
+                          AppLocalizations.of(context)!.nextHealthMilestone,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
@@ -156,12 +157,12 @@ class DashboardPreviewWidget extends StatelessWidget {
                         SizedBox(height: 0.5.h),
                         Text(
                           daysSinceQuit < 1
-                              ? 'Blood oxygen levels normalize'
+                              ? AppLocalizations.of(context)!.bloodOxygenLevelsNormalize
                               : daysSinceQuit < 7
-                                  ? 'Taste and smell improve'
+                                  ? AppLocalizations.of(context)!.tasteAndSmellImprove
                                   : daysSinceQuit < 30
-                                      ? 'Lung function increases'
-                                      : 'Heart disease risk reduces',
+                                        ? AppLocalizations.of(context)!.lungFunctionIncreases
+                                        : AppLocalizations.of(context)!.heartDiseaseRiskReduces,
                           style:
                               Theme.of(context).textTheme.bodySmall?.copyWith(
                             color: AppTheme
@@ -220,8 +221,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                   children: [
                     Text(
                       daysSinceQuit >= 1
-                          ? 'Achievement Unlocked!'
-                          : 'First Achievement Awaits',
+                          ? AppLocalizations.of(context)!.achievementUnlocked
+                          : AppLocalizations.of(context)!.firstAchievementAwaits,
                       style:
                           Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
@@ -231,8 +232,8 @@ class DashboardPreviewWidget extends StatelessWidget {
                     SizedBox(height: 0.5.h),
                     Text(
                       daysSinceQuit >= 1
-                          ? 'First Day Champion - You\'ve completed your first smoke-free day!'
-                          : 'Complete your first smoke-free day to earn your first badge',
+                          ? AppLocalizations.of(context)!.firstDayChampion
+                          : AppLocalizations.of(context)!.firstDayChampionAwaits,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),

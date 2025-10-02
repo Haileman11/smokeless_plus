@@ -1,61 +1,61 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
 class CravingFrequencyChart extends StatelessWidget {
-  final String selectedPeriod;
+  final PeriodType selectedPeriod;
 
   const CravingFrequencyChart({
-    Key? key,
+    super.key,
     required this.selectedPeriod,
-  }) : super(key: key);
+  });
 
   List<FlSpot> _getCravingData() {
     switch (selectedPeriod) {
-      case 'Week':
+      case PeriodType.week:
         return [
-          FlSpot(0, 8),
-          FlSpot(1, 6),
-          FlSpot(2, 5),
-          FlSpot(3, 4),
-          FlSpot(4, 3),
-          FlSpot(5, 2),
-          FlSpot(6, 1),
+          const FlSpot(0, 8),
+          const FlSpot(1, 6),
+          const FlSpot(2, 5),
+          const FlSpot(3, 4),
+          const FlSpot(4, 3),
+          const FlSpot(5, 2),
+          const FlSpot(6, 1),
         ];
-      case 'Month':
+      case PeriodType.month:
         return [
-          FlSpot(0, 8),
-          FlSpot(5, 6),
-          FlSpot(10, 4),
-          FlSpot(15, 3),
-          FlSpot(20, 2),
-          FlSpot(25, 1),
-          FlSpot(30, 1),
+          const FlSpot(0, 8),
+          const FlSpot(5, 6),
+          const FlSpot(10, 4),
+          const FlSpot(15, 3),
+          const FlSpot(20, 2),
+          const FlSpot(25, 1),
+          const FlSpot(30, 1),
         ];
-      case '3 Months':
+      case PeriodType.threeMonths:
         return [
-          FlSpot(0, 8),
-          FlSpot(15, 5),
-          FlSpot(30, 3),
-          FlSpot(45, 2),
-          FlSpot(60, 1),
-          FlSpot(75, 1),
-          FlSpot(90, 0),
+          const FlSpot(0, 8),
+          const FlSpot(15, 5),
+          const FlSpot(30, 3),
+          const FlSpot(45, 2),
+          const FlSpot(60, 1),
+          const FlSpot(75, 1),
+          const FlSpot(90, 0),
         ];
-      case 'Year':
+      case PeriodType.year:
         return [
-          FlSpot(0, 8),
-          FlSpot(60, 4),
-          FlSpot(120, 2),
-          FlSpot(180, 1),
-          FlSpot(240, 1),
-          FlSpot(300, 0),
-          FlSpot(365, 0),
-        ];
-      default:
-        return [];
+          const FlSpot(0, 8),
+          const FlSpot(60, 4),
+          const FlSpot(120, 2),
+          const FlSpot(180, 1),
+          const FlSpot(240, 1),
+          const FlSpot(300, 0),
+          const FlSpot(365, 0),
+        ];    
     }
   }
 
@@ -73,7 +73,7 @@ class CravingFrequencyChart extends StatelessWidget {
           BoxShadow(
             color: Theme.of(context).colorScheme.shadow,
             blurRadius: 8,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),
@@ -89,7 +89,7 @@ class CravingFrequencyChart extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Text(
-                'Craving Frequency',
+                AppLocalizations.of(context)!.cravingFrequency,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -115,24 +115,24 @@ class CravingFrequencyChart extends StatelessWidget {
                 titlesData: FlTitlesData(
                   show: true,
                   rightTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                   topTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                      const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                   bottomTitles: AxisTitles(
                     sideTitles: SideTitles(
                       showTitles: true,
                       reservedSize: 30,
-                      interval: selectedPeriod == 'Year'
+                      interval: selectedPeriod == PeriodType.year
                           ? 60
-                          : selectedPeriod == '3 Months'
+                          : selectedPeriod == PeriodType.threeMonths
                               ? 15
-                              : selectedPeriod == 'Month'
+                              : selectedPeriod == PeriodType.month
                                   ? 5
                                   : 1,
                       getTitlesWidget: (value, meta) {
                         String text = '';
                         switch (selectedPeriod) {
-                          case 'Week':
+                          case PeriodType.week:
                             final days = [
                               'Mon',
                               'Tue',
@@ -145,13 +145,13 @@ class CravingFrequencyChart extends StatelessWidget {
                             if (value.toInt() < days.length)
                               text = days[value.toInt()];
                             break;
-                          case 'Month':
+                          case PeriodType.month:
                             text = '${value.toInt() + 1}';
                             break;
-                          case '3 Months':
+                          case PeriodType.threeMonths:
                             text = 'Day ${value.toInt()}';
                             break;
-                          case 'Year':
+                          case PeriodType.year:
                             text = 'M${(value / 30).round()}';
                             break;
                         }
@@ -177,11 +177,11 @@ class CravingFrequencyChart extends StatelessWidget {
                 ),
                 borderData: FlBorderData(show: false),
                 minX: 0,
-                maxX: selectedPeriod == 'Year'
+                maxX: selectedPeriod == PeriodType.year
                     ? 365
-                    : selectedPeriod == '3 Months'
+                    : selectedPeriod == PeriodType.threeMonths
                         ? 90
-                        : selectedPeriod == 'Month'
+                        : selectedPeriod == PeriodType.month
                             ? 30
                             : 6,
                 minY: 0,
@@ -231,7 +231,7 @@ class CravingFrequencyChart extends StatelessWidget {
                     getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
                       return touchedBarSpots.map((barSpot) {
                         return LineTooltipItem(
-                          '${barSpot.y.toInt()} cravings',
+                          '${barSpot.y.toInt()} ${AppLocalizations.of(context)!.cravings}',
                           Theme.of(context).textTheme.bodySmall!.copyWith(
                             color: Theme.of(context).colorScheme.onPrimary,
                             fontWeight: FontWeight.w600,

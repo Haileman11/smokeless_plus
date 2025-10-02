@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -54,7 +55,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Total Points',
+                    AppLocalizations.of(context)!.totalPoints,
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.8),
                     ),
@@ -86,7 +87,7 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                     ),
                     SizedBox(width: 1.w),
                     Text(
-                      'Level $currentLevel',
+                      '${AppLocalizations.of(context)!.level} $currentLevel',
                       style:
                           Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.white,
@@ -109,14 +110,14 @@ class PointsLevelHeaderWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Progress to Level ${currentLevel + 1}',
+                    '${AppLocalizations.of(context)!.progressToLevel} ${currentLevel + 1}',
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.9),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
-                    '$pointsToNextLevel points to go',
+                    '$pointsToNextLevel ${AppLocalizations.of(context)!.pointsToGo}',
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.8),
                     ),

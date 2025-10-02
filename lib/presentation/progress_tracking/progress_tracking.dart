@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../core/app_export.dart';
 import '../../services/user_data_service.dart';
@@ -22,9 +24,9 @@ class ProgressTracking extends StatefulWidget {
 
 class _ProgressTrackingState extends State<ProgressTracking>
     with TickerProviderStateMixin {
-  String _selectedPeriod = 'Month';
-  String _selectedCategory = 'Financial';
-  String _selectedMilestoneCategory = 'All';
+  PeriodType _selectedPeriod = PeriodType.month;
+  MotivationCategory _selectedCategory = MotivationCategory.financial;
+  MilestoneCategory _selectedMilestoneCategory = MilestoneCategory.all;
   late ScrollController _scrollController;
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
@@ -142,19 +144,19 @@ All data synchronized across the entire app!
     // Show export success message
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Synchronized progress report exported successfully'),
+        content: Text(AppLocalizations.of(context)!.exportSuccessful),
         backgroundColor: Theme.of(context).colorScheme.secondary,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         action: SnackBarAction(
-          label: 'View',
+          label: AppLocalizations.of(context)!.view,
           textColor: Theme.of(context).colorScheme.onSecondary,
           onPressed: () {
             // In a real app, this would open the exported file
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
-                title: Text('Synchronized Export Preview'),
+                title: Text(AppLocalizations.of(context)!.synchronizedExportPreview),
                 content: SingleChildScrollView(
                   child: Text(
                     reportData,
@@ -164,7 +166,7 @@ All data synchronized across the entire app!
                 actions: [
                   TextButton(
                     onPressed: () => Navigator.pop(context),
-                    child: Text('Close'),
+                    child: Text(AppLocalizations.of(context)!.close),
                   ),
                 ],
               ),
@@ -280,7 +282,7 @@ All data synchronized across the entire app!
             children: [
               Expanded(
                 child: Text(
-                  'Your Synchronized Progress',
+                  AppLocalizations.of(context)!.progressTracking,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
@@ -306,7 +308,7 @@ All data synchronized across the entire app!
                     ),
                     SizedBox(width: 1.w),
                     Text(
-                      'Live sync: ${_formatLastSync()}',
+                      '${AppLocalizations.of(context)!.liveSync}: ${_formatLastSync()}',
                       style: Theme.of(context).textTheme.bodySmall                      
                     ),
                   ],
@@ -317,7 +319,7 @@ All data synchronized across the entire app!
           SizedBox(height: 1.h),
           if (_progressData["quitDate"] != null) ...[
             Text(
-              'Quit Date: ${DateTime.parse(_progressData["quitDate"]).toString().split(' ')[0]}',
+              '${AppLocalizations.of(context)!.quitDate}: ${DateTime.parse(_progressData["quitDate"]).toString().split(' ')[0]}',
               style: Theme.of(context).textTheme.bodySmall
             ),
             SizedBox(height: 2.h),
@@ -326,7 +328,7 @@ All data synchronized across the entire app!
             children: [
               Expanded(
                 child: _buildSummaryCard(
-                  'Streak',
+                  AppLocalizations.of(context)!.streak,
                   '${_progressData["currentStreak"]} days',
                   'timeline',
                 ),
@@ -334,7 +336,7 @@ All data synchronized across the entire app!
               SizedBox(width: 3.w),
               Expanded(
                 child: _buildSummaryCard(
-                  'Saved',
+                  AppLocalizations.of(context)!.saved,
                   '\$${(_progressData["totalMoneySaved"] ?? 0.0).toStringAsFixed(2)}',
                   'savings',
                 ),
@@ -346,7 +348,7 @@ All data synchronized across the entire app!
             children: [
               Expanded(
                 child: _buildSummaryCard(
-                  'Avoided',
+                  AppLocalizations.of(context)!.avoided,
                   '${_progressData["cigarettesAvoided"]} cigs',
                   'smoke_free',
                 ),
@@ -354,7 +356,7 @@ All data synchronized across the entire app!
               SizedBox(width: 3.w),
               Expanded(
                 child: _buildSummaryCard(
-                  'Health',
+                  AppLocalizations.of(context)!.health,
                   '${_progressData["healthScore"]}%',
                   'favorite',
                 ),
@@ -426,14 +428,14 @@ All data synchronized across the entire app!
 
   Widget _buildChartContent() {
     switch (_selectedCategory) {
-      case 'Financial':
+      case MotivationCategory.financial:
         return Column(
           children: [
             MoneySavedChart(selectedPeriod: _selectedPeriod),
             SizedBox(height: 2.h),
           ],
         );
-      case 'Health':
+      case MotivationCategory.health:
         return Column(
           children: [
             HealthImprovementChart(selectedPeriod: _selectedPeriod),
@@ -455,7 +457,7 @@ All data synchronized across the entire app!
                 HapticFeedback.lightImpact();
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Achievement shared successfully!'),
+                    content: Text(AppLocalizations.of(context)!.achievementSharedSuccess),
                     backgroundColor: Theme.of(context).colorScheme.secondary,
                     behavior: SnackBarBehavior.floating,
                     shape: RoundedRectangleBorder(
@@ -468,7 +470,7 @@ All data synchronized across the entire app!
             SizedBox(height: 2.h),
           ],
         );
-      case 'Behavioral':
+      case MotivationCategory.behavioral:
         return Column(
           children: [
             CravingFrequencyChart(selectedPeriod: _selectedPeriod),
@@ -477,19 +479,19 @@ All data synchronized across the entire app!
             SizedBox(height: 2.h),
           ],
         );
-      case 'Social':
+      case MotivationCategory.social:
         return Column(
           children: [_buildSocialProgressChart(), SizedBox(height: 2.h)],
         );
-      default:
-        return Column(
-          children: [
-            StreakTimelineChart(selectedPeriod: _selectedPeriod),
-            SizedBox(height: 2.h),
-            MoneySavedChart(selectedPeriod: _selectedPeriod),
-            SizedBox(height: 2.h),
-          ],
-        );
+      // default:
+      //   return Column(
+      //     children: [
+      //       StreakTimelineChart(selectedPeriod: _selectedPeriod),
+      //       SizedBox(height: 2.h),
+      //       MoneySavedChart(selectedPeriod: _selectedPeriod),
+      //       SizedBox(height: 2.h),
+      //     ],
+      //   );
     }
   }
 
@@ -522,7 +524,7 @@ All data synchronized across the entire app!
               ),
               SizedBox(width: 2.w),
               Text(
-                'Social Impact',
+                AppLocalizations.of(context)!.socialImpact,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -530,11 +532,11 @@ All data synchronized across the entire app!
             ],
           ),
           SizedBox(height: 3.h),
-          _buildSocialMetric('Friends Inspired', '3', 'group'),
+          _buildSocialMetric(AppLocalizations.of(context)!.friendsInspired, '3', 'group'),
           SizedBox(height: 2.h),
-          _buildSocialMetric('Support Messages', '47', 'message'),
+          _buildSocialMetric(AppLocalizations.of(context)!.supportMessages, '47', 'message'),
           SizedBox(height: 2.h),
-          _buildSocialMetric('Community Rank', '#12', 'leaderboard'),
+          _buildSocialMetric(AppLocalizations.of(context)!.communityRank, '#12', 'leaderboard'),
         ],
       ),
     );
@@ -591,7 +593,7 @@ All data synchronized across the entire app!
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         appBar: AppBar(
-          title: Text('Progress Tracking', 
+          title: Text(AppLocalizations.of(context)!.progressTracking, 
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
               color: Theme.of(context).colorScheme.primary, 
@@ -608,7 +610,7 @@ All data synchronized across the entire app!
               ),
               SizedBox(height: 2.h),
               Text(
-                'Synchronizing your progress data...',
+                AppLocalizations.of(context)!.synchronizingProgressData,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
@@ -620,7 +622,7 @@ All data synchronized across the entire app!
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('Progress Tracking',
+        title: Text(AppLocalizations.of(context)!.progressTracking,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w700,
               color: Theme.of(context).colorScheme.primary,
@@ -635,7 +637,7 @@ All data synchronized across the entire app!
               color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
-            tooltip: 'Filter Options',
+            tooltip: AppLocalizations.of(context)!.filterOptions,
           ),
           IconButton(
             onPressed: _exportProgress,
@@ -644,7 +646,7 @@ All data synchronized across the entire app!
               color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
-            tooltip: 'Export Synchronized Progress',
+            tooltip: AppLocalizations.of(context)!.exportSynchronizedProgress,
           ),
           IconButton(
             onPressed: _loadUserData,
@@ -653,7 +655,7 @@ All data synchronized across the entire app!
               color: Theme.of(context).colorScheme.onSurface,
               size: 24,
             ),
-            tooltip: 'Refresh Data',
+            tooltip: AppLocalizations.of(context)!.refreshData,
           ),
         ],
       ),

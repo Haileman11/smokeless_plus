@@ -1,89 +1,1772 @@
 {
-    "@@locale": "ja",
-    "appTitle": "\u7981\u7159\u30c8\u30e9\u30c3\u30ab\u30fc",
-    "goodMorning": "\u304a\u306f\u3088\u3046\u3054\u3056\u3044\u307e\u3059",
-    "goodAfternoon": "\u3053\u3093\u306b\u3061\u306f",
-    "goodEvening": "\u3053\u3093\u3070\u3093\u306f",
-    "smokeFreeJourney": "\u3042\u306a\u305f\u306f\u7981\u7159\u306e\u65c5\u3067\u7d20\u6674\u3089\u3057\u3044\u4ed5\u4e8b\u3092\u3057\u3066\u3044\u307e\u3059",
-    "currentStreak": "\u73fe\u5728\u306e\u9023\u7d9a\u8a18\u9332",
-    "daysSmokeFree": "\u7981\u7159\u65e5\u6570",
-    "timeSmokeFree": "\u7981\u7159\u6642\u9593",
-    "moneySaved": "\u7bc0\u7d04\u91d1\u984d",
-    "cigarettesAvoided": "\u907f\u3051\u305f\u30bf\u30d0\u30b3",
-    "healthScore": "\u5065\u5eb7\u30b9\u30b3\u30a2",
-    "achievements": "\u9054\u6210",
-    "keepItUp": "\u305d\u306e\u8abf\u5b50\u3067\uff01",
-    "improvingDaily": "\u6bce\u65e5\u6539\u5584",
-    "basedOnProgress": "\u9032\u6b69\u306b\u57fa\u3065\u304f",
-    "thatsPacks": "\u305d\u308c\u306f{count}\u7bb1\u3067\u3059",
-    "navigationHome": "\u30db\u30fc\u30e0",
-    "navigationProgress": "進捗",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "健康スコア",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "達成項目",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb",
-    "progressUpdated": "\u9032\u6b69\u304c\u6b63\u5e38\u306b\u66f4\u65b0\u3055\u308c\u307e\u3057\u305f\uff01",
-    "errorLoadingData": "\u30c7\u30fc\u30bf\u8aad\u307f\u8fbc\u307f\u30a8\u30e9\u30fc\u3002\u30c7\u30d5\u30a9\u30eb\u30c8\u5024\u3092\u4f7f\u7528\u3057\u307e\u3059\u3002",
-    "motivationalMessage1": "\u7981\u7159\u306e\u6bce\u65e5\u304c\u52dd\u5229\u3067\u3059\u3002\u3042\u306a\u305f\u306f\u904e\u304e\u884c\u304f\u4e00\u77ac\u4e00\u77ac\u3067\u3001\u3088\u308a\u5065\u5eb7\u3067\u5f37\u3044\u81ea\u5206\u3092\u69cb\u7bc9\u3057\u3066\u3044\u307e\u3059\u3002",
-    "motivationalMessage2": "\u3042\u306a\u305f\u306e\u80ba\u306f\u4eca\u3001\u3042\u306a\u305f\u306b\u611f\u8b1d\u3057\u3066\u3044\u307e\u3059\u3002\u3059\u3079\u3066\u306e\u547c\u5438\u304c\u3088\u308a\u6e05\u6f54\u3067\u3001\u3059\u3079\u3066\u306e\u5fc3\u62cd\u304c\u3088\u308a\u5f37\u304f\u306a\u3063\u3066\u3044\u307e\u3059\u3002",
-    "motivationalMessage3": "\u3042\u306a\u305f\u304c\u7bc0\u7d04\u3057\u3066\u3044\u308b\u304a\u91d1\u306f\u59cb\u307e\u308a\u306b\u904e\u304e\u307e\u305b\u3093\u3002\u672c\u5f53\u306e\u5b9d\u306f\u3001\u3042\u306a\u305f\u306e\u4eba\u751f\u306b\u52a0\u3048\u3066\u3044\u308b\u5e74\u6708\u3067\u3059\u3002",
-    "drMichaelChen": "\u30de\u30a4\u30b1\u30eb\u30fb\u30c1\u30a7\u30f3\u533b\u5e2b",
-    "healthCoachMaria": "\u30d8\u30eb\u30b9\u30b3\u30fc\u30c1 \u30de\u30ea\u30a2",
-    "wellnessExpertJohn": "\u30a6\u30a7\u30eb\u30cd\u30b9\u5c02\u9580\u5bb6 \u30b8\u30e7\u30f3",
-    "healthStageStarting": "\u56de\u5fa9\u958b\u59cb",
-    "healthStageBegin": "\u59cb\u3081\u308b\u6e96\u5099",
-    "healthStageJourney": "\u65c5\u304c\u59cb\u307e\u308b",
-    "healthStageNicotineDropping": "\u30cb\u30b3\u30c1\u30f3\u6e1b\u5c11",
-    "healthStageCONormalizing": "CO\u5024\u6b63\u5e38\u5316",
-    "healthStageHeartRisk": "\u5fc3\u81d3\u30ea\u30b9\u30af\u6e1b\u5c11",
-    "healthStageNicotineFree": "\u30cb\u30b3\u30c1\u30f3\u30d5\u30ea\u30fc\u4f53",
-    "healthStageSensesImproving": "\u611f\u899a\u6539\u5584",
-    "healthStageCirculation": "\u5faa\u74b0\u6539\u5584",
-    "healthStageLungFunction": "\u80ba\u6a5f\u80fd\u6539\u5584",
-    "healthStageSignificant": "\u5927\u5e45\u56de\u5fa9",
-    "healthStageHeartDisease": "\u5fc3\u75be\u60a3\u30ea\u30b9\u30af\u8efd\u6e1b",
-    "healthStageStroke": "\u8133\u5352\u4e2d\u30ea\u30b9\u30af\u6b63\u5e38\u5316",
-    "healthStageMaximum": "\u6700\u5927\u5065\u5eb7\u56de\u5fa9",
-    "milestoneStartJourney": "\u65c5\u3092\u59cb\u3081\u308b",
-    "milestoneNicotineDropping": "\u30cb\u30b3\u30c1\u30f3\u30ec\u30d9\u30eb\u4e0b\u964d",
-    "milestoneCOClearing": "\u4e00\u9178\u5316\u70ad\u7d20\u9664\u53bb",
-    "milestoneHeartAttack": "\u5fc3\u81d3\u767a\u4f5c\u30ea\u30b9\u30af\u6e1b\u5c11",
-    "milestoneNicotineElimination": "\u30cb\u30b3\u30c1\u30f3\u9664\u53bb",
-    "milestoneTasteSmell": "\u5473\u899a\u30fb\u55c5\u899a\u5fa9\u6d3b",
-    "milestoneCirculationBoost": "\u5faa\u74b0\u4fc3\u9032",
-    "milestoneLungBoost": "\u80ba\u6a5f\u80fd\u4fc3\u9032",
-    "milestoneMajorLung": "\u4e3b\u8981\u80ba\u56de\u5fa9",
-    "milestoneHeartRisk": "\u5fc3\u81d3\u30ea\u30b9\u30af\u534a\u6e1b",
-    "milestoneStrokeRisk": "\u8133\u5352\u4e2d\u30ea\u30b9\u30af\u6b63\u5e38\u5316",
-    "milestoneCancerRisk": "\u304c\u3093\u30ea\u30b9\u30af\u534a\u6e1b",
-    "milestoneMaintaining": "\u5353\u8d8a\u6027\u7dad\u6301",
-    "achievedStatus": "\u9054\u6210",
-    "soonStatus": "\u307e\u3082\u306a\u304f",
-    "notStartedStatus": "\u672a\u958b\u59cb",
-    "timeInDays": "{count}\u65e5\u5f8c",
-    "timeInDaysPlural": "{count}\u65e5\u5f8c",
-    "timeInHours": "{count}\u6642\u9593\u5f8c",
-    "timeInHoursPlural": "{count}\u6642\u9593\u5f8c",
-    "timeInMinutes": "{count}\u5206\u5f8c",
-    "languageSettings": "\u8a00\u8a9e\u8a2d\u5b9a",
-    "selectLanguage": "\u8a00\u8a9e\u3092\u9078\u629e",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "ja",
+  "appTitle": "スモークレスプラス",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "グッドモーニング",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "グッドアフタヌーン",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "グッドイブニング",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "煙のかけがえのない旅に出会おう",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "デイズスモークフリー",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "タイムスモークフリー",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "保存されたお金",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "タバコは避けました",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "健康スコア",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "実績紹介",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "お問い合わせ!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "日々改善",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "進捗状況に基づく",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "これは {count} パック",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "ホーム >",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "プロジェクト",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "健康スコア",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "実績紹介",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "プロフィール",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "進捗が正常に更新されました!",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "エラー読み込みデータ。 デフォルト値を使用します.",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "一日中無煙が勝利です。 それぞれの通過瞬間に、より健康で強烈なバージョンを自分で構築しています.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "あなたの肺は今あなたに感謝しています。 すべての呼吸はクリーナーで、すべての心が強くなります.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "節約するお金は始まりです。 本当の宝は、あなたの人生に追加する年です.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "マイケル・チェン博士",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "健康コーチマリア",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "ウェルネスエキスパートジョン",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "回復を開始",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "始める準備",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "旅の始まり",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "ニコチンドロップ",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "COレベル正規化",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "心臓リスク減少",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "ニコチンフリーボディ",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "センスの改善",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "循環改善",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "肺機能改善",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "重要な回復",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "心臓病リスク低減",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "ストローク リスク 正規化",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "最高の健康回復",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "旅の始まり",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "ニコチンレベル低下",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "酸化炭素 クリアリング",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "心臓攻撃リスク減少",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "ニコチン除去",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "味と臭いの復活",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "循環ブースト",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "肺機能ブースト",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "主要な肺の回復",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "心臓のリスクを解決",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "ストローク リスク 正規化",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "がんリスク 治療",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "エクセレンスを維持",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "アキシード",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "近日公開",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "はじめに",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "{count} 日",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "{count} 日",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "{count}時間",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "{count}時間",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "{count}分",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "言語設定",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "言語を選択",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "日本語 English",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "スペイン語",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "フランチェスコ",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "ドイツ",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "所在地:東京都",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "お問い合わせ",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "العربية",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "ニュース",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": "日本語 English",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "ありがたい",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": "行 I",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "健康回復タイムライン",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "現在の段階",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "次のマイルストーンの進捗",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "次のマイルストーン",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "時間残り",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "日々のモチベーションを積み重ねる.",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "ローディング...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "引用符をリフレッシュできません。 もう一度お試しください.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "モーニングモチベーション",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "イブニングインスパイア",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "毎秒カウント - {second}秒数とカウント!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "準備完了 - 開始まで_{second}秒!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "デイリー",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "営業時間",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "ミニッツ",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "あなたの業績をロードする...",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "実績システム",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "ロック解除",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "合計:",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "プロジェクト",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "最近の業績",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "同期の進捗",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "ライブ同期",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "終了日",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "ストール",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "保存済み",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "避ける",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "健康保健",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "社会的影響",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "友人のインスピレーション",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "サポートメッセージ",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "コミュニティランク",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "進捗データの同期",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "フィルターオプション",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "輸出同期 プロジェクト",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "成功のエクスポート",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "データの更新",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "成功を収めた成果!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "健康改善",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "週刊",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "カレンダー",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3ヶ月",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "年間行事",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "振動頻度",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "クルージング",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "同期スモークフリーストリーク",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "現在の縞",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "あなたの旅はまだ始まりません",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "プロフィール設定で終了日を確認する",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "すべてのマイルストーン",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "すべての健康マイルストーンを表示",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "短期コース",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20分～48時間",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "中期経営計画",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "2週間 - 9ヶ月",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "長期長期",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10+年",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "財務・業績",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "健康保健",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "行動",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "社会招聘",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "マイルストーン カテゴリー",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "マイルストーン 到着! 🎉\n\n{title}\n{timeframe}\n{description} \n科学的事実: {scientificBasis}\n\n#Quit喫煙 #健康ジャーニー #マイルストーン達成",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "共有にコピーされた達成!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "コンテンツ",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "科学研究",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "完全なセットアップ ファースト",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "キルトな日付を設定して、健康マイルストーンを追跡",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "健康マイルストーンタイムライン",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "科学的な回復進捗状況を追跡",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "ログイン\nファンクション\n{percent}%の特長",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "ハート\n健康保健\n{percent}%の特長",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": "スタッフ\nウェルネス\n{percent}%の特長",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20分",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "心拍数および血圧の低下",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12 営業時間",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "酸化炭素レベルは正常化します",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "2週間",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "循環は改善し、肺機能は増加します",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "1ヶ月",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "呼吸の衰退と不足",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3ヶ月",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "心臓発作のリスクは低下し始めます",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "1 年",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "心臓病のリスクは半分に切られます",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "同期マネー保存",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "保存された合計: @{saved}",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": "今日はお金を節約し始める!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "節約を見るためにあなたの終了日を設定します",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "皆様のご旅行をお待ちしております!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "煙を吸わない生活を始めましょう。 一緒にこの素晴らしい旅を始めよう!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "ツイート",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "ステップ {currentStep}_ の {totalSteps}",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "喫煙をやめたとき?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "あなたの進捗状況を追跡し、マイルストーンを祝うためにあなたの終了日を選択します.",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "喫煙習慣について教えてください",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "これは、あなたの節約を計算し、あなたの経験をパーソナライズするのに役立ちます.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "通知でモチベーションを維持",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "サポートと励ましを受け取るためにどのようにしたいかを選択します.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "強力な機能を発見",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "煙を含まない旅をサポートしてくれるツールをご覧ください.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "パーソナライズされたダッシュボード",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "ここでは、提供された情報に基づいて、進捗のプレビューです.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "お問い合わせ",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "完全なセットアップ",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "健康増進",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "次のヘルスマイルストーン",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "血酸素濃度は正常化します",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "終了日と喫煙習慣に基づいて",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "味と匂いを改善",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "肺機能増加",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "心臓病リスクを低減",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "成果のロック解除!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "初年度実績 待っています",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "初日優勝 - 初日無煙の日を完成!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "あなたの最初のバッジを獲得するためにあなたの最初の禁煙日を完了してください",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "進捗追跡",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "煙のない旅を詳細統計で監視",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "健康マイルストーン",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "あなたの体が時間をかけて回復する方法を参照してください",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "実績システム",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "あなたの進捗状況のためにバッジと報酬を獲得",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "舗装サポート",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "あなたがそれを最も必要とすればすぐに助けを得て下さい",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "あらゆる機能をタップして探索",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "あなたを待っているもののプレビューを取得します",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "閉じる",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "ツアー",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "毎日のモチベーション",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "日々のメッセージやヒントを受け取る",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "通知の時間",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "変更点",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "マイルストーンアラート",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "重要なマイルストーンに達すると通知を受ける",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "舗装サポート",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "困難な瞬間の瞬間にインスタントヘルプとモチベーション",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "終了日と時刻",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "終了日と時刻を選択します",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "日付と時刻の変更",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "日付と時刻を選択",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "何年も喫煙できますか?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "終了前の喫煙年",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "健康スコアダッシュボード",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "ニュース",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "ロック解除方法",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "この達成を解除するために必要なアクションを完了します.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "株式実績",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "総ポイント",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "レベル",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "レベルへの進展",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "行くポイント",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "獲得ポイント",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "プレミアムモチベーションコンテンツ",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "毎日のモチベーションや成功のストーリーにアクセス",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "オセアニア テーマ:",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "美しい海をテーマにしたアプリインターフェイスで落ち着いた色",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "森のテーマ",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "自然志向のグリーンテーマで爽やかな体験",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "チャリティ寄付",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "あなたの名前で5ドルを肺がん研究に寄付",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "高度な統計",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "詳細な健康分析と進捗状況の把握",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "パーソナルコーチセッション",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "認定資格認定コーチによる30分バーチャルセッション",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "確認の償還",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "{points} のポイントで {title} を交換したいですか?",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "{availablePoints} のポイントは残ります.",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": "{title} を正常に変更しました。詳細はプロフィールを確認してください.",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "リワードリワード!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "おすすめ",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "お問い合わせ!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit}_ 日は無煙",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "禁煙",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "ブリージング\nトレーニング",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "電話番号\nサポート",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "ニュース\nプロジェクト",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "魅力ゲーム",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "渇望を持っている? あなただけではありません。 下記の対処戦略を選択します.",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "最近のコーピングセッション",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "クイックブレア",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "設定で緊急連絡先を設定する",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "コンテンツ",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "緊急連絡先",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "皆様のお越しをお待ちしております",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "サポートを受ける",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "記録された保存セッション。 {method}_ を使って素晴らしい仕事!",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "クイックコッピングのヒント",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "今すぐお試しください",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "素晴らしい選択! {title} は効果的なコッピング戦略です.",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "健康上の利点",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "飲料水",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "あなたの体を水和させ、あなたの手を忙しく保ちます。 水は毒素を洗い流し、渇望を減らすのを助けます.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3分",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "散策",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "動く! 肉体活性は、エンドルフィンを解放し、渇望から引き起こします.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5～10分",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "友人に電話する",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "サポートを受ける 誰かに話して、モチベーションや気配りを提供できます.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5～15分",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "あなたの理由を確認する",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "辞めることにした理由を忘れないでください。 あなたの健康、家族、そして財政の目標に焦点を合わせて下さい.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5分",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "深い呼吸",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "ゆっくりと深い呼吸を練習します。 4 の 4 のための吸入器は、4 秒のための 4 の吸入します.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5分",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "チュー・ガム",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "砂糖を含まないガムで口を忙しく保ちます。 経口固定習慣に役立ちます.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "オンゴーイング",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "音楽を聴く",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "お気に入りのプレイリストに入れます。 音楽は気分を改善し、気晴らしを与えることができます.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3～10分",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "練習の高度",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "あなたが感謝している3つのことを考える。 肯定的な思考は、ストレスと渇望を減らす.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3分",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "高い",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "非常に高い",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "メディア",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "カラーフォーカスチャレンジ",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "あなたの周りに5{randomColor}オブジェクトを見つける",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "環境を把握し、 {randomColor}_ である 5 つのオブジェクトを識別します。 各オブジェクトに時間をかけて焦点を合わせます.",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "新しいカラーチャレンジ",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "カウントチャレンジ",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "この精神的な数学の演習は、フォーカスと集中を必要とし、渇望から引き起こすのを助けます.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "ショーヒント",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "新チャレンジ",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "メモリーパレス",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "あなたの子供時代の家を視覚化",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "取扱説明書",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "1。 あなたの目を閉じて、あなたの子供の頃の家を歩くことを想像してください\n\n2。 正面玄関で始まり、お部屋でお部屋を移動\n\n3。 通知の細部:色、家具、装飾\n\n4。 特定のオブジェクトを覚えている各部屋の時間を過ごします\n\n5。 5。 音、匂い、気持ちを思い出させる",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "素晴らしい仕事! 記憶演習は焦点を強化し、渇望を減らす.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "完全な練習",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "ワード協会",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "単語の開始",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "関連する単語のチェーンを作成します。 各新しい単語は、前の単語に接続する必要があります.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "例:海洋→水→雨→雲→空→鳥→自由",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "新しいスタートワード",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "オセアニア",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "マウンテンビュー",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "フォレスト",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "シティ",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "ガーデン",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "ライブラリー",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "キッチン",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "ミュージック",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "呼吸は新しい始まりです",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "あなたの欲求より強いです",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "この瞬間が通過します, あなたは克服します",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "平和の息吹、ストレスを呼吸する",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "あなたの健康はすべての呼吸の価値があります",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "1日1回、一度に1回呼吸する",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "インハル",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "ホールド",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "エクスハーレ",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "呼吸する準備は?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 呼吸技術",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "エクササイズを始める",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "拡張(+2サイクル)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "ストップ",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "新しいモチベーションの引用が読み込まれました!",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "引用符をリフレッシュできませんでした。 もう一度お試しください.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "見積スケジュール",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "リフレッシュスケジュール",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "次 更新",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "総見積",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "現在の期間",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "{number} ユニークな引用符",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod}__ に {hours}h {minutes}m",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "毎日午前6時～午後6時までに自動でお見積もりして、禁煙の旅を通し、お気をつけください!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "お問い合わせ!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "自動refreshes 毎日2x",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "サポート担当者またはキルトリンに電話する:",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "緊急サポート",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "お問い合わせ",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "お問い合わせ!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "バックナンバー",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "スタート",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "4 のための Breathe ホールド 7、8 のための exhale",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "今あなたに最も役立つものを選択してください:",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "呼吸の練習",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "cravingsを減らす4-7-8技術",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "モチベーション見積",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "即時の励ましを得る",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "緊急連絡先",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "サポート担当者に連絡",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "障がい者活動",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "5分のアクティビティ",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "タバコを吸わないと良いです.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "あなたの渇望よりも強くなります.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "この転倒は通過します。 お問い合わせ!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "明日の誇りに思うことを考える.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "あなたの健康はタバコよりも価値があります.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "10 ジャックをジャンプする",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "ゆっくり水を飲む",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "5つの深い呼吸を取る",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "友だちや家族に会う",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "徒歩で行く",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "お気に入りの曲を聴く",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "健康回復の進歩",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "マイルストーン達成",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "素晴らしい進行! あなたの体は美しく癒されます.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "すべてのマイルストーンは、完全な回復にあなたを近づけます.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "保存する",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "キャンセル",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "現在の時間",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "ニュース",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "同期エクスポートプレビュー",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "あなたのquitの旅を初期化...",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "ユーザー設定をロードする...",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "終了日の確認.",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "進捗データを読み込む...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "ストールを計算する...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "やる気のあるコンテンツの準備...",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "健康カテゴリの故障",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "Quit の編集",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "株式情報を更新します。 変更は、すべてのアプリの機能間で同期します.",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "喫煙年数",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "毎日のタバコ",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "1日あたりのタバコ",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "パックコスト",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "変更を保存",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "全体的な健康のスコア",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "デイズ・クイット",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "終了時間",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "バックアップ",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "よくある質問",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "お問い合わせ",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "改善の改善",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
@@ -27,17 +29,10 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
   bool _isExerciseActive = false;
   int _currentCycle = 0;
   int _totalCycles = 4;
-  String _currentPhase = 'Inhale';
+  BreathingPhase _currentPhase = BreathingPhase.inhale;
   int _phaseCountdown = 4;
 
-  final List<String> _motivationalQuotes = [
-    "Every breath is a new beginning",
-    "You are stronger than your cravings",
-    "This moment will pass, you will overcome",
-    "Breathe in peace, breathe out stress",
-    "Your health is worth every breath",
-    "One breath at a time, one day at a time",
-  ];
+  late final List<String> _motivationalQuotes;
 
   String _currentQuote = "";
 
@@ -47,7 +42,18 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
     _initializeAnimations();
     _setRandomQuote();
   }
-
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _motivationalQuotes = [
+      AppLocalizations.of(context)!.everyBreathIsANewBeginning,
+      AppLocalizations.of(context)!.youAreStrongerThanYourCravings,
+      AppLocalizations.of(context)!.thisMomentWillPass,
+      AppLocalizations.of(context)!.breatheInPeace,
+      AppLocalizations.of(context)!.yourHealthIsWorthEveryBreath,
+      AppLocalizations.of(context)!.oneBreathAtATime,
+  ];
+  }
   void _initializeAnimations() {
     _breathingController = AnimationController(
       duration: const Duration(seconds: 19), // 4-7-8 cycle
@@ -97,13 +103,13 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
       });
 
       // Inhale phase (4 seconds)
-      await _runPhase('Inhale', 4, 0.3, 1.0);
+      await _runPhase(BreathingPhase.inhale, 4, 0.3, 1.0);
 
       // Hold phase (7 seconds)
-      await _runPhase('Hold', 7, 1.0, 1.0);
+      await _runPhase(BreathingPhase.hold, 7, 1.0, 1.0);
 
       // Exhale phase (8 seconds)
-      await _runPhase('Exhale', 8, 1.0, 0.3);
+      await _runPhase(BreathingPhase.exhale, 8, 1.0, 0.3);
     }
 
     if (_isExerciseActive) {
@@ -112,7 +118,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
   }
 
   Future<void> _runPhase(
-      String phase, int duration, double startValue, double endValue) async {
+      BreathingPhase phase, int duration, double startValue, double endValue) async {
     if (!_isExerciseActive) return;
 
     setState(() {
@@ -358,7 +364,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                     // Phase instruction
                     if (_isExerciseActive) ...[
                       Text(
-                        _currentPhase,
+                        getLocalizedBreathingPhase(context, _currentPhase),
                         style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(
                           fontWeight: FontWeight.w600,
@@ -376,7 +382,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                       ),
                     ] else ...[
                       Text(
-                        'Ready to breathe?',
+                        AppLocalizations.of(context)!.readyToBreathe,
                         style: Theme.of(context).textTheme.headlineMedium
                             ?.copyWith(
                           fontWeight: FontWeight.w600,
@@ -385,7 +391,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        '4-7-8 Breathing Technique',
+                       AppLocalizations.of(context)!.fourSevenEightTechnique,
                         style:
                             Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.onSurface,
@@ -440,7 +446,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                           ),
                         ),
                         child: Text(
-                          'Start Exercise',
+                          AppLocalizations.of(context)!.startExercise,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.onPrimary,
@@ -460,7 +466,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                           ),
                         ),
                         child: Text(
-                          'Extend (+2 cycles)',
+                          AppLocalizations.of(context)!.extendExercise,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.primary,
@@ -482,7 +488,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
                           ),
                         ),
                         child: Text(
-                          'Stop',
+                          AppLocalizations.of(context)!.stopExercise,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.onError,

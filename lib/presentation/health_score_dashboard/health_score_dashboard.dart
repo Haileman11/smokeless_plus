@@ -108,7 +108,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
       //   ),
       // ),
       title: Text(
-        'Health Score Dashboard',
+        AppLocalizations.of(context)!.healthScoreDashboard,
         style: Theme.of(context).textTheme.titleLarge?.copyWith(
           fontWeight: FontWeight.w700,   
           color: Theme.of(context).colorScheme.primary,        
@@ -183,6 +183,7 @@ class _HealthScoreDashboardState extends State<HealthScoreDashboard>
 
   void _exportHealthReport() {
     // Show share sheet functionality for health reports
+    Navigator.pushNamed(context, AppRoutes.statisticsDashboard);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Health report export feature coming soon'),

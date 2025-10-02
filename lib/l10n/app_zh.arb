@@ -1,89 +1,1772 @@
 {
-    "@@locale": "zh",
-    "appTitle": "\u6212\u70df\u8ffd\u8e2a\u5668",
-    "goodMorning": "\u65e9\u4e0a\u597d",
-    "goodAfternoon": "\u4e0b\u5348\u597d",
-    "goodEvening": "\u665a\u4e0a\u597d",
-    "smokeFreeJourney": "\u60a8\u5728\u65e0\u70df\u4e4b\u65c5\u4e2d\u8868\u73b0\u5f97\u975e\u5e38\u51fa\u8272",
-    "currentStreak": "\u5f53\u524d\u8fde\u7eed\u8bb0\u5f55",
-    "daysSmokeFree": "\u65e0\u70df\u5929\u6570",
-    "timeSmokeFree": "\u65e0\u70df\u65f6\u95f4",
-    "moneySaved": "\u8282\u7701\u7684\u94b1",
-    "cigarettesAvoided": "\u907f\u514d\u7684\u9999\u70df",
-    "healthScore": "\u5065\u5eb7\u5f97\u5206",
-    "achievements": "\u6210\u5c31",
-    "keepItUp": "\u7ee7\u7eed\u4fdd\u6301\uff01",
-    "improvingDaily": "\u6bcf\u5929\u6539\u5584",
-    "basedOnProgress": "\u57fa\u4e8e\u8fdb\u5c55",
-    "thatsPacks": "\u90a3\u662f {count} \u5305",
-    "navigationHome": "\u9996\u9875",
-    "navigationProgress": "进度",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "健康评分",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "成就",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "\u4e2a\u4eba\u8d44\u6599",
-    "progressUpdated": "\u8fdb\u5c55\u66f4\u65b0\u6210\u529f\uff01",
-    "errorLoadingData": "\u52a0\u8f7d\u6570\u636e\u51fa\u9519\u3002\u4f7f\u7528\u9ed8\u8ba4\u503c\u3002",
-    "motivationalMessage1": "\u6bcf\u4e00\u4e2a\u65e0\u70df\u7684\u65e5\u5b50\u90fd\u662f\u80dc\u5229\u3002\u60a8\u5728\u6bcf\u4e00\u4e2a\u8fc7\u53bb\u7684\u65f6\u523b\u90fd\u5728\u5efa\u8bbe\u66f4\u5065\u5eb7\u3001\u66f4\u5f3a\u58ee\u7684\u81ea\u5df1\u3002",
-    "motivationalMessage2": "\u60a8\u7684\u80ba\u90e8\u73b0\u5728\u6b63\u5728\u611f\u8c22\u60a8\u3002\u6bcf\u4e00\u6b21\u547c\u5438\u90fd\u66f4\u6e05\u6d01\uff0c\u6bcf\u4e00\u6b21\u5fc3\u8df3\u90fd\u66f4\u5f3a\u52b2\u3002",
-    "motivationalMessage3": "\u60a8\u7701\u4e0b\u7684\u94b1\u53ea\u662f\u5f00\u59cb\u3002\u771f\u6b63\u7684\u5b9d\u85cf\u662f\u60a8\u4e3a\u751f\u547d\u589e\u52a0\u7684\u5c81\u6708\u3002",
-    "drMichaelChen": "\u9648\u8fc8\u514b\u5c14\u533b\u751f",
-    "healthCoachMaria": "\u5065\u5eb7\u6559\u7ec3\u739b\u4e3d\u4e9a",
-    "wellnessExpertJohn": "\u5065\u5eb7\u4e13\u5bb6\u7ea6\u7ff0",
-    "healthStageStarting": "\u5f00\u59cb\u6062\u590d",
-    "healthStageBegin": "\u51c6\u5907\u5f00\u59cb",
-    "healthStageJourney": "\u65c5\u7a0b\u5f00\u59cb",
-    "healthStageNicotineDropping": "\u5c3c\u53e4\u4e01\u4e0b\u964d",
-    "healthStageCONormalizing": "\u4e00\u6c27\u5316\u78b3\u6c34\u5e73\u6b63\u5e38\u5316",
-    "healthStageHeartRisk": "\u5fc3\u810f\u98ce\u9669\u4e0b\u964d",
-    "healthStageNicotineFree": "\u8eab\u4f53\u65e0\u5c3c\u53e4\u4e01",
-    "healthStageSensesImproving": "\u611f\u5b98\u6539\u5584",
-    "healthStageCirculation": "\u5faa\u73af\u6539\u5584",
-    "healthStageLungFunction": "\u80ba\u529f\u80fd\u6539\u5584",
-    "healthStageSignificant": "\u663e\u8457\u6062\u590d",
-    "healthStageHeartDisease": "\u5fc3\u810f\u75c5\u98ce\u9669\u964d\u4f4e",
-    "healthStageStroke": "\u4e2d\u98ce\u98ce\u9669\u6b63\u5e38\u5316",
-    "healthStageMaximum": "\u6700\u5927\u5065\u5eb7\u6062\u590d",
-    "milestoneStartJourney": "\u5f00\u59cb\u60a8\u7684\u65c5\u7a0b",
-    "milestoneNicotineDropping": "\u5c3c\u53e4\u4e01\u6c34\u5e73\u4e0b\u964d",
-    "milestoneCOClearing": "\u4e00\u6c27\u5316\u78b3\u6e05\u9664",
-    "milestoneHeartAttack": "\u5fc3\u810f\u75c5\u53d1\u4f5c\u98ce\u9669\u4e0b\u964d",
-    "milestoneNicotineElimination": "\u5c3c\u53e4\u4e01\u6d88\u9664",
-    "milestoneTasteSmell": "\u5473\u89c9\u548c\u55c5\u89c9\u590d\u82cf",
-    "milestoneCirculationBoost": "\u5faa\u73af\u4fc3\u8fdb",
-    "milestoneLungBoost": "\u80ba\u529f\u80fd\u4fc3\u8fdb",
-    "milestoneMajorLung": "\u4e3b\u8981\u80ba\u90e8\u6062\u590d",
-    "milestoneHeartRisk": "\u5fc3\u810f\u98ce\u9669\u51cf\u534a",
-    "milestoneStrokeRisk": "\u4e2d\u98ce\u98ce\u9669\u6b63\u5e38\u5316",
-    "milestoneCancerRisk": "\u764c\u75c7\u98ce\u9669\u51cf\u534a",
-    "milestoneMaintaining": "\u4fdd\u6301\u5353\u8d8a",
-    "achievedStatus": "\u5df2\u8fbe\u6210",
-    "soonStatus": "\u5373\u5c06",
-    "notStartedStatus": "\u672a\u5f00\u59cb",
-    "timeInDays": "{count} \u5929\u5185",
-    "timeInDaysPlural": "{count} \u5929\u5185",
-    "timeInHours": "{count} \u5c0f\u65f6\u5185",
-    "timeInHoursPlural": "{count} \u5c0f\u65f6\u5185",
-    "timeInMinutes": "{count} \u5206\u949f\u5185",
-    "languageSettings": "\u8bed\u8a00\u8bbe\u7f6e",
-    "selectLanguage": "\u9009\u62e9\u8bed\u8a00",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "zh",
+  "appTitle": "无烟加工厂",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "早,早,早,早,早,早,早,早,早,早",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "再见",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "边",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "你在你的无烟之旅中表现的很棒",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "无烟日",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "无烟时代",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "省下来的钱",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "香烟",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "健康分数",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "成绩",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "继续!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "每日改进",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "基于进展",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "这是 {count} 包",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "页 次",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "进展",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "健康分数",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "成绩",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "简介",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "进展成功更新 !",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "装入数据出错 。 使用默认值 .",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "每日无烟是胜. 你正在用每一瞬间 建立更健康更强壮的自我.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "你的肺现在在感谢你 呼吸干净,心跳更强.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "你存的钱只是开始 真实宝藏是岁月增上.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "迈克尔·陈博士",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "卫生教练玛丽亚",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "健康专家约翰",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "开始恢复",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "准备开始",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "旅程开始",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "尼古丁丢弃",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "CO 水平正常化",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "心脏风险下降",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "尼古丁自由体",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "感官改进",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "流通改进",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "肺功能改进",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "重大恢复",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "减少心脏病风险",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "划线风险规范化",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "最大限度的健康恢复",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "开始你的旅程",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "尼古丁水平下降",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "单氧化碳 清除",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "心脏攻击风险下降",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "消除尼古丁",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "味觉复活( S)",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "流通脚步",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "龙函数提示",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "主要肺复苏",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "心脏风险减半",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "划线风险规范化",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "癌症风险减半",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "保持卓越",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "已达到",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "快点",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "未开始",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "在 {count} 天时",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "在 {count} 天之内",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "在 {count} 小时之内",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "在 {count} 小时之内",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "在 {count} 分钟之内",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "语言设置",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "选择语言",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "联合国",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "西班牙语Name",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "法国语Name",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "德国",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "意大利语",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "葡萄牙",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "العربية",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "联合国",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": "日本語",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "Русский",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": "हिन्दी",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "恢复健康时间表",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "当前阶段",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "下一个里程碑的进展",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "下一个里程碑",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "剩余时间",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "正在装入您的日常动机...",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "正在装入...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "无法刷新引用 。 以后再试.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "上午的动机",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "晚间灵感",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "每秒数 - {second} 秒!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "准备好 - - {second} 秒,直到开始!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "天数",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "小时",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "分钟",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "正在装入您的成绩...",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "成就系统",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "解锁",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "共计",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "进展",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "最近的成就",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "您同步进度",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "实时同步",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "退出日期",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "断头",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "已保存",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "已避免",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "卫生",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "社会影响",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "被启发的朋友",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "支持信件",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "社区等级",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "同步您的进度数据",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "过滤选项",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "导出同步 进展",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "导出成功",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "刷新数据",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "成功分享成就!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "健康改善",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "周数",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "月数",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3个月",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "年份",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "剪切频率",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "刮伤",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "同步无烟喷雾",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "当前记录",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "你的旅程还没有开始",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "在配置文件中检查退出日期",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "所有里程碑",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "显示所有健康里程碑",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "短期",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20分钟至48小时",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "中期",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "2周 - 9个月",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "长期",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10岁以上",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "财务",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "卫生",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "行为",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "社会",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "里程碑类别",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "里程碑已实现! 🎉\n\n- {title} \n{timeframe} \n* {description}\n\n科学事实: {scientificBasis}\n\n#健康旅程#",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "成就复制到共享!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "说明",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "科学基础",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "首先完成设置",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "设定退出日期以跟踪健康里程碑",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "健康里程碑",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "跟踪基于科学的恢复进度",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "肺功能\n* {percent}%",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "心脏\n卫生\n* {percent}%",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": "A. 总表\n健康状况\n* {percent}%",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20分钟",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "心率和血压下降",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12小时",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "一氧化碳水平正常化",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "2 个星期",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "循环改善和肺功能增加",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "1个月",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "咳嗽和呼吸短促减少",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3个月",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "心脏病发作的风险开始下降",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "1 岁",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "心脏病的风险减半",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "同步保存的货币",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "保存总数 : * {saved}",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": "今天开始省钱!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "设定退出日期以查看节省",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "欢迎来到你的旅程!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "你们准备开始无烟生活了 让我们一起开始这个奇妙的旅程!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "跳过",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "第 {currentStep} 步，共 {totalSteps} 步",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "你什么时候戒烟的?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "选择退出日期以跟踪进度并庆祝里程碑 .",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "告诉我们你的吸烟习惯",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "这可以帮助我们计算你的积蓄 让你的经验个性化.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "保持通知的动机",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "选择如何获得支持和鼓励.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "发现强大的特征",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "探索支持您无烟旅行的工具.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "你的个性化仪表板",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "以下是根据您提供的信息对您进度的预览.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "继续",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "完成设置",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "卫生进步",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "下一个健康里程碑",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "血氧水平正常化",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "根据你退出的日期和吸烟习惯",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "味道和气味都有改善",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "肺功能增加",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "减少心脏病风险",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "成就解锁!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "第一成就 等待时间",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "首日冠军——你完成了第一个禁烟日!!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "完成你的第一个无烟日 赚你的第一份徽章",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "进展跟踪",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "监控你的无烟旅行 详细的统计数据",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "健康里程碑",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "看看你身体的恢复情况",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "成就系统",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "奖章和奖励",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "编译支持",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "你最需要的时候马上找人帮忙",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "点击任何要探索的特性",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "预览你等着什么",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "关闭",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "探索",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "每日动机",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "每天接收鼓励信息和提示",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "通知时间",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "变动",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "里程碑警报",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "到达重要里程碑时通知您",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "编译支持",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "在困难时刻立即提供帮助和激励",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "退出日期和时间",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "选择退出的日期和时间",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "更改日期和时间",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "选择日期和时间",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "你抽烟多久了?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "戒烟前吸烟多年",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "健康计分板",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "新建",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "如何解锁",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "完成必要的行动以解锁这一成就.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "共享成就",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "总点数",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "职等",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "进展到级别",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "点数",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "所得分数",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "刺激性高含量",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "每日获取独家激励引言和成功故事",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "海洋 主题",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "美丽的海洋主题应用界面 颜色平静",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "森林主题",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "充满自然灵感的绿色主题",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "慈善捐款",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "用你的名义捐5块给肺癌研究",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "高级统计",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "解锁详细的健康分析与进步见解",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "个人教练会议",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "与经认证的退出教练进行30分钟虚拟会话",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "确认赎回",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "您确定要赎回 {title} = {points} 积分吗 ?",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "剩下的点数是... {availablePoints}",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": "您已成功赎回 {title} 。 请检查您的描述文件 .",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "奖赏复辟!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "不错",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "你干得不错!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit} 无烟天数",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "未吸烟",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "饮气\n锻炼",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "调用\n支助",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "视图\n进展",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "分散游戏",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "渴望吗? 你不是一个人 下面选择一个应对策略 .",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "最近的处理会话",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "快速呼吸",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "在设置中设置紧急联系人",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "设置",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "呼叫紧急联系人",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "联系你的支持者",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "获取支持",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "爬行会记录。 伟大的工作使用 {method}!",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "快速处理提示",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "现在试试这个",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "伟大的选择! {title} 是一个有效的应对策略.",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "健康福利",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "饮水",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "将身体水化,使手忙. 水有助于冲洗毒素,减少渴望.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3分钟",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "走开",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "快点! 物理活动释放内啡素并分散对渴望的注意力.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5-10分钟",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "给朋友打电话",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "伸出援手来 与某人交谈可以提供动力和分散注意力.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5-15分钟",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "审查你的理由",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "记得你为什么决定辞职吗? 专注于健康、家庭和财政目标.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5分钟",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "深呼吸",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "练习慢,深呼吸。 吸气4, 保持4, 呼气4秒.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5分钟",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "楚国",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "把你的嘴 与无糖口香糖。 有助于口服固定习惯.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "正在进行",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "听音乐",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "把最喜欢的播放列表。 音乐可以改善情绪,提供分心.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3-10分钟",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "实践感谢",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "思惟三谛心生感激. 积极思考可以减轻压力和欲望.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3分钟",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "高级",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "甚高楼",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "中型",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "色彩焦点挑战",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "查找周围的 5 个 {randomColor} 物体",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "环视周围环境并识别 {randomColor}的5个对象。 慢慢来,集中注意每个物体.",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "新颜色挑战",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "计数挑战",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "这种精神数学运动需要专注和集中,帮助分散对渴望的注意力.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "显示提示",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "新的挑战",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "记忆宫",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "想象你的童年家园",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "说明",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "一、导 言 闭上眼睛,想象一下 穿过你童年的家\n\n2. 国家 从前门开始,逐个房间\n\n3个 通知详情:颜色、家具、装饰\n\n4个 在每个房间花时间纪念特定物体\n\n 5.五. 试着回想起声音、气味和感觉",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "干得不错! 记忆演练加强重点,减少渴望.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "完成练习",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "语言协会",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "开始单词",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "创建关联词链 。 每个新词都应该连接到上一个词.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "实例:海洋 水 雨 云 天空 鸟类 自由",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "新建起始单词",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "海洋",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "山区",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "森林",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "城市",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "花园",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "图书馆",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "厨房",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "音乐",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "每一次呼吸都是一个新的开始",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "你比你的渴望更强壮",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "这个时刻将过去,你将战胜",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "安静的呼吸,呼吸压力",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "你的健康状况值得一口气",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "一口气一口气 一口气一口气 一口气一口气 一口气一口气一口气",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "吸入",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "坚持住",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "呼气",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "准备好呼吸了吗?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 呼吸技术",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "开始练习",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "延长(+2周期)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "停下来",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "新的动机引用已载入 !",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "刷新引用失败 。 以后再试.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "引用时间表",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "刷新计划",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "下一次刷新",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "引文共计",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "本期",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "* {number} 唯一引文",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod} {hours} 小时 {minutes} 分钟",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "每天早上6点和下午6点!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "明白了吗!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "每日2x自动刷新",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "拨打您的支持人或退出线:",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "紧急支助",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "谢谢",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "你有这个!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "回来",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "开始",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "4号呼吸,7号呼吸,8号呼气",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "选择什么对你最有帮助:",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "呼吸练习",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "4-7-8 减少渴望的技术",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "动机引文",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "获得即时鼓励",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "紧急联系人",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "呼叫支援人员",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "分散活动",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "5分钟快速活动",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "每根不抽烟的烟都对你有好处.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "你比欲望更强壮.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "这种渴望会过去的 交给你了!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "想想你明天会有多骄傲.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "你的健康比任何香烟都值钱.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "跳十个J",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "慢点喝水",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "深呼吸五声",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "打给朋友或家人",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "去散个步",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "听听你最喜欢的歌",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "健康恢复进展",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "里程碑已实现",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "惊人的进步! 你的身体恢复得很好.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "每个里程碑都让你更接近完全恢复.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "保存",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "取消",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "当前时间",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "视图",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "同步导出预览",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "正在初始化您的退出行程...",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "正在装入用户首选项...",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "正在检查退出日期...",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "正在装入进度数据...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "计算记录...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "正在准备动机内容...",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "健康类别",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "编辑退出细节",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "更新退出信息 。 更改会同步到所有应用特性 .",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "吸烟年份",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "每日香烟",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "每日香烟",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "包装成本",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "保存更改",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "健康总分",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "天数退出",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "退出持续时间",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "恢复",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "不错",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "不错",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "改进",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

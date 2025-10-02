@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
 class MilestoneCategorySelectorWidget extends StatelessWidget {
-  final String selectedCategory;
-  final Function(String) onCategoryChanged;
+  final MilestoneCategory selectedCategory;
+  final Function(MilestoneCategory) onCategoryChanged;
 
   const MilestoneCategorySelectorWidget({
     Key? key,
@@ -16,32 +18,15 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = [
-      {
-        'id': 'All',
-        'label': 'All Milestones',
-        'icon': 'view_list',
-        'description': 'Show all health milestones',
-      },
-      {
-        'id': 'Short-Term',
-        'label': 'Short-Term',
-        'icon': 'schedule',
-        'description': '20 min - 48 hours',
-      },
-      {
-        'id': 'Medium-Term',
-        'label': 'Medium-Term',
-        'icon': 'trending_up',
-        'description': '2 weeks - 9 months',
-      },
-      {
-        'id': 'Long-Term',
-        'label': 'Long-Term',
-        'icon': 'military_tech',
-        'description': '1-10+ years',
-      },
-    ];
+    final categories = MilestoneCategory.values.map((category) {
+      return {
+        'id': category.name,
+        'label': category.label(AppLocalizations.of(context)!),
+        'description': category.description(AppLocalizations.of(context)!),
+        'icon': category.iconName(),
+      };
+    }).toList();
+
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
@@ -49,7 +34,7 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Milestone Categories',
+            AppLocalizations.of(context)!.milestoneCategories,
             style: Theme.of(context).textTheme.titleSmall?.copyWith(
               fontWeight: FontWeight.w600,
               color: Theme.of(context).colorScheme.onSurface,
@@ -69,7 +54,7 @@ class MilestoneCategorySelectorWidget extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             HapticFeedback.selectionClick();
-                            onCategoryChanged(category['id'] as String);
+                            onCategoryChanged(MilestoneCategory.values.firstWhere((e) => e.toString() == 'MilestoneCategory.${category['id']}'));
                           },
                           borderRadius: BorderRadius.circular(12),
                           child: AnimatedContainer(

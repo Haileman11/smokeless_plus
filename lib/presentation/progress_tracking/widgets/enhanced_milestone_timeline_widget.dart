@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 import '../../../services/user_data_service.dart';
 
 class EnhancedMilestoneTimelineWidget extends StatefulWidget {
-  final String selectedCategory;
-  final String selectedPeriod;
+  final MilestoneCategory selectedCategory;
+  final PeriodType selectedPeriod;
   final VoidCallback? onShareAchievement;
 
   const EnhancedMilestoneTimelineWidget({
@@ -35,11 +37,11 @@ class _EnhancedMilestoneTimelineWidgetState
   void initState() {
     super.initState();
     _progressAnimationController = AnimationController(
-      duration: Duration(milliseconds: 1500),
+      duration: const Duration(milliseconds: 1500),
       vsync: this,
     );
     _pulseAnimationController = AnimationController(
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
     _pulseAnimationController.repeat(reverse: true);
@@ -88,11 +90,11 @@ class _EnhancedMilestoneTimelineWidgetState
     List<Map<String, dynamic>> milestones,
   ) {
     switch (widget.selectedCategory) {
-      case 'Short-Term':
+      case MilestoneCategory.shortTerm:
         return milestones.where((m) => m['category'] == 'Short-Term').toList();
-      case 'Medium-Term':
+      case MilestoneCategory.mediumTerm:
         return milestones.where((m) => m['category'] == 'Medium-Term').toList();
-      case 'Long-Term':
+      case MilestoneCategory.longTerm:
         return milestones.where((m) => m['category'] == 'Long-Term').toList();
       default:
         return milestones;
@@ -116,7 +118,7 @@ Scientific Fact: ${milestone['scientificBasis']}
     // In a real app, this would use the share package
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('Achievement copied to share!'),
+        content:  Text(AppLocalizations.of(context)!.achievementCopied),
         backgroundColor: Theme.of(context).colorScheme.secondary,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -145,7 +147,7 @@ Scientific Fact: ${milestone['scientificBasis']}
             height: 70.h,
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
             ),
             child: Column(
               children: [
@@ -230,7 +232,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                         _buildProgressSection(milestone),
                         SizedBox(height: 3.h),
                         Text(
-                          'Description',
+                          AppLocalizations.of(context)!.description,
                           style: Theme.of(context).textTheme.titleSmall
                               ?.copyWith(fontWeight: FontWeight.w600),
                         ),
@@ -241,7 +243,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                         ),
                         SizedBox(height: 2.h),
                         Text(
-                          'Scientific Basis',
+                          AppLocalizations.of(context)!.scientificBasis,
                           style: Theme.of(context).textTheme.titleSmall
                               ?.copyWith(fontWeight: FontWeight.w600),
                         ),
@@ -291,7 +293,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                                     Theme.of(context).colorScheme.onSecondary,
                                 size: 20,
                               ),
-                              label: Text('Share Achievement'),
+                              label: Text(AppLocalizations.of(context)!.shareAchievement),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor:
                                     Theme.of(context).colorScheme.secondary,
@@ -336,7 +338,7 @@ Scientific Fact: ${milestone['scientificBasis']}
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Progress',
+                AppLocalizations.of(context)!.progress,
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -434,7 +436,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                           alpha: 0.1,
                         ),
                 blurRadius: isAchieved ? 12 : 4,
-                offset: Offset(0, 2),
+                offset: const Offset(0, 2),
               ),
             ],
           ),
@@ -578,7 +580,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Progress',
+                              AppLocalizations.of(context)!.progress,
                               style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(fontWeight: FontWeight.w500),
                             ),
@@ -710,14 +712,14 @@ Scientific Fact: ${milestone['scientificBasis']}
             ),
             SizedBox(height: 2.h),
             Text(
-              'Complete Setup First',
+              AppLocalizations.of(context)!.completeSetupFirst,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.w600,
               ),
             ),
             SizedBox(height: 1.h),
             Text(
-              'Set your quit date to track health milestones',
+              AppLocalizations.of(context)!.setQuitDateToSeeMilestones,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).colorScheme.onSurface.withValues(
                   alpha: 0.6,
@@ -761,7 +763,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                     ),
                     SizedBox(width: 2.w),
                     Text(
-                      'Health Milestones Timeline',
+                      AppLocalizations.of(context)!.healthMilestoneTimeline,
                       style: Theme.of(context).textTheme.titleMedium
                           ?.copyWith(
                             color: Theme.of(context).colorScheme.onPrimary,
@@ -772,7 +774,7 @@ Scientific Fact: ${milestone['scientificBasis']}
                 ),
                 SizedBox(height: 1.h),
                 Text(
-                  'Track your scientifically-based recovery progress',
+                  AppLocalizations.of(context)!.trackYourRecoveryProgress,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).colorScheme.onPrimary.withValues(
                       alpha: 0.8,
@@ -787,7 +789,7 @@ Scientific Fact: ${milestone['scientificBasis']}
           // Milestones List
           ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: _milestones.length,
             itemBuilder: (context, index) {
               return _buildMilestoneCard(_milestones[index], index);

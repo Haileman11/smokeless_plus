@@ -1,12 +1,14 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 import '../../../services/user_data_service.dart';
 
 class MoneySavedChart extends StatefulWidget {
-  final String selectedPeriod;
+  final PeriodType selectedPeriod;
 
   const MoneySavedChart({
     Key? key,
@@ -47,7 +49,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
     if (!hasStartedQuitting || currentStreak == 0) return [];
 
     switch (widget.selectedPeriod) {
-      case 'Week':
+      case PeriodType.week:
         // Show daily savings for the week
         final dailySaving =
             moneySaved / (currentStreak > 7 ? 7 : currentStreak);
@@ -64,7 +66,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
             ],
           );
         });
-      case 'Month':
+      case PeriodType.month:
         // Show weekly savings for the month
         final weeklySaving = moneySaved / (currentStreak / 7);
         final weeksToShow =
@@ -82,7 +84,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
             ],
           );
         });
-      case '3 Months':
+      case PeriodType.threeMonths:
         // Show monthly savings
         final monthlySaving = moneySaved / (currentStreak / 30);
         final monthsToShow =
@@ -100,7 +102,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
             ],
           );
         });
-      case 'Year':
+      case PeriodType.year:
         // Show quarterly savings
         final quarterlySaving = moneySaved / (currentStreak / 90);
         final quartersToShow =
@@ -174,14 +176,14 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
         children: [
           Row(
             children: [
-              CustomIconWidget(
+              const CustomIconWidget(
                 iconName: 'savings',
                 color: AppTheme.successLight,
                 size: 24,
               ),
               SizedBox(width: 2.w),
               Text(
-                'Synchronized Money Saved',
+                AppLocalizations.of(context)!.synchronizedMoneySaved,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -190,7 +192,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
           ),
           SizedBox(height: 1.h),
           Text(
-            'Total saved: \$${moneySaved.toStringAsFixed(2)}',
+            AppLocalizations.of(context)!.totalSaved(moneySaved.toStringAsFixed(2)),
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: AppTheme.successLight,
               fontWeight: FontWeight.w600,
@@ -210,7 +212,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                         ),
                         SizedBox(height: 2.h),
                         Text(
-                          'Start saving money today!',
+                          AppLocalizations.of(context)!.startSavingMoneyToday,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.outline,
@@ -218,7 +220,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                         ),
                         SizedBox(height: 1.h),
                         Text(
-                          'Set your quit date to see savings',
+                          AppLocalizations.of(context)!.setYourQuitDateToStartSaving,
                           style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.outline,
@@ -257,7 +259,7 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                             getTitlesWidget: (value, meta) {
                               String text = '';
                               switch (widget.selectedPeriod) {
-                                case 'Week':
+                                case PeriodType.week:
                                   final days = [
                                     'M',
                                     'T',
@@ -270,13 +272,13 @@ class _MoneySavedChartState extends State<MoneySavedChart> {
                                   if (value.toInt() < days.length)
                                     text = days[value.toInt()];
                                   break;
-                                case 'Month':
+                                case PeriodType.month:
                                   text = 'W${value.toInt() + 1}';
                                   break;
-                                case '3 Months':
+                                case PeriodType.threeMonths:
                                   text = 'M${value.toInt() + 1}';
                                   break;
-                                case 'Year':
+                                case PeriodType.year:
                                   text = 'Q${value.toInt() + 1}';
                                   break;
                               }

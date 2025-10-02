@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
 class ProgressCategoryTabs extends StatelessWidget {
-  final String selectedCategory;
-  final Function(String) onCategoryChanged;
+  final MotivationCategory selectedCategory;
+  final Function(MotivationCategory) onCategoryChanged;
 
   const ProgressCategoryTabs({
     Key? key,
@@ -15,12 +17,14 @@ class ProgressCategoryTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categories = [
-      {'name': 'Financial', 'icon': 'attach_money'},
-      {'name': 'Health', 'icon': 'favorite'},
-      {'name': 'Behavioral', 'icon': 'psychology'},
-      {'name': 'Social', 'icon': 'people'},
-    ];
+    final categories = MotivationCategory.values.map((category) {
+      return {
+        'id': category.name,
+        'label': category.name(AppLocalizations.of(context)!),
+        'icon': category.icon(),
+      };
+    }).toList();
+
 
     return Container(
       height: 8.h,
@@ -34,7 +38,7 @@ class ProgressCategoryTabs extends StatelessWidget {
           final isSelected = selectedCategory == category['name'];
 
           return GestureDetector(
-            onTap: () => onCategoryChanged(category['name'] as String),
+            onTap: () => onCategoryChanged(category['id'] as MotivationCategory),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               decoration: BoxDecoration(

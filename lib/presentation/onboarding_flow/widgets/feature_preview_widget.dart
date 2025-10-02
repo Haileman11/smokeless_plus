@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/models/feature.dart';
 
 import '../../../core/app_export.dart';
 
@@ -7,38 +9,38 @@ class FeaturePreviewWidget extends StatelessWidget {
   const FeaturePreviewWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final List<Map<String, dynamic>> features = [
-      {
-        "title": "Progress Tracking",
-        "description":
-            "Monitor your smoke-free journey with detailed statistics",
-        "icon": "trending_up",
-        "color": Theme.of(context).colorScheme.primary,
-        "route": "/progress-tracking",
-      },
-      {
-        "title": "Health Milestones",
-        "description": "See how your body recovers over time",
-        "icon": "favorite",
-        "color": Theme.of(context).colorScheme.secondary,
-        "route": "/health-milestones",
-      },
-      {
-        "title": "Achievement System",
-        "description": "Earn badges and rewards for your progress",
-        "icon": "emoji_events",
-        "color": Theme.of(context).colorScheme.tertiary,
-        "route": "/achievement-system",
-      },
-      {
-        "title": "Craving Support",
-        "description": "Get instant help when you need it most",
-        "icon": "support_agent",
-        "color": Theme.of(context).colorScheme.primary,
-        "route": "/craving-support",
-      },
+  Widget build(BuildContext context) {    
+    final List<Feature> features = [
+       Feature(
+        titleKey: 'feature_progress_tracking_title',
+        descriptionKey: 'feature_progress_tracking_description',
+        icon: "trending_up",
+        route: '/progress-tracking',
+        color: Theme.of(context).colorScheme.primary, 
+      ),
+       Feature(
+        titleKey: 'feature_health_milestones_title',
+        descriptionKey: 'feature_health_milestones_description',
+        icon: "favorite",
+        route: '/health-milestones',
+        color: Theme.of(context).colorScheme.secondary,
+      ),
+       Feature(
+        titleKey: 'feature_achievement_system_title',
+        descriptionKey: 'feature_achievement_system_description',
+        icon: "emoji_events",
+        route: '/achievement-system',
+        color: Theme.of(context).colorScheme.tertiary,
+      ),
+       Feature(
+        titleKey: 'feature_craving_support_title',
+        descriptionKey: 'feature_craving_support_description',
+        icon: "support_agent",
+        route: '/craving-support',
+        color: Theme.of(context).colorScheme.primary,
+      ),
     ];
+
 
     return Column(
       children: [
@@ -56,11 +58,11 @@ class FeaturePreviewWidget extends StatelessWidget {
             final feature = features[index];
             return _buildFeatureCard(
               context: context,
-              title: feature["title"] as String,
-              description: feature["description"] as String,
-              iconName: feature["icon"] as String,
-              color: feature["color"] as Color,
-              route: feature["route"] as String,
+              title: feature.title(AppLocalizations.of(context)!),
+              description: feature.description(AppLocalizations.of(context)!),
+              iconName: feature.icon,
+              color: feature.color,
+              route: feature.route,
             );
           },
         ),
@@ -97,7 +99,7 @@ class FeaturePreviewWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Tap any feature to explore',
+                      AppLocalizations.of(context)!.tapAnyFeatureToExplore,
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.secondary,
@@ -105,7 +107,7 @@ class FeaturePreviewWidget extends StatelessWidget {
                     ),
                     SizedBox(height: 0.5.h),
                     Text(
-                      'Get a preview of what awaits you',
+                      AppLocalizations.of(context)!.getAPreviewOfWhatAwaitsYou,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                       ),

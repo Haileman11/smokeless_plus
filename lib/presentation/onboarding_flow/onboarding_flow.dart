@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/app_export.dart';
@@ -36,7 +37,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
   bool _milestoneAlerts = true;
   bool _cravingSupport = true;
   TimeOfDay _motivationTime = const TimeOfDay(hour: 9, minute: 0);
-  String _selectedCurrency = 'USD (\$)';
+  String _selectedCurrency = 'USD';
 
   @override
   void initState() {
@@ -135,7 +136,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
             ),
             SizedBox(height: 2.h),
             Text(
-              'Welcome to Your Journey!',
+              AppLocalizations.of(context)!.welcomeToYourJourney,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.w700,
                 color: Theme.of(context).colorScheme.onSurface,
@@ -144,7 +145,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
             ),
             SizedBox(height: 1.h),
             Text(
-              'You\'re all set to start your smoke-free life. Let\'s begin this amazing journey together!',
+              AppLocalizations.of(context)!.youAreAllSetToStartYourSmokeFreeLife,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
               ),
@@ -240,7 +241,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Step ${_currentStep + 1} of $_totalSteps',
+                      AppLocalizations.of(context)!.stepXofY(_currentStep + 1, _totalSteps),
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Theme.of(context).colorScheme.onSurfaceVariant,
                         fontWeight: FontWeight.w500,
@@ -286,9 +287,9 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                 children: [
                   // Step 1: Quit Date
                   OnboardingStepWidget(
-                    title: 'When did you quit smoking?',
+                    title: AppLocalizations.of(context)!.whenDidYouQuitSmoking,
                     description:
-                        'Select your quit date to track your progress and celebrate milestones.',
+                        AppLocalizations.of(context)!.selectYourQuitDateToTrackProgress,
                     imageUrl:
                         'assets/images/step-one.png',
                     customContent: QuitDatePickerWidget(
@@ -304,9 +305,9 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   ),
                   // Step 2: Smoking Habits - UPDATED
                   OnboardingStepWidget(
-                    title: 'Tell us about your smoking habits',
+                    title: AppLocalizations.of(context)!.tellUsAboutYourSmokingHabits,
                     description:
-                        'This helps us calculate your savings and personalize your experience.',
+                        AppLocalizations.of(context)!.thisHelpsUsCalculateYourSavings,
                     imageUrl:
                         'assets/images/step-two.png',
                     customContent: SmokingHabitsWidget(
@@ -340,9 +341,9 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   ),
                   // Step 3: Notification Preferences
                   OnboardingStepWidget(
-                    title: 'Stay motivated with notifications',
+                    title: AppLocalizations.of(context)!.stayMotivatedWithNotifications,
                     description:
-                        'Choose how you\'d like to receive support and encouragement.',
+                        AppLocalizations.of(context)!.chooseHowYoudLikeToReceiveSupport,
                     imageUrl:
                         'assets/images/step-three.png',
                     customContent: NotificationPreferencesWidget(
@@ -376,20 +377,20 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                   ),
                   // Step 4: Feature Preview
                   OnboardingStepWidget(
-                    title: 'Discover powerful features',
+                    title: AppLocalizations.of(context)!.discoverPowerfulFeatures,
                     description:
-                        'Explore the tools that will support you on your smoke-free journey.',
+                        AppLocalizations.of(context)!.exploreTheToolsThatWillSupportYou,
                     imageUrl:
                         'assets/images/step-four.png',
                     customContent: const FeaturePreviewWidget(),
                     onNext: _nextStep,
-                    buttonText: 'Continue',
+                    buttonText: AppLocalizations.of(context)!.continueText,
                   ),
                   // Step 5: Dashboard Preview
                   OnboardingStepWidget(
-                    title: 'Your personalized dashboard',
+                    title: AppLocalizations.of(context)!.yourPersonalizedDashboard,
                     description:
-                        'Here\'s a preview of your progress based on the information you provided.',
+                        AppLocalizations.of(context)!.dashboardPreviewDescription,
                     imageUrl:
                         'assets/images/step-five.png',
                     customContent: _quitDate != null
@@ -400,7 +401,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
                           )
                         : null,
                     onNext: _nextStep,
-                    buttonText: 'Complete Setup',
+                    buttonText: AppLocalizations.of(context)!.completeSetup,
                     isLastStep: true,
                     showSkip: false,
                   ),

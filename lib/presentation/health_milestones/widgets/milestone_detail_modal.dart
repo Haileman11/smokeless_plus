@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -157,7 +158,7 @@ class MilestoneDetailModal extends StatelessWidget {
                   ],
                   // Description
                   Text(
-                    'Health Benefit',
+                    AppLocalizations.of(context)!.healthBenefits,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),

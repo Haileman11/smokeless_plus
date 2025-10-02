@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -127,7 +128,7 @@ class MilestoneCardWidget extends StatelessWidget {
                         ),
                         SizedBox(width: 2.w),
                         Text(
-                          'Achieved!',
+                          AppLocalizations.of(context)!.achievementUnlocked,
                           style: Theme.of(context).textTheme.labelMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.tertiary,

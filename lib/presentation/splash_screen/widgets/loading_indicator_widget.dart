@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 import '../../../theme/app_theme.dart';
@@ -74,7 +75,7 @@ class _LoadingIndicatorWidgetState extends State<LoadingIndicatorWidget>
         ),
         SizedBox(height: 2.h),
         Text(
-          'Initializing your quit journey...',
+          AppLocalizations  .of(context)!.initializingYourQuitJourney,
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
             color: Theme.of(context).colorScheme.onSurface
                 .withValues(alpha: 0.7),

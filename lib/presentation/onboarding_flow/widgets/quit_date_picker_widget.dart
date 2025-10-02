@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -79,11 +81,16 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
     widget.onDateSelected(combined);
   }
 
+
+  List<String> getLocalizedMonthNames([String? locale]) {
+    return List.generate(12, (index) {
+      final date = DateTime(2024, index + 1, 1); // Any non-leap year works
+      return DateFormat.MMMM(locale).format(date); // Full month name
+    });
+  }
+
   String _formatDateTime(DateTime dateTime) {
-    final months = [
-      'January', 'February', 'March', 'April', 'May', 'June',
-      'July', 'August', 'September', 'October', 'November', 'December'
-    ];
+    final months = getLocalizedMonthNames(Localizations.localeOf(context).languageCode);
 
     final String formattedDate =
         '${months[dateTime.month - 1]} ${dateTime.day}, ${dateTime.year}';
@@ -133,7 +140,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Quit Date & Time',
+                      AppLocalizations.of(context)!.quitDateTime,
                       style:
                           Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
@@ -144,7 +151,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                     Text(
                       _selectedDateTime != null
                           ? _formatDateTime(_selectedDateTime!)
-                          : 'Select your quit date and time',
+                          : AppLocalizations.of(context)!.selectYourQuitDateAndTime,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: _selectedDateTime != null
                             ? Theme.of(context).colorScheme.onSurface
@@ -172,7 +179,7 @@ class _QuitDatePickerWidgetState extends State<QuitDatePickerWidget> {
                 ),
               ),
               child: Text(
-                _selectedDateTime != null ? 'Change Date & Time' : 'Select Date & Time',
+                _selectedDateTime != null ? AppLocalizations.of(context)!.changeDateAndTime : AppLocalizations.of(context)!.selectDateAndTime,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.w500,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -85,7 +86,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
               SizedBox(width: 3.w),
               Expanded(
                 child: Text(
-                  'Health Recovery Progress',
+                  AppLocalizations.of(context)!.healthRecoveryProgress,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w700,
@@ -103,7 +104,7 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Milestones Achieved',
+                    AppLocalizations.of(context)!.milestonesAchieved,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Colors.white.withValues(alpha: 0.9),
                     ),
@@ -168,8 +169,8 @@ class _ProgressHeaderWidgetState extends State<ProgressHeaderWidget>
           // Motivational text
           Text(
             widget.progressPercentage >= 50
-                ? 'Amazing progress! Your body is healing beautifully.'
-                : 'Every milestone brings you closer to complete recovery.',
+                ? AppLocalizations.of(context)!.amazingProgress
+                : AppLocalizations.of(context)!.everyMilestoneBringsYouCloserToCompleteRecovery,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white.withValues(alpha: 0.9),
               fontStyle: FontStyle.italic,

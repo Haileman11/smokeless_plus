@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -9,11 +10,11 @@ class HealthScoreProgressWidget extends StatefulWidget {
   final int currentStreak;
 
   const HealthScoreProgressWidget({
-    Key? key,
+    super.key,
     required this.healthScore,
     required this.quitDate,
     required this.currentStreak,
-  }) : super(key: key);
+  });
 
   @override
   State<HealthScoreProgressWidget> createState() =>
@@ -76,7 +77,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Overall Health Score',
+                  AppLocalizations.of(context)!.healthCategoryBreakdown,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w700,
                     // color: Theme.of(context).colorScheme.primary,
@@ -89,7 +90,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    _getScoreStatus(),
+                    _getScoreStatus(context),
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: _getScoreColor(),
                       fontWeight: FontWeight.w600,
@@ -138,7 +139,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
                         ),
                       ),
                       Text(
-                        'Health Score',
+                        AppLocalizations.of(context)!.healthScore,
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: AppTheme.textMediumEmphasisLight,
@@ -158,7 +159,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _buildStatItem(
-                  'Days Quit',
+                  AppLocalizations.of(context)!.daysQuit,
                   '${widget.currentStreak}',
                   'calendar_today',
                 ),
@@ -168,7 +169,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
                   color: Colors.grey.shade300,
                 ),
                 _buildStatItem(
-                  'Quit Duration',
+                  AppLocalizations.of(context)!.quitDuration,
                   _getQuitDuration(),
                   'schedule',
                 ),
@@ -178,7 +179,7 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
                   color: Colors.grey.shade300,
                 ),
                 _buildStatItem(
-                  'Recovery',
+                  AppLocalizations.of(context)!.recovery,
                   '${widget.healthScore}%',
                   'trending_up',
                 ),
@@ -223,11 +224,11 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
     return Color(0xFFE74C3C);
   }
 
-  String _getScoreStatus() {
-    if (widget.healthScore >= 80) return 'Excellent';
-    if (widget.healthScore >= 60) return 'Good';
-    if (widget.healthScore >= 40) return 'Improving';
-    return 'Recovery';
+  String _getScoreStatus(BuildContext context) {
+    if (widget.healthScore >= 80) return AppLocalizations.of(context)!.excellent;
+    if (widget.healthScore >= 60) return AppLocalizations.of(context)!.good;
+    if (widget.healthScore >= 40) return AppLocalizations.of(context)!.improving;
+    return AppLocalizations.of(context)!.recovery;
   }
 
   String _getQuitDuration() {

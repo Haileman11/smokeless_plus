@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -186,11 +187,11 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildTimeUnit('Days', _days, primaryColor),
+                _buildTimeUnit(AppLocalizations.of(context)!.days, _days, primaryColor),
                 _buildSeparator(),
-                _buildTimeUnit('Hours', _hours, accentColor),
+                _buildTimeUnit(AppLocalizations.of(context)!.hours, _hours, accentColor),
                 _buildSeparator(),
-                _buildTimeUnit('Minutes', _minutes, AppTheme.successLight),
+                _buildTimeUnit(AppLocalizations.of(context)!.minutes, _minutes, AppTheme.successLight),
               ],
             ),
 
@@ -199,8 +200,8 @@ class _AnimatedTimeCounterWidgetState extends State<AnimatedTimeCounterWidget>
             // Subtitle with live seconds and motivational message
             Text(
               _hasStartedQuitting
-                  ? 'Every second counts - $_seconds seconds and counting!'
-                  : 'Get ready - $_seconds seconds until you start!',
+                  ? AppLocalizations.of(context)!.everySecondCounts(_seconds)
+                  : AppLocalizations.of(context)!.getReady(_seconds),
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppTheme.onPrimaryLight.withValues(alpha: 0.9),
                 fontWeight: FontWeight.w500,

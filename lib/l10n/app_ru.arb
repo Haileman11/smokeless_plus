@@ -1,89 +1,1772 @@
 {
-    "@@locale": "ru",
-    "appTitle": "\u0422\u0440\u0435\u043a\u0435\u0440 \u041e\u0442\u043a\u0430\u0437\u0430 \u043e\u0442 \u041a\u0443\u0440\u0435\u043d\u0438\u044f",
-    "goodMorning": "\u0414\u043e\u0431\u0440\u043e\u0435 \u0443\u0442\u0440\u043e",
-    "goodAfternoon": "\u0414\u043e\u0431\u0440\u044b\u0439 \u0434\u0435\u043d\u044c",
-    "goodEvening": "\u0414\u043e\u0431\u0440\u044b\u0439 \u0432\u0435\u0447\u0435\u0440",
-    "smokeFreeJourney": "\u0412\u044b \u0434\u0435\u043b\u0430\u0435\u0442\u0435 \u043f\u043e\u0442\u0440\u044f\u0441\u0430\u044e\u0449\u0443\u044e \u0440\u0430\u0431\u043e\u0442\u0443 \u0432 \u0441\u0432\u043e\u0451\u043c \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0438 \u0431\u0435\u0437 \u043a\u0443\u0440\u0435\u043d\u0438\u044f",
-    "currentStreak": "\u0422\u0435\u043a\u0443\u0449\u0430\u044f \u0441\u0435\u0440\u0438\u044f",
-    "daysSmokeFree": "\u0414\u043d\u0435\u0439 \u0431\u0435\u0437 \u043a\u0443\u0440\u0435\u043d\u0438\u044f",
-    "timeSmokeFree": "\u0412\u0440\u0435\u043c\u044f \u0431\u0435\u0437 \u043a\u0443\u0440\u0435\u043d\u0438\u044f",
-    "moneySaved": "\u0414\u0435\u043d\u044c\u0433\u0438 \u0441\u044d\u043a\u043e\u043d\u043e\u043c\u043b\u0435\u043d\u044b",
-    "cigarettesAvoided": "\u0421\u0438\u0433\u0430\u0440\u0435\u0442 \u0438\u0437\u0431\u0435\u0436\u0430\u043d\u043e",
-    "healthScore": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044c \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f",
-    "achievements": "\u0414\u043e\u0441\u0442\u0438\u0436\u0435\u043d\u0438\u044f",
-    "keepItUp": "\u0422\u0430\u043a \u0434\u0435\u0440\u0436\u0430\u0442\u044c!",
-    "improvingDaily": "\u0423\u043b\u0443\u0447\u0448\u0430\u0435\u0442\u0441\u044f \u0435\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e",
-    "basedOnProgress": "\u041d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430",
-    "thatsPacks": "\u042d\u0442\u043e {count} \u043f\u0430\u0447\u0435\u043a",
-    "navigationHome": "\u0413\u043b\u0430\u0432\u043d\u0430\u044f",
-    "navigationProgress": "Прогресс",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "Показатель Здоровья",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "Достижения",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "\u041f\u0440\u043e\u0444\u0438\u043b\u044c",
-    "progressUpdated": "\u041f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043e\u0431\u043d\u043e\u0432\u043b\u0451\u043d!",
-    "errorLoadingData": "\u041e\u0448\u0438\u0431\u043a\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0434\u0430\u043d\u043d\u044b\u0445. \u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e.",
-    "motivationalMessage1": "\u041a\u0430\u0436\u0434\u044b\u0439 \u0434\u0435\u043d\u044c \u0431\u0435\u0437 \u043a\u0443\u0440\u0435\u043d\u0438\u044f - \u044d\u0442\u043e \u043f\u043e\u0431\u0435\u0434\u0430. \u0412\u044b \u0441\u0442\u0440\u043e\u0438\u0442\u0435 \u0431\u043e\u043b\u0435\u0435 \u0437\u0434\u043e\u0440\u043e\u0432\u0443\u044e, \u0441\u0438\u043b\u044c\u043d\u0443\u044e \u0432\u0435\u0440\u0441\u0438\u044e \u0441\u0435\u0431\u044f \u0441 \u043a\u0430\u0436\u0434\u044b\u043c \u043f\u0440\u043e\u0445\u043e\u0434\u044f\u0449\u0438\u043c \u043c\u043e\u043c\u0435\u043d\u0442\u043e\u043c.",
-    "motivationalMessage2": "\u0412\u0430\u0448\u0438 \u043b\u0451\u0433\u043a\u0438\u0435 \u0431\u043b\u0430\u0433\u043e\u0434\u0430\u0440\u044f\u0442 \u0432\u0430\u0441 \u043f\u0440\u044f\u043c\u043e \u0441\u0435\u0439\u0447\u0430\u0441. \u041a\u0430\u0436\u0434\u044b\u0439 \u0432\u0434\u043e\u0445 \u0447\u0438\u0449\u0435, \u043a\u0430\u0436\u0434\u043e\u0435 \u0441\u0435\u0440\u0434\u0446\u0435\u0431\u0438\u0435\u043d\u0438\u0435 \u0441\u0438\u043b\u044c\u043d\u0435\u0435.",
-    "motivationalMessage3": "\u0414\u0435\u043d\u044c\u0433\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u044b \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0442\u0435 - \u044d\u0442\u043e \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u0430\u0447\u0430\u043b\u043e. \u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u0435 \u0441\u043e\u043a\u0440\u043e\u0432\u0438\u0449\u0435 - \u044d\u0442\u043e \u0433\u043e\u0434\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u044b \u0434\u043e\u0431\u0430\u0432\u043b\u044f\u0435\u0442\u0435 \u043a \u0441\u0432\u043e\u0435\u0439 \u0436\u0438\u0437\u043d\u0438.",
-    "drMichaelChen": "\u0414\u043e\u043a\u0442\u043e\u0440 \u041c\u0430\u0439\u043a\u043b \u0427\u0435\u043d",
-    "healthCoachMaria": "\u0422\u0440\u0435\u043d\u0435\u0440 \u043f\u043e \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044e \u041c\u0430\u0440\u0438\u044f",
-    "wellnessExpertJohn": "\u042d\u043a\u0441\u043f\u0435\u0440\u0442 \u043f\u043e \u043e\u0437\u0434\u043e\u0440\u043e\u0432\u043b\u0435\u043d\u0438\u044e \u0414\u0436\u043e\u043d",
-    "healthStageStarting": "\u041d\u0430\u0447\u0430\u043b\u043e \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f",
-    "healthStageBegin": "\u0413\u043e\u0442\u043e\u0432 \u043d\u0430\u0447\u0430\u0442\u044c",
-    "healthStageJourney": "\u041f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0435 \u043d\u0430\u0447\u0438\u043d\u0430\u0435\u0442\u0441\u044f",
-    "healthStageNicotineDropping": "\u041d\u0438\u043a\u043e\u0442\u0438\u043d \u0441\u043d\u0438\u0436\u0430\u0435\u0442\u0441\u044f",
-    "healthStageCONormalizing": "\u0423\u0440\u043e\u0432\u043d\u0438 CO \u043d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u0443\u044e\u0442\u0441\u044f",
-    "healthStageHeartRisk": "\u0421\u0435\u0440\u0434\u0435\u0447\u043d\u044b\u0439 \u0440\u0438\u0441\u043a \u0441\u043d\u0438\u0436\u0430\u0435\u0442\u0441\u044f",
-    "healthStageNicotineFree": "\u0422\u0435\u043b\u043e \u0431\u0435\u0437 \u043d\u0438\u043a\u043e\u0442\u0438\u043d\u0430",
-    "healthStageSensesImproving": "\u0427\u0443\u0432\u0441\u0442\u0432\u0430 \u0443\u043b\u0443\u0447\u0448\u0430\u044e\u0442\u0441\u044f",
-    "healthStageCirculation": "\u0426\u0438\u0440\u043a\u0443\u043b\u044f\u0446\u0438\u044f \u0443\u043b\u0443\u0447\u0448\u0430\u0435\u0442\u0441\u044f",
-    "healthStageLungFunction": "\u0424\u0443\u043d\u043a\u0446\u0438\u044f \u043b\u0451\u0433\u043a\u0438\u0445 \u0443\u043b\u0443\u0447\u0448\u0430\u0435\u0442\u0441\u044f",
-    "healthStageSignificant": "\u0417\u043d\u0430\u0447\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0435 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435",
-    "healthStageHeartDisease": "\u0420\u0438\u0441\u043a \u0441\u0435\u0440\u0434\u0435\u0447\u043d\u044b\u0445 \u0437\u0430\u0431\u043e\u043b\u0435\u0432\u0430\u043d\u0438\u0439 \u0441\u043d\u0438\u0436\u0435\u043d",
-    "healthStageStroke": "\u0420\u0438\u0441\u043a \u0438\u043d\u0441\u0443\u043b\u044c\u0442\u0430 \u043d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d",
-    "healthStageMaximum": "\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e\u0435 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f",
-    "milestoneStartJourney": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u043f\u0443\u0442\u0435\u0448\u0435\u0441\u0442\u0432\u0438\u0435",
-    "milestoneNicotineDropping": "\u0423\u0440\u043e\u0432\u043d\u0438 \u043d\u0438\u043a\u043e\u0442\u0438\u043d\u0430 \u043f\u0430\u0434\u0430\u044e\u0442",
-    "milestoneCOClearing": "\u0423\u0433\u0430\u0440\u043d\u044b\u0439 \u0433\u0430\u0437 \u043e\u0447\u0438\u0449\u0430\u0435\u0442\u0441\u044f",
-    "milestoneHeartAttack": "\u0420\u0438\u0441\u043a \u0438\u043d\u0444\u0430\u0440\u043a\u0442\u0430 \u0441\u043d\u0438\u0436\u0430\u0435\u0442\u0441\u044f",
-    "milestoneNicotineElimination": "\u0423\u0441\u0442\u0440\u0430\u043d\u0435\u043d\u0438\u0435 \u043d\u0438\u043a\u043e\u0442\u0438\u043d\u0430",
-    "milestoneTasteSmell": "\u0412\u043e\u0437\u0440\u043e\u0436\u0434\u0435\u043d\u0438\u0435 \u0432\u043a\u0443\u0441\u0430 \u0438 \u0437\u0430\u043f\u0430\u0445\u0430",
-    "milestoneCirculationBoost": "\u0423\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u0435 \u0446\u0438\u0440\u043a\u0443\u043b\u044f\u0446\u0438\u0438",
-    "milestoneLungBoost": "\u0423\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u0435 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u043b\u0451\u0433\u043a\u0438\u0445",
-    "milestoneMajorLung": "\u041a\u0440\u0443\u043f\u043d\u043e\u0435 \u0432\u043e\u0441\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u043b\u0451\u0433\u043a\u0438\u0445",
-    "milestoneHeartRisk": "\u0421\u0435\u0440\u0434\u0435\u0447\u043d\u044b\u0439 \u0440\u0438\u0441\u043a \u0443\u043c\u0435\u043d\u044c\u0448\u0435\u043d \u0432\u0434\u0432\u043e\u0435",
-    "milestoneStrokeRisk": "\u0420\u0438\u0441\u043a \u0438\u043d\u0441\u0443\u043b\u044c\u0442\u0430 \u043d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043d",
-    "milestoneCancerRisk": "\u0420\u0438\u0441\u043a \u0440\u0430\u043a\u0430 \u0443\u043c\u0435\u043d\u044c\u0448\u0435\u043d \u0432\u0434\u0432\u043e\u0435",
-    "milestoneMaintaining": "\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u043d\u0438\u0435 \u043f\u0440\u0435\u0432\u043e\u0441\u0445\u043e\u0434\u0441\u0442\u0432\u0430",
-    "achievedStatus": "\u0414\u043e\u0441\u0442\u0438\u0433\u043d\u0443\u0442\u043e",
-    "soonStatus": "\u0421\u043a\u043e\u0440\u043e",
-    "notStartedStatus": "\u041d\u0435 \u043d\u0430\u0447\u0430\u0442\u043e",
-    "timeInDays": "\u0427\u0435\u0440\u0435\u0437 {count} \u0434\u0435\u043d\u044c",
-    "timeInDaysPlural": "\u0427\u0435\u0440\u0435\u0437 {count} \u0434\u043d\u0435\u0439",
-    "timeInHours": "\u0427\u0435\u0440\u0435\u0437 {count} \u0447\u0430\u0441",
-    "timeInHoursPlural": "\u0427\u0435\u0440\u0435\u0437 {count} \u0447\u0430\u0441\u043e\u0432",
-    "timeInMinutes": "\u0427\u0435\u0440\u0435\u0437 {count} \u043c\u0438\u043d\u0443\u0442",
-    "languageSettings": "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u044f\u0437\u044b\u043a\u0430",
-    "selectLanguage": "\u0412\u044b\u0431\u0440\u0430\u0442\u044c \u044f\u0437\u044b\u043a",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "ru",
+  "appTitle": "Бездымный плюс",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "Доброе утро",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "Добрый день",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "Добрый вечер",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "Ты отлично справляешься со своим бездымным путешествием",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "Дни без дыма",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "Время без дыма",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "Сэкономленные деньги",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "Сигареты избегают",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "Счет здоровья",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "Достижения",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "Продолжай!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "Улучшение ежедневно",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "На основе прогресса",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "Это пакеты {count}",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "Домой",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "Прогресс",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "Счет здоровья",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "Достижения",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "Профиль",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "Успешно обновляется!",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "Ошибка загрузки данных. Использование значений по умолчанию.",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "Каждый день без дыма – это победа. Вы создаете более здоровую и сильную версию себя с каждым мгновением.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "Ваши легкие благодарят вас прямо сейчас. Каждое дыхание чище, каждое сердцебиение сильнее.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "Деньги, которые вы экономите, — это только начало. Настоящее сокровище - это годы, которые вы добавляете в свою жизнь.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "Доктор Майкл Чен",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "Тренер по здоровью Мария",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "Оздоровительный эксперт Джон",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "Начало восстановления",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "Готовы начать",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "Путешествие начинается",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "Никотин падает",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "Уровень CO нормализуется",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "Сердечный риск снижается",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "Никотин свободное тело",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "Улучшение чувств",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "Улучшение циркуляции",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "Улучшение функции легких",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "Значительное восстановление",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "Риск сердечных заболеваний снижен",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "Риск инсульта нормализован",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "Максимальное восстановление здоровья",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "Начните свое путешествие",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "Уровень никотина падает",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "Моноксид углерода Очистка",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "Риск сердечного приступа снижается",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "Ликвидация никотина",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "Возрождение вкуса и запаха",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "Циркуляция усиливается",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "Усиление функции легких",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "Основное восстановление легких",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "Сердечный риск снижается",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "Риск инсульта нормализован",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "Риск рака снижается",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "Сохранение совершенства",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "Достигнутый",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "Скоро",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "Не началось",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "В день {count}",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "В {count} днях",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "В {count} час",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "В {count} часах",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "В {count} минутах",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "Языковые настройки",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "Выберите язык",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "Английский",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "Испаньол",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "Франсуа",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "Немецкий",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "Итальянец",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "Португес",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "العربية",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "中 ",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": " ",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "Русский",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": " ",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "Время восстановления здоровья",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "Текущая стадия",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "Следующий Milestone",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "Следующий Milestone",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "Время остается",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "Повысьте свою ежедневную мотивацию...",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "Загрузка...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "Невозможно обновить цитату. Попробуй позже.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "Утренняя мотивация",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "Вечернее вдохновение",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "Каждая секунда на счету - {second} секунды и счет!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "Приготовьтесь - {second} секунды до начала!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "Дни",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "Часы",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "Минуты",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "Загрузить свои достижения...",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "Система достижений",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "Разблокирован",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "Всего",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "Прогресс",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "Последние достижения",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "Ваш синхронный прогресс",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "Живая синхронизация",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "Бросить дату",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "Полоса",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "Спасенный",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "Избегать",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "Здоровье",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "Социальный эффект",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "Друзья вдохновляют",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "Поддержка сообщений",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "Ранг сообщества",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "Синхронизация ваших данных о прогрессе",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "Варианты фильтров",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "Синхронизация экспорта Прогресс",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "Успешный экспорт",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "Обновить данные",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "Достижения успешно распределены!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "Улучшение здоровья",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "Неделя",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "Месяц",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3 месяца",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "Год",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "Требовательная частота",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "Жажда",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "Синхронизированная бездымная полоса",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "Текущая полоса",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "Ваше путешествие еще не началось",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "Проверьте дату выхода в настройках профиля",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "Все достопримечательности",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "Показать все этапы здоровья",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "Краткосрочный",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20 мин - 48 часов",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "Среднесрочный",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "2 недели - 9 месяцев",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "Долгосрочный",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10+ лет",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "Финансовый",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "Здоровье",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "Поведенческий",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "Социальный",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "Ключевые категории",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "Достигнутая вершина! упорство\n\n{title} - {timeframe}\n{description}\n\nНаучный факт: {scientificBasis}\n\n#QuitSmoking #HealthJourney #MilestoneДостигнута",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "Достижения копируются для обмена!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "Описание",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "Научные основы",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "Сначала полная настройка",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "Установите дату выхода, чтобы отслеживать вехи здоровья",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "Здоровая шкала времени",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "Отслеживайте научно обоснованный прогресс восстановления",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "Лунг\nФункция\n{percent}%",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "Сердце\nЗдоровье\n{percent}%",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": "В целом\nоздоровительный\n{percent}%",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20 минут",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "Частота сердечных сокращений и падение кровяного давления",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12 часов",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "Уровень монооксида углерода нормализуется",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "2 недели",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "Циркуляция улучшается, а функция легких увеличивается",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "1 месяц",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "Кашель и одышка уменьшаются",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3 месяца",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "Риск сердечного приступа начинает падать",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "1 год",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "Риск сердечных заболеваний сокращается вдвое",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "Синхронизированные сбережения",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "Полностью сохранено: {saved}",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": "Начните экономить деньги уже сегодня!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "Установите дату выхода, чтобы увидеть сбережения",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "Добро пожаловать в свое путешествие!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "Вы все готовы начать бездымную жизнь. Давайте начнем это удивительное путешествие вместе!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "Пропустить",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "Шаг {currentStep}_{totalSteps}",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "Когда ты бросил курить?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "Выберите дату выхода, чтобы отслеживать свой прогресс и отмечать вехи.",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "Расскажите о своих привычках курения",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "Это поможет нам рассчитать ваши сбережения и персонализировать ваш опыт.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "Оставайтесь мотивированными уведомлениями",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "Выберите, как вы хотите получить поддержку и поощрение.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "Откройте для себя мощные",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "Изучите инструменты, которые помогут вам в вашем бездымном путешествии.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "Ваша персональная приборная панель",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "Вот предварительный просмотр вашего прогресса на основе предоставленной вами информации.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "Продолжать",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "Полная настройка",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "Прогресс в области здравоохранения",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "Следующий Health Milestone",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "Уровень кислорода в крови нормализуется",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "Основываясь на дате отказа и привычках курения",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "Вкус и запах улучшаются",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "Функция легких повышается",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "Риск сердечных заболеваний уменьшается",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "Достижение разблокировано!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "Первое достижение В ожидании",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "Чемпион первого дня - Вы завершили свой первый день без дыма!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "Заполните свой первый день без дыма, чтобы заработать свой первый значок",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "Отслеживание прогресса",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "Следите за своим путешествием без дыма с подробной статистикой",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "Вехи здоровья",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "Посмотрите, как ваше тело восстанавливается со временем",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "Система достижений",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "Зарабатывайте значки и награды за свой прогресс",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "Жажда поддержки",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "Получите мгновенную помощь, когда она вам больше всего нужна",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "Нажмите любую функцию, чтобы исследовать",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "Получите предварительный просмотр того, что вас ждет",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "Закрыть",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "Исследовать",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "Ежедневная мотивация",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "Получайте ежедневные обнадеживающие сообщения и советы",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "Время уведомления",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "Изменения",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "Предупреждения Milestone",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "Получите уведомление, когда вы достигнете важных этапов",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "Жажда поддержки",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "Мгновенная помощь и мотивация в трудные моменты",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "Бросить дату и время",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "Выберите дату и время выхода",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "Изменить дату и время",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "Выберите дату и время",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "Сколько лет вы курите?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "Годы курения, прежде чем бросить курить",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "Таблица показателей здоровья",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "НОВОСТИ",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "Как разблокировать",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "Выполните необходимые действия, чтобы разблокировать это достижение.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "Поделиться Достижения",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "Всего баллов",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "Уровень",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "Прогресс на уровне",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "очки, чтобы идти",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "заработанные баллы",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "Премиальный мотивационный контент",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "Доступ к эксклюзивным ежедневным мотивационным цитатам и историям успеха",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "Океан Тема",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "Красивый интерфейс приложения на тему океана с успокаивающими цветами",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "Лесная тема",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "Вдохновленная природой зеленая тема для освежающего опыта",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "Пожертвование на благотворительность",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "Пожертвуйте 5 долларов на исследование рака легких от вашего имени",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "Передовая статистика",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "Разблокируйте подробную аналитику здоровья и понимание прогресса",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "Персональная тренерская сессия",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "30-минутная виртуальная сессия с сертифицированным тренером",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "Подтвердить искупление",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "Вы уверены, что хотите выкупить {title} за {points} баллы?",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "У вас останется {availablePoints} баллов.",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": "Вы успешно погасили {title}. Проверьте свой профиль для получения подробной информации.",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "Вознаграждение выкуплено!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "Великий",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "Ты молодец!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit} дней без дыма",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "Не курят",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "Дыхание\nУпражнение",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "Звони.\nПоддержка",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "Посмотреть\nПрогресс",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "Игры отвлекающие",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "У тебя тяга? Ты не одна. Выберите стратегию преодоления ниже.",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "Последние сеансы копирования",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "Быстро дышите",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "Настройте аварийный контакт в настройках",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "Настройки",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "Вызовите экстренный контакт",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "Обращайтесь к своему человеку поддержки",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "Получить поддержку",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "Требовательная сессия зарегистрирована. Отличная работа с {method}!",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "Быстрые советы по копированию",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "Попробуйте сейчас",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "Отличный выбор! {title} является эффективной стратегией.",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "Польза для здоровья",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "Пейте воду",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "Гидратируйте свое тело и держите руки занятыми. Вода помогает смыть токсины и уменьшает тягу.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3 минуты",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "Прогуляйтесь",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "Двигайся! Физическая активность высвобождает эндорфины и отвлекает от тяги.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5-10 минут",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "Позвони другу",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "Заручитесь поддержкой. Разговор с кем-то может обеспечить мотивацию и отвлечение.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5-15 минут",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "Пересмотрите свои причины",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "Вспомните, почему вы решили уйти. Сосредоточьтесь на своем здоровье, семье и финансовых целях.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5 минут",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "Глубокое дыхание",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "Практикуйте медленные, глубокие вдохи. Вдыхать по 4, удерживать по 4, выдыхать по 4 секунды.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5 минут",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "Жвачка",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "Держите рот занятым без сахара жвачки. Это помогает с привычками оральной фиксации.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "Продолжающийся",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "Слушайте музыку",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "Наденьте свой любимый плейлист. Музыка может улучшить настроение и отвлечь внимание.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3-10 минут",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "Практика благодарности",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "Подумайте о трех вещах, за которые вы благодарны. Позитивное мышление уменьшает стресс и тягу.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3 минуты",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "Высокий",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "Очень высоко",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "Средний",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "Color Focus Challenge",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "Найти 5 {randomColor} цветовых объектов вокруг вас",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "Оглянитесь вокруг и определите 5 объектов, которые являются {randomColor}. Потратьте время и сосредоточьтесь на каждом объекте.",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "Новый цветной вызов",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "Counting Challenge",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "Это умственное математическое упражнение требует сосредоточенности и концентрации, помогая отвлечься от тяги.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "Показать подсказку",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "Новый вызов",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "Дворец памяти",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "Визуализируйте свой дом детства",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "Инструкции",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "1. Закройте глаза и представьте, что вы идете по дому своего детства.\n\n2. Начните с входной двери и перемещайте комнату за комнатой\n\n3. Обратите внимание на детали: цвета, мебель, украшения\n\n4. Проводите время в каждой комнате, запоминая определенные предметы.\n\n5. Попробуйте вспомнить звуки, запахи и чувства",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "Отличная работа! Упражнения памяти укрепляют фокус и уменьшают тягу.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "Полное упражнение",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "Word Ассоциация",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "Начинающее слово",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "Создайте цепочку связанных слов. Каждое новое слово должно соединяться с предыдущим.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "Пример: Океан → Вода → Дождь → Облака → Небо → Птицы → Свобода",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "Новое стартовое слово",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "Океан",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "Гора",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "Лес",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "Город",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "Сад",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "Библиотека",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "Кухня",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "Музыка",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "Каждый вдох – это новое начало",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "Ты сильнее своих желаний",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "Этот момент пройдет, вы преодолеете",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "Дышите спокойно, выдыхайте стресс",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "Ваше здоровье стоит каждого дыхания",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "Один вдох за раз, один день за раз",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "Вдох",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "Держать",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "Выдох",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "Готовы дышать?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 Техника дыхания",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "Начните упражнение",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "Расширение (+2 цикла)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "Стоп",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "Новая мотивационная цитата загружена!",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "Не удалось обновить цитату. Попробуй позже.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "Расписание цитат",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "Расписание обновлений",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "Следующий Refresh",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "Полные цитаты",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "Текущий период",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "{number} уникальные цитаты",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod} в {hours}h {minutes}m",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "Цитаты автоматически обновляются в 6 утра и 6 вечера каждый день, чтобы мотивировать вас на протяжении всего вашего путешествия!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "Понял!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "Автоотказы 2 раза в день",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "Позвоните своему человеку поддержки или бросьте линию:",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "Экстренная помощь",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "Спасибо",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "У тебя есть это!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "Назад",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "Начинать",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "Дышите 4, держите 7, выдыхайте 8",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "Выберите то, что помогает вам больше всего прямо сейчас:",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "Дыхательные упражнения",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "4-7-8 техника для уменьшения тяги",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "Мотивационная цитата",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "Получите мгновенное поощрение",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "Экстренный контакт",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "Позвоните человеку поддержки",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "Отвлекающая деятельность",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "Быстрые 5-минутные мероприятия",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "Каждая сигарета, которую вы не курите, приносит вам пользу.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "Ты сильнее своих желаний.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "Эта тяга пройдет. У тебя есть это!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "Подумайте, как вы будете гордиться завтра.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "Ваше здоровье стоит больше, чем любая сигарета.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "10 прыгающих домкратов",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "Пейте стакан воды медленно",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "Сделайте 5 глубоких вдохов",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "Позвоните другу или члену семьи",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "Идите на короткую прогулку",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "Слушайте свою любимую песню",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "Прогресс в восстановлении здоровья",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "Достигнутые рубежи",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "Удивительный прогресс! Ваше тело прекрасно исцеляется.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "Каждый этап приближает вас к полному выздоровлению.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "Спасти",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "Отменить",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "Текущее время",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "Посмотреть",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "Синхронный обзор экспорта",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "Инициировать свое путешествие...",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "Загрузка пользовательских предпочтений...",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "Проверить дату выхода...",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "Загрузка данных о прогрессе...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "Расчет полосы...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "Подготовка мотивационного контента...",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "Категория здоровья Разрушение",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "Edit Quit подробности",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "Обновите информацию об уходе. Изменения будут синхронизироваться со всеми функциями приложения.",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "Годы курения",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "Ежедневные сигареты",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "сигареты в день",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "Стоимость пакета",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "Сохранить изменения",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "Общий показатель здоровья",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "Дни уходят",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "Бросить длительность",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "Восстановление",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "Отлично",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "Хорошо",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "Улучшение",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

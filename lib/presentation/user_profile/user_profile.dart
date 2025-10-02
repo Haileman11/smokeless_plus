@@ -618,6 +618,7 @@ class _UserProfileState extends State<UserProfile> {
           currentQuitDate: currentQuitDate,
           currentDailyCigarettes: currentCigarettes,
           currentPackCost: currentCost,
+          currency: _selectedCurrency,
           currentYearsSmoking: currentYearsSmoking, // Pass years of smoking
           onSave: (newDate, newCigarettes, newCost, newYearsSmoking) async {
             // FIXED: Save all data including years of smoking

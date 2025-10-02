@@ -1,12 +1,14 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 import '../../../services/user_data_service.dart';
 
 class StreakTimelineChart extends StatefulWidget {
-  final String selectedPeriod;
+  final PeriodType selectedPeriod;
 
   const StreakTimelineChart({
     Key? key,
@@ -46,12 +48,12 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
     if (!hasStartedQuitting) return [];
 
     switch (widget.selectedPeriod) {
-      case 'Week':
+      case PeriodType.week:
         // Show current week progress
         final daysInWeek = currentStreak >= 7 ? 7 : currentStreak + 1;
         return List.generate(daysInWeek,
             (index) => FlSpot(index.toDouble(), (index + 1).toDouble()));
-      case 'Month':
+      case PeriodType.month:
         // Show progress over past 30 days or current streak if less
         final daysToShow = currentStreak >= 30 ? 30 : currentStreak;
         if (daysToShow == 0) return [FlSpot(0, 0)];
@@ -61,7 +63,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
           final day = (index * interval).round();
           return FlSpot(day.toDouble(), day.toDouble());
         });
-      case '3 Months':
+      case PeriodType.threeMonths:
         // Show progress over past 90 days
         final daysToShow = currentStreak >= 90 ? 90 : currentStreak;
         if (daysToShow == 0) return [FlSpot(0, 0)];
@@ -71,7 +73,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
           final day = (index * interval).round();
           return FlSpot(day.toDouble(), day.toDouble());
         });
-      case 'Year':
+      case PeriodType.year:
         // Show progress over past year
         final daysToShow = currentStreak >= 365 ? 365 : currentStreak;
         if (daysToShow == 0) return [FlSpot(0, 0)];
@@ -80,9 +82,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
         return List.generate(13, (index) {
           final day = (index * interval).round();
           return FlSpot(day.toDouble(), day.toDouble());
-        });
-      default:
-        return [];
+        });      
     }
   }
 
@@ -144,7 +144,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
               ),
               SizedBox(width: 2.w),
               Text(
-                'Synchronized Smoke-Free Streak',
+                AppLocalizations.of(context)!.synchronizedSmokeFreeStreak,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -153,7 +153,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
           ),
           SizedBox(height: 1.h),
           Text(
-            'Current streak: $currentStreak days',
+            '${AppLocalizations.of(context)!.currentStreak}: $currentStreak days',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
@@ -173,7 +173,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                         ),
                         SizedBox(height: 2.h),
                         Text(
-                          'Your journey hasn\'t started yet',
+                          AppLocalizations.of(context)!.yourJourneyHasntStartedYet,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.outline,
@@ -181,7 +181,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                         ),
                         SizedBox(height: 1.h),
                         Text(
-                          'Check your quit date in Profile settings',
+                          AppLocalizations.of(context)!.checkYourQuitDate,
                           style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.outline,
@@ -245,11 +245,11 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                       ),
                       borderData: FlBorderData(show: false),
                       minX: 0,
-                      maxX: widget.selectedPeriod == 'Year'
+                      maxX: widget.selectedPeriod == PeriodType.year
                           ? 365
-                          : widget.selectedPeriod == '3 Months'
+                          : widget.selectedPeriod == PeriodType.threeMonths
                               ? 90
-                              : widget.selectedPeriod == 'Month'
+                              : widget.selectedPeriod == PeriodType.month
                                   ? 30
                                   : 7,
                       minY: 0,
@@ -299,7 +299,7 @@ class _StreakTimelineChartState extends State<StreakTimelineChart> {
                           getTooltipItems: (List<LineBarSpot> touchedBarSpots) {
                             return touchedBarSpots.map((barSpot) {
                               return LineTooltipItem(
-                                '${barSpot.y.toInt()} days smoke-free',
+                                '${barSpot.y.toInt()} ${AppLocalizations.of(context)!.daysSmokeFree}',
                                 Theme.of(context).textTheme.bodySmall!
                                     .copyWith(
                                   color:

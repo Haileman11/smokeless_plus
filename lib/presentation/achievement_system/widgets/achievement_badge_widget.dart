@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -187,7 +188,7 @@ class _AchievementBadgeWidgetState extends State<AchievementBadgeWidget>
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
-                            'NEW',
+                            AppLocalizations.of(context)!.newText,
                             style: Theme.of(context).textTheme.labelSmall
                                 ?.copyWith(
                               color: Colors.white,

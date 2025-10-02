@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 
@@ -33,7 +36,7 @@ class RecentAchievementsWidget extends StatelessWidget {
               ),
               SizedBox(width: 2.w),
               Text(
-                'Recent Achievements',
+                AppLocalizations.of(context)!.recentAchievements,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
@@ -98,8 +101,7 @@ class RecentAchievementsWidget extends StatelessWidget {
                                   Expanded(
                                     child: Text(
                                       achievement['title'] ?? 'Achievement',
-                                      style: AppTheme
-                                          .lightTheme.textTheme.titleSmall
+                                      style: Theme.of(context).textTheme.titleSmall
                                           ?.copyWith(
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -111,16 +113,14 @@ class RecentAchievementsWidget extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 2.w, vertical: 0.5.h),
                                     decoration: BoxDecoration(
-                                      color: AppTheme
-                                          .lightTheme.colorScheme.tertiary,
+                                      color: Theme.of(context).colorScheme.tertiary,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Text(
-                                      'NEW',
-                                      style: AppTheme
-                                          .lightTheme.textTheme.labelSmall
+                                      AppLocalizations.of(context)!.newText,
+                                      style: Theme.of(context).textTheme.labelSmall
                                           ?.copyWith(
-                                        color: Colors.white,
+                                        color: Theme.of(context).colorScheme.onTertiary,
                                         fontSize: 8.sp,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -130,7 +130,7 @@ class RecentAchievementsWidget extends StatelessWidget {
                               ),
                               SizedBox(height: 0.5.h),
                               Text(
-                                '+${achievement['points'] ?? 0} points earned',
+                                '+${achievement['points'] ?? 0} ${AppLocalizations.of(context)!.pointsEarned}',
                                 style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
                                   color:
@@ -140,12 +140,12 @@ class RecentAchievementsWidget extends StatelessWidget {
                               ),
                               SizedBox(height: 0.5.h),
                               Text(
-                                achievement['unlockDate'] ?? 'Just now',
+                                DateFormat.yMMMd().format(
+                                    DateTime.parse( achievement['unlockDate']) ?? DateTime.now()),
                                 style: Theme.of(context).textTheme.bodySmall
                                     ?.copyWith(
-                                  color: AppTheme
-                                      .lightTheme.colorScheme.onSurface
-                                      .withValues(alpha: 0.6),
+                                  color: Theme.of(context).colorScheme.onSurface
+                                      .withOpacity(0.6),
                                 ),
                               ),
                             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -68,7 +69,7 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
               child: Column(
                 children: [
                   Text(
-                    'Current Time',
+                    AppLocalizations.of(context)!.currentTime,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
@@ -106,7 +107,7 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text(
-                    'Cancel',
+                    AppLocalizations.of(context)!.cancel,
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
                       color: Theme.of(context).colorScheme.onSurfaceVariant,
                     ),
@@ -118,7 +119,7 @@ class _NotificationTimePickerState extends State<NotificationTimePicker> {
                     widget.onTimeChanged(_selectedTime);
                     Navigator.of(context).pop();
                   },
-                  child: Text('Save'),
+                  child: Text(AppLocalizations.of(context)!.save),
                 ),
               ],
             ),

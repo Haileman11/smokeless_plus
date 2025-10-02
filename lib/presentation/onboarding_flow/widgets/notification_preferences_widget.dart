@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/l10n/app_localizations_ar.dart';
 
 import '../../../core/app_export.dart';
 
@@ -141,8 +143,8 @@ class _NotificationPreferencesWidgetState
     return Column(
       children: [
         _buildNotificationOption(
-          title: 'Daily Motivation',
-          description: 'Receive daily encouraging messages and tips',
+          title: AppLocalizations.of(context)!.dailyMotivation,
+          description: AppLocalizations.of(context)!.receiveDailyEncouragingMessagesAndTips,
           iconName: 'favorite',
           iconColor: Theme.of(context).colorScheme.secondary,
           value: widget.dailyMotivation,
@@ -189,16 +191,16 @@ class _NotificationPreferencesWidgetState
               : null,
         ),
         _buildNotificationOption(
-          title: 'Milestone Alerts',
-          description: 'Get notified when you reach important milestones',
+          title: AppLocalizations.of(context)!.milestoneAlerts,
+          description: AppLocalizations.of(context)!.getNotifiedWhenYouReachImportantMilestones,
           iconName: 'emoji_events',
           iconColor: Theme.of(context).colorScheme.tertiary,
           value: widget.milestoneAlerts,
           onChanged: widget.onMilestoneAlertsChanged,
         ),
         _buildNotificationOption(
-          title: 'Craving Support',
-          description: 'Instant help and motivation during difficult moments',
+          title: AppLocalizations.of(context)!.cravingSupport,
+          description: AppLocalizations.of(context)!.instantHelpAndMotivationDuringDifficultMoments,
           iconName: 'support_agent',
           iconColor: Theme.of(context).colorScheme.primary,
           value: widget.cravingSupport,

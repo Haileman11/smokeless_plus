@@ -1,89 +1,1772 @@
 {
-    "@@locale": "ar",
-    "appTitle": "\u0627\u0644\u0625\u0642\u0644\u0627\u0639 \u0639\u0646 \u0627\u0644\u062a\u062f\u062e\u064a\u0646",
-    "goodMorning": "\u0635\u0628\u0627\u062d \u0627\u0644\u062e\u064a\u0631",
-    "goodAfternoon": "\u0628\u0639\u062f \u0627\u0644\u0638\u0647\u0631 \u0633\u0639\u064a\u062f",
-    "goodEvening": "\u0645\u0633\u0627\u0621 \u0627\u0644\u062e\u064a\u0631",
-    "smokeFreeJourney": "\u0623\u0646\u062a \u062a\u0642\u0648\u0645 \u0628\u0639\u0645\u0644 \u0631\u0627\u0626\u0639 \u0641\u064a \u0631\u062d\u0644\u062a\u0643 \u0627\u0644\u062e\u0627\u0644\u064a\u0629 \u0645\u0646 \u0627\u0644\u062a\u062f\u062e\u064a\u0646",
-    "currentStreak": "\u0627\u0644\u062e\u0637 \u0627\u0644\u062d\u0627\u0644\u064a",
-    "daysSmokeFree": "\u0623\u064a\u0627\u0645 \u0628\u062f\u0648\u0646 \u062a\u062f\u062e\u064a\u0646",
-    "timeSmokeFree": "\u0648\u0642\u062a \u0628\u062f\u0648\u0646 \u062a\u062f\u062e\u064a\u0646",
-    "moneySaved": "\u0627\u0644\u0645\u0627\u0644 \u0627\u0644\u0645\u062f\u062e\u0631",
-    "cigarettesAvoided": "\u0627\u0644\u0633\u062c\u0627\u0626\u0631 \u0627\u0644\u0645\u062a\u062c\u0646\u0628\u0629",
-    "healthScore": "\u0646\u0642\u0627\u0637 \u0627\u0644\u0635\u062d\u0629",
-    "achievements": "\u0627\u0644\u0625\u0646\u062c\u0627\u0632\u0627\u062a",
-    "keepItUp": "\u0648\u0627\u0635\u0644!",
-    "improvingDaily": "\u062a\u062d\u0633\u0646 \u064a\u0648\u0645\u064a",
-    "basedOnProgress": "\u0628\u0646\u0627\u0621\u064b \u0639\u0644\u0649 \u0627\u0644\u062a\u0642\u062f\u0645",
-    "thatsPacks": "\u0647\u0630\u0627 {count} \u0639\u0644\u0628",
-    "navigationHome": "\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",
-    "navigationProgress": "التقدم",
-    "@navigationProgress": {
-        "description": "Navigation label for progress"
-    },
-    "navigationHealthScore": "نقاط الصحة",
-    "@navigationHealthScore": {
-        "description": "Navigation label for health score"
-    },
-    "navigationAchievements": "الإنجازات",
-    "@navigationAchievements": {
-        "description": "Navigation label for achievements"
-    },
-    "navigationProfile": "\u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062e\u0635\u064a",
-    "progressUpdated": "\u062a\u0645 \u062a\u062d\u062f\u064a\u062b \u0627\u0644\u062a\u0642\u062f\u0645 \u0628\u0646\u062c\u0627\u062d!",
-    "errorLoadingData": "\u062e\u0637\u0623 \u0641\u064a \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a. \u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0627\u0644\u0642\u064a\u0645 \u0627\u0644\u0627\u0641\u062a\u0631\u0627\u0636\u064a\u0629.",
-    "motivationalMessage1": "\u0643\u0644 \u064a\u0648\u0645 \u0628\u062f\u0648\u0646 \u062a\u062f\u062e\u064a\u0646 \u0647\u0648 \u0627\u0646\u062a\u0635\u0627\u0631. \u0623\u0646\u062a \u062a\u0628\u0646\u064a \u0646\u0633\u062e\u0629 \u0623\u0643\u062b\u0631 \u0635\u062d\u0629 \u0648\u0642\u0648\u0629 \u0645\u0646 \u0646\u0641\u0633\u0643 \u0645\u0639 \u0643\u0644 \u0644\u062d\u0638\u0629 \u062a\u0645\u0631.",
-    "motivationalMessage2": "\u0631\u0626\u062a\u0627\u0643 \u062a\u0634\u0643\u0631\u0627\u0646\u0643 \u0627\u0644\u0622\u0646. \u0643\u0644 \u0646\u0641\u0633 \u0623\u0646\u0638\u0641\u060c \u0643\u0644 \u0636\u0631\u0628\u0629 \u0642\u0644\u0628 \u0623\u0642\u0648\u0649.",
-    "motivationalMessage3": "\u0627\u0644\u0645\u0627\u0644 \u0627\u0644\u0630\u064a \u062a\u062f\u062e\u0631\u0647 \u0647\u0648 \u0645\u062c\u0631\u062f \u0627\u0644\u0628\u062f\u0627\u064a\u0629. \u0627\u0644\u0643\u0646\u0632 \u0627\u0644\u062d\u0642\u064a\u0642\u064a \u0647\u0648 \u0627\u0644\u0633\u0646\u0648\u0627\u062a \u0627\u0644\u062a\u064a \u062a\u0636\u064a\u0641\u0647\u0627 \u0644\u062d\u064a\u0627\u062a\u0643.",
-    "drMichaelChen": "\u0627\u0644\u062f\u0643\u062a\u0648\u0631 \u0645\u0627\u064a\u0643\u0644 \u062a\u0634\u064a\u0646",
-    "healthCoachMaria": "\u0645\u062f\u0631\u0628\u0629 \u0627\u0644\u0635\u062d\u0629 \u0645\u0627\u0631\u064a\u0627",
-    "wellnessExpertJohn": "\u062e\u0628\u064a\u0631 \u0627\u0644\u0635\u062d\u0629 \u062c\u0648\u0646",
-    "healthStageStarting": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u0634\u0641\u0627\u0621",
-    "healthStageBegin": "\u0645\u0633\u062a\u0639\u062f \u0644\u0644\u0628\u062f\u0627\u064a\u0629",
-    "healthStageJourney": "\u0627\u0644\u0631\u062d\u0644\u0629 \u062a\u0628\u062f\u0623",
-    "healthStageNicotineDropping": "\u0627\u0644\u0646\u064a\u0643\u0648\u062a\u064a\u0646 \u064a\u0646\u062e\u0641\u0636",
-    "healthStageCONormalizing": "\u0645\u0633\u062a\u0648\u064a\u0627\u062a \u0623\u0648\u0644 \u0623\u0643\u0633\u064a\u062f \u0627\u0644\u0643\u0631\u0628\u0648\u0646 \u062a\u062a\u0637\u0628\u0639",
-    "healthStageHeartRisk": "\u062e\u0637\u0631 \u0627\u0644\u0642\u0644\u0628 \u064a\u0646\u062e\u0641\u0636",
-    "healthStageNicotineFree": "\u062c\u0633\u0645 \u062e\u0627\u0644 \u0645\u0646 \u0627\u0644\u0646\u064a\u0643\u0648\u062a\u064a\u0646",
-    "healthStageSensesImproving": "\u0627\u0644\u062d\u0648\u0627\u0633 \u062a\u062a\u062d\u0633\u0646",
-    "healthStageCirculation": "\u0627\u0644\u062f\u0648\u0631\u0629 \u0627\u0644\u062f\u0645\u0648\u064a\u0629 \u062a\u062a\u062d\u0633\u0646",
-    "healthStageLungFunction": "\u0648\u0638\u0627\u0626\u0641 \u0627\u0644\u0631\u0626\u0629 \u062a\u062a\u062d\u0633\u0646",
-    "healthStageSignificant": "\u0634\u0641\u0627\u0621 \u0643\u0628\u064a\u0631",
-    "healthStageHeartDisease": "\u062e\u0637\u0631 \u0623\u0645\u0631\u0627\u0636 \u0627\u0644\u0642\u0644\u0628 \u0645\u0646\u062e\u0641\u0636",
-    "healthStageStroke": "\u062e\u0637\u0631 \u0627\u0644\u0633\u0643\u062a\u0629 \u0627\u0644\u062f\u0645\u0627\u063a\u064a\u0629 \u0637\u0628\u064a\u0639\u064a",
-    "healthStageMaximum": "\u0623\u0642\u0635\u0649 \u0634\u0641\u0627\u0621 \u0635\u062d\u064a",
-    "milestoneStartJourney": "\u0627\u0628\u062f\u0623 \u0631\u062d\u0644\u062a\u0643",
-    "milestoneNicotineDropping": "\u0645\u0633\u062a\u0648\u064a\u0627\u062a \u0627\u0644\u0646\u064a\u0643\u0648\u062a\u064a\u0646 \u062a\u0646\u062e\u0641\u0636",
-    "milestoneCOClearing": "\u0623\u0648\u0644 \u0623\u0643\u0633\u064a\u062f \u0627\u0644\u0643\u0631\u0628\u0648\u0646 \u064a\u062a\u0628\u062f\u062f",
-    "milestoneHeartAttack": "\u062e\u0637\u0631 \u0627\u0644\u0646\u0648\u0628\u0629 \u0627\u0644\u0642\u0644\u0628\u064a\u0629 \u064a\u0646\u062e\u0641\u0636",
-    "milestoneNicotineElimination": "\u0625\u0632\u0627\u0644\u0629 \u0627\u0644\u0646\u064a\u0643\u0648\u062a\u064a\u0646",
-    "milestoneTasteSmell": "\u0625\u062d\u064a\u0627\u0621 \u0627\u0644\u0637\u0639\u0645 \u0648\u0627\u0644\u0631\u0627\u0626\u062d\u0629",
-    "milestoneCirculationBoost": "\u062a\u0639\u0632\u064a\u0632 \u0627\u0644\u062f\u0648\u0631\u0629 \u0627\u0644\u062f\u0645\u0648\u064a\u0629",
-    "milestoneLungBoost": "\u062a\u0639\u0632\u064a\u0632 \u0648\u0638\u0627\u0626\u0641 \u0627\u0644\u0631\u0626\u0629",
-    "milestoneMajorLung": "\u0634\u0641\u0627\u0621 \u0631\u0626\u0648\u064a \u0643\u0628\u064a\u0631",
-    "milestoneHeartRisk": "\u062e\u0637\u0631 \u0627\u0644\u0642\u0644\u0628 \u064a\u0646\u062e\u0641\u0636 \u0644\u0644\u0646\u0635\u0641",
-    "milestoneStrokeRisk": "\u062e\u0637\u0631 \u0627\u0644\u0633\u0643\u062a\u0629 \u0627\u0644\u062f\u0645\u0627\u063a\u064a\u0629 \u0637\u0628\u064a\u0639\u064a",
-    "milestoneCancerRisk": "\u062e\u0637\u0631 \u0627\u0644\u0633\u0631\u0637\u0627\u0646 \u064a\u0646\u062e\u0641\u0636 \u0644\u0644\u0646\u0635\u0641",
-    "milestoneMaintaining": "\u0627\u0644\u062d\u0641\u0627\u0638 \u0639\u0644\u0649 \u0627\u0644\u062a\u0645\u064a\u0632",
-    "achievedStatus": "\u062a\u062d\u0642\u0642",
-    "soonStatus": "\u0642\u0631\u064a\u0628\u0627\u064b",
-    "notStartedStatus": "\u0644\u0645 \u064a\u0628\u062f\u0623",
-    "timeInDays": "\u062e\u0644\u0627\u0644 {count} \u064a\u0648\u0645",
-    "timeInDaysPlural": "\u062e\u0644\u0627\u0644 {count} \u0623\u064a\u0627\u0645",
-    "timeInHours": "\u062e\u0644\u0627\u0644 {count} \u0633\u0627\u0639\u0629",
-    "timeInHoursPlural": "\u062e\u0644\u0627\u0644 {count} \u0633\u0627\u0639\u0627\u062a",
-    "timeInMinutes": "\u062e\u0644\u0627\u0644 {count} \u062f\u0642\u0627\u0626\u0642",
-    "languageSettings": "\u0625\u0639\u062f\u0627\u062f\u0627\u062a \u0627\u0644\u0644\u063a\u0629",
-    "selectLanguage": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0644\u063a\u0629",
-    "languageEnglish": "English",
-    "languageSpanish": "Espa\u00f1ol",
-    "languageFrench": "Fran\u00e7ais",
-    "languageGerman": "Deutsch",
-    "languageItalian": "Italiano",
-    "languagePortuguese": "Portugu\u00eas",
-    "languageArabic": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
-    "languageChinese": "\u4e2d\u6587",
-    "languageJapanese": "\u65e5\u672c\u8a9e",
-    "languageRussian": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
-    "languageHindi": "\u0939\u093f\u0928\u094d\u0926\u0940"
+  "@@locale": "ar",
+  "appTitle": "دخان زائد",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "goodMorning": "صباح الخير",
+  "@goodMorning": {
+    "description": "Morning greeting"
+  },
+  "goodAfternoon": "مساء الخير",
+  "@goodAfternoon": {
+    "description": "Afternoon greeting"
+  },
+  "goodEvening": "مساء الخير",
+  "@goodEvening": {
+    "description": "Evening greeting"
+  },
+  "smokeFreeJourney": "أنت تَعْملُ مُدهِشَ في رحلتِكَ الخاليةِ من الدخانِ",
+  "@smokeFreeJourney": {
+    "description": "Encouragement message for user's journey"
+  },
+  "daysSmokeFree": "أيام الدخان",
+  "@daysSmokeFree": {
+    "description": "Label for days without smoking"
+  },
+  "timeSmokeFree": "دخان الوقت خالي",
+  "@timeSmokeFree": {
+    "description": "Label for time counter"
+  },
+  "moneySaved": "الأموال المحتفظ بها",
+  "@moneySaved": {
+    "description": "Money saved metric"
+  },
+  "cigarettesAvoided": "السيجارة تجنبها",
+  "@cigarettesAvoided": {
+    "description": "Cigarettes avoided metric"
+  },
+  "healthScore": "الصحة",
+  "@healthScore": {
+    "description": "Health score metric"
+  },
+  "achievements": "الإنجازات",
+  "@achievements": {
+    "description": "Achievements metric"
+  },
+  "keepItUp": "استمر!",
+  "@keepItUp": {
+    "description": "Encouragement message"
+  },
+  "improvingDaily": "تحسين الأحوال اليومية",
+  "@improvingDaily": {
+    "description": "Health improvement message"
+  },
+  "basedOnProgress": "استنادا إلى التقدم المحرز",
+  "@basedOnProgress": {
+    "description": "Achievement description"
+  },
+  "thatsPacks": "هذه حزمة {count}",
+  "@thatsPacks": {
+    "description": "Pack count message",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "navigationHome": "البيت",
+  "@navigationHome": {
+    "description": "Navigation label for home"
+  },
+  "navigationProgress": "التقدم",
+  "@navigationProgress": {
+    "description": "Navigation label for progress"
+  },
+  "navigationHealthScore": "الصحة",
+  "@navigationHealthScore": {
+    "description": "Navigation label for health score"
+  },
+  "navigationAchievements": "الإنجازات",
+  "@navigationAchievements": {
+    "description": "Navigation label for achievements"
+  },
+  "navigationProfile": "Profile",
+  "@navigationProfile": {
+    "description": "Navigation label for profile"
+  },
+  "progressUpdated": "تم تحديث التقدم بنجاح!",
+  "@progressUpdated": {
+    "description": "Success message for progress update"
+  },
+  "errorLoadingData": "بيانات تحميل الأخطاء باستخدام القيم الافتراضية.",
+  "@errorLoadingData": {
+    "description": "Error message when data loading fails"
+  },
+  "motivationalMessage1": "كل يوم خالي من الدخان هو انتصار أنت تبني نسخة أصح وأقوى من نفسك مع كل لحظة عابرة.",
+  "@motivationalMessage1": {
+    "description": "First motivational message"
+  },
+  "motivationalMessage2": "رئتيك تشكرك الآن كل نفس أنظف كل نبضات قلب أقوى.",
+  "@motivationalMessage2": {
+    "description": "Second motivational message"
+  },
+  "motivationalMessage3": "المال الذي توفره هو مجرد البداية الكنز الحقيقي هو السنوات التي تضيفها إلى حياتك.",
+  "@motivationalMessage3": {
+    "description": "Third motivational message"
+  },
+  "drMichaelChen": "Dr. Michael Chen",
+  "@drMichaelChen": {
+    "description": "Author name"
+  },
+  "healthCoachMaria": "المدربة الصحية ماريا",
+  "@healthCoachMaria": {
+    "description": "Author name"
+  },
+  "wellnessExpertJohn": "خبير جيد جون",
+  "@wellnessExpertJohn": {
+    "description": "Author name"
+  },
+  "healthStageStarting": "بدء الانتعاش",
+  "@healthStageStarting": {
+    "description": "Health stage for starting"
+  },
+  "healthStageBegin": "جاهز للبدء",
+  "@healthStageBegin": {
+    "description": "Health stage for ready to begin"
+  },
+  "healthStageJourney": "Journey Begins",
+  "@healthStageJourney": {
+    "description": "Health stage for journey begins"
+  },
+  "healthStageNicotineDropping": "النيكوتين",
+  "@healthStageNicotineDropping": {
+    "description": "Health stage for nicotine dropping"
+  },
+  "healthStageCONormalizing": "CO Levels Normalizing",
+  "@healthStageCONormalizing": {
+    "description": "Health stage for CO normalizing"
+  },
+  "healthStageHeartRisk": "مخاطر القلب",
+  "@healthStageHeartRisk": {
+    "description": "Health stage for heart risk"
+  },
+  "healthStageNicotineFree": "الجسد الحر",
+  "@healthStageNicotineFree": {
+    "description": "Health stage for nicotine free"
+  },
+  "healthStageSensesImproving": "تحسين الحواس",
+  "@healthStageSensesImproving": {
+    "description": "Health stage for senses improving"
+  },
+  "healthStageCirculation": "تحسين الدائرة",
+  "@healthStageCirculation": {
+    "description": "Health stage for circulation"
+  },
+  "healthStageLungFunction": "Lung Function Improving",
+  "@healthStageLungFunction": {
+    "description": "Health stage for lung function"
+  },
+  "healthStageSignificant": "استرداد كبير",
+  "@healthStageSignificant": {
+    "description": "Health stage for significant recovery"
+  },
+  "healthStageHeartDisease": "أمراض القلب",
+  "@healthStageHeartDisease": {
+    "description": "Health stage for heart disease"
+  },
+  "healthStageStroke": "Stroke Risk Normalized",
+  "@healthStageStroke": {
+    "description": "Health stage for stroke"
+  },
+  "healthStageMaximum": "الحد الأقصى للتعافي الصحي",
+  "@healthStageMaximum": {
+    "description": "Health stage for maximum recovery"
+  },
+  "milestoneStartJourney": "ابدأ دورك",
+  "@milestoneStartJourney": {
+    "description": "Milestone for starting journey"
+  },
+  "milestoneNicotineDropping": "مستويات النيكوتين",
+  "@milestoneNicotineDropping": {
+    "description": "Milestone for nicotine dropping"
+  },
+  "milestoneCOClearing": "Carbon Monoxide المقاصة",
+  "@milestoneCOClearing": {
+    "description": "Milestone for CO clearing"
+  },
+  "milestoneHeartAttack": "خطر التعرض لهجمات القلب",
+  "@milestoneHeartAttack": {
+    "description": "Milestone for heart attack risk"
+  },
+  "milestoneNicotineElimination": "القضاء على المخدرات",
+  "@milestoneNicotineElimination": {
+    "description": "Milestone for nicotine elimination"
+  },
+  "milestoneTasteSmell": "Taste \" Smell Revival",
+  "@milestoneTasteSmell": {
+    "description": "Milestone for taste and smell"
+  },
+  "milestoneCirculationBoost": "الدائرة",
+  "@milestoneCirculationBoost": {
+    "description": "Milestone for circulation boost"
+  },
+  "milestoneLungBoost": "Lung Function Boost",
+  "@milestoneLungBoost": {
+    "description": "Milestone for lung function boost"
+  },
+  "milestoneMajorLung": "Major Lung Recovery",
+  "@milestoneMajorLung": {
+    "description": "Milestone for major lung recovery"
+  },
+  "milestoneHeartRisk": "مخاطر القلب",
+  "@milestoneHeartRisk": {
+    "description": "Milestone for heart risk halved"
+  },
+  "milestoneStrokeRisk": "Stroke Risk Normalized",
+  "@milestoneStrokeRisk": {
+    "description": "Milestone for stroke risk"
+  },
+  "milestoneCancerRisk": "خطر السرطان",
+  "@milestoneCancerRisk": {
+    "description": "Milestone for cancer risk"
+  },
+  "milestoneMaintaining": "الحفاظ على الامتياز",
+  "@milestoneMaintaining": {
+    "description": "Milestone for maintaining excellence"
+  },
+  "achievedStatus": "أنجز",
+  "@achievedStatus": {
+    "description": "Status for achieved milestone"
+  },
+  "soonStatus": "قريبا",
+  "@soonStatus": {
+    "description": "Status for soon milestone"
+  },
+  "notStartedStatus": "لم يبدأ",
+  "@notStartedStatus": {
+    "description": "Status for not started"
+  },
+  "timeInDays": "في {count} اليوم",
+  "@timeInDays": {
+    "description": "Time remaining in days (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInDaysPlural": "في {count} الأيام",
+  "@timeInDaysPlural": {
+    "description": "Time remaining in days (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHours": "في {count} الساعة",
+  "@timeInHours": {
+    "description": "Time remaining in hours (singular)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInHoursPlural": "في {count} الساعات",
+  "@timeInHoursPlural": {
+    "description": "Time remaining in hours (plural)",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "timeInMinutes": "خلال {count} دقائق",
+  "@timeInMinutes": {
+    "description": "Time remaining in minutes",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "languageSettings": "اللغات",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "selectLanguage": "اللغة المختارة",
+  "@selectLanguage": {
+    "description": "Select language label"
+  },
+  "languageEnglish": "الإنكليزية",
+  "@languageEnglish": {
+    "description": "English language option"
+  },
+  "languageSpanish": "Español",
+  "@languageSpanish": {
+    "description": "Spanish language option"
+  },
+  "languageFrench": "Français",
+  "@languageFrench": {
+    "description": "French language option"
+  },
+  "languageGerman": "Deutsch",
+  "@languageGerman": {
+    "description": "German language option"
+  },
+  "languageItalian": "إيطاليا",
+  "@languageItalian": {
+    "description": "Italian language option"
+  },
+  "languagePortuguese": "بورتوغويس",
+  "@languagePortuguese": {
+    "description": "Portuguese language option"
+  },
+  "languageArabic": "الجمهورية العربية السورية",
+  "@languageArabic": {
+    "description": "Arabic language option"
+  },
+  "languageChinese": "√",
+  "@languageChinese": {
+    "description": "Chinese language option"
+  },
+  "languageJapanese": "♪",
+  "@languageJapanese": {
+    "description": "Japanese language option"
+  },
+  "languageRussian": "Суский",
+  "@languageRussian": {
+    "description": "Russian language option"
+  },
+  "languageHindi": "हिन्दी",
+  "@languageHindi": {
+    "description": "Hindi language option"
+  },
+  "healthRecoveryTimeline": "خط زمني للإنعاش الصحي",
+  "@healthRecoveryTimeline": {
+    "description": "Title for the health recovery timeline screen"
+  },
+  "currentStage": "المرحلة الحالية",
+  "@currentStage": {
+    "description": "Label for the user's current recovery stage"
+  },
+  "progressToNextMilestone": "Progress to next Milestone",
+  "@progressToNextMilestone": {
+    "description": "Label indicating progress toward the next milestone"
+  },
+  "nextMilestone": "المليون التالي",
+  "@nextMilestone": {
+    "description": "Label for the upcoming milestone"
+  },
+  "timeRemaining": "بقاء الوقت",
+  "@timeRemaining": {
+    "description": "Label for remaining time until an event or milestone"
+  },
+  "loadingYourDailyMotivation": "تحمل دافعك اليومي...",
+  "@loadingYourDailyMotivation": {
+    "description": "Message shown while daily motivation content loads"
+  },
+  "loading": "التعبئة...",
+  "@loading": {
+    "description": "Generic loading indicator"
+  },
+  "unableToRefreshQuote": "غير قادر على تجديد الاقتباس حاول مرة أخرى لاحقا.",
+  "@unableToRefreshQuote": {
+    "description": "Error message when a motivational quote cannot be refreshed"
+  },
+  "morningMotivation": "صباح الخير",
+  "@morningMotivation": {
+    "description": "Title for morning motivational content"
+  },
+  "eveningInspiration": "الإلهام",
+  "@eveningInspiration": {
+    "description": "Title for evening inspirational content"
+  },
+  "everySecondCounts": "كل  {second} ثانية تُحسب - ثواني و عد!",
+  "@everySecondCounts": {
+    "description": "Countdown display emphasizing each second",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "getReady": "استعدوا! {second} ثانية للذهاب!",
+  "@getReady": {
+    "description": "Prep countdown message before an activity",
+    "placeholders": {
+      "second": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "days": "أيام",
+  "@days": {
+    "description": "Label for days unit"
+  },
+  "hours": "ساعات",
+  "@hours": {
+    "description": "Label for hours unit"
+  },
+  "minutes": "دقائق",
+  "@minutes": {
+    "description": "Label for minutes unit"
+  },
+  "loadingAchievements": "تحمل إنجازاتك...",
+  "@loadingAchievements": {
+    "description": "Message shown while achievements are being loaded"
+  },
+  "achievementSystem": "نظام الإنجاز",
+  "@achievementSystem": {
+    "description": "Title for the achievement/awards system"
+  },
+  "unlocked": "غير مقفل",
+  "@unlocked": {
+    "description": "Status label when an achievement is unlocked"
+  },
+  "total": "المجموع",
+  "@total": {
+    "description": "Label for total count or total value"
+  },
+  "progress": "التقدم",
+  "@progress": {
+    "description": "Label for progress indicator"
+  },
+  "recentAchievements": "الإنجازات الأخيرة",
+  "@recentAchievements": {
+    "description": "Title for list of recently earned achievements"
+  },
+  "progressTracking": "تقدمك المتزامن",
+  "@progressTracking": {
+    "description": "Title for synchronized progress overview"
+  },
+  "liveSync": "تزامن الحياة",
+  "@liveSync": {
+    "description": "Label for live synchronization feature"
+  },
+  "quitDate": "التاريخ",
+  "@quitDate": {
+    "description": "Label for user's quit date"
+  },
+  "streak": "Streak",
+  "@streak": {
+    "description": "Label for user's current streak"
+  },
+  "saved": "منقذة",
+  "@saved": {
+    "description": "Label for money saved"
+  },
+  "avoided": "تجنب",
+  "@avoided": {
+    "description": "Label for cigarettes avoided"
+  },
+  "health": "الصحة",
+  "@health": {
+    "description": "Label for health-related metric"
+  },
+  "socialImpact": "الأثر الاجتماعي",
+  "@socialImpact": {
+    "description": "Label for social impact metric"
+  },
+  "friendsInspired": "الأصدقاء ملهمون",
+  "@friendsInspired": {
+    "description": "Label for number of friends inspired"
+  },
+  "supportMessages": "رسائل الدعم",
+  "@supportMessages": {
+    "description": "Label for support messages received"
+  },
+  "communityRank": "الجماعة",
+  "@communityRank": {
+    "description": "Label for user's community ranking"
+  },
+  "synchronizingProgressData": "ترجمة",
+  "@synchronizingProgressData": {
+    "description": "Message shown while progress data syncs"
+  },
+  "filterOptions": "خيارات الملفات",
+  "@filterOptions": {
+    "description": "Title for available filter options"
+  },
+  "exportSynchronizedProgress": "الصادرات التقدم",
+  "@exportSynchronizedProgress": {
+    "description": "Action label to export synchronized progress data"
+  },
+  "exportSuccessful": "الصادرات الناجحة",
+  "@exportSuccessful": {
+    "description": "Confirmation shown when export completes successfully"
+  },
+  "refreshData": "بيانات التجديد",
+  "@refreshData": {
+    "description": "Action label to refresh data"
+  },
+  "achievementSharedSuccess": "تحقيق مشترك بنجاح!",
+  "@achievementSharedSuccess": {
+    "description": "Confirmation after sharing an achievement"
+  },
+  "healthImprovement": "تحسين الصحة",
+  "@healthImprovement": {
+    "description": "Label for health improvement metric"
+  },
+  "week": "الأسبوع",
+  "@week": {
+    "description": "Label for weekly time range"
+  },
+  "month": "الشهر",
+  "@month": {
+    "description": "Label for monthly time range"
+  },
+  "threeMonths": "3 أشهر",
+  "@threeMonths": {
+    "description": "Label for three-month time range"
+  },
+  "year": "السنة",
+  "@year": {
+    "description": "Label for yearly time range"
+  },
+  "cravingFrequency": "التردد المشدد",
+  "@cravingFrequency": {
+    "description": "Label for craving frequency metric"
+  },
+  "cravings": "الجروح",
+  "@cravings": {
+    "description": "Label for cravings count or list"
+  },
+  "synchronizedSmokeFreeStreak": "Smoke-Free Streak",
+  "@synchronizedSmokeFreeStreak": {
+    "description": "Label for synchronized smoke-free streak"
+  },
+  "currentStreak": "المرحلة الحالية",
+  "@currentStreak": {
+    "description": "Label showing the current streak (note: duplicate key may exist elsewhere)"
+  },
+  "yourJourneyHasntStartedYet": "رحلتك لم تبدأ بعد",
+  "@yourJourneyHasntStartedYet": {
+    "description": "Message shown when user has not started their journey"
+  },
+  "checkYourQuitDate": "تحققي من تاريخ استقالتكِ في (برايس)",
+  "@checkYourQuitDate": {
+    "description": "Prompt to remind user to verify quit date in profile"
+  },
+  "categoryAllLabel": "جميع الأميال",
+  "@categoryAllLabel": {
+    "description": "Label for the 'all milestones' category"
+  },
+  "categoryAllDescription": "إظهار جميع المعالم الصحية",
+  "@categoryAllDescription": {
+    "description": "Description for the 'all milestones' category"
+  },
+  "categoryShortLabel": "قصير الأجل",
+  "@categoryShortLabel": {
+    "description": "Label for short-term milestones"
+  },
+  "categoryShortDescription": "20 دقيقة - 48 ساعة",
+  "@categoryShortDescription": {
+    "description": "Description for short-term milestone timeframe"
+  },
+  "categoryMediumLabel": "متوسطة الأجل",
+  "@categoryMediumLabel": {
+    "description": "Label for medium-term milestones"
+  },
+  "categoryMediumDescription": "أسبوعان - 9 أشهر",
+  "@categoryMediumDescription": {
+    "description": "Description for medium-term milestone timeframe"
+  },
+  "categoryLongLabel": "طويل الأجل",
+  "@categoryLongLabel": {
+    "description": "Label for long-term milestones"
+  },
+  "categoryLongDescription": "1-10 سنوات",
+  "@categoryLongDescription": {
+    "description": "Description for long-term milestone timeframe"
+  },
+  "motivationFinancial": "المالية",
+  "@motivationFinancial": {
+    "description": "Category label for financial motivations"
+  },
+  "motivationHealth": "الصحة",
+  "@motivationHealth": {
+    "description": "Category label for health motivations"
+  },
+  "motivationBehavioral": "السلوك",
+  "@motivationBehavioral": {
+    "description": "Category label for behavioral motivations"
+  },
+  "motivationSocial": "الاجتماعية",
+  "@motivationSocial": {
+    "description": "Category label for social motivations"
+  },
+  "milestoneCategories": "ميليستون كيتيغوري",
+  "@milestoneCategories": {
+    "description": "Title for milestone category selector"
+  },
+  "milestoneShareText": "ميليستون أنجز ?\n\n {title}\n{timeframe}\n{description}\n\nالحقيقة العلمية: {scientificBasis}\n\n",
+  "@milestoneShareText": {
+    "description": "Text used when sharing a milestone",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "timeframe": {
+        "type": "String"
+      },
+      "description": {
+        "type": "String"
+      },
+      "scientificBasis": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementCopied": "المنجزات تم نسخها لتقاسمها!",
+  "@achievementCopied": {
+    "description": "Confirmation when achievement text is copied to clipboard"
+  },
+  "description": "الوصف",
+  "@description": {
+    "description": "Generic label for description fields"
+  },
+  "scientificBasis": "الأساس العلمي",
+  "@scientificBasis": {
+    "description": "Label for the scientific basis section"
+  },
+  "completeSetupFirst": "المجموعة الأولى",
+  "@completeSetupFirst": {
+    "description": "Prompt to complete app setup before accessing a feature"
+  },
+  "setQuitDateToSeeMilestones": "حدد موعد استقالتك لتتبع المعالم الصحية",
+  "@setQuitDateToSeeMilestones": {
+    "description": "Instruction to set quit date to enable milestone tracking"
+  },
+  "healthMilestoneTimeline": "الخط الزمني الصحي",
+  "@healthMilestoneTimeline": {
+    "description": "Title for the health milestones timeline view"
+  },
+  "trackYourRecoveryProgress": "تتبع تقدمك العلمي",
+  "@trackYourRecoveryProgress": {
+    "description": "Subtitle explaining milestone tracking"
+  },
+  "lungFunction": "لونغ\nالمهمة\n{percent}%",
+  "@lungFunction": {
+    "description": "Label showing lung function percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      }
+    }
+  },
+  "heartHealth": "القلب\nالصحة\n{percent}%",
+  "@heartHealth": {
+    "description": "Label showing heart health percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "72"
+      }
+    }
+  },
+  "overallWellness": " المجموع\nحسناً\n{percent}%",
+  "@overallWellness": {
+    "description": "Label showing overall wellness percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "80"
+      }
+    }
+  },
+  "milestone_20_minutes_title": "20 دقيقة",
+  "@milestone_20_minutes_title": {
+    "description": "Short title for 20 minutes milestone"
+  },
+  "milestone_20_minutes_description": "انخفاض معدل ضربات القلب وضغط الدم",
+  "@milestone_20_minutes_description": {
+    "description": "Description for the 20 minutes milestone"
+  },
+  "milestone_12_hours_title": "12 ساعة",
+  "@milestone_12_hours_title": {
+    "description": "Short title for 12 hours milestone"
+  },
+  "milestone_12_hours_description": "مستوى احتكار الكربون يطبيع",
+  "@milestone_12_hours_description": {
+    "description": "Description for the 12 hours milestone"
+  },
+  "milestone_2_weeks_title": "أسبوعان",
+  "@milestone_2_weeks_title": {
+    "description": "Short title for 2 weeks milestone"
+  },
+  "milestone_2_weeks_description": "تحسين الدائرة وزيادة وظيفة الرئة",
+  "@milestone_2_weeks_description": {
+    "description": "Description for the 2 weeks milestone"
+  },
+  "milestone_1_month_title": "شهر واحد",
+  "@milestone_1_month_title": {
+    "description": "Short title for 1 month milestone"
+  },
+  "milestone_1_month_description": "الحد من التنفس ونقصه",
+  "@milestone_1_month_description": {
+    "description": "Description for the 1 month milestone"
+  },
+  "milestone_3_months_title": "3 أشهر",
+  "@milestone_3_months_title": {
+    "description": "Short title for 3 months milestone"
+  },
+  "milestone_3_months_description": "خطر النوبة القلبية يبدأ بالتسرب",
+  "@milestone_3_months_description": {
+    "description": "Description for the 3 months milestone"
+  },
+  "milestone_1_year_title": "السنة",
+  "@milestone_1_year_title": {
+    "description": "Short title for 1 year milestone"
+  },
+  "milestone_1_year_description": "خطر الإصابة بمرض القلب ينخفض إلى النصف",
+  "@milestone_1_year_description": {
+    "description": "Description for the 1 year milestone"
+  },
+  "synchronizedMoneySaved": "الأموال المحتفظ بها",
+  "@synchronizedMoneySaved": {
+    "description": "Label for synchronized money saved across devices"
+  },
+  "totalSaved": "المجموع المنقذ: {saved}",
+  "@totalSaved": {
+    "description": "Display for total money saved",
+    "placeholders": {
+      "saved": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "startSavingMoneyToday": " ابدأ بإنقاذ المال اليوم!",
+  "@startSavingMoneyToday": {
+    "description": "Encouraging prompt to start saving"
+  },
+  "setYourQuitDateToStartSaving": "حدد موعد استقالتك لرؤية المدخرات",
+  "@setYourQuitDateToStartSaving": {
+    "description": "Prompt to set quit date to enable savings calculation"
+  },
+  "welcomeToYourJourney": "مرحباً بك في رحلتك!",
+  "@welcomeToYourJourney": {
+    "description": "Welcome message for onboarding"
+  },
+  "youAreAllSetToStartYourSmokeFreeLife": "جميعكم مستعدون لبدء حياتكم الخالية من الدخان دعونا نبدأ هذه الرحلة المذهلة معا!",
+  "@youAreAllSetToStartYourSmokeFreeLife": {
+    "description": "Onboarding confirmation message"
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Action label to skip a step"
+  },
+  "stepXofY": "الخطوة {currentStep} من {totalSteps}",
+  "@stepXofY": {
+    "description": "Progress indicator for multi-step setup",
+    "placeholders": {
+      "currentStep": {
+        "type": "int",
+        "example": "1"
+      },
+      "totalSteps": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "whenDidYouQuitSmoking": "متى توقفت عن التدخين؟?",
+  "@whenDidYouQuitSmoking": {
+    "description": "Question asking the user for their quit date"
+  },
+  "selectYourQuitDateToTrackProgress": "اختيار تاريخ استقالتك لتتبع تقدمك والإحتفال بالمعالم.",
+  "@selectYourQuitDateToTrackProgress": {
+    "description": "Instruction for selecting quit date during setup"
+  },
+  "tellUsAboutYourSmokingHabits": "أخبرنا عن عادات التدخين",
+  "@tellUsAboutYourSmokingHabits": {
+    "description": "Prompt asking for smoking habit details"
+  },
+  "thisHelpsUsCalculateYourSavings": "هذا يساعدنا في حساب مدخراتك وإضفاء الطابع الشخصي على تجربتك.",
+  "@thisHelpsUsCalculateYourSavings": {
+    "description": "Explanation of why smoking habit data is collected"
+  },
+  "stayMotivatedWithNotifications": "البقاء بدافع الإخطارات",
+  "@stayMotivatedWithNotifications": {
+    "description": "Prompt about enabling motivational notifications"
+  },
+  "chooseHowYoudLikeToReceiveSupport": "اختر كيف تريد الحصول على الدعم والتشجيع.",
+  "@chooseHowYoudLikeToReceiveSupport": {
+    "description": "Instruction to select support preferences"
+  },
+  "discoverPowerfulFeatures": "الكشف عن سمات قوية",
+  "@discoverPowerfulFeatures": {
+    "description": "Heading encouraging exploration of app features"
+  },
+  "exploreTheToolsThatWillSupportYou": "استكشاف الأدوات التي ستدعمك في رحلتك الخالية من الدخان.",
+  "@exploreTheToolsThatWillSupportYou": {
+    "description": "Subtitle for feature exploration"
+  },
+  "yourPersonalizedDashboard": "لوحك الشخصي",
+  "@yourPersonalizedDashboard": {
+    "description": "Heading for the user's personalized dashboard"
+  },
+  "dashboardPreviewDescription": "هنا استعراض مسبق للتقدم بناء على المعلومات التي قدمتموها.",
+  "@dashboardPreviewDescription": {
+    "description": "Description shown on dashboard preview during onboarding"
+  },
+  "continueText": "استمر",
+  "@continueText": {
+    "description": "Action label to continue"
+  },
+  "completeSetup": "المجموع الكلي",
+  "@completeSetup": {
+    "description": "Action label to finish setup"
+  },
+  "healthProgress": "التقدم في مجال الصحة",
+  "@healthProgress": {
+    "description": "Title for health progress section"
+  },
+  "nextHealthMilestone": "Meestone التالي:",
+  "@nextHealthMilestone": {
+    "description": "Label for the next health milestone"
+  },
+  "bloodOxygenLevelsNormalize": "مستويات الأكسجين الدموية تطبيع",
+  "@bloodOxygenLevelsNormalize": {
+    "description": "Short description for oxygen normalization milestone"
+  },
+  "basedOnYourQuitDateAndSmokingHabits": "بناء على تاريخ استقالتك وعادة التدخين",
+  "@basedOnYourQuitDateAndSmokingHabits": {
+    "description": "Note describing how milestones are calculated"
+  },
+  "tasteAndSmellImprove": "التذوق والرائحة تتحسن",
+  "@tasteAndSmellImprove": {
+    "description": "Short description about improvement in taste and smell"
+  },
+  "lungFunctionIncreases": "الزيادات في وظيفة لونغ",
+  "@lungFunctionIncreases": {
+    "description": "Short description about lung function increase"
+  },
+  "heartDiseaseRiskReduces": "مخاطر أمراض القلب تقلل",
+  "@heartDiseaseRiskReduces": {
+    "description": "Short description about heart disease risk reduction"
+  },
+  "achievementUnlocked": "!",
+  "@achievementUnlocked": {
+    "description": "Notification title when an achievement is unlocked"
+  },
+  "firstAchievementAwaits": "الإنجاز الأول تنتظر",
+  "@firstAchievementAwaits": {
+    "description": "Prompt indicating first achievement is available"
+  },
+  "firstDayChampion": "بطل اليوم الأول لقد أكملت أول يوم خالي من الدخان!",
+  "@firstDayChampion": {
+    "description": "Message awarded for the first smoke-free day"
+  },
+  "firstDayChampionAwaits": "أكمل أول يوم لك خال من الدخان لكسب شارتك الأولى",
+  "@firstDayChampionAwaits": {
+    "description": "Prompt encouraging the user to complete first day milestone"
+  },
+  "feature_progress_tracking_title": "مسار التقدم",
+  "@feature_progress_tracking_title": {
+    "description": "Feature title for progress tracking"
+  },
+  "feature_progress_tracking_description": "رصد رحلتك الخالية من الدخان مع إحصاءات مفصلة",
+  "@feature_progress_tracking_description": {
+    "description": "Description for the progress tracking feature"
+  },
+  "feature_health_milestones_title": "وسائل الصحة",
+  "@feature_health_milestones_title": {
+    "description": "Feature title for health milestones"
+  },
+  "feature_health_milestones_description": "شاهدْ كَمْ جسمكَ يَتعافى بمرور الوقت",
+  "@feature_health_milestones_description": {
+    "description": "Description for the health milestones feature"
+  },
+  "feature_achievement_system_title": "نظام الإنجاز",
+  "@feature_achievement_system_title": {
+    "description": "Feature title for achievement system"
+  },
+  "feature_achievement_system_description": "شارات ومكافآت لتقدمك",
+  "@feature_achievement_system_description": {
+    "description": "Description for the achievement system feature"
+  },
+  "feature_craving_support_title": "الدعم المشدد",
+  "@feature_craving_support_title": {
+    "description": "Feature title for craving support"
+  },
+  "feature_craving_support_description": "تحصل على مساعدة فورية عندما تحتاجها أكثر",
+  "@feature_craving_support_description": {
+    "description": "Description for the craving support feature"
+  },
+  "tapAnyFeatureToExplore": "تخطي أي سمة لاستكشاف",
+  "@tapAnyFeatureToExplore": {
+    "description": "Hint to explore app features"
+  },
+  "getAPreviewOfWhatAwaitsYou": "الحصول على استعراض ما ينتظرك",
+  "@getAPreviewOfWhatAwaitsYou": {
+    "description": "Subheading for feature preview"
+  },
+  "close": "اقترب",
+  "@close": {
+    "description": "Action label to close a modal or screen"
+  },
+  "explore": "Explore",
+  "@explore": {
+    "description": "Action label to explore content"
+  },
+  "dailyMotivation": "الحفز اليومي",
+  "@dailyMotivation": {
+    "description": "Title for daily motivation content"
+  },
+  "receiveDailyEncouragingMessagesAndTips": "تلقي رسائل مشجعة وبقشيش يوميا",
+  "@receiveDailyEncouragingMessagesAndTips": {
+    "description": "Subtitle explaining daily motivational messages"
+  },
+  "notificationTime": "وقت الإخطار",
+  "@notificationTime": {
+    "description": "Label for setting notification time"
+  },
+  "change": "التغيير",
+  "@change": {
+    "description": "Action label to change a setting"
+  },
+  "milestoneAlerts": "ميلستون إنذار",
+  "@milestoneAlerts": {
+    "description": "Title for milestone alert settings"
+  },
+  "getNotifiedWhenYouReachImportantMilestones": "يتم إخطارك عندما تصل إلى معالم هامة",
+  "@getNotifiedWhenYouReachImportantMilestones": {
+    "description": "Description for milestone alert preference"
+  },
+  "cravingSupport": "الدعم المشدد",
+  "@cravingSupport": {
+    "description": "Title for craving support feature"
+  },
+  "instantHelpAndMotivationDuringDifficultMoments": "تقديم المساعدة والحوافز بشكل ثابت خلال اللحظات الصعبة",
+  "@instantHelpAndMotivationDuringDifficultMoments": {
+    "description": "Description for craving support"
+  },
+  "quitDateTime": "التاريخ",
+  "@quitDateTime": {
+    "description": "Label for quit date and time selector"
+  },
+  "selectYourQuitDateAndTime": "اختيار تاريخ الاستقالة والوقت",
+  "@selectYourQuitDateAndTime": {
+    "description": "Instruction to choose quit date and time"
+  },
+  "changeDateAndTime": "التاريخ",
+  "@changeDateAndTime": {
+    "description": "Action label to modify date and time"
+  },
+  "selectDateAndTime": "التاريخ المحدد",
+  "@selectDateAndTime": {
+    "description": "Action label to pick a date and time"
+  },
+  "howManyYearsHaveYouBeenSmoking": "كم سنة كنت تدخن؟?",
+  "@howManyYearsHaveYouBeenSmoking": {
+    "description": "Question to collect years smoked before quitting"
+  },
+  "yearsSmokedBeforeQuitting": "سنوات مدخنة قبل التوقف",
+  "@yearsSmokedBeforeQuitting": {
+    "description": "Label for years smoked input"
+  },
+  "healthScoreDashboard": "لوح الكشافة الصحي",
+  "@healthScoreDashboard": {
+    "description": "Title for the health score dashboard"
+  },
+  "newText": "NEW",
+  "@newText": {
+    "description": "Badge label for new features"
+  },
+  "howToUnlock": "كيف أفتح",
+  "@howToUnlock": {
+    "description": "Label explaining how to unlock an achievement"
+  },
+  "completeTheRequiredTasksToUnlockThisAchievement": "إنجاز الإجراءات اللازمة لفتح هذا الإنجاز.",
+  "@completeTheRequiredTasksToUnlockThisAchievement": {
+    "description": "Instruction to unlock an achievement"
+  },
+  "shareAchievement": "تحقيق الحصة",
+  "@shareAchievement": {
+    "description": "Action label to share an achievement"
+  },
+  "totalPoints": "مجموع النقاط",
+  "@totalPoints": {
+    "description": "Label for total points earned"
+  },
+  "level": "الرتبة",
+  "@level": {
+    "description": "Label for user's level"
+  },
+  "progressToLevel": "التقدم المحرز في المستوى",
+  "@progressToLevel": {
+    "description": "Label showing progress toward next level"
+  },
+  "pointsToGo": "نقاط للذهاب",
+  "@pointsToGo": {
+    "description": "Label indicating points remaining to next milestone"
+  },
+  "pointsEarned": "النقاط المحصلة",
+  "@pointsEarned": {
+    "description": "Label indicating points gained"
+  },
+  "reward_premium_title": "المرحلة التمهيدية",
+  "@reward_premium_title": {
+    "description": "Title for premium motivational content reward"
+  },
+  "reward_premium_description": "الحصول على اقتباسات يومية حصرية وقصص نجاح",
+  "@reward_premium_description": {
+    "description": "Description for premium motivational content reward"
+  },
+  "reward_ocean_title": "المحيطات الموضوع",
+  "@reward_ocean_title": {
+    "description": "Title for ocean theme reward"
+  },
+  "reward_ocean_description": "واجهة جميلة للمحيطات مع ألوان هادئة",
+  "@reward_ocean_description": {
+    "description": "Description for ocean theme reward"
+  },
+  "reward_forest_title": "موضوع الغابات",
+  "@reward_forest_title": {
+    "description": "Title for forest theme reward"
+  },
+  "reward_forest_description": "موضوع خضراء ملهم للطبيعة من أجل تجربة جديدة",
+  "@reward_forest_description": {
+    "description": "Description for forest theme reward"
+  },
+  "reward_charity_title": "التبرعات الخيرية",
+  "@reward_charity_title": {
+    "description": "Title for charity donation reward"
+  },
+  "reward_charity_description": "تبرع بـ 5 دولارات لأبحاث سرطان الرئة باسمك",
+  "@reward_charity_description": {
+    "description": "Description for charity donation reward"
+  },
+  "reward_stats_title": "الإحصاءات المتقدمة",
+  "@reward_stats_title": {
+    "description": "Title for advanced statistics reward"
+  },
+  "reward_stats_description": "الكشف عن التحليلات الصحية المفصّلة ومعرفة التقدم المحرز",
+  "@reward_stats_description": {
+    "description": "Description for advanced statistics reward"
+  },
+  "reward_coach_title": "دورة المدرب الشخصي",
+  "@reward_coach_title": {
+    "description": "Title for personal coach session reward"
+  },
+  "reward_coach_description": "دورة افتراضية مدتها 30 دقيقة مع مدرب معتمد",
+  "@reward_coach_description": {
+    "description": "Description for coach session reward"
+  },
+  "confirmRedemption": "إعادة تأكيد",
+  "@confirmRedemption": {
+    "description": "Title for reward redemption confirmation"
+  },
+  "areYouSureYouWantToRedeem": "هل أنت متأكد من أنك تريد أن تعوض عن بعض النقاط؟\n\n{title}\n\nتكلفة: {points} نقاط",
+  "@areYouSureYouWantToRedeem": {
+    "description": "Confirmation prompt for redeeming a reward",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "youWillHave": "ستكون لديك {availablePoints} نقاط متبقية.",
+  "@youWillHave": {
+    "description": "Shows remaining points after redemption",
+    "placeholders": {
+      "availablePoints": {
+        "type": "int"
+      }
+    }
+  },
+  "youHaveSuccessfullyRedeemed": " {title} لقد نجحت في إعادة فحص ملفك للتفاصيل.",
+  "@youHaveSuccessfullyRedeemed": {
+    "description": "Confirmation after reward redemption",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardRedeemed": "Reward Redeemed!",
+  "@rewardRedeemed": {
+    "description": "Notification title after successful redemption"
+  },
+  "great": "عظيم",
+  "@great": {
+    "description": "Affirming label"
+  },
+  "youreDoingGreat": "أنت تبلي حسناً!",
+  "@youreDoingGreat": {
+    "description": "Encouraging message"
+  },
+  "daysSinceQuit": "{daysSinceQuit} يوماً خالياً من الدخان  ",
+  "@daysSinceQuit": {
+    "description": "Display showing number of smoke-free days",
+    "placeholders": {
+      "daysSinceQuit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "notSmoked": "ليس مدخناً",
+  "@notSmoked": {
+    "description": "Label indicating no cigarettes smoked"
+  },
+  "breathingExercise": "التنفس\nالممارسة",
+  "@breathingExercise": {
+    "description": "Title for breathing exercise card"
+  },
+  "callSupport": "اتصل\nالدعم",
+  "@callSupport": {
+    "description": "Title for support call action"
+  },
+  "viewProgress": "View\nالتقدم",
+  "@viewProgress": {
+    "description": "Title for view progress action"
+  },
+  "distractionGames": "توزيع الألعاب",
+  "@distractionGames": {
+    "description": "Title for distraction games section"
+  },
+  "havingACraving": "هل لديك رغبة؟ أنت لست وحدك اختر استراتيجية التأقلم أدناه.",
+  "@havingACraving": {
+    "description": "Prompt shown when user has a craving"
+  },
+  "recentCopingSessions": "دورات تحديد النطاق الأخيرة",
+  "@recentCopingSessions": {
+    "description": "Title for recent coping activities list"
+  },
+  "quickBreathe": "تنفسي بسرعة",
+  "@quickBreathe": {
+    "description": "Label for quick breathing exercise"
+  },
+  "callingEmergencyContact": "أعد إتصالك الطارئ في (ستينغز)",
+  "@callingEmergencyContact": {
+    "description": "Prompt to configure emergency contact"
+  },
+  "settings": "التركيبات",
+  "@settings": {
+    "description": "Label for settings screen"
+  },
+  "callEmergencyContact": "نداء الطوارئ",
+  "@callEmergencyContact": {
+    "description": "Action label to call emergency contact"
+  },
+  "reachOutToYourDesignatedContact": "التواصل مع شخص الدعم الخاص بك",
+  "@reachOutToYourDesignatedContact": {
+    "description": "Instruction to contact designated support person"
+  },
+  "getSupport": "الحصول على الدعم",
+  "@getSupport": {
+    "description": "Action label to get help"
+  },
+  "cravingSessionLogged": "تم تسجيل جلسة التكيف مع {method}",
+  "@cravingSessionLogged": {
+    "description": "Confirmation after logging a coping session",
+    "placeholders": {
+      "method": {
+        "type": "String",
+        "example": "Deep Breathing"
+      }
+    }
+  },
+  "quickCopingTips": "مجموعة سريعة",
+  "@quickCopingTips": {
+    "description": "Title for quick coping tips"
+  },
+  "tryThisNow": "جرب هذا الآن",
+  "@tryThisNow": {
+    "description": "Call-to-action to try a coping strategy immediately"
+  },
+  "greatCopingStrategyChoice": "عمل رائع باستخدام {title}!",
+  "@greatCopingStrategyChoice": {
+    "description": "Positive feedback after selecting a coping strategy",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "healthBenefits": "الاستحقاقات الصحية",
+  "@healthBenefits": {
+    "description": "Label for health benefits section"
+  },
+  "coping_drink_water_title": "مياه الشرب",
+  "@coping_drink_water_title": {
+    "description": "Title for drink water coping strategy"
+  },
+  "coping_drink_water_description": "اهدئي جسدك وابقي يديك مشغولة الماء يساعد على تفريغ التكسينات ويقلل من الرغبات.",
+  "@coping_drink_water_description": {
+    "description": "Description for drink water coping strategy"
+  },
+  "coping_drink_water_duration": "2-3 دقيقة",
+  "@coping_drink_water_duration": {
+    "description": "Suggested duration for the drink water strategy"
+  },
+  "coping_take_a_walk_title": "خذ المشي",
+  "@coping_take_a_walk_title": {
+    "description": "Title for take a walk coping strategy"
+  },
+  "coping_take_a_walk_description": "تحرك! النشاط الفيزيائي يُطلق الإندورفينات ويشتت انتباهه عن الرغبات.",
+  "@coping_take_a_walk_description": {
+    "description": "Description for take a walk coping strategy"
+  },
+  "coping_take_a_walk_duration": "5-10 دقائق",
+  "@coping_take_a_walk_duration": {
+    "description": "Suggested duration for the walk strategy"
+  },
+  "coping_call_a_friend_title": "دعوة صديق",
+  "@coping_call_a_friend_title": {
+    "description": "Title for call a friend coping strategy"
+  },
+  "coping_call_a_friend_description": "التواصل للحصول على الدعم. التحدث إلى شخص ما يمكن أن يوفر الحافز والإلهاء.",
+  "@coping_call_a_friend_description": {
+    "description": "Description for call a friend coping strategy"
+  },
+  "coping_call_a_friend_duration": "5-15 دقيقة",
+  "@coping_call_a_friend_duration": {
+    "description": "Suggested duration for the call-a-friend strategy"
+  },
+  "coping_review_reasons_title": "استعراض أسبابك",
+  "@coping_review_reasons_title": {
+    "description": "Title for review your reasons strategy"
+  },
+  "coping_review_reasons_description": "تذكري لماذا قررتي الاستقالة ركز على صحتك وعائلتك وأهدافك المالية.",
+  "@coping_review_reasons_description": {
+    "description": "Description for review your reasons strategy"
+  },
+  "coping_review_reasons_duration": "3-5 دقائق",
+  "@coping_review_reasons_duration": {
+    "description": "Suggested duration for the review reasons strategy"
+  },
+  "coping_deep_breathing_title": "التنفس العميق",
+  "@coping_deep_breathing_title": {
+    "description": "Title for deep breathing coping strategy"
+  },
+  "coping_deep_breathing_description": "تدرب ببطء ونفس عميق استنشاق لأربعة، عقد لأربعة، استنشاق لأربع ثوان.",
+  "@coping_deep_breathing_description": {
+    "description": "Description for deep breathing strategy"
+  },
+  "coping_deep_breathing_duration": "2-5 دقائق",
+  "@coping_deep_breathing_duration": {
+    "description": "Suggested duration for deep breathing exercise"
+  },
+  "coping_chew_gum_title": "Chew Gum",
+  "@coping_chew_gum_title": {
+    "description": "Title for chew gum coping strategy"
+  },
+  "coping_chew_gum_description": "أبقي فمك مشغولاً بالعلكة الخالية من السكر إنه يساعد في علاج العادات الفموية.",
+  "@coping_chew_gum_description": {
+    "description": "Description for chew gum strategy"
+  },
+  "coping_chew_gum_duration": "جارية",
+  "@coping_chew_gum_duration": {
+    "description": "Suggested duration for chew gum strategy"
+  },
+  "coping_listen_music_title": "الاستماع إلى الموسيقى",
+  "@coping_listen_music_title": {
+    "description": "Title for listen to music coping strategy"
+  },
+  "coping_listen_music_description": "ضع على قائمتك المفضلة الموسيقى يمكن أن تحسن المزاج وتوفر الإلهاء.",
+  "@coping_listen_music_description": {
+    "description": "Description for listen to music strategy"
+  },
+  "coping_listen_music_duration": "3-10 دقائق",
+  "@coping_listen_music_duration": {
+    "description": "Suggested duration for listening to music"
+  },
+  "coping_gratitude_title": "الممارسة",
+  "@coping_gratitude_title": {
+    "description": "Title for practice gratitude coping strategy"
+  },
+  "coping_gratitude_description": "فكر بثلاثة أشياء أنت ممتن لها التفكير الإيجابي يقلل من الإجهاد والرغبات.",
+  "@coping_gratitude_description": {
+    "description": "Description for gratitude practice strategy"
+  },
+  "coping_gratitude_duration": "2-3 دقيقة",
+  "@coping_gratitude_duration": {
+    "description": "Suggested duration for gratitude exercise"
+  },
+  "coping_effectiveness_high": "عالية",
+  "@coping_effectiveness_high": {
+    "description": "Label indicating high effectiveness"
+  },
+  "coping_effectiveness_very_high": "عالية جدا",
+  "@coping_effectiveness_very_high": {
+    "description": "Label indicating very high effectiveness"
+  },
+  "coping_effectiveness_medium": "متوسطة",
+  "@coping_effectiveness_medium": {
+    "description": "Label indicating medium effectiveness"
+  },
+  "colorFocusChallenge": "Color Focus Challenge",
+  "@colorFocusChallenge": {
+    "description": "Title for color focus distraction challenge"
+  },
+  "findFiveObjects": "ابحث عن خمسة أشياء {randomColor} حولك",
+  "@findFiveObjects": {
+    "description": "Instruction for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String",
+        "example": "red"
+      }
+    }
+  },
+  "lookAroundAndIdentifyFiveObjects": "انظر حولك وحدد خمسة أشياء {randomColor}",
+  "@lookAroundAndIdentifyFiveObjects": {
+    "description": "Detailed instructions for the color focus challenge",
+    "placeholders": {
+      "randomColor": {
+        "type": "String"
+      }
+    }
+  },
+  "newColorChallenge": "تحدي كولور الجديد",
+  "@newColorChallenge": {
+    "description": "Action label to start a new color challenge"
+  },
+  "countingChallenge": "العد التنازلي",
+  "@countingChallenge": {
+    "description": "Title for counting distraction challenge"
+  },
+  "countingGameDescription": "هذا التمرين العقلي يتطلب التركيز والتركيز، يساعد على صرف الانتباه عن الرغبات.",
+  "@countingGameDescription": {
+    "description": "Description for counting challenge"
+  },
+  "showHint": "اظهر له",
+  "@showHint": {
+    "description": "Action label to reveal a hint"
+  },
+  "newChallenge": "التحدي الجديد",
+  "@newChallenge": {
+    "description": "Action label to get a new challenge"
+  },
+  "memoryPalace": "قصر الذاكرة",
+  "@memoryPalace": {
+    "description": "Title for memory palace exercise"
+  },
+  "visualizeChildhoodHome": "رؤية بيت طفولتك",
+  "@visualizeChildhoodHome": {
+    "description": "Prompt to start the memory palace visualization"
+  },
+  "instructions": "التعليمات",
+  "@instructions": {
+    "description": "Label for instruction section"
+  },
+  "memoryPalaceInstructions": "1 اغلقي عينيك وتخيلي المشي خلال طفولتك\n\n2. ابدأوا من الباب الأمامي وتحركوا من الغرفة\n\n3 تفاصيل الإشعار: الألوان والأثاث والزينة\n\n4. قضاء وقت في كل غرفة تذكر أشياء محددة\n\n5 حاول أن تتذكر الأصوات والرائحة والمشاعر",
+  "@memoryPalaceInstructions": {
+    "description": "Step-by-step instructions for the memory palace exercise"
+  },
+  "memoryPalaceCompletionMessage": "عمل رائع! فالتمارين التذكارية تعزز التركيز وتخفض الرغبات.",
+  "@memoryPalaceCompletionMessage": {
+    "description": "Completion message for the memory palace exercise"
+  },
+  "completeExercise": "الممارسة الكاملة",
+  "@completeExercise": {
+    "description": "Action label to complete an exercise"
+  },
+  "wordAssociation": "رابطة الكلمات",
+  "@wordAssociation": {
+    "description": "Title for word association exercise"
+  },
+  "startingWord": "بدء الكلمة",
+  "@startingWord": {
+    "description": "Label for the starting word in the exercise"
+  },
+  "wordAssociationInstructions": "إنشاء سلسلة من الكلمات ذات الصلة. كل كلمة جديدة يجب أن تتصل بالكلمة السابقة.",
+  "@wordAssociationInstructions": {
+    "description": "Instructions for the word association exercise"
+  },
+  "wordAssociationExample": "Example: Ocean : Water : Rain : Clouds : Sky : Birds → Freedom",
+  "@wordAssociationExample": {
+    "description": "Example chain for word association exercise"
+  },
+  "newStartingWord": "كلمة بداية جديدة",
+  "@newStartingWord": {
+    "description": "Action label to generate a new starting word"
+  },
+  "ocean": "المحيطات",
+  "@ocean": {
+    "description": "Themed label: Ocean"
+  },
+  "mountain": "الجبل",
+  "@mountain": {
+    "description": "Themed label: Mountain"
+  },
+  "forest": "الغابات",
+  "@forest": {
+    "description": "Themed label: Forest"
+  },
+  "city": "المدينة",
+  "@city": {
+    "description": "Themed label: City"
+  },
+  "garden": "الحديقة",
+  "@garden": {
+    "description": "Themed label: Garden"
+  },
+  "library": "المكتبة",
+  "@library": {
+    "description": "Themed label: Library"
+  },
+  "kitchen": "المطبخ",
+  "@kitchen": {
+    "description": "Themed label: Kitchen"
+  },
+  "music": "الموسيقى",
+  "@music": {
+    "description": "Themed label: Music"
+  },
+  "everyBreathIsANewBeginning": "كل نفس هو بداية جديدة",
+  "@everyBreathIsANewBeginning": {
+    "description": "Motivational quote"
+  },
+  "youAreStrongerThanYourCravings": "أنت أقوى من رغباتك",
+  "@youAreStrongerThanYourCravings": {
+    "description": "Motivational quote"
+  },
+  "thisMomentWillPass": "هذه اللحظة سوف تمر، سوف تتغلب على",
+  "@thisMomentWillPass": {
+    "description": "Motivational quote"
+  },
+  "breatheInPeace": "تنفس في سلام، تنفس الضغط",
+  "@breatheInPeace": {
+    "description": "Motivational quote"
+  },
+  "yourHealthIsWorthEveryBreath": "صحتك تستحق كل نفس",
+  "@yourHealthIsWorthEveryBreath": {
+    "description": "Motivational quote"
+  },
+  "oneBreathAtATime": "نفس واحد في كل مرة",
+  "@oneBreathAtATime": {
+    "description": "Motivational quote"
+  },
+  "inhale": "Inhale",
+  "@inhale": {
+    "description": "Label for inhale phase of breathing exercise"
+  },
+  "hold": "عقد",
+  "@hold": {
+    "description": "Label for hold phase of breathing exercise"
+  },
+  "exhale": "Exhale",
+  "@exhale": {
+    "description": "Label for exhale phase of breathing exercise"
+  },
+  "readyToBreathe": "مستعد للتنفس؟?",
+  "@readyToBreathe": {
+    "description": "Prompt before starting a breathing exercise"
+  },
+  "fourSevenEightTechnique": "4-7-8 تقنيات التنفس",
+  "@fourSevenEightTechnique": {
+    "description": "Title for the 4-7-8 breathing technique"
+  },
+  "startExercise": "بدء التدريب",
+  "@startExercise": {
+    "description": "Action label to begin an exercise"
+  },
+  "extendExercise": "تمديد (دورات + 2)",
+  "@extendExercise": {
+    "description": "Action label to extend an exercise"
+  },
+  "stopExercise": "توقف",
+  "@stopExercise": {
+    "description": "Action label to stop an exercise"
+  },
+  "newMotivationalQuoteLoaded": "اقتباس جديد محفز!",
+  "@newMotivationalQuoteLoaded": {
+    "description": "Notification shown when a new quote loads"
+  },
+  "failedToRefreshQuote": "فشل في تجديد الاقتباس حاول مرة أخرى لاحقا.",
+  "@failedToRefreshQuote": {
+    "description": "Error message when quote refresh fails"
+  },
+  "quoteSchedule": "الجدول الزمني",
+  "@quoteSchedule": {
+    "description": "Title for quote refresh scheduling"
+  },
+  "refreshSchedule": "الجدول المنقح",
+  "@refreshSchedule": {
+    "description": "Label for schedule refresh settings"
+  },
+  "nextRefresh": "التجديد التالي",
+  "@nextRefresh": {
+    "description": "Label showing next scheduled refresh"
+  },
+  "totalQuotes": "المجموع",
+  "@totalQuotes": {
+    "description": "Label for total number of available quotes"
+  },
+  "currentPeriod": "الفترة الحالية",
+  "@currentPeriod": {
+    "description": "Label for the current scheduling period"
+  },
+  "xUniqueQuotes": "{number} __ اقتباسات فريدة",
+  "@xUniqueQuotes": {
+    "description": "Display for number of unique quotes",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "20"
+      }
+    }
+  },
+  "periodInHoursAndMinutes": "{nextRefreshPeriod} في {hours} ساعة و {minutes} دقيقة",
+  "@periodInHoursAndMinutes": {
+    "description": "Displays time until next refresh",
+    "placeholders": {
+      "nextRefreshPeriod": {
+        "type": "String",
+        "example": "Refresh"
+      },
+      "hours": {
+        "type": "int",
+        "example": "1"
+      },
+      "minutes": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "quoteInfoNote": "يرتعش تلقائياً في السادسة صباحاً و6 مساءً كل يوم لإبقائك محفزاً طوال رحلتك للتدخين!",
+  "@quoteInfoNote": {
+    "description": "Informational note about quote refresh schedule"
+  },
+  "gotIt": "حصلت عليه!",
+  "@gotIt": {
+    "description": "Acknowledgement button label"
+  },
+  "autoRefreshesFrequency": "ثاني أكسيد الكربون يوميا",
+  "@autoRefreshesFrequency": {
+    "description": "Informational text about auto-refresh frequency"
+  },
+  "callYourSupportPersonOrQuitline": "اتصلي بشخص دعمك أو انسحبي",
+  "@callYourSupportPersonOrQuitline": {
+    "description": "Prompt preceding emergency contact numbers"
+  },
+  "emergencySupport": "الدعم في حالات الطوارئ",
+  "@emergencySupport": {
+    "description": "Title for emergency support section"
+  },
+  "thankYou": "شكراً لك",
+  "@thankYou": {
+    "description": "Expression of thanks"
+  },
+  "youveGotThis": "لديك هذا!",
+  "@youveGotThis": {
+    "description": "Encouraging message"
+  },
+  "back": "العودة",
+  "@back": {
+    "description": "Navigation label to go back"
+  },
+  "start": "ابدأ",
+  "@start": {
+    "description": "Action label to start something"
+  },
+  "fourSevenEightTechniqueDescription": "تنفس لأربعة، عقد ل ٧، استنشاق لثمانية",
+  "@fourSevenEightTechniqueDescription": {
+    "description": "Description for the 4-7-8 technique"
+  },
+  "chooseWhatHelpsYouMostRightNow": "اختر ما يساعدك الآن",
+  "@chooseWhatHelpsYouMostRightNow": {
+    "description": "Prompt to select the preferred coping strategy"
+  },
+  "breathing_exercise_title": "ممارسة التنفس",
+  "@breathing_exercise_title": {
+    "description": "Title for breathing exercise card"
+  },
+  "breathing_exercise_subtitle": "4-7-8 التقنيات الرامية إلى خفض المدخرات",
+  "@breathing_exercise_subtitle": {
+    "description": "Subtitle describing the breathing exercise technique"
+  },
+  "motivational_quote_title": "الحي الحافز",
+  "@motivational_quote_title": {
+    "description": "Title for motivational quote card"
+  },
+  "motivational_quote_subtitle": "تشجيع فوري",
+  "@motivational_quote_subtitle": {
+    "description": "Subtitle for the motivational quote section"
+  },
+  "emergency_contact_title": "الاتصال في حالات الطوارئ",
+  "@emergency_contact_title": {
+    "description": "Title for emergency contact action"
+  },
+  "emergency_contact_subtitle": "اتصلي بشخص دعمك",
+  "@emergency_contact_subtitle": {
+    "description": "Subtitle explaining the emergency contact action"
+  },
+  "distraction_activity_title": "التوزيع",
+  "@distraction_activity_title": {
+    "description": "Title for distraction activity card"
+  },
+  "distraction_activity_subtitle": "أنشطة سريعة مدتها 5 دقائق",
+  "@distraction_activity_subtitle": {
+    "description": "Subtitle describing short distraction activities"
+  },
+  "quote_1": "كل سيجارة لا تدخنها تقوم بعمل جيد.",
+  "@quote_1": {
+    "description": "Motivational quote 1"
+  },
+  "quote_2": "أنت أقوى من رغباتك.",
+  "@quote_2": {
+    "description": "Motivational quote 2"
+  },
+  "quote_3": "هذا الرغب سينجح لديك هذا!",
+  "@quote_3": {
+    "description": "Motivational quote 3"
+  },
+  "quote_4": "فكر كم ستكون فخوراً غداً.",
+  "@quote_4": {
+    "description": "Motivational quote 4"
+  },
+  "quote_5": "صحتك تساوي أكثر من أي سيجارة.",
+  "@quote_5": {
+    "description": "Motivational quote 5"
+  },
+  "activity_1": "افعل 10 قفزات",
+  "@activity_1": {
+    "description": "Distraction activity 1"
+  },
+  "activity_2": "اشرب كأس الماء ببطء",
+  "@activity_2": {
+    "description": "Distraction activity 2"
+  },
+  "activity_3": "خذ 5 أنفاس عميقة",
+  "@activity_3": {
+    "description": "Distraction activity 3"
+  },
+  "activity_4": "اتصل بصديق أو فرد من العائلة",
+  "@activity_4": {
+    "description": "Distraction activity 4"
+  },
+  "activity_5": "اذهب للمشي القصير",
+  "@activity_5": {
+    "description": "Distraction activity 5"
+  },
+  "activity_6": "استمع إلى أغنيتك المفضلة",
+  "@activity_6": {
+    "description": "Distraction activity 6"
+  },
+  "healthRecoveryProgress": "التقدم المحرز في مجال الإنعاش الصحي",
+  "@healthRecoveryProgress": {
+    "description": "Title for health recovery progress section"
+  },
+  "milestonesAchieved": "أُنجزت",
+  "@milestonesAchieved": {
+    "description": "Label indicating achieved milestones"
+  },
+  "amazingProgress": "تقدم مذهل! جسدك يشفى بشكل جميل.",
+  "@amazingProgress": {
+    "description": "Encouraging message about recovery progress"
+  },
+  "everyMilestoneBringsYouCloserToCompleteRecovery": "كل معلم يقترب منك لإكمال الانتعاش.",
+  "@everyMilestoneBringsYouCloserToCompleteRecovery": {
+    "description": "Message about cumulative impact of milestones"
+  },
+  "save": "أنقذني",
+  "@save": {
+    "description": "Action label to save changes"
+  },
+  "cancel": "إلغاء",
+  "@cancel": {
+    "description": "Action label to cancel an action"
+  },
+  "currentTime": "الوقت الحالي",
+  "@currentTime": {
+    "description": "Label showing the current time"
+  },
+  "view": "View",
+  "@view": {
+    "description": "Action label to view details"
+  },
+  "synchronizedExportPreview": "استعراض مسبق للصادرات",
+  "@synchronizedExportPreview": {
+    "description": "Title for preview of synchronized export"
+  },
+  "initializingYourQuitJourney": "بدء رحلتك الإستقالة.",
+  "@initializingYourQuitJourney": {
+    "description": "Message shown while initializing user journey"
+  },
+  "loadingUserPreferences": "وضع أفضليات المستخدمين.",
+  "@loadingUserPreferences": {
+    "description": "Message shown while user preferences load"
+  },
+  "checkingQuitDate": "التحقق من تاريخ الاستقالة.",
+  "@checkingQuitDate": {
+    "description": "Message displayed while verifying quit date"
+  },
+  "loadingProgressData": "وضع بيانات التقدم...",
+  "@loadingProgressData": {
+    "description": "Message shown while progress data loads"
+  },
+  "calculatingStreak": "حاسبة شريحة...",
+  "@calculatingStreak": {
+    "description": "Message shown while streak is calculated"
+  },
+  "preparingMotivationalContent": "إعداد محتوى دافعي...",
+  "@preparingMotivationalContent": {
+    "description": "Message shown while motivational content is prepared"
+  },
+  "healthCategoryBreakdown": "فئة الصحة",
+  "@healthCategoryBreakdown": {
+    "description": "Title for breakdown of health categories"
+  },
+  "editQuitDetails": "Edit Quit details",
+  "@editQuitDetails": {
+    "description": "Action label to edit quit details"
+  },
+  "updateQuitInformation": "تحديث معلومات استقالتك التغييرات ستتزامن مع جميع خصائص التطبيق.",
+  "@updateQuitInformation": {
+    "description": "Instruction describing quit information updates and sync"
+  },
+  "yearsOfSmoking": "سنوات التدخين",
+  "@yearsOfSmoking": {
+    "description": "Label for years smoked input"
+  },
+  "dailyCigarettes": "السجائر اليومية",
+  "@dailyCigarettes": {
+    "description": "Label for daily cigarettes input"
+  },
+  "cigarettesPerDay": "سجائر في اليوم",
+  "@cigarettesPerDay": {
+    "description": "Unit label for cigarettes per day"
+  },
+  "packCost": "التكلفة",
+  "@packCost": {
+    "description": "Label for cost per pack input"
+  },
+  "saveChanges": "Save Changes",
+  "@saveChanges": {
+    "description": "Action label to save modified settings"
+  },
+  "overallHealthScore": "إجمالي الصحة",
+  "@overallHealthScore": {
+    "description": "Label for overall health score"
+  },
+  "daysQuit": "أيام التوقف",
+  "@daysQuit": {
+    "description": "Label representing number of days quit"
+  },
+  "quitDuration": "مدة الخدمة",
+  "@quitDuration": {
+    "description": "Label for quit duration display"
+  },
+  "recovery": "الاسترداد",
+  "@recovery": {
+    "description": "Label for recovery metric"
+  },
+  "excellent": "ممتاز",
+  "@excellent": {
+    "description": "Rating label: excellent"
+  },
+  "good": "جيد",
+  "@good": {
+    "description": "Rating label: good"
+  },
+  "improving": "تحسين",
+  "@improving": {
+    "description": "Rating label: improving"
+  }
 }

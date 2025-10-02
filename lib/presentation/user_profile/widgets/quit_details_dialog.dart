@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -9,6 +10,7 @@ class QuitDetailsDialog extends StatefulWidget {
   final int currentDailyCigarettes;
   final double currentPackCost;
   final double currentYearsSmoking;
+  final String currency;
   final Function(DateTime, int, double, double) onSave;
 
   const QuitDetailsDialog({
@@ -18,6 +20,7 @@ class QuitDetailsDialog extends StatefulWidget {
     required this.currentPackCost,
     required this.currentYearsSmoking,
     required this.onSave,
+    required this.currency,
   }) : super(key: key);
 
   @override
@@ -75,7 +78,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
                   ),
                   SizedBox(width: 3.w),
                   Text(
-                    'Edit Quit Details',
+                    AppLocalizations.of(context)!.editQuitDetails,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -84,7 +87,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
               ),
               SizedBox(height: 1.h),
               Text(
-                'Update your quit information. Changes will sync across all app features.',
+                AppLocalizations.of(context)!.updateQuitInformation,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
@@ -93,23 +96,23 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
               _buildDateSelector(),
               SizedBox(height: 3.h),
               _buildNumberInput(
-                'Years of Smoking',
+                AppLocalizations.of(context)!.yearsOfSmoking,
                 _yearsSmokingController,
-                'years smoked before quitting',
+                AppLocalizations.of(context)!.yearsSmokedBeforeQuitting,
                 const TextInputType.numberWithOptions(decimal: true),
               ),
               SizedBox(height: 3.h),
               _buildNumberInput(
-                'Daily Cigarettes',
+                AppLocalizations.of(context)!.dailyCigarettes,
                 _cigarettesController,
-                'cigarettes per day',
+                AppLocalizations.of(context)!.cigarettesPerDay,
                 TextInputType.number,
               ),
               SizedBox(height: 3.h),
               _buildNumberInput(
-                'Pack Cost',
+                AppLocalizations.of(context)!.packCost,
                 _packCostController,
-                '\$ per pack',
+                '${widget.currency} per pack',
                 const TextInputType.numberWithOptions(decimal: true),
               ),
               SizedBox(height: 2.h),
@@ -121,7 +124,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
                   TextButton(
                     onPressed:
                         _isSaving ? null : () => Navigator.of(context).pop(),
-                    child: Text('Cancel'),
+                    child: Text(AppLocalizations.of(context)!.cancel),
                   ),
                   SizedBox(width: 3.w),
                   ElevatedButton(
@@ -137,7 +140,7 @@ class _QuitDetailsDialogState extends State<QuitDetailsDialog> {
                               ),
                             ),
                           )
-                        : Text('Save Changes'),
+                        : Text(AppLocalizations.of(context)!.saveChanges),
                   ),
                 ],
               ),

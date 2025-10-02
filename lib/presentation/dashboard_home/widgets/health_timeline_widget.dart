@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -19,6 +20,7 @@ class HealthTimelineWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
@@ -48,7 +50,7 @@ class HealthTimelineWidget extends StatelessWidget {
                 SizedBox(width: 3.w),
                 Expanded(
                   child: Text(
-                    'Health Recovery Timeline',
+                    l10n.healthRecoveryTimeline,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
@@ -67,7 +69,7 @@ class HealthTimelineWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Current Stage',
+                    l10n.currentStage,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                       color: AppTheme.textMediumEmphasisLight,
                       fontWeight: FontWeight.w500,
@@ -86,7 +88,7 @@ class HealthTimelineWidget extends StatelessWidget {
             ),
             SizedBox(height: 3.h),
             Text(
-              'Progress to Next Milestone',
+              l10n.progressToNextMilestone,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w500,
               ),
@@ -118,7 +120,7 @@ class HealthTimelineWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Next Milestone',
+                        l10n.nextMilestone,
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: AppTheme.textMediumEmphasisLight,
@@ -142,7 +144,7 @@ class HealthTimelineWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      'Time Remaining',
+                      l10n.timeRemaining,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: AppTheme.textMediumEmphasisLight,
                       ),

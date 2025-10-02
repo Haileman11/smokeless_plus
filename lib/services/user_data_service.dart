@@ -1,4 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smokeless_plus/services/motivational_quotes_service.dart';
 
 /// Service class for managing user data and quit-smoking calculations
 class UserDataService {
@@ -202,131 +203,88 @@ class UserDataService {
 // Time-based achievements
       {
         'id': 'first_hour',
-        'title': 'First Hour',
-        'description':
-            'Your first hour smoke-free! The journey begins with a single step.',
         'points': 25,
         'icon': 'access_time',
         'category': 'Streak',
         'unlockCondition': () => totalHours >= 1,
-        'unlockMessage': 'Unlocked after 1 hour smoke-free',
       },
       {
         'id': 'first_day',
-        'title': 'First Day',
-        'description':
-            'Congratulations! You\'ve completed your first smoke-free day.',
         'points': 50,
         'icon': 'looks_one',
         'category': 'Streak',
         'unlockCondition': () => currentStreak >= 1,
-        'unlockMessage': 'Unlocked after 1 day smoke-free',
       },
       {
         'id': 'first_week',
-        'title': 'Week Warrior',
-        'description':
-            'Amazing! One week smoke-free. Your body is already healing.',
         'points': 100,
         'icon': 'calendar_view_week',
         'category': 'Streak',
         'unlockCondition': () => currentStreak >= 7,
-        'unlockMessage': 'Unlocked after 7 days smoke-free',
       },
       {
         'id': 'first_month',
-        'title': 'Month Master',
-        'description':
-            'Incredible! One month smoke-free. Your willpower is growing stronger.',
         'points': 250,
         'icon': 'calendar_month',
         'category': 'Streak',
         'unlockCondition': () => currentStreak >= 30,
-        'unlockMessage': 'Unlocked after 30 days smoke-free',
       },
       {
         'id': 'hundred_days',
-        'title': '100 Day Hero',
-        'description':
-            '100 days smoke-free! Your dedication is truly inspiring.',
         'points': 500,
         'icon': 'military_tech',
         'category': 'Streak',
         'unlockCondition': () => currentStreak >= 100,
-        'unlockMessage': 'Unlocked after 100 days smoke-free',
       },
       {
         'id': 'first_year',
-        'title': 'Year Champion',
-        'description':
-            'One full year without smoking! You\'ve transformed your life.',
         'points': 1000,
         'icon': 'emoji_events',
         'category': 'Streak',
         'unlockCondition': () => currentStreak >= 365,
-        'unlockMessage': 'Unlocked after 365 days smoke-free',
       },
 
 // Health achievements
       {
         'id': 'nicotine_drop',
-        'title': 'Nicotine Dropping',
-        'description':
-            'Your nicotine levels are dropping! Feel the difference.',
         'points': 30,
         'icon': 'trending_down',
         'category': 'Health',
         'unlockCondition': () => totalHours >= 1,
-        'unlockMessage': 'Unlocked after 1 hour smoke-free',
       },
       {
         'id': 'co_normal',
-        'title': 'CO Normal',
-        'description': 'Carbon monoxide levels normalized! Breathe easier.',
         'points': 75,
         'icon': 'air',
         'category': 'Health',
         'unlockCondition': () => totalHours >= 12,
-        'unlockMessage': 'Unlocked after 12 hours smoke-free',
       },
       {
         'id': 'taste_revival',
-        'title': 'Taste Revival',
-        'description':
-            'Your taste and smell are returning! Enjoy life\'s flavors.',
         'points': 100,
         'icon': 'restaurant',
         'category': 'Health',
         'unlockCondition': () => totalHours >= 72,
-        'unlockMessage': 'Unlocked after 3 days smoke-free',
       },
       {
         'id': 'lung_healing',
-        'title': 'Lung Healing',
-        'description': 'Your lungs are healing! Cilia are regenerating.',
         'points': 200,
         'icon': 'healing',
         'category': 'Health',
         'unlockCondition': () => currentStreak >= 14,
-        'unlockMessage': 'Unlocked after 2 weeks smoke-free',
       },
 
 // Financial achievements
       {
         'id': 'first_10_saved',
         'title': 'First \$10 Saved',
-        'description':
-            'You\'ve saved your first \$10! Small steps, big results.',
         'points': 25,
         'icon': 'attach_money',
         'category': 'Financial',
         'unlockCondition': () => moneySaved >= 10,
-        'unlockMessage': 'Unlocked after saving \$10',
       },
       {
         'id': 'hundred_saved',
-        'title': '\$100 Milestone',
-        'description': 'Amazing! \$100 saved. Think what you can do with this!',
         'points': 100,
         'icon': 'savings',
         'category': 'Financial',
@@ -335,50 +293,46 @@ class UserDataService {
       },
       {
         'id': 'five_hundred_saved',
-        'title': '\$500 Saver',
-        'description': '\$500 saved! That\'s vacation money right there.',
         'points': 250,
         'icon': 'account_balance_wallet',
         'category': 'Financial',
         'unlockCondition': () => moneySaved >= 500,
-        'unlockMessage': 'Unlocked after saving \$500',
       },
       {
         'id': 'thousand_saved',
-        'title': '\$1000 Champion',
-        'description':
-            'Incredible! \$1000 saved. You could buy something special.',
         'points': 500,
         'icon': 'monetization_on',
         'category': 'Financial',
         'unlockCondition': () => moneySaved >= 1000,
-        'unlockMessage': 'Unlocked after saving \$1000',
       },
 
 // Cigarette avoidance achievements
       {
         'id': 'first_pack_avoided',
-        'title': 'First Pack Avoided',
-        'description':
-            'You\'ve avoided smoking an entire pack! That\'s 20 cigarettes.',
         'points': 50,
         'icon': 'smoke_free',
         'category': 'Progress',
         'unlockCondition': () => cigarettesAvoided >= 20,
-        'unlockMessage': 'Unlocked after avoiding 20 cigarettes',
       },
       {
         'id': 'carton_avoided',
-        'title': 'Carton Avoided',
-        'description':
-            'You\'ve avoided 200 cigarettes! That\'s a whole carton.',
         'points': 150,
         'icon': 'inventory_2',
         'category': 'Progress',
         'unlockCondition': () => cigarettesAvoided >= 200,
-        'unlockMessage': 'Unlocked after avoiding 200 cigarettes',
       },
-    ];
+    ].map((toElement) {
+      return {
+        ...toElement,
+        'title': DynamicLocalization()
+            .getAchievement(toElement['id'] as String)["title"] as String,
+        'description': DynamicLocalization()
+            .getAchievement(toElement['id'] as String)["description"] as String,
+        'unlockMessage': DynamicLocalization()
+                .getAchievement(toElement['id'] as String)["unlockMessage"]
+            as String,
+      };
+    }).toList();
 
     // Process each achievement
     for (var achievement in allAchievements) {
@@ -425,16 +379,10 @@ class UserDataService {
     final totalHours = hasStartedQuitting ? timeDifference.inHours : 0;
     final totalDays = hasStartedQuitting ? timeDifference.inDays : 0;
 
-    return [
+    final List<Map<String, dynamic>> milestones = [
       // Short-Term Milestones (First 48 Hours)
       {
         "id": "20_minutes",
-        "timeframe": "20 Minutes",
-        "title": "Heart Rate & Blood Pressure Normalize",
-        "description":
-            "Your heart rate and blood pressure drop to normal levels, reducing cardiovascular strain immediately.",
-        "scientificBasis":
-            "Research shows immediate cardiovascular improvements as nicotine's acute effects wear off.",
         "icon": "favorite",
         "category": "Short-Term",
         "targetMinutes": 20,
@@ -453,12 +401,6 @@ class UserDataService {
       },
       {
         "id": "8_hours",
-        "timeframe": "8 Hours",
-        "title": "Carbon Monoxide Levels Normal",
-        "description":
-            "The carbon monoxide level in your blood returns to normal, improving oxygen delivery.",
-        "scientificBasis":
-            "Scientific studies confirm CO levels drop to normal within 8 hours after quitting smoking.",
         "icon": "air",
         "category": "Short-Term",
         "targetMinutes": 480, // 8 hours
@@ -477,12 +419,6 @@ class UserDataService {
       },
       {
         "id": "24_hours",
-        "timeframe": "24 Hours",
-        "title": "Heart Attack Risk Decreases",
-        "description":
-            "Your chance of heart attack decreases significantly after just one day smoke-free.",
-        "scientificBasis":
-            "Medical research demonstrates measurable reduction in heart attack risk after 24 hours.",
         "icon": "monitor_heart",
         "category": "Short-Term",
         "targetMinutes": 1440, // 24 hours
@@ -501,12 +437,6 @@ class UserDataService {
       },
       {
         "id": "48_hours",
-        "timeframe": "48 Hours",
-        "title": "Taste & Smell Return",
-        "description":
-            "Your ability to taste and smell starts to return as nerve endings regenerate.",
-        "scientificBasis":
-            "Nerve endings begin regenerating within 48 hours, restoring sensory function.",
         "icon": "restaurant",
         "category": "Short-Term",
         "targetMinutes": 2880, // 48 hours
@@ -527,12 +457,6 @@ class UserDataService {
       // Medium-Term Milestones (2 Weeks to 1 Year)
       {
         "id": "2_weeks",
-        "timeframe": "2 Weeks to 12 Weeks",
-        "title": "Circulation & Lung Function Improve",
-        "description":
-            "Your circulation improves dramatically and lung function increases by up to 30%.",
-        "scientificBasis":
-            "Studies show significant improvements in circulation and lung function within the first 3 months.",
         "icon": "healing",
         "category": "Medium-Term",
         "targetMinutes": 20160, // 14 days
@@ -551,12 +475,6 @@ class UserDataService {
       },
       {
         "id": "1_to_9_months",
-        "timeframe": "1 to 9 Months",
-        "title": "Respiratory Recovery",
-        "description":
-            "Coughing and shortness of breath decrease significantly as cilia regrow in lungs.",
-        "scientificBasis":
-            "Lung cilia regenerate over 1-9 months, dramatically improving respiratory function.",
         "icon": "self_improvement",
         "category": "Medium-Term",
         "targetMinutes": 43200, // 30 days
@@ -577,12 +495,6 @@ class UserDataService {
       // Long-Term Milestones (1 to 10+ Years)
       {
         "id": "1_to_5_years",
-        "timeframe": "1 to 5 Years",
-        "title": "Heart Disease Risk Halved",
-        "description":
-            "Your risk of dying from heart disease is about half that of a continuing smoker.",
-        "scientificBasis":
-            "Longitudinal studies demonstrate 50% reduction in heart disease risk within 1-5 years.",
         "icon": "health_and_safety",
         "category": "Long-Term",
         "targetMinutes": 525600, // 365 days
@@ -601,12 +513,6 @@ class UserDataService {
       },
       {
         "id": "10_years",
-        "timeframe": "10+ Years",
-        "title": "Cancer Risk Dramatically Reduced",
-        "description":
-            "Your risk of lung cancer falls to about half that of a continuing smoker.",
-        "scientificBasis":
-            "Decade-long studies show 50% reduction in lung cancer risk after 10 years smoke-free.",
         "icon": "shield",
         "category": "Long-Term",
         "targetMinutes": 5256000, // 10 years
@@ -623,7 +529,21 @@ class UserDataService {
             ? quitDate.add(Duration(minutes: 5256000)).toIso8601String()
             : null,
       },
-    ];
+    ].map((toElement) {
+      return {
+        ...toElement,
+        'title': DynamicLocalization()
+                .getDetailedHealthMilestones(toElement['id'] as String)["title"]
+            as String,
+        'description': DynamicLocalization().getDetailedHealthMilestones(
+            toElement['id'] as String)["description"] as String,
+        'timeframe': DynamicLocalization().getDetailedHealthMilestones(
+            toElement['id'] as String)["timeframe"] as String,
+        'scientificBasis': DynamicLocalization().getDetailedHealthMilestones(
+            toElement['id'] as String)["scientificBasis"] as String,
+      };
+    }).toList();
+    return milestones;
   }
 
   static String _getCountdownText(
@@ -700,7 +620,8 @@ class UserDataService {
       final userName = prefs.getString(_keyUserName) ?? 'User';
       final yearsSmoking =
           prefs.getDouble(_keyYearsSmoking) ?? 0.0; // Load years of smoking
-      final currency = prefs.getString(_keyCurrency) ?? 'USD (\$)'; // Default currency
+      final currency =
+          prefs.getString(_keyCurrency) ?? 'USD'; // Default currency
       // Calculate current metrics with years of smoking
       final metrics = calculateQuittingMetrics(
         quitDate: quitDate,

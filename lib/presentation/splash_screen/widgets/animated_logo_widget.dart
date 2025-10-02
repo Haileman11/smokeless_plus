@@ -83,21 +83,21 @@ class _AnimatedLogoWidgetState extends State<AnimatedLogoWidget>
                   ),
                   SizedBox(height: 1.h),
                   Text(
-                    'QuitSmoking',
+                    'Smokeless+',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w700,
                       fontSize: 14.sp,
                     ),
                   ),
-                  Text(
-                    'Tracker',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 10.sp,
-                    ),
-                  ),
+                  // Text(
+                  //   'Tracker',
+                  //   style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  //     color: Theme.of(context).colorScheme.secondary,
+                  //     fontWeight: FontWeight.w500,
+                  //     fontSize: 10.sp,
+                  //   ),
+                  // ),
                 ],
               ),
             ),

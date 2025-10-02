@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/models/coping_strategies.dart';
 
 import '../../../core/app_export.dart';
 
@@ -15,88 +17,95 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
 
-  final List<Map<String, dynamic>> _copingStrategies = [
+  late final List<CopingStrategy> _copingStrategies;
+  
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+
+  _copingStrategies = [
     {
       "id": 1,
-      "title": "Drink Water",
+      "title": AppLocalizations.of(context)!.coping_drink_water_title,
       "description":
-          "Hydrate your body and keep your hands busy. Water helps flush toxins and reduces cravings.",
+          AppLocalizations.of(context)!.coping_drink_water_description,
       "icon": "local_drink",
       "color": 0xFF2196F3,
-      "duration": "2-3 minutes",
+      "duration": AppLocalizations.of(context)!.coping_drink_water_duration,
       "effectiveness": "High"
     },
     {
       "id": 2,
-      "title": "Take a Walk",
+      "title": AppLocalizations.of(context)!.coping_take_a_walk_title,
       "description":
-          "Get moving! Physical activity releases endorphins and distracts from cravings.",
+          AppLocalizations.of(context)!.coping_take_a_walk_description,
       "icon": "directions_walk",
       "color": 0xFF4CAF50,
-      "duration": "5-10 minutes",
+      "duration": AppLocalizations.of(context)!.coping_take_a_walk_duration,
       "effectiveness": "Very High"
     },
     {
       "id": 3,
-      "title": "Call a Friend",
+      "title": AppLocalizations.of(context)!.coping_call_a_friend_title,
       "description":
-          "Reach out for support. Talking to someone can provide motivation and distraction.",
+          AppLocalizations.of(context)!.coping_call_a_friend_description,
       "icon": "phone",
       "color": 0xFFFF9800,
-      "duration": "5-15 minutes",
+      "duration": AppLocalizations.of(context)!.coping_call_a_friend_duration,
       "effectiveness": "High"
     },
     {
       "id": 4,
-      "title": "Review Your Reasons",
+      "title": AppLocalizations.of(context)!.coping_review_reasons_title,
       "description":
-          "Remember why you decided to quit. Focus on your health, family, and financial goals.",
+          AppLocalizations.of(context)!.coping_review_reasons_description,
       "icon": "favorite",
       "color": 0xFFE91E63,
-      "duration": "3-5 minutes",
+      "duration": AppLocalizations.of(context)!.coping_review_reasons_duration,
       "effectiveness": "Very High"
     },
     {
       "id": 5,
-      "title": "Deep Breathing",
+      "title": AppLocalizations.of(context)!.coping_deep_breathing_title,
       "description":
-          "Practice slow, deep breaths. Inhale for 4, hold for 4, exhale for 4 seconds.",
+          AppLocalizations.of(context)!.coping_deep_breathing_description,
       "icon": "air",
       "color": 0xFF9C27B0,
-      "duration": "2-5 minutes",
+      "duration": AppLocalizations.of(context)!.coping_deep_breathing_duration,
       "effectiveness": "High"
     },
     {
       "id": 6,
-      "title": "Chew Gum",
+      "title": AppLocalizations.of(context)!.coping_chew_gum_title,
       "description":
-          "Keep your mouth busy with sugar-free gum. It helps with oral fixation habits.",
+          AppLocalizations.of(context)!.coping_chew_gum_description,
       "icon": "bubble_chart",
       "color": 0xFF00BCD4,
-      "duration": "Ongoing",
+      "duration": AppLocalizations.of(context)!.coping_chew_gum_duration,
       "effectiveness": "Medium"
     },
     {
       "id": 7,
-      "title": "Listen to Music",
+      "title": AppLocalizations.of(context)!.coping_listen_music_title,
       "description":
-          "Put on your favorite playlist. Music can improve mood and provide distraction.",
+          AppLocalizations.of(context)!.coping_listen_music_description,
       "icon": "music_note",
       "color": 0xFF795548,
-      "duration": "3-10 minutes",
+      "duration": AppLocalizations.of(context)!.coping_listen_music_duration,
       "effectiveness": "Medium"
     },
     {
       "id": 8,
-      "title": "Practice Gratitude",
+      "title": AppLocalizations.of(context)!.coping_gratitude_title,
       "description":
-          "Think of three things you're grateful for. Positive thinking reduces stress and cravings.",
+          AppLocalizations.of(context)!.coping_gratitude_description,
       "icon": "sentiment_very_satisfied",
       "color": 0xFFFFEB3B,
-      "duration": "2-3 minutes",
+      "duration": AppLocalizations.of(context)!.coping_gratitude_duration,
       "effectiveness": "High"
-    }
-  ];
+    },
+  ].map( (e) => CopingStrategy.fromMap(e)).toList();
+}
 
   @override
   void dispose() {
@@ -149,7 +158,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Quick Coping Tips',
+                  AppLocalizations.of(context)!.quickCopingTips,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: Theme.of(context).colorScheme.primary,
@@ -202,7 +211,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                           colors: [
-                            Color(strategy["color"] as int)
+                            Color(strategy.color)
                                 .withValues(alpha: 0.1),
                             Theme.of(context).colorScheme.surface,
                           ],
@@ -217,13 +226,13 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                               Container(
                                 padding: EdgeInsets.all(3.w),
                                 decoration: BoxDecoration(
-                                  color: Color(strategy["color"] as int)
+                                  color: Color(strategy.color)
                                       .withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
                                 child: CustomIconWidget(
-                                  iconName: strategy["icon"] as String,
-                                  color: Color(strategy["color"] as int),
+                                  iconName: strategy.icon,
+                                  color: Color(strategy.color),
                                   size: 28,
                                 ),
                               ),
@@ -233,7 +242,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      strategy["title"] as String,
+                                      strategy.title,
                                       style: AppTheme
                                           .lightTheme.textTheme.titleMedium
                                           ?.copyWith(
@@ -250,20 +259,18 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                               horizontal: 2.w, vertical: 0.5.h),
                                           decoration: BoxDecoration(
                                             color: _getEffectivenessColor(
-                                                    strategy["effectiveness"]
-                                                        as String)
+                                                    strategy.effectiveness)
                                                 .withValues(alpha: 0.2),
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                           ),
                                           child: Text(
-                                            strategy["effectiveness"] as String,
+                                            strategy.effectiveness,
                                             style: AppTheme
                                                 .lightTheme.textTheme.bodySmall
                                                 ?.copyWith(
                                               color: _getEffectivenessColor(
-                                                  strategy["effectiveness"]
-                                                      as String),
+                                                  strategy.effectiveness),                                                      
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
@@ -278,7 +285,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                         ),
                                         SizedBox(width: 1.w),
                                         Text(
-                                          strategy["duration"] as String,
+                                          strategy.duration,
                                           style: AppTheme
                                               .lightTheme.textTheme.bodySmall
                                               ?.copyWith(
@@ -299,7 +306,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
 
                           // Description
                           Text(
-                            strategy["description"] as String,
+                            strategy.description,
                             style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
                               color: Theme.of(context).colorScheme.onSurface,
@@ -318,7 +325,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
                                     content: Text(
-                                      'Great choice! "${strategy["title"]}" is an effective coping strategy.',
+                                      AppLocalizations.of(context)!.greatCopingStrategyChoice(strategy.title),
                                       style: AppTheme
                                           .lightTheme.textTheme.bodyMedium
                                           ?.copyWith(
@@ -334,7 +341,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor:
-                                    Color(strategy["color"] as int),
+                                    Color(strategy.color),
                                 foregroundColor: Colors.white,
                                 padding: EdgeInsets.symmetric(vertical: 1.5.h),
                                 shape: RoundedRectangleBorder(
@@ -342,7 +349,7 @@ class _QuickTipsCarouselWidgetState extends State<QuickTipsCarouselWidget> {
                                 ),
                               ),
                               child: Text(
-                                'Try This Now',
+                                AppLocalizations.of(context)!.tryThisNow,
                                 style: Theme.of(context).textTheme.titleSmall
                                     ?.copyWith(
                                   color: Colors.white,

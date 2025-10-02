@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../../core/app_export.dart';
 
@@ -140,7 +141,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Description',
+                          AppLocalizations.of(context)!.description,
                           style: Theme.of(context).textTheme.titleMedium
                               ?.copyWith(
                             fontWeight: FontWeight.w600,
@@ -185,7 +186,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                               ),
                               SizedBox(width: 2.w),
                               Text(
-                                'Unlocked',
+                                AppLocalizations.of(context)!.unlocked,
                                 style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(
                                   color:
@@ -227,7 +228,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                               ),
                               SizedBox(width: 2.w),
                               Text(
-                                'How to Unlock',
+                                AppLocalizations.of(context)!.howToUnlock,
                                 style: Theme.of(context).textTheme.titleMedium
                                     ?.copyWith(
                                   color: Colors.grey.withValues(alpha: 0.8),
@@ -239,7 +240,7 @@ class AchievementDetailModalWidget extends StatelessWidget {
                           SizedBox(height: 1.h),
                           Text(
                             achievement['unlockCriteria'] ??
-                                'Complete the required actions to unlock this achievement.',
+                                AppLocalizations.of(context)!.completeTheRequiredTasksToUnlockThisAchievement,
                             style: Theme.of(context).textTheme.bodyMedium
                                 ?.copyWith(
                               color: Colors.grey.withValues(alpha: 0.7),

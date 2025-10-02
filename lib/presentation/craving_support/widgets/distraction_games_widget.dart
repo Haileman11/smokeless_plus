@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/models/game.dart';
 
 import '../../../core/app_export.dart';
 
@@ -14,11 +16,15 @@ class DistractionGamesWidget extends StatefulWidget {
 
 class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
   int _selectedGameIndex = 0;
+  late final List<Game> _games;
 
-  final List<Map<String, dynamic>> _games = [
-    {
-      "id": 1,
-      "name": "Color Focus",
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _games = [
+      {
+        "id": 1,
+        "name": "Color Focus",
       "description": "Find all items of a specific color around you",
       "icon": "palette",
       "duration": "2-5 minutes",
@@ -48,7 +54,9 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
       "duration": "3-7 minutes",
       "difficulty": "Easy"
     }
-  ];
+  ].map((e) => Game.fromJson(e)).toList();
+}
+  
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +115,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               CustomIconWidget(
-                                iconName: game["icon"] as String,
+                                iconName: game.icon,
                                 color: isSelected
                                     ? Theme.of(context).colorScheme.onPrimary
                                     : Theme.of(context).colorScheme.primary,
@@ -115,7 +123,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                               ),
                               SizedBox(width: 2.w),
                               Text(
-                                game["name"] as String,
+                                game.name,
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyMedium
@@ -148,8 +156,8 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
     );
   }
 
-  Widget _buildGameContent(Map<String, dynamic> game) {
-    switch (game["id"] as int) {
+  Widget _buildGameContent(Game game) {
+    switch (game.id) {
       case 1:
         return _buildColorFocusGame();
       case 2:
@@ -198,7 +206,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 2.h),
           Text(
-            'Color Focus Challenge',
+            AppLocalizations.of(context)!.colorFocusChallenge,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
@@ -216,7 +224,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               ),
             ),
             child: Text(
-              'Find 5 ${randomColor['name']} objects around you',
+              AppLocalizations.of(context)!.findFiveObjects(randomColor['name'] as String),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
@@ -226,7 +234,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 3.h),
           Text(
-            'Look around your environment and identify 5 objects that are ${randomColor['name'].toString().toLowerCase()}. Take your time and focus on each object.',
+            AppLocalizations.of(context)!.lookAroundAndIdentifyFiveObjects(randomColor['name'] as String),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context)
@@ -242,7 +250,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 // Refresh the game with a new color
               });
             },
-            child: Text('New Color Challenge'),
+            child: Text(AppLocalizations.of(context)!.newColorChallenge),
           ),
         ],
       ),
@@ -273,7 +281,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 2.h),
           Text(
-            'Counting Challenge',
+            AppLocalizations.of(context)!.countingChallenge,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
@@ -288,7 +296,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              'Count backwards from 100 by 7s',
+              AppLocalizations.of(context)!.countingChallenge,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
@@ -307,7 +315,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 2.h),
           Text(
-            'This mental math exercise requires focus and concentration, helping distract from cravings.',
+            AppLocalizations.of(context)!.countingGameDescription,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context)
@@ -330,7 +338,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                       ),
                     );
                   },
-                  child: Text('Show Hint'),
+                  child: Text(AppLocalizations.of(context)!.showHint),
                 ),
               ),
               SizedBox(width: 3.w),
@@ -340,7 +348,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                     // Start new challenge
                     setState(() {});
                   },
-                  child: Text('New Challenge'),
+                  child: Text(AppLocalizations.of(context)!.newChallenge),
                 ),
               ),
             ],
@@ -374,7 +382,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 2.h),
           Text(
-            'Memory Palace',
+            AppLocalizations.of(context)!.memoryPalace,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
@@ -391,7 +399,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               borderRadius: BorderRadius.circular(12),
             ),
             child: Text(
-              'Visualize your childhood home',
+              AppLocalizations.of(context)!.visualizeChildhoodHome,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: Theme.of(context).colorScheme.secondary,
@@ -406,7 +414,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Instructions:',
+                    AppLocalizations.of(context)!.instructions,
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
                           fontWeight: FontWeight.w600,
                           color: Theme.of(context).colorScheme.onSurface,
@@ -414,7 +422,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                   ),
                   SizedBox(height: 1.h),
                   Text(
-                    '1. Close your eyes and imagine walking through your childhood home\n\n2. Start at the front door and move room by room\n\n3. Notice details: colors, furniture, decorations\n\n4. Spend time in each room remembering specific objects\n\n5. Try to recall sounds, smells, and feelings',
+                    AppLocalizations.of(context)!.memoryPalaceInstructions,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Theme.of(context)
                               .colorScheme
@@ -432,12 +440,12 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                      'Great job! Memory exercises strengthen focus and reduce cravings.'),
+                      AppLocalizations.of(context)!.memoryPalaceCompletionMessage),
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
               );
             },
-            child: Text('Complete Exercise'),
+            child: Text(AppLocalizations.of(context)!.completeExercise),
           ),
         ],
       ),
@@ -446,14 +454,14 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
 
   Widget _buildWordAssociationGame() {
     final startWords = [
-      'Ocean',
-      'Mountain',
-      'Forest',
-      'City',
-      'Garden',
-      'Library',
-      'Kitchen',
-      'Music'
+      AppLocalizations.of(context)!.ocean,
+      AppLocalizations.of(context)!.mountain,
+      AppLocalizations.of(context)!.forest,
+      AppLocalizations.of(context)!.city,
+      AppLocalizations.of(context)!.garden,
+      AppLocalizations.of(context)!.library,
+      AppLocalizations.of(context)!.kitchen,
+      AppLocalizations.of(context)!.music,
     ];
     final randomWord = startWords[Random().nextInt(startWords.length)];
 
@@ -480,7 +488,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 2.h),
           Text(
-            'Word Association',
+            AppLocalizations.of(context)!.wordAssociation,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: Theme.of(context).colorScheme.onSurface,
@@ -497,7 +505,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
             child: Column(
               children: [
                 Text(
-                  'Starting word:',
+                  AppLocalizations.of(context)!.startingWord,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Theme.of(context)
                             .colorScheme
@@ -518,7 +526,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
           ),
           SizedBox(height: 3.h),
           Text(
-            'Create a chain of related words. Each new word should connect to the previous one.',
+            AppLocalizations.of(context)!.wordAssociationInstructions,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context)
@@ -541,7 +549,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
               ),
             ),
             child: Text(
-              'Example: Ocean → Water → Rain → Clouds → Sky → Birds → Freedom',
+              AppLocalizations.of(context)!.wordAssociationExample,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: Theme.of(context)
@@ -559,7 +567,7 @@ class _DistractionGamesWidgetState extends State<DistractionGamesWidget> {
                 // Generate new starting word
               });
             },
-            child: Text('New Starting Word'),
+            child: Text(AppLocalizations.of(context)!.newStartingWord),
           ),
         ],
       ),

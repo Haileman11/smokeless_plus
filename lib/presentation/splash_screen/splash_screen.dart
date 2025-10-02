@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
 
 import '../../core/app_export.dart';
 import '../../theme/app_theme.dart';
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   double _loadingProgress = 0.0;
   bool _isInitialized = false;
-  String _loadingMessage = 'Initializing your quit journey...';
+  late String _loadingMessage;
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     // _setupStatusBar();
     _initializeAnimations();
-    _startInitialization();
+    
   }
 
   void _setupStatusBar() {
@@ -47,6 +48,8 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _loadingMessage = AppLocalizations.of(context)!.initializingYourQuitJourney;
+    _startInitialization(AppLocalizations.of(context)!);
     _setupStatusBar(); // ✅ Safe here
   }
   void _initializeAnimations() {
@@ -64,29 +67,29 @@ class _SplashScreenState extends State<SplashScreen>
     ));
   }
 
-  Future<void> _startInitialization() async {
+  Future<void> _startInitialization(l10n) async {
     try {
       // Step 1: Check user preferences
-      await _updateProgress(0.2, 'Loading user preferences...');
+      await _updateProgress(0.2, l10n.loadingUserPreferences);
       await Future.delayed(const Duration(milliseconds: 300));
 
       // Step 2: Check quit date
-      await _updateProgress(0.4, 'Checking quit date...');
+      await _updateProgress(0.4, l10n.checkingQuitDate);
       final hasQuitDate = await _checkQuitDate();
       await Future.delayed(const Duration(milliseconds: 300));
 
       // Step 3: Load progress data
-      await _updateProgress(0.6, 'Loading progress data...');
+      await _updateProgress(0.6, l10n.loadingProgressData);
       await _loadProgressData();
       await Future.delayed(const Duration(milliseconds: 300));
 
       // Step 4: Calculate current streak
-      await _updateProgress(0.8, 'Calculating streak...');
+      await _updateProgress(0.8, l10n.calculatingStreak);
       await _calculateCurrentStreak();
       await Future.delayed(const Duration(milliseconds: 300));
 
       // Step 5: Prepare motivational content
-      await _updateProgress(1.0, 'Preparing motivational content...');
+      await _updateProgress(1.0, l10n.preparingMotivationalContent);
       await _prepareMotivationalContent();
       await Future.delayed(const Duration(milliseconds: 500));
 
@@ -334,7 +337,7 @@ class _SplashScreenState extends State<SplashScreen>
                           ),
                           SizedBox(height: 0.5.h),
                           Text(
-                            '© 2024 QuitSmoking Tracker',
+                            '© 2025 Smokeless Plus. All rights reserved.',
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                               color: Theme.of(context).colorScheme.onSurface

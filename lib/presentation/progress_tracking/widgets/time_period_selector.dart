@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../../core/app_export.dart';
 import '../../../theme/app_theme.dart';
 
 class TimePeriodSelector extends StatelessWidget {
-  final String selectedPeriod;
-  final Function(String) onPeriodChanged;
+  final PeriodType selectedPeriod;
+  final Function(PeriodType) onPeriodChanged;
 
   const TimePeriodSelector({
     Key? key,
@@ -16,7 +18,7 @@ class TimePeriodSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final periods = ['Week', 'Month', '3 Months', 'Year'];
+    final periods = PeriodType.values.toList();
 
     return Container(
       height: 6.h,
@@ -44,7 +46,7 @@ class TimePeriodSelector extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    period,
+                    getLocalizedPeriod(context, period),
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: isSelected
                           ? Theme.of(context).colorScheme.onPrimary

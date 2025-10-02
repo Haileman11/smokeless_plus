@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/models/rewards.dart';
 
 import '../../../core/app_export.dart';
 
@@ -18,7 +20,7 @@ class RewardRedemptionModalWidget extends StatefulWidget {
 
 class _RewardRedemptionModalWidgetState
     extends State<RewardRedemptionModalWidget> {
-  final List<Map<String, dynamic>> rewards = [
+  final List<Reward> rewards = [
     {
       'id': 1,
       'title': 'Premium Motivational Content',
@@ -68,7 +70,7 @@ class _RewardRedemptionModalWidgetState
       'icon': 'support_agent',
       'available': true,
     },
-  ];
+  ].map((e) => Reward.fromMap(e)).toList();
 
   @override
   Widget build(BuildContext context) {
@@ -158,7 +160,7 @@ class _RewardRedemptionModalWidgetState
               itemBuilder: (context, index) {
                 final reward = rewards[index];
                 final bool canAfford =
-                    widget.availablePoints >= (reward['points'] as int);
+                    widget.availablePoints >= reward.points;
 
                 return Container(
                   margin: EdgeInsets.only(bottom: 3.h),
@@ -197,7 +199,7 @@ class _RewardRedemptionModalWidgetState
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: CustomIconWidget(
-                          iconName: reward['icon'] ?? 'card_giftcard',
+                          iconName: reward.icon ?? 'card_giftcard',
                           color: canAfford
                               ? Colors.white
                               : Colors.grey.withValues(alpha: 0.5),
@@ -212,7 +214,7 @@ class _RewardRedemptionModalWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              reward['title'] ?? 'Reward',
+                              reward.title ?? 'Reward',
                               style: Theme.of(context).textTheme.titleMedium
                                   ?.copyWith(
                                 color: canAfford
@@ -224,8 +226,7 @@ class _RewardRedemptionModalWidgetState
                             ),
                             SizedBox(height: 1.h),
                             Text(
-                              reward['description'] ??
-                                  'No description available.',
+                              reward.description ?? 'No description available.',
                               style: Theme.of(context).textTheme.bodySmall
                                   ?.copyWith(
                                 color: canAfford
@@ -253,7 +254,7 @@ class _RewardRedemptionModalWidgetState
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Text(
-                                    '${reward['points']} pts',
+                                    '${reward.points} pts',
                                     style: AppTheme
                                         .lightTheme.textTheme.labelMedium
                                         ?.copyWith(
@@ -310,7 +311,7 @@ class _RewardRedemptionModalWidgetState
   }
 
   void _showRedeemConfirmation(
-      BuildContext context, Map<String, dynamic> reward) {
+      BuildContext context, Reward reward) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -319,7 +320,7 @@ class _RewardRedemptionModalWidgetState
             borderRadius: BorderRadius.circular(16),
           ),
           title: Text(
-            'Confirm Redemption',
+            AppLocalizations.of(context)!.confirmRedemption,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -329,7 +330,7 @@ class _RewardRedemptionModalWidgetState
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Are you sure you want to redeem "${reward['title']}" for ${reward['points']} points?',
+                AppLocalizations.of(context)!.areYouSureYouWantToRedeem(reward.title ,reward.points),
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(height: 2.h),
@@ -350,7 +351,9 @@ class _RewardRedemptionModalWidgetState
                     SizedBox(width: 2.w),
                     Expanded(
                       child: Text(
-                        'You will have ${widget.availablePoints - (reward['points'] as int)} points remaining.',
+                        AppLocalizations.of(context)!.youWillHave(
+                          widget.availablePoints - (reward.points as int),
+                        ),
                         style:
                             Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
@@ -382,7 +385,7 @@ class _RewardRedemptionModalWidgetState
   }
 
   void _showRedemptionSuccess(
-      BuildContext context, Map<String, dynamic> reward) {
+      BuildContext context, Reward reward) {
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -409,7 +412,7 @@ class _RewardRedemptionModalWidgetState
               ),
               SizedBox(height: 3.h),
               Text(
-                'Reward Redeemed!',
+                AppLocalizations.of(context)!.rewardRedeemed,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.secondary,
@@ -417,17 +420,19 @@ class _RewardRedemptionModalWidgetState
               ),
               SizedBox(height: 2.h),
               Text(
-                'You have successfully redeemed "${reward['title']}". Check your profile for details.',
+                AppLocalizations.of(context)!.youHaveSuccessfullyRedeemed(
+                  reward.title,
+                ),
                 style: Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 3.h),
               ElevatedButton(
                 onPressed: () => Navigator.pop(context),
-                child: Text('Great!'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                 ),
+                child: Text(AppLocalizations.of(context)!.great),
               ),
             ],
           ),
