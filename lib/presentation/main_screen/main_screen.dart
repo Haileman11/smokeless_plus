@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:smokeless_plus/presentation/achievement_system/achievement_system.dart';
-import 'package:smokeless_plus/presentation/craving_support/craving_support.dart';
 import 'package:smokeless_plus/presentation/dashboard_home/dashboard_home.dart';
-import 'package:smokeless_plus/presentation/health_milestones/health_milestones.dart';
 import 'package:smokeless_plus/presentation/health_score_dashboard/health_score_dashboard.dart';
-import 'package:smokeless_plus/presentation/onboarding_flow/onboarding_flow.dart';
 import 'package:smokeless_plus/presentation/progress_tracking/progress_tracking.dart';
-import 'package:smokeless_plus/presentation/statistics_dashboard/statistics_dashboard.dart';
 import 'package:smokeless_plus/presentation/user_profile/user_profile.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
-import 'package:smokeless_plus/theme/app_theme.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -32,10 +27,6 @@ class _MainScreenState extends State<MainScreen> {
     const HealthScoreDashboard(),    
     const AchievementSystem(),
     const UserProfile(),
-    // const OnboardingFlow(),
-    // const CravingSupport(),
-    // const StatisticsDashboard(),
-    // const HealthMilestones(),
   ];
 
   @override
@@ -67,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -102,7 +93,8 @@ class _MainScreenState extends State<MainScreen> {
         );
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        width: MediaQuery.of(context).size.width / 5 - 4,
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
         decoration: BoxDecoration(
           color: isActive
               ? Theme.of(context).colorScheme.primary.withOpacity(0.1)
@@ -111,6 +103,7 @@ class _MainScreenState extends State<MainScreen> {
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
               icon,
@@ -120,9 +113,13 @@ class _MainScreenState extends State<MainScreen> {
             const SizedBox(height: 4),
             Text(
               label,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
               style: TextStyle(
+                overflow: TextOverflow.ellipsis,
                 color: Theme.of(context).colorScheme.primary,
-                fontSize: 12,
+                fontSize: 10,
                 fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
               ),
             ),

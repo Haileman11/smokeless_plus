@@ -170,14 +170,13 @@ class DynamicLocalization {
 
   Future<void> load(String localeCode) async {
     try {
-    
-    final path = 'assets/lang/intl_$localeCode.arb';
-    final jsonString = await rootBundle.loadString(path);
-    _translations = json.decode(jsonString);
+      final path = 'assets/l10n/intl_$localeCode.arb';
+      final jsonString = await rootBundle.loadString(path);
+      _translations = json.decode(jsonString);
     } catch (e) {
       // Fallback to English if loading fails
       print('Error loading localization for $localeCode, falling back to English.');
-      final fallbackPath = 'assets/lang/intl_en.arb';
+      final fallbackPath = 'assets/l10n/intl_en.arb';
       final fallbackJsonString = await rootBundle.loadString(fallbackPath);
       _translations = json.decode(fallbackJsonString);
     }

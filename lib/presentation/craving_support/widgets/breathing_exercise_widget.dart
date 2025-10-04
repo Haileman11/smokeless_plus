@@ -32,7 +32,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
   BreathingPhase _currentPhase = BreathingPhase.inhale;
   int _phaseCountdown = 4;
 
-  late final List<String> _motivationalQuotes;
+  late List<String> _motivationalQuotes;
 
   String _currentQuote = "";
 
@@ -40,7 +40,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
   void initState() {
     super.initState();
     _initializeAnimations();
-    _setRandomQuote();
+    
   }
   @override
   void didChangeDependencies() {
@@ -53,6 +53,7 @@ class _BreathingExerciseWidgetState extends State<BreathingExerciseWidget>
       AppLocalizations.of(context)!.yourHealthIsWorthEveryBreath,
       AppLocalizations.of(context)!.oneBreathAtATime,
   ];
+  _setRandomQuote();
   }
   void _initializeAnimations() {
     _breathingController = AnimationController(

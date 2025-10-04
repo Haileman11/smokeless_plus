@@ -485,7 +485,7 @@ const targetLanguages = ['es', 'fr', 'de','zh', 'hi', 'ar', 'it', 'ja', 'pt', 'r
 // }
 
 Future<void> main() async {
-  final File sourceFile = File('lib/l10n/app_en.arb');
+  final File sourceFile = File('assets/l10n/intl_en.arb');
   final Map<String, dynamic> enJson = jsonDecode(await sourceFile.readAsString());
 
   // Filter out metadata keys (e.g., keys that start with "@")
@@ -525,7 +525,7 @@ Future<void> main() async {
       // }
     }
 
-    final outputFile = File('lib/l10n/app_$lang.arb');
+    final outputFile = File('assets/l10n/intl_$lang.arb');
     outputFile.writeAsStringSync(JsonEncoder.withIndent('  ').convert(translatedArb));
     print('✅ app_$lang.arb generated.');
   }

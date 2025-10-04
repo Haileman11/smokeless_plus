@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/services/notification_sevice.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/app_export.dart';
@@ -37,7 +38,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
   bool _milestoneAlerts = true;
   bool _cravingSupport = true;
   TimeOfDay _motivationTime = const TimeOfDay(hour: 9, minute: 0);
-  String _selectedCurrency = 'USD';
+  String _selectedCurrency = 'USD (\$)';
 
   @override
   void initState() {
@@ -108,7 +109,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
         currency: _selectedCurrency
       );
     }
-
+    scheduleMilestoneNotifications();
     // Show celebration animation
     showDialog(
       context: context,

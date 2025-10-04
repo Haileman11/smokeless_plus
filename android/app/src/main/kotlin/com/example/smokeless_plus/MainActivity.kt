@@ -1,4 +1,4 @@
-package com.example.smokeless_plus
+package com.smokeless.smokeless
 
 import io.flutter.embedding.android.FlutterActivity
 

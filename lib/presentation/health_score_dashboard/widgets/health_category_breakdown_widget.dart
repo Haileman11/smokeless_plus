@@ -29,8 +29,9 @@ class HealthCategoryBreakdownWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: Padding(
+      child: Container(
         padding: EdgeInsets.all(4.w),
+        width: MediaQuery.of(context).size.width/2,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

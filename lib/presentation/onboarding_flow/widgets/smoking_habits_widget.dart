@@ -88,9 +88,9 @@ class _SmokingHabitsWidgetState extends State<SmokingHabitsWidget> {
   }
 
   void _updateCurrency(String? value) {
-    widget.onCurrencyChanged(value ?? 'USD');
+    widget.onCurrencyChanged(value ?? 'USD (\$)');
     setState(() {
-      _selectedCurrency = value ?? 'USD';
+      _selectedCurrency = value ?? 'USD (\$)';
     });
   }
 

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/services/notification_sevice.dart';
 
 import '../../core/app_export.dart';
-import '../../services/language_service.dart';
 import '../../services/user_data_service.dart';
 import './widgets/animated_time_counter_widget.dart';
-import './widgets/craving_support_sheet.dart';
 import './widgets/daily_motivation_widget.dart';
 import './widgets/health_timeline_widget.dart';
 import './widgets/metric_card_widget.dart';
@@ -299,7 +298,12 @@ class _DashboardHomeState extends State<DashboardHome> {
     );
   }
 
-  void _showCravingSupport() {
+  Future<void> _showCravingSupport() async {    
+    await createScheduledNotification([{
+      "duration": const Duration(seconds: 5),
+      "message":
+          "🌟 5 seconds smoke-free! This is a life-changing achievement!"
+    },]);
     Navigator.of(context).pushNamed(AppRoutes.cravingSupport);
     // showModalBottomSheet(
     //   context: context,

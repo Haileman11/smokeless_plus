@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +8,7 @@ import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smokeless_plus/services/motivational_quotes_service.dart';
+import 'package:smokeless_plus/services/notification_sevice.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
 
 import '../core/app_export.dart';
@@ -15,7 +18,9 @@ import './presentation/user_profile/user_profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+Platform.isIOS ? await requestNotificationPermissions() : await requestAndroidPermissions();
+  await initNotifications();
+  
   bool _hasShownError = false;
 
   // 🚨 CRITICAL: Custom error handling - DO NOT REMOVE

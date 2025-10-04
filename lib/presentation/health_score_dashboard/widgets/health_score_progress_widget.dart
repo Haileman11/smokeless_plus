@@ -76,11 +76,13 @@ class _HealthScoreProgressWidgetState extends State<HealthScoreProgressWidget>
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  AppLocalizations.of(context)!.healthCategoryBreakdown,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    // color: Theme.of(context).colorScheme.primary,
+                Expanded(
+                  child: Text(
+                    AppLocalizations.of(context)!.healthCategoryBreakdown,
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w700,
+                      // color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ),
                 Container(

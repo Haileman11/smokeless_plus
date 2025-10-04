@@ -382,7 +382,7 @@ class UserDataService {
     final List<Map<String, dynamic>> milestones = [
       // Short-Term Milestones (First 48 Hours)
       {
-        "id": "20_minutes",
+        "id": "milestone_20_minutes",
         "icon": "favorite",
         "category": "Short-Term",
         "targetMinutes": 20,
@@ -400,7 +400,7 @@ class UserDataService {
             : null,
       },
       {
-        "id": "8_hours",
+        "id": "milestone_8_hours",
         "icon": "air",
         "category": "Short-Term",
         "targetMinutes": 480, // 8 hours
@@ -418,7 +418,7 @@ class UserDataService {
             : null,
       },
       {
-        "id": "24_hours",
+        "id": "milestone_24_hours",
         "icon": "monitor_heart",
         "category": "Short-Term",
         "targetMinutes": 1440, // 24 hours
@@ -436,7 +436,7 @@ class UserDataService {
             : null,
       },
       {
-        "id": "48_hours",
+        "id": "milestone_48_hours",
         "icon": "restaurant",
         "category": "Short-Term",
         "targetMinutes": 2880, // 48 hours
@@ -456,7 +456,7 @@ class UserDataService {
 
       // Medium-Term Milestones (2 Weeks to 1 Year)
       {
-        "id": "2_weeks",
+        "id": "milestone_2_weeks",
         "icon": "healing",
         "category": "Medium-Term",
         "targetMinutes": 20160, // 14 days
@@ -474,7 +474,7 @@ class UserDataService {
             : null,
       },
       {
-        "id": "1_to_9_months",
+        "id": "milestone_1_to_9_months",
         "icon": "self_improvement",
         "category": "Medium-Term",
         "targetMinutes": 43200, // 30 days
@@ -494,7 +494,7 @@ class UserDataService {
 
       // Long-Term Milestones (1 to 10+ Years)
       {
-        "id": "1_to_5_years",
+        "id": "milestone_1_to_5_years",
         "icon": "health_and_safety",
         "category": "Long-Term",
         "targetMinutes": 525600, // 365 days
@@ -512,7 +512,7 @@ class UserDataService {
             : null,
       },
       {
-        "id": "10_years",
+        "id": "milestone_10_years",
         "icon": "shield",
         "category": "Long-Term",
         "targetMinutes": 5256000, // 10 years
