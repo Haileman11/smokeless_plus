@@ -6,6 +6,7 @@ import 'package:smokeless_plus/presentation/dashboard_home/dashboard_home.dart';
 import 'package:smokeless_plus/presentation/health_score_dashboard/health_score_dashboard.dart';
 import 'package:smokeless_plus/presentation/progress_tracking/progress_tracking.dart';
 import 'package:smokeless_plus/presentation/user_profile/user_profile.dart';
+import 'package:smokeless_plus/services/notification_sevice.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
 
 class MainScreen extends StatefulWidget {
@@ -41,6 +42,9 @@ class _MainScreenState extends State<MainScreen> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        sendTestNotification();
+      }),
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(), // Disable swipe

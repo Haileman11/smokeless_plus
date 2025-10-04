@@ -106,10 +106,12 @@ class _OnboardingFlowState extends State<OnboardingFlow>
         cigarettesPerPack: 20,
         userName: 'User',
         yearsSmoking: _yearsSmoking,
-        currency: _selectedCurrency
+        currency: _selectedCurrency,
+        motivationTime: "${_motivationTime.hour} ${_motivationTime.minute}",
       );
     }
     scheduleMilestoneNotifications();
+    scheduleDailyReminder( _motivationTime);
     // Show celebration animation
     showDialog(
       context: context,
@@ -155,7 +157,7 @@ class _OnboardingFlowState extends State<OnboardingFlow>
             SizedBox(height: 3.h),
             SizedBox(
               width: double.infinity,
-              height: 6.h,
+              // height: 6.h,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();

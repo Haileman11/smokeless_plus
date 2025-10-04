@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/services/notification_sevice.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 
 import '../../core/app_export.dart';
 import '../../services/language_service.dart';
@@ -39,21 +41,22 @@ class _UserProfileState extends State<UserProfile> {
   bool _milestoneAlerts = true;
   bool _cravingReminders = false;
   bool _bedtimeEncouragement = true;
-  bool _socialFeatures = true;  
+  bool _socialFeatures = true;
 
-  TimeOfDay _motivationTime = const TimeOfDay(hour: 9, minute: 0);
+  late TimeOfDay _motivationTime;
   TimeOfDay _bedtimeTime = const TimeOfDay(hour: 22, minute: 0);
 
   String _selectedTheme = 'Light';
-  late String _selectedCurrency ;
+  late String _selectedCurrency;
   String _selectedUnits = 'Imperial';
 
-  late String _currentLanguage ;
+  late String _currentLanguage;
 
   @override
   void initState() {
     super.initState();
-    _selectedTheme = context.read<ThemeProvider>().isDarkMode ? 'Dark' : 'Light';
+    _selectedTheme =
+        context.read<ThemeProvider>().isDarkMode ? 'Dark' : 'Light';
     _loadUserData();
     _loadCurrentLanguage();
   }
@@ -71,6 +74,9 @@ class _UserProfileState extends State<UserProfile> {
         setState(() {
           _userData = userData;
           _selectedCurrency = userData['currency'] as String? ?? 'USD (\$)';
+          _motivationTime = TimeOfDay(
+              hour: int.parse(userData['motivationTime'].split(' ')[0]),
+              minute: int.parse(userData['motivationTime'].split(' ')[1]));
           _isLoading = false;
         });
       } else {
@@ -191,12 +197,13 @@ class _UserProfileState extends State<UserProfile> {
   Widget _buildAppBar(AppLocalizations l10n) {
     return SliverAppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      title: Text('Profile',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w700,
-            color: Theme.of(context).colorScheme.primary,
-          ),
-        ),
+      title: Text(
+        'Profile',
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w700,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+      ),
       centerTitle: false,
       actions: [
         IconButton(
@@ -232,10 +239,10 @@ class _UserProfileState extends State<UserProfile> {
           switch (index) {
             case 0:
               return SettingsSectionWidget(
-                title: 'Quit Details',
+                title: AppLocalizations.of(context)!.editQuitDetails,
                 items: [
                   SettingsItem(
-                    title: 'Edit Quit Information',
+                    title: AppLocalizations.of(context)!.editQuitDetails,
                     subtitle: 'Quit date, daily cigarettes, pack cost',
                     icon: CustomIconWidget(
                       iconName: 'edit',
@@ -271,7 +278,7 @@ class _UserProfileState extends State<UserProfile> {
                 title: 'Notifications',
                 items: [
                   SettingsItem(
-                    title: 'Daily Motivation',
+                    title: AppLocalizations.of(context)!.dailyMotivation,
                     subtitle: _dailyMotivation
                         ? 'Enabled at ${_formatTime(_motivationTime)}'
                         : 'Disabled',
@@ -283,6 +290,12 @@ class _UserProfileState extends State<UserProfile> {
                     trailing: Switch(
                       value: _dailyMotivation,
                       onChanged: (value) {
+                        if (value) {
+                          scheduleDailyReminder(_motivationTime);
+                        }
+                        else {
+                          cancelDailyNotifications();
+                        }
                         setState(() {
                           _dailyMotivation = value;
                         });
@@ -290,15 +303,17 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                     onTap: _dailyMotivation
                         ? () => _showTimePicker(
-                                'Daily Motivation', _motivationTime, (time) {
+                                AppLocalizations.of(context)!.dailyMotivation,
+                                _motivationTime, (time) {
                               setState(() {
                                 _motivationTime = time;
+                                _updateUserData();
                               });
                             })
                         : null,
                   ),
                   SettingsItem(
-                    title: 'Milestone Alerts',
+                    title: AppLocalizations.of(context)!.milestoneAlerts,
                     subtitle: 'Celebrate your achievements',
                     icon: CustomIconWidget(
                       iconName: 'emoji_events',
@@ -432,12 +447,17 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                     onTap: () => _showSelectionDialog(
                       'Theme',
-                      ['Light', 'Dark',],
+                      [
+                        'Light',
+                        'Dark',
+                      ],
                       _selectedTheme,
                       (value) {
                         setState(() {
                           _selectedTheme = value;
-                          context.read<ThemeProvider>().setDarkMode(value == 'Dark');
+                          context
+                              .read<ThemeProvider>()
+                              .setDarkMode(value == 'Dark');
                         });
                       },
                     ),
@@ -466,15 +486,18 @@ class _UserProfileState extends State<UserProfile> {
                       ],
                       _selectedCurrency,
                       (value) async {
-                        
                         await UserDataService.saveUserData(
-                          quitDate: DateTime.parse(_userData!["quitDate"] as String),
-                          cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
+                          quitDate:
+                              DateTime.parse(_userData!["quitDate"] as String),
+                          cigarettesPerDay:
+                              _userData!["cigarettesPerDay"] as int,
                           costPerPack: _userData!["costPerPack"] as double,
                           currency: value,
-                          cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
+                          cigarettesPerPack:
+                              _userData!["cigarettesPerPack"] as int,
                           userName: _userData!["name"] as String,
-                          yearsSmoking: _userData!["yearsSmoking"] as double? ?? 0.0,
+                          yearsSmoking:
+                              _userData!["yearsSmoking"] as double? ?? 0.0,
                         );
                         setState(() {
                           _selectedCurrency = value;
@@ -500,15 +523,18 @@ class _UserProfileState extends State<UserProfile> {
                       ['Imperial', 'Metric'],
                       _selectedUnits,
                       (value) async {
-                        
                         await UserDataService.saveUserData(
-                          quitDate: DateTime.parse(_userData!["quitDate"] as String),
-                          cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
+                          quitDate:
+                              DateTime.parse(_userData!["quitDate"] as String),
+                          cigarettesPerDay:
+                              _userData!["cigarettesPerDay"] as int,
                           costPerPack: _userData!["costPerPack"] as double,
                           currency: value,
-                          cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
+                          cigarettesPerPack:
+                              _userData!["cigarettesPerPack"] as int,
                           userName: _userData!["name"] as String,
-                          yearsSmoking: _userData!["yearsSmoking"] as double? ?? 0.0,
+                          yearsSmoking:
+                              _userData!["yearsSmoking"] as double? ?? 0.0,
                         );
                         setState(() {
                           _selectedUnits = value;
@@ -664,22 +690,19 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   // Add missing _handleEditQuitDetails method
-  void _handleEditQuitDetails() {
-    _showQuitDetailsDialog();
-  }
 
-  Future<void> _updateUserData(DateTime quitDate, int cigarettes, double cost,
-      double yearsSmoking) async {
+  Future<void> _updateUserData() async {
     try {
       // Save the updated data with years of smoking
       final success = await UserDataService.saveUserData(
-        quitDate: quitDate,
-        cigarettesPerDay: cigarettes,
-        costPerPack: cost,
-        currency: _selectedCurrency,
+        quitDate: _userData!["quitDate"],
+        cigarettesPerDay:_userData!["cigarettesPerDay"],
+        costPerPack: _userData!["costPerPack"],
+        currency: _userData!["currency"],
         cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
         userName: _userData!["name"] as String,
-        yearsSmoking: yearsSmoking, // Include years of smoking
+        yearsSmoking: _userData!["yearsSmoking"], // Include years of smoking
+        motivationTime: "${_motivationTime.hour} ${_motivationTime.minute}"
       );
 
       if (success) {
@@ -728,7 +751,7 @@ class _UserProfileState extends State<UserProfile> {
       builder: (context) => DataExportDialog(
         onExport: (format) {
           // Handle data export based on format
-          _generateExportData(format);
+          generateExportData(_userData!, format);
         },
       ),
     );
@@ -835,16 +858,16 @@ class _UserProfileState extends State<UserProfile> {
             Text(
               '• Quit progress and statistics\n• Achievement history\n• Personal preferences\n• All saved data',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
             ),
             SizedBox(height: 2.h),
             Text(
               'This action cannot be undone.',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).colorScheme.error,
-                fontWeight: FontWeight.w600,
-              ),
+                    color: Theme.of(context).colorScheme.error,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ],
         ),
@@ -937,84 +960,6 @@ class _UserProfileState extends State<UserProfile> {
     }
   }
 
-  void _generateExportData(String format) {
-    // Use real user data for export including years of smoking
-    final quitDate = DateTime.parse(_userData!["quitDate"] as String);
-    final daysSinceQuit = DateTime.now().difference(quitDate).inDays;
-    final moneySaved = (_userData!["moneySaved"] as double).toStringAsFixed(2);
-    final yearsSmoking = (_userData!["yearsSmoking"] as double? ?? 0.0);
-    final totalCigarettesSmoked =
-        (_userData!["totalCigarettesSmoked"] as int? ?? 0);
-    final totalMoneySpent = (_userData!["totalMoneySpent"] as double? ?? 0.0);
-
-    String exportData = '';
-
-    switch (format) {
-      case 'PDF':
-        exportData = '''
-QuitSmoking Tracker - Progress Report
-Generated: ${DateTime.now().toString().split('.')[0]}
-
-User Information:
-- Name: ${_userData!["name"]}
-- Quit Date: ${quitDate.day}/${quitDate.month}/${quitDate.year}
-- Days Smoke-Free: $daysSinceQuit
-- Current Streak: ${_userData!["currentStreak"]} days
-
-Smoking History:
-- Years of Smoking: ${yearsSmoking.toStringAsFixed(1)} years
-- Total Cigarettes Smoked: ${totalCigarettesSmoked.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}
-- Total Money Spent on Smoking: \$${totalMoneySpent.toStringAsFixed(0)}
-
-Financial Impact:
-- Daily Cigarettes: ${_userData!["cigarettesPerDay"]}
-- Pack Cost: \${(_userData!["costPerPack"] as double).toStringAsFixed(2)}
-- Money Saved: \$moneySaved
-
-Health Progress:
-- Health Progress: ${((_userData!["healthProgress"] as double) * 100).toStringAsFixed(1)}%
-- Health Stage: ${_userData!["healthStage"]}
-- Next Milestone: ${_userData!["nextMilestone"]}
-        ''';
-        break;
-      case 'CSV':
-        exportData = '''
-Date,Days Smoke-Free,Money Saved,Cigarettes Avoided,Health Progress,Years Smoked,Total Cigarettes Smoked,Total Money Spent
-${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$moneySaved,${_userData!["cigarettesAvoided"]},${((_userData!["healthProgress"] as double) * 100).toStringAsFixed(1)}%,${yearsSmoking.toStringAsFixed(1)},${totalCigarettesSmoked},\$${totalMoneySpent.toStringAsFixed(2)}
-        ''';
-        break;
-      case 'JSON':
-        exportData = '''
-{
-  "user": {
-    "name": "${_userData!["name"]}",
-    "quitDate": "${_userData!["quitDate"]}",
-    "cigarettesPerDay": ${_userData!["cigarettesPerDay"]},
-    "costPerPack": ${_userData!["costPerPack"]},
-    "yearsSmoking": ${yearsSmoking}
-  },
-  "smokingHistory": {
-    "totalCigarettesSmoked": ${totalCigarettesSmoked},
-    "totalMoneySpent": ${totalMoneySpent},
-    "smokingPeriodDays": ${(_userData!["smokingPeriodDays"] as int? ?? 0)}
-  },
-  "progress": {
-    "currentStreak": ${_userData!["currentStreak"]},
-    "moneySaved": ${_userData!["moneySaved"]},
-    "cigarettesAvoided": ${_userData!["cigarettesAvoided"]},
-    "healthProgress": ${_userData!["healthProgress"]},
-    "healthStage": "${_userData!["healthStage"]}"
-  },
-  "exportDate": "${DateTime.now().toIso8601String()}"
-}
-        ''';
-        break;
-    }
-
-    // In a real app, this would trigger actual file download
-    print('Export Data ($format):\n$exportData');
-  }
-
   String _formatTime(TimeOfDay time) {
     final hour = time.hourOfPeriod == 0 ? 12 : time.hourOfPeriod;
     final minute = time.minute.toString().padLeft(2, '0');
@@ -1050,8 +995,8 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                   Text(
                     'Edit Profile',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                 ],
               ),
@@ -1062,8 +1007,8 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                   Text(
                     'Name',
                     style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                   SizedBox(height: 1.h),
                   TextFormField(
@@ -1074,8 +1019,7 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
                         padding: EdgeInsets.all(3.w),
                         child: CustomIconWidget(
                           iconName: 'person_outline',
-                          color:
-                              Theme.of(context).colorScheme.onSurfaceVariant,
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
                           size: 20,
                         ),
                       ),
@@ -1148,106 +1092,6 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
     }
   }
 
-  Widget _buildOverviewCard() {
-    if (_userData == null) return const SizedBox.shrink();
-
-    final yearsSmoking = _userData!['yearsSmoking'] as double? ?? 0.0;
-
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4.w),
-      padding: EdgeInsets.all(4.w),
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outline,
-          width: 1,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Your Quit Journey Overview',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          SizedBox(height: 2.h),
-          Row(
-            children: [
-              Expanded(
-                child: _buildStatItem(
-                  'Quit Date',
-                  _formatDate(DateTime.parse(_userData!['quitDate'])),
-                  'calendar_today',
-                ),
-              ),
-              Container(
-                width: 1,
-                height: 4.h,
-                color: Theme.of(context).colorScheme.outline,
-                margin: EdgeInsets.symmetric(horizontal: 4.w),
-              ),
-              Expanded(
-                child: _buildStatItem(
-                  'Daily Cigarettes',
-                  '${_userData!['cigarettesPerDay']}',
-                  'smoking_rooms',
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 2.h),
-          Row(
-            children: [
-              Expanded(
-                child: _buildStatItem(
-                  'Pack Cost',
-                  '\$${(_userData!['costPerPack'] as double).toStringAsFixed(2)}',
-                  'attach_money',
-                ),
-              ),
-              Container(
-                width: 1,
-                height: 4.h,
-                color: Theme.of(context).colorScheme.outline,
-                margin: EdgeInsets.symmetric(horizontal: 4.w),
-              ),
-              Expanded(
-                child: _buildStatItem(
-                  'Years Smoking',
-                  '${yearsSmoking.toStringAsFixed(1)} years',
-                  'schedule',
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 2.h),
-          // Enhanced edit button
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton.icon(
-              onPressed: _showQuitDetailsDialog,
-              icon: CustomIconWidget(
-                iconName: 'edit',
-                color: Theme.of(context).colorScheme.primary,
-                size: 20,
-              ),
-              label: Text('Edit Quit Details'),
-              style: OutlinedButton.styleFrom(
-                padding: EdgeInsets.symmetric(vertical: 2.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   String _formatDate(DateTime date) {
     return '${date.day}/${date.month}/${date.year}';
   }
@@ -1259,16 +1103,16 @@ ${DateTime.now().toString().split(' ')[0]},${_userData!["currentStreak"]},\$mone
         Text(
           label,
           style: Theme.of(context).textTheme.labelMedium?.copyWith(
-            color: Theme.of(context).colorScheme.onSurfaceVariant,
-          ),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
         ),
         SizedBox(height: 1.h),
         Text(
           value,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: Theme.of(context).colorScheme.primary,
-          ),
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).colorScheme.primary,
+              ),
         ),
       ],
     );

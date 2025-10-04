@@ -19,7 +19,7 @@ class ProgressCategoryTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = MotivationCategory.values.map((category) {
       return {
-        'id': category.name,
+        'id': category.index,
         'label': category.name(AppLocalizations.of(context)!),
         'icon': category.icon(),
       };
@@ -35,10 +35,10 @@ class ProgressCategoryTabs extends StatelessWidget {
         separatorBuilder: (context, index) => SizedBox(width: 2.w),
         itemBuilder: (context, index) {
           final category = categories[index];
-          final isSelected = selectedCategory == category['name'];
-
+          final isSelected = selectedCategory.index == category['id'];
+          
           return GestureDetector(
-            onTap: () => onCategoryChanged(category['id'] as MotivationCategory),
+            onTap: () => onCategoryChanged( MotivationCategory.values.firstWhere((e)=>category['id']==e.index) ),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
               decoration: BoxDecoration(
@@ -76,7 +76,7 @@ class ProgressCategoryTabs extends StatelessWidget {
                   ),
                   SizedBox(width: 2.w),
                   Text(
-                    category['name'] as String,
+                    category['label'] as String,
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: isSelected
                           ? Theme.of(context).colorScheme.onPrimary

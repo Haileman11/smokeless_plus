@@ -147,7 +147,7 @@ void didChangeDependencies() {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45.h,
+      height: 50.h,      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -204,7 +204,7 @@ void didChangeDependencies() {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Container(
-                      padding: EdgeInsets.all(4.w),
+                      padding: EdgeInsets.symmetric( horizontal: 4.w, vertical: 4.h),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         gradient: LinearGradient(

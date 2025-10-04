@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
@@ -18,8 +20,27 @@ import './presentation/user_profile/user_profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-Platform.isIOS ? await requestNotificationPermissions() : await requestAndroidPermissions();
+  
+  // Add permission check
+  if (Platform.isIOS) {
+    final granted = await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
+        ?.requestPermissions(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+    print("iOS notification permissions granted: $granted");
+  } else {
+    final status = await Permission.notification.status;
+    if (status.isDenied) {
+      await Permission.notification.request();
+    }
+    print("Android notification permission status: ${await Permission.notification.status}");
+  }
+  
   await initNotifications();
+    
   
   bool _hasShownError = false;
 

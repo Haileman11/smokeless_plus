@@ -1,3 +1,4 @@
+import 'package:flutter/src/material/time.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smokeless_plus/services/motivational_quotes_service.dart';
 
@@ -11,6 +12,7 @@ class UserDataService {
   static const String _keyYearsSmoking =
       'years_smoking'; // New field for years of smoking
   static const String _keyCurrency = 'currency';
+  static const String _motivationTimeKey = 'motivation_time';
 
   /// Calculate various metrics based on user's quit data
   static Map<String, dynamic> calculateQuittingMetrics({
@@ -586,7 +588,8 @@ class UserDataService {
     required String currency,
     int cigarettesPerPack = 20,
     String userName = 'User',
-    double yearsSmoking = 0.0, // New parameter for years of smoking
+    double yearsSmoking = 0.0, 
+    String? motivationTime, // New parameter for years of smoking
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -599,6 +602,7 @@ class UserDataService {
       await prefs.setDouble(
           _keyYearsSmoking, yearsSmoking); // Save years of smoking
       await prefs.setString(_keyCurrency, currency);
+      await prefs.setString(_motivationTimeKey,motivationTime ?? "9: 00 AM");
       return true;
     } catch (e) {
       return false;
@@ -622,6 +626,7 @@ class UserDataService {
           prefs.getDouble(_keyYearsSmoking) ?? 0.0; // Load years of smoking
       final currency =
           prefs.getString(_keyCurrency) ?? 'USD'; // Default currency
+      final motivationTime = prefs.getString(_motivationTimeKey) ?? '9: 00 AM';
       // Calculate current metrics with years of smoking
       final metrics = calculateQuittingMetrics(
         quitDate: quitDate,
@@ -648,6 +653,7 @@ class UserDataService {
         "cigarettesPerPack": cigarettesPerPack,
         "yearsSmoking": yearsSmoking, // Include years of smoking in return data
         "currency": currency,
+        "motivationTime": motivationTime,
         ...metrics,
         "achievements": achievements,
       };

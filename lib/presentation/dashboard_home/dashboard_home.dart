@@ -36,8 +36,7 @@ class _DashboardHomeState extends State<DashboardHome> {
 
   @override
   void initState() {
-    super.initState();
-    
+    super.initState();    
     _loadUserData();
   }
 
@@ -298,12 +297,7 @@ class _DashboardHomeState extends State<DashboardHome> {
     );
   }
 
-  Future<void> _showCravingSupport() async {    
-    await createScheduledNotification([{
-      "duration": const Duration(seconds: 5),
-      "message":
-          "🌟 5 seconds smoke-free! This is a life-changing achievement!"
-    },]);
+  Future<void> _showCravingSupport() async {        
     Navigator.of(context).pushNamed(AppRoutes.cravingSupport);
     // showModalBottomSheet(
     //   context: context,

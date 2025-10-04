@@ -101,7 +101,7 @@ class OnboardingStepWidget extends StatelessWidget {
                 // Continue button
                 SizedBox(
                   width: double.infinity,
-                  height: 6.h,
+                  // height: 6.h,
                   child: ElevatedButton(
                     onPressed: onNext,
                     style: ElevatedButton.styleFrom(

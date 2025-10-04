@@ -167,3 +167,84 @@ void callNumber(String phoneNumber) async {
     throw 'Could not launch $phoneNumber';
   }
 }
+
+
+
+void generateExportData(Map<String,dynamic> userData ,String format) {
+  final _userData = userData;
+    // Use real user data for export including years of smoking
+    final quitDate = DateTime.parse(_userData["quitDate"] as String);
+    final daysSinceQuit = DateTime.now().difference(quitDate).inDays;
+    final moneySaved = (_userData["moneySaved"] as double).toStringAsFixed(2);
+    final yearsSmoking = (_userData["yearsSmoking"] as double? ?? 0.0);
+    final totalCigarettesSmoked =
+        (_userData["totalCigarettesSmoked"] as int? ?? 0);
+    final totalMoneySpent = (_userData["totalMoneySpent"] as double? ?? 0.0);
+
+    String exportData = '';
+
+    switch (format) {
+      case 'PDF':
+        exportData = '''
+QuitSmoking Tracker - Progress Report
+Generated: ${DateTime.now().toString().split('.')[0]}
+
+User Information:
+- Name: ${_userData["name"]}
+- Quit Date: ${quitDate.day}/${quitDate.month}/${quitDate.year}
+- Days Smoke-Free: $daysSinceQuit
+- Current Streak: ${_userData["currentStreak"]} days
+
+Smoking History:
+- Years of Smoking: ${yearsSmoking.toStringAsFixed(1)} years
+- Total Cigarettes Smoked: ${totalCigarettesSmoked.toString().replaceAllMapped(RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')}
+- Total Money Spent on Smoking: \$${totalMoneySpent.toStringAsFixed(0)}
+
+Financial Impact:
+- Daily Cigarettes: ${_userData["cigarettesPerDay"]}
+- Pack Cost: \${(_userData!["costPerPack"] as double).toStringAsFixed(2)}
+- Money Saved: \$moneySaved
+
+Health Progress:
+- Health Progress: ${((_userData["healthProgress"] as double) * 100).toStringAsFixed(1)}%
+- Health Stage: ${_userData["healthStage"]}
+- Next Milestone: ${_userData["nextMilestone"]}
+        ''';
+        break;
+      case 'CSV':
+        exportData = '''
+Date,Days Smoke-Free,Money Saved,Cigarettes Avoided,Health Progress,Years Smoked,Total Cigarettes Smoked,Total Money Spent
+${DateTime.now().toString().split(' ')[0]},${_userData["currentStreak"]},\$moneySaved,${_userData["cigarettesAvoided"]},${((_userData["healthProgress"] as double) * 100).toStringAsFixed(1)}%,${yearsSmoking.toStringAsFixed(1)},${totalCigarettesSmoked},\$${totalMoneySpent.toStringAsFixed(2)}
+        ''';
+        break;
+      case 'JSON':
+        exportData = '''
+{
+  "user": {
+    "name": "${_userData["name"]}",
+    "quitDate": "${_userData["quitDate"]}",
+    "cigarettesPerDay": ${_userData["cigarettesPerDay"]},
+    "costPerPack": ${_userData["costPerPack"]},
+    "yearsSmoking": ${yearsSmoking}
+  },
+  "smokingHistory": {
+    "totalCigarettesSmoked": ${totalCigarettesSmoked},
+    "totalMoneySpent": ${totalMoneySpent},
+    "smokingPeriodDays": ${(_userData["smokingPeriodDays"] as int? ?? 0)}
+  },
+  "progress": {
+    "currentStreak": ${_userData["currentStreak"]},
+    "moneySaved": ${_userData["moneySaved"]},
+    "cigarettesAvoided": ${_userData["cigarettesAvoided"]},
+    "healthProgress": ${_userData["healthProgress"]},
+    "healthStage": "${_userData["healthStage"]}"
+  },
+  "exportDate": "${DateTime.now().toIso8601String()}"
+}
+        ''';
+        break;
+    }
+
+    // In a real app, this would trigger actual file download
+    print('Export Data ($format):\n$exportData');
+  }
