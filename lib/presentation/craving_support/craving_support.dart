@@ -23,15 +23,9 @@ class _CravingSupportState extends State<CravingSupport>
   bool _showBreathingExercise = false;
   late AnimationController _pulseController;
   late Animation<double> _pulseAnimation;
-
+  bool _isLoading=false;
   // Mock user data
-  final Map<String, dynamic> _userData = {
-    "quitDate": DateTime.now().subtract(const Duration(days: 15)),
-    "cigarettesNotSmoked": 225,
-    "moneySaved": 67.50,
-    "currentStreak": 15,
-    "dailyCigarettePrice": 4.50,
-  };
+  late final Map<String, dynamic> _userData ;
 
   // Mock craving session data
   late final List<Map<String, dynamic>> _cravingSessions;
@@ -44,6 +38,7 @@ class _CravingSupportState extends State<CravingSupport>
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    _loadUserData();
     _cravingSessions = [
       {
         "id": 1,
@@ -70,6 +65,34 @@ class _CravingSupportState extends State<CravingSupport>
       "success": true,
     },
   ];
+  }
+  Future<void> _loadUserData() async {
+    setState(() => _isLoading = true);
+
+    try {
+      final userData = await UserDataService.loadUserData();
+
+      if (userData != null) {
+        setState(() {
+          _userData = userData;
+        });
+      } else {
+        // If no user data, redirect to onboarding
+        Navigator.pushReplacementNamed(context, '/onboarding-flow');
+        return;
+      }
+    } catch (e) {
+      // Show error message but continue with default values
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.errorLoadingData),
+          backgroundColor: Colors.orange,
+        ),
+      );
+    }
+
+    setState(() => _isLoading = false);
   }
 
   void _initializePulseAnimation() {
@@ -263,7 +286,7 @@ class _CravingSupportState extends State<CravingSupport>
 
   Widget _buildMotivationBanner() {
     final daysSinceQuit =
-        DateTime.now().difference(_userData["quitDate"] as DateTime).inDays;
+        DateTime.now().difference(DateTime.parse( _userData["quitDate"]) ).inDays;
 
     return Container(
       margin: EdgeInsets.all(4.w),
@@ -573,6 +596,13 @@ class _CravingSupportState extends State<CravingSupport>
 
   @override
   Widget build(BuildContext context) {
+    if (_isLoading ){
+      Scaffold(
+        body: Center(
+          child: const CircularProgressIndicator(),
+        )
+      );
+    }
     if (_showBreathingExercise) {
       return Scaffold(
         body: BreathingExerciseWidget(

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,6 +12,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smokeless_plus/services/motivational_quotes_service.dart';
 import 'package:smokeless_plus/services/notification_sevice.dart';
+import 'package:smokeless_plus/services/subscription_service.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
 
 import '../core/app_export.dart';
@@ -20,6 +22,9 @@ import './presentation/user_profile/user_profile.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize AdMob
+  MobileAds.instance.initialize();
   
   // Add permission check
   if (Platform.isIOS) {
@@ -65,6 +70,11 @@ void main() async {
 
   // 🚨 CRITICAL: Device orientation lock - DO NOT REMOVE
   await DynamicLocalization().load(prefs.getString('selected_language') ?? 'en');
+
+
+  final subscriptionProvider = SubscriptionProvider();
+  await subscriptionProvider.initialize();
+
   Future.wait([
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
   ]).then((value) {
@@ -72,6 +82,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider(prefs)),
         ChangeNotifierProvider(create: (_) => LanguageProvider(prefs)),
+        ChangeNotifierProvider.value(value: subscriptionProvider),
       ],
       child: MyApp(),
     ));

@@ -7,7 +7,9 @@ import 'package:smokeless_plus/presentation/health_score_dashboard/health_score_
 import 'package:smokeless_plus/presentation/progress_tracking/progress_tracking.dart';
 import 'package:smokeless_plus/presentation/user_profile/user_profile.dart';
 import 'package:smokeless_plus/services/notification_sevice.dart';
+import 'package:smokeless_plus/services/subscription_service.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
+import 'package:smokeless_plus/widgets/ad_banner_widget.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -37,48 +39,69 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _loadInterstitial();
+  }
+  void _loadInterstitial() {
+    final subscriptionProvider = context.watch<SubscriptionProvider>();
+    if (subscriptionProvider.isPremium) return; // No ads for premium users
+    
+    subscriptionProvider.showInterstitialAd();    
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDarkMode = context.watch<ThemeProvider>().isDarkMode;
     final l10n = AppLocalizations.of(context)!;
+    final subscriptionProvider = context.watch<SubscriptionProvider>();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        sendTestNotification();
-      }),
+      backgroundColor: Theme.of(context).colorScheme.surface,      
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(), // Disable swipe
         children: _screens,
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
-          border: Border(
-            top: BorderSide(
-              color: Theme.of(context).dividerColor,
-              width: 1,
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (!subscriptionProvider.isPremium)
+                        Container(
+                          height: 60,
+                          margin: const EdgeInsets.all(8),
+                          child: subscriptionProvider.getBannerAdWidget(),
+                        ),
+          Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              border: Border(
+                top: BorderSide(
+                  color: Theme.of(context).dividerColor,
+                  width: 1,
+                ),
+              ),
+            ),
+            child: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildNavItem(Icons.home, l10n.navigationHome, 0, isDarkMode),
+                    _buildNavItem(
+                        Icons.trending_up, l10n.navigationProgress, 1, isDarkMode),
+                    _buildNavItem(
+                        Icons.favorite, l10n.navigationHealthScore, 2, isDarkMode),
+                    _buildNavItem(Icons.emoji_events, l10n.navigationAchievements,
+                        3, isDarkMode),
+                    _buildNavItem(
+                        Icons.person, l10n.navigationProfile, 4, isDarkMode),
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildNavItem(Icons.home, l10n.navigationHome, 0, isDarkMode),
-                _buildNavItem(
-                    Icons.trending_up, l10n.navigationProgress, 1, isDarkMode),
-                _buildNavItem(
-                    Icons.favorite, l10n.navigationHealthScore, 2, isDarkMode),
-                _buildNavItem(Icons.emoji_events, l10n.navigationAchievements,
-                    3, isDarkMode),
-                _buildNavItem(
-                    Icons.person, l10n.navigationProfile, 4, isDarkMode),
-              ],
-            ),
-          ),
-        ),
+        ],
       ),
     );
   }

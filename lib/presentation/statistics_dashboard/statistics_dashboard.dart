@@ -5,6 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/l10n/app_localizations.dart';
+import 'package:smokeless_plus/services/user_data_service.dart';
+import 'package:smokeless_plus/utils/utils.dart';
 import 'package:universal_html/html.dart' as html;
 
 import '../../core/app_export.dart';
@@ -30,38 +33,44 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
   String _selectedMetricType = 'All Metrics';
   String _selectedComparison = 'Personal Goals';
   DateTime _lastUpdated = DateTime.now();
+  late final Map<String, dynamic> _userData ;
 
   // Mock data for statistics
-  final List<Map<String, dynamic>> _topMetrics = [
-    {
-      "title": "Days Smoke-Free",
-      "value": "127",
-      "subtitle": "4 months, 5 days",
-      "icon": "calendar_today",
-      "backgroundColor": null,
-    },
-    {
-      "title": "Money Saved",
-      "value": "\$847",
-      "subtitle": "Average \$6.67/day",
-      "icon": "attach_money",
-      "backgroundColor": null,
-    },
-    {
-      "title": "Cigarettes Avoided",
-      "value": "2,540",
-      "subtitle": "20 packs avoided",
-      "icon": "smoke_free",
-      "backgroundColor": null,
-    },
-    {
-      "title": "Life Regained",
-      "value": "18.2 hrs",
-      "subtitle": "Time not smoking",
-      "icon": "favorite",
-      "backgroundColor": null,
-    },
-  ];
+  List<Map<String, dynamic>> get _topMetrics {
+    if (_userData.isEmpty) return [];
+
+    return [
+      {
+        "title": "Days Smoke-Free",
+        "value": _userData["currentStreak"].toString(),
+        "subtitle": "${_userData["daysSmokeFreeString"] ?? ''}",
+        "icon": "calendar_today",
+        "backgroundColor": null,
+      },
+      {
+        "title": "Money Saved",
+        "value": "${_userData["currency"] ?? 'USD'}${_userData["moneySaved"].toStringAsFixed(2)}",
+        "subtitle": "Average \$${(_userData["moneySaved"] / (_userData["currentStreak"] > 7 ? 7 : _userData["currentStreak"])).toStringAsFixed(2)}/day",
+        "icon": "attach_money",
+        "backgroundColor": null,
+      },
+      {
+        "title": "Cigarettes Avoided",
+        "value": _userData["cigarettesAvoided"].toString(),
+        "subtitle": "${(_userData["cigarettesAvoided"] / 20).floor()} packs avoided",
+        "icon": "smoke_free",
+        "backgroundColor": null,
+      },
+      {
+        "title": "Life Regained",
+        "value": "${formatLifeLost(_userData["totalCigarettesSmoked"] * 11)} hrs",
+        "subtitle": "Time not smoking",
+        "icon": "favorite",
+        "backgroundColor": null,
+      },
+    ];
+  }
+
 
   final List<String> _chartTypes = [
     'Daily Streak',
@@ -100,11 +109,15 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
     ],
   };
 
-  final Map<String, dynamic> _userStats = {
-    "daysQuit": 127,
-    "moneySaved": 847,
-    "cigarettesAvoided": 2540,
-  };
+  Map<String, dynamic> get _userStats {
+    if (_userData.isEmpty) return {};
+    return {
+      "daysQuit": _userData["currentStreak"],
+      "moneySaved": _userData["moneySaved"],
+      "cigarettesAvoided": _userData["cigarettesAvoided"],
+    };
+  }
+
 
   final Map<String, dynamic> _averageStats = {
     "daysQuit": 95,
@@ -118,37 +131,23 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
     "cigarettesGoal": 7300,
   };
 
-  final List<Map<String, dynamic>> _achievements = [
-    {
-      "id": 1,
-      "title": "First Week Champion",
-      "description": "Completed your first smoke-free week",
-      "icon": "emoji_events",
-      "unlocked": true,
-      "date": "2024-01-15",
-    },
-    {
-      "id": 2,
-      "title": "Money Saver",
-      "description": "Saved your first \$500",
-      "icon": "savings",
-      "unlocked": true,
-      "date": "2024-03-10",
-    },
-    {
-      "id": 3,
-      "title": "Health Warrior",
-      "description": "100 days smoke-free milestone",
-      "icon": "favorite",
-      "unlocked": true,
-      "date": "2024-04-20",
-    },
-  ];
+  List<Map<String, dynamic>> get _achievements {
+    if (_userData.isEmpty) return [];
+    return List<Map<String, dynamic>>.from(_userData["achievements"]["unlockedAchievements"] ?? []);
+  }
+
+  
+  bool _isLoading=false;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 3, vsync: this);
+  }
+  @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    _loadUserData();
   }
 
   @override
@@ -157,8 +156,43 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
     super.dispose();
   }
 
+  Future<void> _loadUserData() async {
+    setState(() => _isLoading = true);
+
+    try {
+      final userData = await UserDataService.loadUserData();
+
+      if (userData != null) {
+        setState(() {
+          _userData = userData;
+        });
+      } else {
+        // If no user data, redirect to onboarding
+        Navigator.pushReplacementNamed(context, '/onboarding-flow');
+        return;
+      }
+    } catch (e) {
+      // Show error message but continue with default values
+      final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.errorLoadingData),
+          backgroundColor: Colors.orange,
+        ),
+      );
+    }
+
+    setState(() => _isLoading = false);
+  }
   @override
   Widget build(BuildContext context) {
+    if(_isLoading) {
+      return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: _buildAppBar(),
+      body: Center(child: CircularProgressIndicator(),),
+    );
+    }
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: _buildAppBar(),
@@ -486,7 +520,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                       ),
                     ),
                     Text(
-                      achievement['date'] as String,
+                      achievement['unlockDate'] as String,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: Theme.of(context).colorScheme.secondary,
                         fontWeight: FontWeight.w500,
@@ -495,7 +529,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
         ),
       ),
@@ -604,7 +638,7 @@ class _StatisticsDashboardState extends State<StatisticsDashboard>
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
         ),
       ),

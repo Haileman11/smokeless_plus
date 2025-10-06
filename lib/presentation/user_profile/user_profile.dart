@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:purchases_ui_flutter/purchases_ui_flutter.dart';
 import 'package:smokeless_plus/l10n/app_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smokeless_plus/presentation/user_profile/widgets/subscription.dart';
 import 'package:smokeless_plus/services/notification_sevice.dart';
+import 'package:smokeless_plus/services/subscription_service.dart';
 import 'package:smokeless_plus/services/theme_service.dart';
 import 'package:smokeless_plus/utils/utils.dart';
 
@@ -115,7 +118,7 @@ class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-
+    final subscriptionProvider = context.watch<SubscriptionProvider>();
     if (_isLoading) {
       return Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -175,6 +178,7 @@ class _UserProfileState extends State<UserProfile> {
         child: CustomScrollView(
           slivers: [
             _buildAppBar(l10n),
+            _buildPremiumSection(context, subscriptionProvider),
             _buildProfileHeader(),
             _buildLanguageSelector(),
             _buildSettingsSection(l10n),
@@ -1117,4 +1121,143 @@ class _UserProfileState extends State<UserProfile> {
       ],
     );
   }
+  Widget _buildPremiumSection(BuildContext context, SubscriptionProvider subscriptionProvider) {
+    if (subscriptionProvider.isPremium) {
+      return SliverToBoxAdapter(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(            
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              const Icon(
+                Icons.verified,
+                color: Colors.white,
+                size: 24,
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Premium Active',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      subscriptionProvider.getSubscriptionStatusText(),
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SubscriptionScreen(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor:  Theme.of(context).colorScheme.primary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: const Text(
+                  'Manage',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    } else {
+      return SliverToBoxAdapter(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color:  Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+            borderRadius: BorderRadius.circular(12),
+            color: Theme.of(context).colorScheme.surface
+          ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                   Icon(
+                    Icons.star,
+                    color: Theme.of(context).colorScheme.primary,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Upgrade to Premium',
+                          style: TextStyle(                          
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          'Remove ads and unlock all features',
+                          style: TextStyle(                          
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // presentPaywall();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SubscriptionScreen(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:  Theme.of(context).colorScheme.primary,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Upgrade',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),              
+            ],
+          ),
+        ),
+      );
+    }
+  }  
 }
