@@ -597,9 +597,9 @@ class _CravingSupportState extends State<CravingSupport>
   @override
   Widget build(BuildContext context) {
     if (_isLoading ){
-      Scaffold(
+      return const Scaffold(
         body: Center(
-          child: const CircularProgressIndicator(),
+          child: CircularProgressIndicator(),
         )
       );
     }
