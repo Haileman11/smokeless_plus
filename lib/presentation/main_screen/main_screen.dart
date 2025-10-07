@@ -121,7 +121,7 @@ class _MainScreenState extends State<MainScreen> {
       },
       child: Container(
         width: MediaQuery.of(context).size.width / 5 - 4,
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+        padding: const EdgeInsets.symmetric(vertical: 8,),
         decoration: BoxDecoration(
           color: isActive
               ? Theme.of(context).colorScheme.primary.withOpacity(0.1)

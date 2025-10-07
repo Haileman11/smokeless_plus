@@ -602,12 +602,63 @@ class UserDataService {
       await prefs.setDouble(
           _keyYearsSmoking, yearsSmoking); // Save years of smoking
       await prefs.setString(_keyCurrency, currency);
-      await prefs.setString(_motivationTimeKey,motivationTime ?? "9: 00 AM");
+      await prefs.setString(_motivationTimeKey,motivationTime ?? "9 00");
       return true;
     } catch (e) {
       return false;
     }
   }
+
+  static Future<void> saveQuitDate(DateTime quitDate) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyQuitDate, quitDate.toIso8601String());
+  }
+
+  static Future<void> saveCigarettesPerDay(int count) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_keyCigarettesPerDay, count);
+  }
+
+  static Future<void> saveCostPerPack(double cost) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble(_keyCostPerPack, cost);
+  }
+  static Future<void> saveCurrency(String currency) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyCurrency, currency);
+  }
+  static Future<void> saveCigarettesPerPack(int count) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_keyCigarettesPerPack, count);
+  }
+  static Future<void> saveUserName(String name) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyUserName, name);
+  }
+  static Future<void> saveYearsSmoking(double years) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setDouble(_keyYearsSmoking, years);
+  }
+  static Future<void> saveMotivationTime(TimeOfDay? time) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_motivationTimeKey, time==null ? "":"${time.hour} ${time.minute}");
+  }
+  static Future<bool> saveSmokingHabits({
+    required int cigarettesPerDay,
+    required double costPerPack,
+    required int cigarettesPerPack,
+    required double yearsSmoking,
+  }) async {
+    await saveCigarettesPerDay(cigarettesPerDay);
+    await saveCostPerPack(costPerPack);
+    await saveCigarettesPerPack(cigarettesPerPack);
+    await saveYearsSmoking(yearsSmoking);
+    return true;
+  }
+
+
+
+
 
   /// Load user's quit smoking data from local storage
   static Future<Map<String, dynamic>?> loadUserData() async {

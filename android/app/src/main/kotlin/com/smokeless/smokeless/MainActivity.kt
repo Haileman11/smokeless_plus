@@ -1,4 +1,4 @@
-package com.adilsmaili.nosmoke
+package com.quitsmoking.nosmoke
 
 import io.flutter.embedding.android.FlutterActivity
 

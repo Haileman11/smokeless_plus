@@ -168,22 +168,21 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   }
 
   Widget _buildSubscriptionCard(Package package, bool isDarkMode, SubscriptionProvider subscriptionProvider) {
-    final isYearly = package.identifier.contains('annual') || package.identifier.contains('yearly');
     final isLifetime = package.identifier.contains('lifetime');
     
     return Container(
       margin: const EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         border: Border.all(
-          color: isYearly ? Theme.of(context).colorScheme.primary : Colors.grey.withOpacity(0.3),
-          width: isYearly ? 2 : 1,
+          color:  Theme.of(context).colorScheme.primary ,
+          width:  2,
         ),
         borderRadius: BorderRadius.circular(12),
         color: Theme.of(context).cardTheme.color,
       ),
       child: Column(
         children: [
-          if (isYearly)
+          
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 8),
@@ -245,15 +244,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                             fontWeight: FontWeight.bold,
                             color: isDarkMode ? Colors.white : Colors.black,
                           ),
-                        ),
-                        if (!isLifetime)
-                          Text(
-                            isYearly ? '/year' : '/month',
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: isDarkMode ? Colors.white70 : Colors.black54,
-                            ),
-                          ),
+                        ),                        
                       ],
                     ),
                   ],

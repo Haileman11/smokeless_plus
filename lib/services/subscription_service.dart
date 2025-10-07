@@ -73,6 +73,7 @@ class SubscriptionProvider with ChangeNotifier {
   Future<void> loadPackages() async {
     try {
       _availablePackages = await _revenueCatService.getAvailablePackages();
+      print("Available Packages ${availablePackages.length}",);
       notifyListeners();
     } catch (e) {
       debugPrint('Error loading packages: $e');

@@ -224,14 +224,15 @@ class _UserProfileState extends State<UserProfile> {
 
   Widget _buildProfileHeader() {
     return SliverToBoxAdapter(
-      child: ProfileHeaderWidget(
-        userName: _userData!["name"] as String,
-        userEmail:
-            "user@quitsmoking.com", // You can add email to UserDataService if needed
-        avatarUrl:
-            "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400", // Default avatar
-        quitDate: DateTime.parse(_userData!["quitDate"] as String),
-        currentStreak: _userData!["currentStreak"] as int,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+        // padding: EdgeInsets.all(4.w),
+        child: ProfileHeaderWidget(
+          userName: _userData!["name"] as String,
+          userEmail: "", // You can add email to UserDataService if needed
+          quitDate: DateTime.parse(_userData!["quitDate"] as String),
+          currentStreak: _userData!["currentStreak"] as int,
+        ),
       ),
     );
   }
@@ -295,9 +296,10 @@ class _UserProfileState extends State<UserProfile> {
                       value: _dailyMotivation,
                       onChanged: (value) {
                         if (value) {
+                          UserDataService.saveMotivationTime(_motivationTime);
                           scheduleDailyReminder(_motivationTime);
-                        }
-                        else {
+                        } else {
+                          UserDataService.saveMotivationTime(null);
                           cancelDailyNotifications();
                         }
                         setState(() {
@@ -309,9 +311,9 @@ class _UserProfileState extends State<UserProfile> {
                         ? () => _showTimePicker(
                                 AppLocalizations.of(context)!.dailyMotivation,
                                 _motivationTime, (time) {
+                              UserDataService.saveMotivationTime(time);
                               setState(() {
                                 _motivationTime = time;
-                                _updateUserData();
                               });
                             })
                         : null,
@@ -490,58 +492,9 @@ class _UserProfileState extends State<UserProfile> {
                       ],
                       _selectedCurrency,
                       (value) async {
-                        await UserDataService.saveUserData(
-                          quitDate:
-                              DateTime.parse(_userData!["quitDate"] as String),
-                          cigarettesPerDay:
-                              _userData!["cigarettesPerDay"] as int,
-                          costPerPack: _userData!["costPerPack"] as double,
-                          currency: value,
-                          cigarettesPerPack:
-                              _userData!["cigarettesPerPack"] as int,
-                          userName: _userData!["name"] as String,
-                          yearsSmoking:
-                              _userData!["yearsSmoking"] as double? ?? 0.0,
-                        );
+                        await UserDataService.saveCurrency(value);
                         setState(() {
                           _selectedCurrency = value;
-                        });
-                      },
-                    ),
-                  ),
-                  SettingsItem(
-                    title: 'Measurement Units',
-                    subtitle: _selectedUnits,
-                    icon: CustomIconWidget(
-                      iconName: 'straighten',
-                      color: Theme.of(context).colorScheme.primary,
-                      size: 24,
-                    ),
-                    trailing: CustomIconWidget(
-                      iconName: 'chevron_right',
-                      color: Theme.of(context).colorScheme.onSurfaceVariant,
-                      size: 20,
-                    ),
-                    onTap: () => _showSelectionDialog(
-                      'Units',
-                      ['Imperial', 'Metric'],
-                      _selectedUnits,
-                      (value) async {
-                        await UserDataService.saveUserData(
-                          quitDate:
-                              DateTime.parse(_userData!["quitDate"] as String),
-                          cigarettesPerDay:
-                              _userData!["cigarettesPerDay"] as int,
-                          costPerPack: _userData!["costPerPack"] as double,
-                          currency: value,
-                          cigarettesPerPack:
-                              _userData!["cigarettesPerPack"] as int,
-                          userName: _userData!["name"] as String,
-                          yearsSmoking:
-                              _userData!["yearsSmoking"] as double? ?? 0.0,
-                        );
-                        setState(() {
-                          _selectedUnits = value;
                         });
                       },
                     ),
@@ -652,13 +605,10 @@ class _UserProfileState extends State<UserProfile> {
           currentYearsSmoking: currentYearsSmoking, // Pass years of smoking
           onSave: (newDate, newCigarettes, newCost, newYearsSmoking) async {
             // FIXED: Save all data including years of smoking
-            final success = await UserDataService.saveUserData(
-              quitDate: newDate,
+            final success = await UserDataService.saveSmokingHabits(
               cigarettesPerDay: newCigarettes,
               costPerPack: newCost,
               cigarettesPerPack: 20,
-              currency: _selectedCurrency,
-              userName: userData['name'] ?? 'User',
               yearsSmoking: newYearsSmoking, // Include years of smoking in save
             );
 
@@ -688,50 +638,6 @@ class _UserProfileState extends State<UserProfile> {
               }
             }
           },
-        ),
-      );
-    }
-  }
-
-  // Add missing _handleEditQuitDetails method
-
-  Future<void> _updateUserData() async {
-    try {
-      // Save the updated data with years of smoking
-      final success = await UserDataService.saveUserData(
-        quitDate: _userData!["quitDate"],
-        cigarettesPerDay:_userData!["cigarettesPerDay"],
-        costPerPack: _userData!["costPerPack"],
-        currency: _userData!["currency"],
-        cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
-        userName: _userData!["name"] as String,
-        yearsSmoking: _userData!["yearsSmoking"], // Include years of smoking
-        motivationTime: "${_motivationTime.hour} ${_motivationTime.minute}"
-      );
-
-      if (success) {
-        // Reload the user data to reflect changes
-        await _loadUserData();
-
-        // Notify other screens that user data has changed
-        if (widget.onUserDataChanged != null) {
-          widget.onUserDataChanged!();
-        }
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Quit details updated successfully'),
-            backgroundColor: Theme.of(context).colorScheme.secondary,
-          ),
-        );
-      } else {
-        throw Exception('Failed to save data');
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Failed to update quit details: $e'),
-          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     }
@@ -896,42 +802,22 @@ class _UserProfileState extends State<UserProfile> {
   }
 
   void _resetProgress() async {
-    try {
-      // Reset quit date to today while preserving years of smoking
-      final success = await UserDataService.saveUserData(
-        quitDate: DateTime.now(),
-        currency: _selectedCurrency,
-        cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
-        costPerPack: _userData!["costPerPack"] as double,
-        cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
-        userName: _userData!["name"] as String,
-        yearsSmoking: _userData!["yearsSmoking"] as double? ??
-            0.0, // Preserve years of smoking
-      );
+    // Reset quit date to today while preserving years of smoking
+    final success = await UserDataService.saveQuitDate(DateTime.now());
 
-      if (success) {
-        await _loadUserData();
+    await _loadUserData();
 
-        // Notify other screens that user data has changed
-        if (widget.onUserDataChanged != null) {
-          widget.onUserDataChanged!();
-        }
-
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Progress reset successfully. You can do this!'),
-            backgroundColor: Theme.of(context).colorScheme.secondary,
-          ),
-        );
-      }
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Failed to reset progress: $e'),
-          backgroundColor: Theme.of(context).colorScheme.error,
-        ),
-      );
+    // Notify other screens that user data has changed
+    if (widget.onUserDataChanged != null) {
+      widget.onUserDataChanged!();
     }
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Progress reset successfully. You can do this!'),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+      ),
+    );
   }
 
   void _deleteAccount() async {
@@ -1049,7 +935,7 @@ class _UserProfileState extends State<UserProfile> {
                       if (newName.isNotEmpty && newName != _userData!["name"]) {
                         await _updateUserName(newName);
                       }
-                      nameController.dispose();
+                      // nameController.dispose();
                       Navigator.of(context).pop();
                     },
                     child: Text('Save'),
@@ -1066,16 +952,7 @@ class _UserProfileState extends State<UserProfile> {
   Future<void> _updateUserName(String newName) async {
     try {
       // Save the updated name while preserving all other data including years of smoking
-      await UserDataService.saveUserData(
-        currency: _selectedCurrency,
-        quitDate: DateTime.parse(_userData!["quitDate"] as String),
-        cigarettesPerDay: _userData!["cigarettesPerDay"] as int,
-        costPerPack: _userData!["costPerPack"] as double,
-        cigarettesPerPack: _userData!["cigarettesPerPack"] as int,
-        userName: newName,
-        yearsSmoking: _userData!["yearsSmoking"] as double? ??
-            0.0, // Preserve years of smoking
-      );
+      await UserDataService.saveUserName(newName);
 
       // Reload the user data to reflect changes
       await _loadUserData();
@@ -1121,12 +998,15 @@ class _UserProfileState extends State<UserProfile> {
       ],
     );
   }
-  Widget _buildPremiumSection(BuildContext context, SubscriptionProvider subscriptionProvider) {
+
+  Widget _buildPremiumSection(
+      BuildContext context, SubscriptionProvider subscriptionProvider) {
     if (subscriptionProvider.isPremium) {
       return SliverToBoxAdapter(
         child: Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(            
+          margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+          padding: EdgeInsets.all(4.w),
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -1170,7 +1050,7 @@ class _UserProfileState extends State<UserProfile> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor:  Theme.of(context).colorScheme.primary,
+                  foregroundColor: Theme.of(context).colorScheme.primary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -1189,20 +1069,20 @@ class _UserProfileState extends State<UserProfile> {
     } else {
       return SliverToBoxAdapter(
         child: Container(
-          padding: const EdgeInsets.all(16),
+          margin: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+          padding: EdgeInsets.all(4.w),
           decoration: BoxDecoration(
-            border: Border.all(
-              color:  Theme.of(context).colorScheme.primary,
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(12),
-            color: Theme.of(context).colorScheme.surface
-          ),
+              border: Border.all(
+                color: Theme.of(context).colorScheme.primary,
+                width: 2,
+              ),
+              borderRadius: BorderRadius.circular(12),
+              color: Theme.of(context).colorScheme.surface),
           child: Column(
             children: [
               Row(
                 children: [
-                   Icon(
+                  Icon(
                     Icons.star,
                     color: Theme.of(context).colorScheme.primary,
                     size: 24,
@@ -1214,14 +1094,14 @@ class _UserProfileState extends State<UserProfile> {
                       children: [
                         Text(
                           'Upgrade to Premium',
-                          style: TextStyle(                          
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
                           'Remove ads and unlock all features',
-                          style: TextStyle(                          
+                          style: TextStyle(
                             fontSize: 14,
                           ),
                         ),
@@ -1239,7 +1119,7 @@ class _UserProfileState extends State<UserProfile> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:  Theme.of(context).colorScheme.primary,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
@@ -1253,11 +1133,11 @@ class _UserProfileState extends State<UserProfile> {
                     ),
                   ),
                 ],
-              ),              
+              ),
             ],
           ),
         ),
       );
     }
-  }  
+  }
 }
