@@ -116,7 +116,7 @@ abstract class AppLocalizations {
   /// The title of the application
   ///
   /// In en, this message translates to:
-  /// **'Smokeless Plus'**
+  /// **'No Smoke'**
   String get appTitle;
 
   /// Morning greeting

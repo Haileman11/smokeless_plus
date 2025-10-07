@@ -83,7 +83,7 @@ class _AnimatedLogoWidgetState extends State<AnimatedLogoWidget>
                   ),
                   SizedBox(height: 1.h),
                   Text(
-                    'Smokeless+',
+                    'No Smoke',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.w700,

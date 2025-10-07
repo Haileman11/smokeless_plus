@@ -337,7 +337,7 @@ class _SplashScreenState extends State<SplashScreen>
                           ),
                           SizedBox(height: 0.5.h),
                           Text(
-                            '© 2025 Smokeless Plus. All rights reserved.',
+                            '© 2025 No Smoke. All rights reserved.',
                             style: Theme.of(context).textTheme.bodySmall
                                 ?.copyWith(
                               color: Theme.of(context).colorScheme.onSurface
