@@ -21,7 +21,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   double _loadingProgress = 0.0;
-  bool _isInitialized = false;
   late String _loadingMessage;
 
   late AnimationController _fadeController;
@@ -92,10 +91,7 @@ class _SplashScreenState extends State<SplashScreen>
       await _updateProgress(1.0, l10n.preparingMotivationalContent);
       await _prepareMotivationalContent();
       await Future.delayed(const Duration(milliseconds: 500));
-
-      setState(() {
-        _isInitialized = true;
-      });
+      
 
       // Navigate based on user status
       await Future.delayed(const Duration(milliseconds: 800));
@@ -271,91 +267,89 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: AnimatedBuilder(
-          animation: _fadeAnimation,
-          builder: (context, child) {
-            return Opacity(
-              opacity: _fadeAnimation.value,
-              child: GradientBackgroundWidget(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 6.w),
-                  child: Column(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Container(),
+      body: AnimatedBuilder(
+        animation: _fadeAnimation,
+        builder: (context, child) {
+          return Opacity(
+            opacity: _fadeAnimation.value,
+            child: GradientBackgroundWidget(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 6.w),
+                child: Column(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Container(),
+                    ),
+      
+                    // Animated Logo Section
+                    const AnimatedLogoWidget(),
+      
+                    SizedBox(height: 4.h),
+      
+                    // Health Icons Animation
+                    const HealthIconsWidget(),
+      
+                    Expanded(
+                      flex: 2,
+                      child: Container(),
+                    ),
+      
+                    // Loading Section
+                    LoadingIndicatorWidget(progress: _loadingProgress),
+      
+                    SizedBox(height: 2.h),
+      
+                    // Loading Message
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: Text(
+                        _loadingMessage,
+                        key: ValueKey(_loadingMessage),
+                        style: Theme.of(context).textTheme.bodyMedium
+                            ?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface
+                              .withValues(alpha: 0.7),
+                          fontSize: 12.sp,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-
-                      // Animated Logo Section
-                      const AnimatedLogoWidget(),
-
-                      SizedBox(height: 4.h),
-
-                      // Health Icons Animation
-                      const HealthIconsWidget(),
-
-                      Expanded(
-                        flex: 2,
-                        child: Container(),
-                      ),
-
-                      // Loading Section
-                      LoadingIndicatorWidget(progress: _loadingProgress),
-
-                      SizedBox(height: 2.h),
-
-                      // Loading Message
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        child: Text(
-                          _loadingMessage,
-                          key: ValueKey(_loadingMessage),
-                          style: Theme.of(context).textTheme.bodyMedium
+                    ),
+      
+                    SizedBox(height: 4.h),
+      
+                    // App Version and Copyright
+                    Column(
+                      children: [
+                        Text(
+                          'Version 1.0.0',
+                          style: Theme.of(context).textTheme.bodySmall
                               ?.copyWith(
                             color: Theme.of(context).colorScheme.onSurface
-                                .withValues(alpha: 0.7),
-                            fontSize: 12.sp,
+                                .withValues(alpha: 0.5),
+                            fontSize: 10.sp,
                           ),
-                          textAlign: TextAlign.center,
                         ),
-                      ),
-
-                      SizedBox(height: 4.h),
-
-                      // App Version and Copyright
-                      Column(
-                        children: [
-                          Text(
-                            'Version 1.0.0',
-                            style: Theme.of(context).textTheme.bodySmall
-                                ?.copyWith(
-                              color: Theme.of(context).colorScheme.onSurface
-                                  .withValues(alpha: 0.5),
-                              fontSize: 10.sp,
-                            ),
+                        SizedBox(height: 0.5.h),
+                        Text(
+                          '© 2025 No Smoke. All rights reserved.',
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(
+                            color: Theme.of(context).colorScheme.onSurface
+                                .withValues(alpha: 0.5),
+                            fontSize: 10.sp,
                           ),
-                          SizedBox(height: 0.5.h),
-                          Text(
-                            '© 2025 No Smoke. All rights reserved.',
-                            style: Theme.of(context).textTheme.bodySmall
-                                ?.copyWith(
-                              color: Theme.of(context).colorScheme.onSurface
-                                  .withValues(alpha: 0.5),
-                              fontSize: 10.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-
-                      SizedBox(height: 2.h),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+      
+                    SizedBox(height: 2.h),
+                  ],
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

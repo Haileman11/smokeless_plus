@@ -397,13 +397,18 @@ class _CravingSupportState extends State<CravingSupport>
                   ),
                   child: Column(
                     children: [
-                      Text(
-                        '${_userData["cigarettesNotSmoked"]}',
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onPrimary,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      Builder(
+                        builder: (context) {
+                          final cigarettesAvoided = daysSinceQuit * _userData["cigarettesPerDay"];
+                          return Text(
+                            '$cigarettesAvoided',
+                            style:
+                                Theme.of(context).textTheme.titleMedium?.copyWith(
+                              color: Theme.of(context).colorScheme.onPrimary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          );
+                        }
                       ),
                       Text(
                         AppLocalizations.of(context)!.notSmoked,
