@@ -49,7 +49,7 @@ class AdMobService {
     _bannerAd = BannerAd(
       adUnitId: Platform.isAndroid
           ? 'ca-app-pub-3940256099942544/6300978111' // Test banner ID
-          : 'ca-app-pub-3940256099942544/2934735716',
+          : 'ca-app-pub-4159281980067233/9750208642',
       size: AdSize.banner,
       request: _request,
       listener: BannerAdListener(
@@ -96,7 +96,7 @@ class AdMobService {
     InterstitialAd.load(
       adUnitId: Platform.isAndroid
           ? 'ca-app-pub-3940256099942544/1033173712'
-          : 'ca-app-pub-3940256099942544/4411468910',
+          : 'ca-app-pub-4159281980067233/4153309174',
       request: _request,
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {
