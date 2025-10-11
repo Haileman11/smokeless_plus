@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -25,6 +26,7 @@ class AdMobService {
 
   RewardedInterstitialAd? _rewardedInterstitialAd;
   int _rewardedInterstitialLoadAttempts = 0;
+  Timer? _adTimer;
 
   /// Singleton pattern
   static final AdMobService _instance = AdMobService._internal();
@@ -76,7 +78,17 @@ class AdMobService {
       child: AdWidget(ad: _bannerAd!),
     );
   }
-
+  void init() {
+    loadInterstitialAd();
+    _startAdTimer();
+  }
+  void _startAdTimer() {
+    _adTimer?.cancel();
+    _adTimer = Timer.periodic(const Duration(minutes: 2), (timer) {
+      print('🕑 Timer triggered: showing ad if available...');
+      showInterstitialAd();
+    });
+  }
   // -----------------------------
   // Interstitial Ad
   // -----------------------------

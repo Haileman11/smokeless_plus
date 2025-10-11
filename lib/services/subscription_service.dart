@@ -145,7 +145,7 @@ class SubscriptionProvider with ChangeNotifier {
   // Show interstitial ad (only for free users)
   void showInterstitialAd() {
     if (!_isPremium) {
-      _adMobService.showInterstitialAd();
+      _adMobService.init();
     }
   }
 

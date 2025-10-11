@@ -70,6 +70,7 @@ void main() async {
 
   // 🚨 CRITICAL: Device orientation lock - DO NOT REMOVE
   await DynamicLocalization().load(prefs.getString('selected_language') ?? 'en');
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
 
   final subscriptionProvider = SubscriptionProvider();
@@ -94,76 +95,74 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder: (context, orientation, screenType) {
-      return Consumer2<ThemeProvider, LanguageProvider>(
-        builder: (context, themeProvider, languageProvider, _) {
-          
-          return FutureBuilder(
-            future: DynamicLocalization().load(languageProvider.locale.languageCode),
-            builder: (context, asyncSnapshot) {
-              final isLoading = asyncSnapshot.connectionState != ConnectionState.done;
-              if (isLoading) {
-                return Center(child: CircularProgressIndicator());
-              }
-              return MaterialApp(
-                title: 'quitsmoking_tracker',
-                theme: AppTheme.lightTheme,
-                darkTheme: AppTheme.darkTheme,
-                themeMode: themeProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-                locale: languageProvider.locale,
-                localizationsDelegates: const [
-                  AppLocalizations.delegate,
-                  GlobalMaterialLocalizations.delegate,
-                  GlobalWidgetsLocalizations.delegate,
-                  GlobalCupertinoLocalizations.delegate,
-                ],
-                supportedLocales: const [
-                  Locale('en'), // English
-                  Locale('es'), // Spanish
-                  Locale('fr'), // French
-                  Locale('de'), // German
-                  Locale('it'), // Italian
-                  Locale('pt'), // Portuguese
-                  Locale('ar'), // Arabic
-                  Locale('zh'), // Chinese
-                  Locale('ja'), // Japanese
-                  Locale('ru'), // Russian
-                  Locale('hi'), // Hindi
-                ],
-                // Force locale rebuild when changed
-                key: ValueKey(languageProvider.locale.languageCode),
-                // 🚨 CRITICAL: NEVER REMOVE OR MODIFY
-                builder: (context, child) {
-                  return MediaQuery(
-                    data: MediaQuery.of(context).copyWith(
-                      textScaler: TextScaler.linear(1.0),
-                    ),
-                    child: child!,
-                  );
-                },
-                // 🚨 END CRITICAL SECTION
-                debugShowCheckedModeBanner: false,
-                routes: AppRoutes.routes,
-                initialRoute: AppRoutes.initial,
-                onGenerateRoute: (settings) {
-                  // Pass language change callback to all screens that need it
-                  switch (settings.name) {
-                    case '/user-profile':
-                      return MaterialPageRoute(
-                        builder: (context) => UserProfile(
-                          onLanguageChanged: languageProvider.setLanguage,
-                        ),
-                        settings: settings,
-                      );
-                    default:
-                      return null;
-                  }
-                },
-              );
+    return Consumer2<ThemeProvider, LanguageProvider>(
+      builder: (context, themeProvider, languageProvider, _) {
+        
+        return FutureBuilder(
+          future: DynamicLocalization().load(languageProvider.locale.languageCode),
+          builder: (context, asyncSnapshot) {
+            final isLoading = asyncSnapshot.connectionState != ConnectionState.done;
+            if (isLoading) {
+              return Center(child: CircularProgressIndicator());
             }
-          );
-        }
-      );
-    });
+            return MaterialApp(
+              title: 'quitsmoking_tracker',
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
+              themeMode: themeProvider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+              locale: languageProvider.locale,
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: const [
+                Locale('en'), // English
+                Locale('es'), // Spanish
+                Locale('fr'), // French
+                Locale('de'), // German
+                Locale('it'), // Italian
+                Locale('pt'), // Portuguese
+                Locale('ar'), // Arabic
+                Locale('zh'), // Chinese
+                Locale('ja'), // Japanese
+                Locale('ru'), // Russian
+                Locale('hi'), // Hindi
+              ],
+              // Force locale rebuild when changed
+              key: ValueKey(languageProvider.locale.languageCode),
+              // 🚨 CRITICAL: NEVER REMOVE OR MODIFY
+              builder: (context, child) {
+                return MediaQuery(
+                  data: MediaQuery.of(context).copyWith(
+                    textScaler: TextScaler.linear(1.0),
+                  ),
+                  child:  Sizer(builder: (context, orientation, screenType)=> child!),
+                );
+              },
+              // 🚨 END CRITICAL SECTION
+              debugShowCheckedModeBanner: false,
+              routes: AppRoutes.routes,
+              initialRoute: AppRoutes.initial,
+              onGenerateRoute: (settings) {
+                // Pass language change callback to all screens that need it
+                switch (settings.name) {
+                  case '/user-profile':
+                    return MaterialPageRoute(
+                      builder: (context) => UserProfile(
+                        onLanguageChanged: languageProvider.setLanguage,
+                      ),
+                      settings: settings,
+                    );
+                  default:
+                    return null;
+                }
+              },
+            );
+          }
+        );
+      }
+    );
   }
 }

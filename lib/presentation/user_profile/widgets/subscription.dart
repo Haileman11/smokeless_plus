@@ -19,9 +19,9 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = context.watch<ThemeProvider>().isDarkMode;
-    final language = context.watch<LanguageProvider>();
-    final subscriptionProvider = context.watch<SubscriptionProvider>();
+    final isDarkMode = context.read<ThemeProvider>().isDarkMode;
+    final language = context.read<LanguageProvider>();
+    final subscriptionProvider = context.read<SubscriptionProvider>();
 
     return Scaffold(
       backgroundColor: Theme.of(context).appBarTheme.backgroundColor,

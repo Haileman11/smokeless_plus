@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
     _loadInterstitial();
   }
   void _loadInterstitial() {
-    final subscriptionProvider = context.watch<SubscriptionProvider>();
+    final subscriptionProvider = context.read<SubscriptionProvider>();
     if (subscriptionProvider.isPremium) return; // No ads for premium users
     
     subscriptionProvider.showInterstitialAd();    
@@ -52,9 +52,9 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = context.watch<ThemeProvider>().isDarkMode;
+    final isDarkMode = context.read<ThemeProvider>().isDarkMode;
     final l10n = AppLocalizations.of(context)!;
-    final subscriptionProvider = context.watch<SubscriptionProvider>();
+    
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,      
       body: PageView(
@@ -65,12 +65,19 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (!subscriptionProvider.isPremium)
-                        Container(
-                          height: 60,
-                          margin: const EdgeInsets.all(8),
-                          child: subscriptionProvider.getBannerAdWidget(),
-                        ),
+          Builder(
+            builder: (context) {
+              final subscriptionProvider = context.read<SubscriptionProvider>();
+              if (!subscriptionProvider.isPremium) {
+                return Container(
+                height: 60,
+                margin: const EdgeInsets.all(8),
+                child: subscriptionProvider.getBannerAdWidget(),
+              );
+              }
+              return const SizedBox.shrink();
+            }
+          ),
           Container(
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
